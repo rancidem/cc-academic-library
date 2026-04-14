@@ -21,6 +21,14 @@ Use the repo sections below to browse items, then open the local link for in-pro
 - Skills: 166
 - Tools: 6
 
+## Featured Paths
+
+- [Browse by task](categories.md) - category-style navigation for review, download, and install flows.
+- [Featured stacks](stacks.md) - curated workflow combinations with the shortest path to use.
+- [Repository summaries](repositories.md) - repo-level comparison when you want to choose the right source first.
+- [Skills inventory](skills.md) - raw `SKILL.md` links when you want a direct download.
+- [Tools index](tools.md) - raw manifests and package roots when you want installable tool entry points.
+
 ## Quick Jump
 
 - [MySkills](#myskills)

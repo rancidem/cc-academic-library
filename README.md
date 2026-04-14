@@ -13,6 +13,8 @@ Build a structured, searchable, and maintainable inventory of Claude Code tools,
 - `LIBRARY.md` - single canonical dashboard and master catalog
 - `repos/README.md` - quick navigation table for the cloned repositories
 - `library/README.md` - library-folder landing page
+- `library/categories.md` - task-first catalog navigation
+- `library/stacks.md` - curated workflow combinations
 - `library/index.md` - pointer-only compatibility page
 - `library/` - working index for commands, agents, skills, tools, resources, and repo summaries
 - `library/inventory.md` - master inventory of all commands, agents, skills, and tools
@@ -29,7 +31,7 @@ Build a structured, searchable, and maintainable inventory of Claude Code tools,
 
 - The project is organized around a single dashboard-first workflow.
 - `LIBRARY.md` is the canonical start page.
-- The repo summaries, quick-nav, and indexed command/agent/skill/tool inventories are in place.
+- The repo summaries, quick-nav, task categories, featured stacks, and indexed command/agent/skill/tool inventories are in place.
 - The planning docs and maintenance notes are synchronized with the current library structure.
 - The local source set has been trimmed toward Claude Code-only usage where runtime mirrors were redundant.
 - Phase 4 focuses on personal usability, repo summaries, and maintenance.
@@ -38,7 +40,8 @@ Build a structured, searchable, and maintainable inventory of Claude Code tools,
 ## Next Steps
 
 1. Keep the repo summaries current when upstream READMEs or structures change.
-2. Use `LIBRARY.md` as the main start page and `library/repositories.md` for deep comparison.
+2. Use `LIBRARY.md` as the main start page, `library/categories.md` for task-based browsing, and `library/repositories.md` for deep comparison.
 3. Keep source sync notes and index refreshes in `.planning/` and `notes/`.
 4. Expand tool and resource entries as new reusable items are discovered.
 5. Keep the dashboard concise so it stays useful at a glance.
+6. Keep the task categories and featured stacks aligned with the underlying repository summaries.

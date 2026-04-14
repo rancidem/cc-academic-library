@@ -6,11 +6,14 @@ Curated supporting references, docs, manifests, and maintenance pages for the li
 
 - Use this page for supporting docs rather than entry-point commands, agents, skills, or tools.
 - Keep the highest-value references here so the main inventory stays focused.
+- Use `library/categories.md` for task-first navigation and `library/stacks.md` for curated workflow bundles.
 
 ## Download And Setup
 
 | Need | Resource | Why it matters | Open |
 |---|---|---|---|
+| Browse by task | library/categories.md | Category-style navigation for review, download, and install flows | [open](categories.md) |
+| Featured stacks | library/stacks.md | Curated workflow bundles with the shortest path to use | [open](stacks.md) |
 | Review raw skill files | library/skills.md | Direct raw `SKILL.md` links and folder contents for download | [open](skills.md) |
 | Review raw tool files | library/tools.md | Direct raw source links for tool roots, packages, and manifests | [open](tools.md) |
 | Install WTF-P | sources/wtf-p/README.md | Exact `npx wtf-p` install, update, and uninstall commands | [open](../sources/wtf-p/README.md) |

@@ -21,13 +21,15 @@ Use the repo sections below to browse agents, then open the local link for in-pr
 - Skills: 0
 - Tools: 0
 
+## Featured Paths
+
+- [Browse by task](categories.md) - task-first navigation for review, download, and install flows.
+- [Featured stacks](stacks.md) - curated workflow bundles that include agents alongside their companion repos.
+- [Repository summaries](repositories.md) - compare the cloned sources before opening a specific agent.
+
 ## Quick Jump
 
-- [MySkills](#myskills)
-- [academic-paper-skills](#academic-paper-skills)
 - [wtf-p](#wtf-p)
-- [claude-scientific-writer](#claude-scientific-writer)
-- [scientific-agent-skills](#scientific-agent-skills)
 
 ## Kind Filter: agent
 

@@ -30,6 +30,12 @@ Use the repo sections below to browse skills, then open the local link for in-pr
 - Skills: 166
 - Tools: 0
 
+## Featured Paths
+
+- [Browse by task](categories.md) - task-first navigation for review, download, and install flows.
+- [Featured stacks](stacks.md) - curated workflow bundles centered on the most useful skill collections.
+- [Repository summaries](repositories.md) - compare the cloned sources before opening a specific skill.
+
 ## Quick Jump
 
 - [MySkills](#myskills)

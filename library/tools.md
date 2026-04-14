@@ -28,13 +28,16 @@ Use the repo sections below to browse tools, then open the local link for in-pro
 - Skills: 0
 - Tools: 6
 
+## Featured Paths
+
+- [Browse by task](categories.md) - task-first navigation for review, download, and install flows.
+- [Featured stacks](stacks.md) - curated workflow bundles that include installable tool paths.
+- [Repository summaries](repositories.md) - compare the cloned sources before opening a specific tool.
+
 ## Quick Jump
 
-- [MySkills](#myskills)
-- [academic-paper-skills](#academic-paper-skills)
 - [wtf-p](#wtf-p)
 - [claude-scientific-writer](#claude-scientific-writer)
-- [scientific-agent-skills](#scientific-agent-skills)
 
 ## Kind Filter: tool
 

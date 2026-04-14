@@ -23,6 +23,7 @@ Phase 4 - personal usability, repo summaries, and maintenance.
 
 - Keep `LIBRARY.md` as the default entry point.
 - Keep `LIBRARY.md` action-first for review, raw download, and install/setup workflows.
+- Keep `library/categories.md` and `library/stacks.md` as task-first navigation and featured workflow pages.
 - Keep `library/inventory.md` as the complete cross-type inventory.
 - Keep `library/commands.md`, `library/agents.md`, `library/skills.md`, `library/tools.md`, and `library/resources.md` usable under time pressure.
 - Keep `library/repositories.md` richer than the root catalog.

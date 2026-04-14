@@ -5,6 +5,7 @@
 - Maintain an index of the five cloned upstream repositories.
 - Keep `LIBRARY.md` as the first-page dashboard.
 - Keep `LIBRARY.md` organized for review, raw download, and install/setup workflows.
+- Keep task-first browsing and featured workflow bundles available from the dashboard.
 - Keep `library/inventory.md` as the full command, agent, skill, and tool inventory.
 - Keep `library/repositories.md` as the detailed per-repo summary page.
 - Keep `library/commands.md`, `library/agents.md`, `library/skills.md`, and `library/tools.md` as type-specific indexes.
@@ -12,6 +13,7 @@
 - Keep `repos/README.md` as the quick-nav table.
 - Keep all entries readable in plain Markdown.
 - Support fast navigation through cross-links and consistent headings.
+- Support task-first navigation through category and stack pages.
 - Preserve raw download paths and install/setup notes where applicable.
 
 ## Content

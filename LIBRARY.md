@@ -10,6 +10,8 @@ Last refreshed: 2026-04-14.
 
 Use the sections below based on what you want to do right now.
 
+- [Browse by task](library/categories.md) - category-style entry points for review, download, and install flows
+- [Featured stacks](library/stacks.md) - curated repository combinations for the most common workflows
 - [Library inventory](library/inventory.md) - full cross-type catalog for quick review
 - [Repository summaries](library/repositories.md) - repo-level comparison plus install/setup notes
 - [Skills inventory](library/skills.md) - raw skill-file links and folder contents for direct download
@@ -31,6 +33,8 @@ Use the sections below based on what you want to do right now.
 - [Skills](library/skills.md) - indexed skill files with summaries, use notes, open links, and raw download links
 - [Tools](library/tools.md) - reusable tool roots, packages, and helper utilities
 - [Resources](library/resources.md) - supporting references, guides, and maintenance material
+- [Browse by task](library/categories.md) - task-first catalog entry points
+- [Featured stacks](library/stacks.md) - recommended workflow combinations
 - [Entry template](library/entry-template.md) - shared schema for all new entries
 - [Taxonomy](library/taxonomy.md) - controlled tags and search terms
 
@@ -48,13 +52,15 @@ Use the sections below based on what you want to do right now.
 
 ## Current State
 
-- The master catalog, repo quick-nav, and exhaustive inventory pages are in place.
+- The master catalog, repo quick-nav, task categories, featured stacks, and exhaustive inventory pages are in place.
 - The dashboard, planning docs, and maintenance notes are synchronized with the current library structure.
 - Phase 4 is focused on maintenance, refreshes, and personal usability.
-- The next useful work is tightening summaries and keeping the library easy to scan.
+- The next useful work is tightening summaries and keeping the category and stack pages easy to scan.
 
 ## Most Useful Now
 
+- `library/categories.md` - best when you want a task-first starting point instead of a type-first index.
+- `library/stacks.md` - best when you want a curated workflow bundle with the shortest path to use.
 - `library/inventory.md` - best when you want every command, agent, skill, and tool in one place.
 - `wtf-p` - best when you want a command-first writing workflow with clear orchestration.
 - `claude-scientific-writer` - best when you want a research-backed scientific writing stack.

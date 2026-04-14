@@ -8,6 +8,8 @@ Use `library/inventory.md` for item-level browsing across commands, agents, skil
 
 - Use the `Raw` links in `library/skills.md` and `library/tools.md` when you want direct downloads of individual files.
 - Use the repo sections below when you want the fastest install or setup path for a whole repository.
+- Use `library/categories.md` when you want the shortest task-first route to the right repo.
+- Use `library/stacks.md` when you want a curated workflow bundle instead of a single repo.
 
 ## Comparison Matrix
 
