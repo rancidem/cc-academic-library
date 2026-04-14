@@ -394,7 +394,7 @@
     {
       "kind": "file",
       "path": "README.md",
-      "size": 2467
+      "size": 3173
     },
     {
       "kind": "reference",
@@ -19968,5 +19968,5 @@
     }
   ],
   "format": "cc-academic-canonical-inventory/v1",
-  "generated": "2026-04-14T11:39:03.463Z"
+  "generated": "2026-04-14T11:40:57.606Z"
 }
