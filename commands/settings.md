@@ -9,7 +9,7 @@ allowed-tools:
 ---
 
 <objective>
-Interactive config editor for .planning/config.json.
+Interactive config editor for docs/config.json.
 
 Reads current config, presents categories, allows edits, shows diff of changes before applying.
 
@@ -17,7 +17,7 @@ No subagents needed - orchestrator handles all interaction directly.
 </objective>
 
 <context>
-No arguments. Requires .planning/config.json to exist.
+No arguments. Requires docs/config.json to exist.
 </context>
 
 <process>
@@ -25,12 +25,12 @@ No arguments. Requires .planning/config.json to exist.
 ## 1. Validate Environment
 
 ```bash
-[ ! -f .planning/config.json ] && echo "ERROR: No config. Run /wtfp:new-paper" && exit 1
+[ ! -f docs/config.json ] && echo "ERROR: No config. Run /wtfp:new-paper" && exit 1
 ```
 
 Read current config:
 ```bash
-CONFIG_CONTENT=$(cat .planning/config.json)
+CONFIG_CONTENT=$(cat docs/config.json)
 ```
 
 Store original for diff comparison later.

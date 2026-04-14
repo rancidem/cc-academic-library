@@ -58,8 +58,8 @@ Every orchestrator follows these phases:
 ### 1. Validate Environment and Resolve Model Profile
 
 ```bash
-ls .planning/ 2>/dev/null
-MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | \
+ls docs/ 2>/dev/null
+MODEL_PROFILE=$(cat docs/config.json 2>/dev/null | \
   grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | \
   grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
@@ -69,8 +69,8 @@ Include per-command model lookup table (see agent-model-matrix.md).
 ### 2. Load Context Files
 
 ```bash
-STATE_CONTENT=$(cat .planning/STATE.md)
-PROJECT_CONTENT=$(cat .planning/PROJECT.md)
+STATE_CONTENT=$(cat docs/STATE.md)
+PROJECT_CONTENT=$(cat docs/PROJECT.md)
 CONTEXT_CONTENT=$(cat "${SECTION_DIR}"/*-CONTEXT.md 2>/dev/null)
 ```
 

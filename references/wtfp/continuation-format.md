@@ -44,7 +44,7 @@ Standard format for presenting next steps after completing a command or workflow
 
 **02-01: Methods Overview** — Draft study design and participant sections
 
-`/wtfp:write-section .planning/sections/02-methods/02-01-PLAN.md`
+`/wtfp:write-section docs/sections/02-methods/02-01-PLAN.md`
 
 <sub>`/clear` first → fresh context window</sub>
 
@@ -188,7 +188,7 @@ Extract: `**02-01: Methods Overview** — Draft study design and participant sec
 ## To Continue
 
 Run `/clear`, then paste:
-/wtfp:write-section .planning/sections/02-methods/02-01-PLAN.md
+/wtfp:write-section docs/sections/02-methods/02-01-PLAN.md
 ```
 
 User has no idea what 02-01 is about.

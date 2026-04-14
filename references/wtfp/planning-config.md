@@ -1,6 +1,6 @@
 # Planning Configuration Reference
 
-Complete documentation of every key in `.planning/config.json`. This is the v0.5.0 schema — the single source of truth for all orchestrator and agent configuration.
+Complete documentation of every key in `docs/config.json`. This is the v0.5.0 schema — the single source of truth for all orchestrator and agent configuration.
 
 Template location: `core/write-the-f-paper/templates/config.json`
 
@@ -72,7 +72,7 @@ Controls planning document behavior. New in v0.5.0.
 
 | Key | Type | Default | Description | Read By |
 |-----|------|---------|-------------|---------|
-| `planning.commit_docs` | bool | `true` | Include planning docs (SUMMARY.md, STATE.md) in git commits. When `false`, planning docs are gitignored. | All orchestrators (commit step) |
+| `planning.commit_docs` | bool | `true` | Include docs (SUMMARY.md, STATE.md) in git commits. When `false`, docs are gitignored. | All orchestrators (commit step) |
 | `planning.search_gitignored` | bool | `false` | Allow searching gitignored files for context. When `true`, agents can read files in .gitignore paths. | research-synthesizer, section-writer |
 
 ## Parallelization

@@ -27,7 +27,7 @@ Execute all sections of a paper in wave-based parallel execution, then verify cr
 </objective>
 
 <context>
-No arguments. Requires `.planning/ROADMAP.md` and PLAN.md files to exist.
+No arguments. Requires `docs/ROADMAP.md` and PLAN.md files to exist.
 </context>
 
 <process>
@@ -35,15 +35,15 @@ No arguments. Requires `.planning/ROADMAP.md` and PLAN.md files to exist.
 ## 1. Validate Environment and Resolve Model Profile
 
 ```bash
-[ ! -f .planning/ROADMAP.md ] && echo "ERROR: No outline. Run /wtfp:create-outline" && exit 1
-ls .planning/sections/*/  2>/dev/null
-ls .planning/sections/*/*-PLAN.md 2>/dev/null
+[ ! -f docs/ROADMAP.md ] && echo "ERROR: No outline. Run /wtfp:create-outline" && exit 1
+ls docs/sections/*/  2>/dev/null
+ls docs/sections/*/*-PLAN.md 2>/dev/null
 ```
 
 **Resolve model profile:**
 
 ```bash
-MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+MODEL_PROFILE=$(cat docs/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
 
 **Model lookup table:**
@@ -55,18 +55,18 @@ MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"
 
 **Resolve config flags:**
 ```bash
-WORKFLOW_VERIFIER=$(cat .planning/config.json 2>/dev/null | grep -o '"verifier"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+WORKFLOW_VERIFIER=$(cat docs/config.json 2>/dev/null | grep -o '"verifier"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
 ```
 
 ## 2. Read Context Files
 
 ```bash
-ROADMAP_CONTENT=$(cat .planning/ROADMAP.md)
-STATE_CONTENT=$(cat .planning/STATE.md)
-PROJECT_CONTENT=$(cat .planning/PROJECT.md)
-ARGMAP_CONTENT=$(cat .planning/structure/argument-map.md 2>/dev/null)
-OUTLINE_CONTENT=$(cat .planning/structure/outline.md 2>/dev/null)
-NARRATIVE_CONTENT=$(cat .planning/structure/narrative-arc.md 2>/dev/null)
+ROADMAP_CONTENT=$(cat docs/ROADMAP.md)
+STATE_CONTENT=$(cat docs/STATE.md)
+PROJECT_CONTENT=$(cat docs/PROJECT.md)
+ARGMAP_CONTENT=$(cat docs/structure/argument-map.md 2>/dev/null)
+OUTLINE_CONTENT=$(cat docs/structure/outline.md 2>/dev/null)
+NARRATIVE_CONTENT=$(cat docs/structure/narrative-arc.md 2>/dev/null)
 ```
 
 ## 3. Build Wave Execution Plan
@@ -75,7 +75,7 @@ Parse ROADMAP.md and all PLAN.md files to build wave groups:
 
 ```bash
 # Find all plans and their wave assignments
-for plan in .planning/sections/*/*-PLAN.md; do
+for plan in docs/sections/*/*-PLAN.md; do
   section=$(basename $(dirname "$plan"))
   wave=$(grep -o 'wave:.*' "$plan" | head -1)
   echo "$wave $section $plan"

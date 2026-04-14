@@ -187,7 +187,7 @@ Citations found: {N new}
 Existing in bib: {N already available}
 Confidence: {level}
 
-File: .planning/sections/{section}/{section}-RESEARCH.md
+File: docs/sections/{section}/{section}-RESEARCH.md
 ```
 
 ## RESEARCH BLOCKED

@@ -14,7 +14,7 @@ allowed-tools:
 <objective>
 Archive a completed draft or submission round.
 
-Archives full state to `.planning/milestones/{version}/`.
+Archives full state to `docs/milestones/{version}/`.
 Creates MILESTONES.md entry with stats.
 Evolves PROJECT.md (shipped claims to Validated).
 Creates annotated git tag.
@@ -27,9 +27,9 @@ Resets ROADMAP.md for revision round.
 **Step 1: Validate Environment and Gather Stats**
 
 ```bash
-[ ! -f .planning/STATE.md ] && echo "ERROR: No project state found" && exit 1
-[ ! -f .planning/ROADMAP.md ] && echo "ERROR: No ROADMAP.md found" && exit 1
-[ ! -f .planning/PROJECT.md ] && echo "ERROR: No PROJECT.md found" && exit 1
+[ ! -f docs/STATE.md ] && echo "ERROR: No project state found" && exit 1
+[ ! -f docs/ROADMAP.md ] && echo "ERROR: No ROADMAP.md found" && exit 1
+[ ! -f docs/PROJECT.md ] && echo "ERROR: No PROJECT.md found" && exit 1
 ```
 
 Read version from argument:
@@ -41,7 +41,7 @@ VERSION=$ARGUMENTS  # e.g., "draft-1", "camera-ready", "revision-2"
 **Gather statistics from ROADMAP.md and section summaries:**
 - Total sections (count section entries in ROADMAP)
 - Sections complete (count checked `[x]` entries)
-- Read all SUMMARY.md files in `.planning/sections/*/`:
+- Read all SUMMARY.md files in `docs/sections/*/`:
   - Total words (sum from each summary)
   - Citations used
   - Figures
@@ -70,10 +70,10 @@ Use AskUserQuestion:
 **Step 2: Read Git Config**
 
 ```bash
-BRANCH_STRATEGY=$(cat .planning/config.json 2>/dev/null | grep -o '"branching_strategy"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "none")
-SQUASH=$(cat .planning/config.json 2>/dev/null | grep -o '"squash_on_merge"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "false")
-COMMIT_DOCS=$(cat .planning/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
-SUBMISSION_TEMPLATE=$(cat .planning/config.json 2>/dev/null | grep -o '"submission_branch_template"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "wtfp/{milestone}-{slug}")
+BRANCH_STRATEGY=$(cat docs/config.json 2>/dev/null | grep -o '"branching_strategy"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "none")
+SQUASH=$(cat docs/config.json 2>/dev/null | grep -o '"squash_on_merge"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "false")
+COMMIT_DOCS=$(cat docs/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+SUBMISSION_TEMPLATE=$(cat docs/config.json 2>/dev/null | grep -o '"submission_branch_template"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "wtfp/{milestone}-{slug}")
 ```
 
 Store these for use in subsequent steps.
@@ -81,24 +81,24 @@ Store these for use in subsequent steps.
 </step>
 
 <step name="archive">
-**Step 3: Archive to .planning/milestones/ (MLN-01)**
+**Step 3: Archive to docs/milestones/ (MLN-01)**
 
 ```bash
-ARCHIVE_DIR=".planning/milestones/${VERSION}"
+ARCHIVE_DIR="docs/milestones/${VERSION}"
 mkdir -p "$ARCHIVE_DIR"
 ```
 
 Archive these files:
 ```bash
-# Core planning files
-cp .planning/ROADMAP.md "$ARCHIVE_DIR/${VERSION}-ROADMAP.md"
-cp .planning/STATE.md "$ARCHIVE_DIR/${VERSION}-STATE.md"
+# Core docs files
+cp docs/ROADMAP.md "$ARCHIVE_DIR/${VERSION}-ROADMAP.md"
+cp docs/STATE.md "$ARCHIVE_DIR/${VERSION}-STATE.md"
 
 # Argument map if exists
-cp .planning/structure/argument-map.md "$ARCHIVE_DIR/${VERSION}-argument-map.md" 2>/dev/null || true
+cp docs/structure/argument-map.md "$ARCHIVE_DIR/${VERSION}-argument-map.md" 2>/dev/null || true
 
 # All section summaries
-for summary in .planning/sections/*/*-SUMMARY.md; do
+for summary in docs/sections/*/*-SUMMARY.md; do
   [ -f "$summary" ] && cp "$summary" "$ARCHIVE_DIR/"
 done
 ```
@@ -115,7 +115,7 @@ ls -la "$ARCHIVE_DIR/"
 
 Read existing MILESTONES.md if present, otherwise create header.
 
-Prepend new entry to `.planning/MILESTONES.md`:
+Prepend new entry to `docs/MILESTONES.md`:
 
 ```markdown
 # Milestones
@@ -147,7 +147,7 @@ Prepend new entry to `.planning/MILESTONES.md`:
 ### Git Reference
 - Tag: `{version}`
 - Commit: {hash}
-- Archive: `.planning/milestones/{version}/`
+- Archive: `docs/milestones/{version}/`
 
 ---
 
@@ -183,7 +183,7 @@ Write updated PROJECT.md.
 1. Create submission branch:
 ```bash
 # Resolve template variables
-PAPER_SLUG=$(cat .planning/PROJECT.md | grep -m1 "^#" | sed 's/^# //' | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr -cd '[:alnum:]-')
+PAPER_SLUG=$(cat docs/PROJECT.md | grep -m1 "^#" | sed 's/^# //' | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | tr -cd '[:alnum:]-')
 BRANCH_NAME=$(echo "$SUBMISSION_TEMPLATE" | sed "s/{milestone}/${VERSION}/g" | sed "s/{slug}/${PAPER_SLUG}/g")
 
 git checkout -b "$BRANCH_NAME"
@@ -191,13 +191,13 @@ git checkout -b "$BRANCH_NAME"
 
 2. Commit archive and MILESTONES.md:
 ```bash
-git add .planning/milestones/
-git add .planning/MILESTONES.md
-git add .planning/PROJECT.md
+git add docs/milestones/
+git add docs/MILESTONES.md
+git add docs/PROJECT.md
 
-# Respect commit_docs for planning files
+# Respect commit_docs for docs files
 if [ "$COMMIT_DOCS" = "true" ]; then
-  git add .planning/STATE.md .planning/ROADMAP.md
+  git add docs/STATE.md docs/ROADMAP.md
 fi
 
 git commit -m "$(cat <<'EOF'
@@ -207,7 +207,7 @@ Sections: {M}/{N}
 Words: {X}
 Date: {date}
 
-Archive: .planning/milestones/{version}/
+Archive: docs/milestones/{version}/
 EOF
 )"
 ```
@@ -222,7 +222,7 @@ $(list sections from stats)
 
 Words: ${WORD_COUNT}
 Date: ${DATE}
-Archive: .planning/milestones/${VERSION}/
+Archive: docs/milestones/${VERSION}/
 EOF
 )"
 ```
@@ -246,12 +246,12 @@ git branch -d "$BRANCH_NAME"
 
 1. Commit archive and MILESTONES.md (respect commit_docs):
 ```bash
-git add .planning/milestones/
-git add .planning/MILESTONES.md
-git add .planning/PROJECT.md
+git add docs/milestones/
+git add docs/MILESTONES.md
+git add docs/PROJECT.md
 
 if [ "$COMMIT_DOCS" = "true" ]; then
-  git add .planning/STATE.md .planning/ROADMAP.md
+  git add docs/STATE.md docs/ROADMAP.md
 fi
 
 git commit -m "$(cat <<'EOF'
@@ -261,7 +261,7 @@ Sections: {M}/{N}
 Words: {X}
 Date: {date}
 
-Archive: .planning/milestones/{version}/
+Archive: docs/milestones/{version}/
 EOF
 )"
 ```
@@ -276,7 +276,7 @@ $(list sections from stats)
 
 Words: ${WORD_COUNT}
 Date: ${DATE}
-Archive: .planning/milestones/${VERSION}/
+Archive: docs/milestones/${VERSION}/
 EOF
 )"
 ```
@@ -295,7 +295,7 @@ After archival, prepare for revision round:
 
 2. Reset all section checkboxes (change `[x]` to `[ ]`):
 ```bash
-sed -i 's/\[x\]/[ ]/g' .planning/ROADMAP.md
+sed -i 's/\[x\]/[ ]/g' docs/ROADMAP.md
 ```
 
 3. Keep section structure intact for revision round.
@@ -316,7 +316,7 @@ sed -i 's/\[x\]/[ ]/g' .planning/ROADMAP.md
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Version: {version}
-Archive: .planning/milestones/{version}/
+Archive: docs/milestones/{version}/
 Tag: {version}
 
 Stats:
@@ -349,7 +349,7 @@ Git:
 </process>
 
 <success_criteria>
-- [ ] Archive directory created at `.planning/milestones/{version}/`
+- [ ] Archive directory created at `docs/milestones/{version}/`
 - [ ] Archive contains: ROADMAP, argument-map, STATE, section summaries
 - [ ] MILESTONES.md entry created with version, date, stats table
 - [ ] PROJECT.md updated (shipped items to Validated, What This Is appended)

@@ -21,10 +21,10 @@ $ARGUMENTS: The todo description to capture.
 ## 1. Validate Environment
 
 ```bash
-ls .planning/ 2>/dev/null
+ls docs/ 2>/dev/null
 ```
 
-If `.planning/` does not exist, output error and exit:
+If `docs/` does not exist, output error and exit:
 ```
 Error: No project found. Run /wtfp:new-paper first.
 ```
@@ -41,7 +41,7 @@ Example: /wtfp:add-todo "Check whether Smith2024 contradicts our methodology cla
 ## 3. Create Todo File
 
 ```bash
-mkdir -p .planning/todos/pending
+mkdir -p docs/todos/pending
 ```
 
 Generate filename: `{YYYYMMDD-HHMMSS}-{slug}.md`
@@ -54,14 +54,14 @@ Example: `20260204-143052-check-whether-smith2024-contradicts.md`
 
 Try to determine current section from STATE.md:
 ```bash
-grep -o "Section [0-9]* of [0-9]*:" .planning/STATE.md 2>/dev/null | head -1
+grep -o "Section [0-9]* of [0-9]*:" docs/STATE.md 2>/dev/null | head -1
 ```
 
 If found, extract section number as context. Otherwise, use "general".
 
 ## 5. Write Todo File
 
-Write to `.planning/todos/pending/{filename}`:
+Write to `docs/todos/pending/{filename}`:
 
 ```markdown
 ---
@@ -79,7 +79,7 @@ Read STATE.md. Find or create "### Pending Todos" section under "## Accumulated 
 
 Count pending todos:
 ```bash
-ls -1 .planning/todos/pending/*.md 2>/dev/null | wc -l
+ls -1 docs/todos/pending/*.md 2>/dev/null | wc -l
 ```
 
 Update STATE.md with the count. Format:
@@ -101,7 +101,7 @@ No banner, no offer_next. Minimal interruption.
 </process>
 
 <success_criteria>
-- [ ] Todo file created in .planning/todos/pending/
+- [ ] Todo file created in docs/todos/pending/
 - [ ] File has proper frontmatter (created, status, context)
 - [ ] STATE.md updated with pending count
 - [ ] Output is single confirmation line

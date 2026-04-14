@@ -1,6 +1,6 @@
 # Data Inventory Template
 
-Template for `.planning/sources/data.md` — evidence inventory for your paper.
+Template for `docs/sources/data.md` — evidence inventory for your paper.
 
 **Purpose:** Track all figures, tables, statistics, and data that will appear in the paper.
 

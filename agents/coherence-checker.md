@@ -31,10 +31,10 @@ Read all written content and structure files provided by the orchestrator.
 
 **Required inputs (provided inline by orchestrator):**
 - All paper/*.md section files (written content)
-- .planning/structure/argument-map.md (claims to verify)
-- .planning/structure/narrative-arc.md (expected story flow)
-- .planning/structure/outline.md (expected structure)
-- .planning/ROADMAP.md (section goals and word targets)
+- docs/structure/argument-map.md (claims to verify)
+- docs/structure/narrative-arc.md (expected story flow)
+- docs/structure/outline.md (expected structure)
+- docs/ROADMAP.md (section goals and word targets)
 
 **Context budget awareness:** If the document is large (>5000 words across all sections), work in focused passes rather than loading everything at once. Process section pairs for narrative flow, scan globally for terminology.
 </step>

@@ -1,6 +1,6 @@
 # Bibliography Template
 
-Template for `.planning/sources/literature.md` — the literature index for your paper.
+Template for `docs/sources/literature.md` — the literature index for your paper.
 
 **Purpose:** Track all sources: what you must cite, what informed your thinking, and what you still need to find.
 

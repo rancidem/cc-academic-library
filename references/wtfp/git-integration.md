@@ -51,7 +51,7 @@ Sections:
 What to commit:
 
 ```bash
-git add .planning/
+git add docs/
 git commit
 ```
 
@@ -99,7 +99,7 @@ git commit -m "revise(02-01): strengthen methods clarity
 "
 
 # Citation task
-git add paper/discussion.md .planning/sources/literature.md
+git add paper/discussion.md docs/sources/literature.md
 git commit -m "cite(04-01): add supporting citations
 
 - Added Chen2024 for alternative interpretation
@@ -123,16 +123,16 @@ Words written: [X]
 - [Task 2 name]
 - [Task 3 name]
 
-SUMMARY: .planning/sections/XX-name/{section}-{plan}-SUMMARY.md
+SUMMARY: docs/sections/XX-name/{section}-{plan}-SUMMARY.md
 ```
 
 What to commit:
 
 ```bash
-git add .planning/sections/XX-name/{section}-{plan}-PLAN.md
-git add .planning/sections/XX-name/{section}-{plan}-SUMMARY.md
-git add .planning/STATE.md
-git add .planning/ROADMAP.md
+git add docs/sections/XX-name/{section}-{plan}-PLAN.md
+git add docs/sections/XX-name/{section}-{plan}-SUMMARY.md
+git add docs/STATE.md
+git add docs/ROADMAP.md
 git commit
 ```
 
@@ -153,7 +153,7 @@ Current: [task name]
 What to commit:
 
 ```bash
-git add .planning/
+git add docs/
 git commit
 ```
 
@@ -244,7 +244,7 @@ Each plan produces 3-5 commits (tasks + metadata). Clear, granular, recoverable.
 
 ## Branching Strategies
 
-Controlled by `git.branching_strategy` in `.planning/config.json`. Three strategies available.
+Controlled by `git.branching_strategy` in `docs/config.json`. Three strategies available.
 
 ### Strategy: "none" (default)
 

@@ -19,7 +19,7 @@ Keep the canonical library organized, accurate, and easy to sync back to upstrea
 ### Active
 
 - [ ] New upstream bundles can be added without breaking the canonical layout
-- [ ] Quick tasks can track work in `.planning/quick/`
+- [ ] Quick tasks can track work in `docs/quick/`
 - [ ] Source-to-canonical mapping stays explicit in metadata
 - [ ] Registry, traceability doc, inventory, and status stay synchronized
 

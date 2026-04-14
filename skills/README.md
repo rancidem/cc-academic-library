@@ -19,7 +19,7 @@ Canonical skill identities grouped by domain live here. Keep the tree stable, de
 | Source map | [resources/source-references.md](resources/source-references.md) |
 | Registry | [resources/bundle-registry.json](resources/bundle-registry.json) |
 | Snapshot | [inventory.json](inventory.json) |
-| State | [.planning/STATE.md](.planning/STATE.md) |
+| State | [docs/STATE.md](docs/STATE.md) |
 
 ## Rules
 

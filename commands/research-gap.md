@@ -31,12 +31,12 @@ Section: $ARGUMENTS (section number or name)
 ## 1. Validate Environment and Resolve Model Profile
 
 ```bash
-[ ! -f .planning/PROJECT.md ] && echo "ERROR: No project. Run /wtfp:new-paper" && exit 1
-[ ! -f .planning/ROADMAP.md ] && echo "ERROR: No roadmap. Run /wtfp:create-outline" && exit 1
+[ ! -f docs/PROJECT.md ] && echo "ERROR: No project. Run /wtfp:new-paper" && exit 1
+[ ! -f docs/ROADMAP.md ] && echo "ERROR: No roadmap. Run /wtfp:create-outline" && exit 1
 ```
 
 ```bash
-MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+MODEL_PROFILE=$(cat docs/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
 
 | Agent | quality | balanced | budget |
@@ -53,7 +53,7 @@ DEPTH_ARG=$(echo "$ARGUMENTS" | grep -oE '\-\-depth=(quick|standard|deep)' | cut
 
 # If no --depth flag, read default from config
 if [ -z "$DEPTH_ARG" ]; then
-  DEPTH=$(cat .planning/config.json 2>/dev/null | grep -o '"depth"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "standard")
+  DEPTH=$(cat docs/config.json 2>/dev/null | grep -o '"depth"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "standard")
 else
   DEPTH="$DEPTH_ARG"
 fi
@@ -81,13 +81,13 @@ Use AskUserQuestion:
 ## 3. Read Context Files
 
 ```bash
-PROJECT_CONTENT=$(cat .planning/PROJECT.md)
-ROADMAP_CONTENT=$(cat .planning/ROADMAP.md)
-ARGMAP_CONTENT=$(cat .planning/structure/argument-map.md 2>/dev/null)
-LITERATURE_CONTENT=$(cat .planning/sources/literature.md 2>/dev/null)
+PROJECT_CONTENT=$(cat docs/PROJECT.md)
+ROADMAP_CONTENT=$(cat docs/ROADMAP.md)
+ARGMAP_CONTENT=$(cat docs/structure/argument-map.md 2>/dev/null)
+LITERATURE_CONTENT=$(cat docs/sources/literature.md 2>/dev/null)
 BIB_INDEX=$(node ~/.claude/bin/bib-index.js index references.bib 2>/dev/null || echo "No references.bib")
 
-SECTION_DIR=$(ls -d .planning/sections/${SECTION}-* 2>/dev/null | head -1)
+SECTION_DIR=$(ls -d docs/sections/${SECTION}-* 2>/dev/null | head -1)
 CONTEXT_CONTENT=$(cat "${SECTION_DIR}"/*-CONTEXT.md 2>/dev/null)
 ```
 

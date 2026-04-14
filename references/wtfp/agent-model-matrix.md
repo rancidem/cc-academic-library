@@ -1,6 +1,6 @@
 # Agent Model Matrix
 
-Model assignments per agent across quality/balanced/budget profiles. Resolved at runtime from `.planning/config.json` `model_profile` field.
+Model assignments per agent across quality/balanced/budget profiles. Resolved at runtime from `docs/config.json` `model_profile` field.
 
 ## Lookup Table
 
@@ -22,7 +22,7 @@ Model assignments per agent across quality/balanced/budget profiles. Resolved at
 ## Resolution Pattern
 
 ```bash
-MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | \
+MODEL_PROFILE=$(cat docs/config.json 2>/dev/null | \
   grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | \
   grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
@@ -55,7 +55,7 @@ Default: `balanced` when config missing or field absent.
 
 ```bash
 # Via config.json
-cat .planning/config.json | jq '.model_profile = "quality"' > tmp && mv tmp .planning/config.json
+cat docs/config.json | jq '.model_profile = "quality"' > tmp && mv tmp docs/config.json
 
 # Via command
 /wtfp:settings → model_profile → quality|balanced|budget

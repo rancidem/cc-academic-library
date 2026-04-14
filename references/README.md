@@ -16,7 +16,7 @@ Supporting reference material, examples, and policy notes live here.
 | Source map | [resources/source-references.md](resources/source-references.md) |
 | Registry | [resources/bundle-registry.json](resources/bundle-registry.json) |
 | Snapshot | [inventory.json](inventory.json) |
-| State | [.planning/STATE.md](.planning/STATE.md) |
+| State | [docs/STATE.md](docs/STATE.md) |
 
 ## Common Files
 

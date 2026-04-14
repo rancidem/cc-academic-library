@@ -64,7 +64,7 @@ Repeat steps 3-5 for each section. Run `/wtfp:progress` anytime to see where you
 /wtfp:discuss-section 2          # Talk through your vision before committing to a plan
 /wtfp:research-gap 3             # Find key citations and standard approaches
 /wtfp:list-assumptions 3         # See what Claude intends — course-correct early
-/wtfp:plan-section 1             # Creates .planning/sections/01-intro/01-01-PLAN.md
+/wtfp:plan-section 1             # Creates docs/sections/01-intro/01-01-PLAN.md
 ```
 
 ### Writing
@@ -76,7 +76,7 @@ Repeat steps 3-5 for each section. Run `/wtfp:progress` anytime to see where you
 | `/wtfp:quick <task>` | Run a small writing fix without full planning overhead |
 
 ```
-/wtfp:write-section .planning/sections/01-introduction/01-01-PLAN.md
+/wtfp:write-section docs/sections/01-introduction/01-01-PLAN.md
 /wtfp:execute-outline            # Writes all sections by wave, checks coherence after
 /wtfp:quick "add citation for Smith2023 in methods"
 ```
@@ -196,10 +196,10 @@ Repeat steps 3-5 for each section. Run `/wtfp:progress` anytime to see where you
 
 ## Files and Structure
 
-WTF-P creates a `.planning/` directory in your project:
+WTF-P creates a `docs/` directory in your project:
 
 ```
-.planning/
+docs/
   PROJECT.md              Paper vision and requirements
   ROADMAP.md              Section breakdown with status
   STATE.md                Writing progress and session context
@@ -234,7 +234,7 @@ paper/                    Written output
 /wtfp:new-paper
 /wtfp:create-outline
 /wtfp:plan-section 1
-/wtfp:write-section .planning/sections/01-introduction/01-01-PLAN.md
+/wtfp:write-section docs/sections/01-introduction/01-01-PLAN.md
 ```
 
 **Resuming after a break:**
@@ -251,7 +251,7 @@ paper/                    Written output
 **Handling reviewer comments:**
 ```
 /wtfp:plan-revision 02-01
-/wtfp:write-section .planning/sections/02-methods/02-01-PLAN.md
+/wtfp:write-section docs/sections/02-methods/02-01-PLAN.md
 ```
 
 ## Getting Help

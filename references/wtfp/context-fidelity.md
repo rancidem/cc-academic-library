@@ -4,7 +4,7 @@ CONTEXT.md is the user decision authority. It captures the user's vision for a s
 
 ## CONTEXT.md Structure
 
-Created by `/wtfp:discuss-section`, stored at `.planning/sections/XX-name/XX-CONTEXT.md`:
+Created by `/wtfp:discuss-section`, stored at `docs/sections/XX-name/XX-CONTEXT.md`:
 
 ```markdown
 ## Vision
@@ -68,7 +68,7 @@ Examples:
 All orchestrators load CONTEXT.md early and pass it to every agent:
 
 ```bash
-SECTION_DIR=$(ls -d .planning/sections/${SECTION}-* 2>/dev/null | head -1)
+SECTION_DIR=$(ls -d docs/sections/${SECTION}-* 2>/dev/null | head -1)
 CONTEXT_CONTENT=$(cat "${SECTION_DIR}"/*-CONTEXT.md 2>/dev/null)
 ```
 

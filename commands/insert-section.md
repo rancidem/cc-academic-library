@@ -35,7 +35,7 @@ Example: `/wtfp:insert-section 3 "Add methodology validation subsection"`
 **Verify project exists:**
 
 ```bash
-[ ! -f .planning/ROADMAP.md ] && echo "ERROR: No roadmap found. Run /wtfp:create-outline first" && exit 1
+[ ! -f docs/ROADMAP.md ] && echo "ERROR: No roadmap found. Run /wtfp:create-outline first" && exit 1
 ```
 
 Check that "after" section exists in ROADMAP.md.
@@ -68,7 +68,7 @@ Use AskUserQuestion:
 
 1. Create directory:
 ```bash
-mkdir -p ".planning/sections/[XX.Y]-[section-name-slug]"
+mkdir -p "docs/sections/[XX.Y]-[section-name-slug]"
 ```
 
 2. Update ROADMAP.md:
@@ -81,7 +81,7 @@ mkdir -p ".planning/sections/[XX.Y]-[section-name-slug]"
 
 <step name="commit">
 ```bash
-git add .planning/ROADMAP.md .planning/sections/
+git add docs/ROADMAP.md docs/sections/
 git commit -m "$(cat <<'EOF'
 docs: insert Section [X.Y] - [name]
 
@@ -101,7 +101,7 @@ EOF
 Section inserted:
 
 - Section [X.Y]: [Name]
-- Directory: .planning/sections/[XX.Y]-[name]/
+- Directory: docs/sections/[XX.Y]-[name]/
 - ROADMAP.md updated
 
 ---

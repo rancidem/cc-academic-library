@@ -21,8 +21,8 @@ No files created - conversational output only.
 **Verify project exists:**
 
 ```bash
-[ ! -f .planning/PROJECT.md ] && echo "ERROR: No project found. Run /wtfp:new-paper first" && exit 1
-[ ! -f .planning/ROADMAP.md ] && echo "ERROR: No outline found. Run /wtfp:create-outline first" && exit 1
+[ ! -f docs/PROJECT.md ] && echo "ERROR: No project found. Run /wtfp:new-paper first" && exit 1
+[ ! -f docs/ROADMAP.md ] && echo "ERROR: No outline found. Run /wtfp:create-outline first" && exit 1
 ```
 
 </step>

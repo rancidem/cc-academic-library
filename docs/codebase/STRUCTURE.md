@@ -10,7 +10,7 @@
 - `skills/` - canonical skill catalog organized by domain.
 - `templates/` - reusable markdown and YAML templates for workflows, prompts, and documents.
 - `tools/` - auxiliary tooling, currently centered on `wcn`.
-- `.planning/` - project state, roadmap, and codebase map artifacts.
+- `docs/` - project state, roadmap, and codebase map artifacts.
 
 ## Canonical Content Areas
 

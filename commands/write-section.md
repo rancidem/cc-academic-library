@@ -36,12 +36,12 @@ Plan path: $ARGUMENTS (path to a PLAN.md file)
 
 ```bash
 [ ! -f "$ARGUMENTS" ] && echo "ERROR: Plan not found at $ARGUMENTS" && exit 1
-ls .planning/ 2>/dev/null
+ls docs/ 2>/dev/null
 ```
 
 **Resolve model profile:**
 ```bash
-MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+MODEL_PROFILE=$(cat docs/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
 
 **Model lookup table:**
@@ -54,10 +54,10 @@ MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"
 **Resolve gate and safety flags:**
 ```bash
 # Gate: confirm_write — skip confirmation if false
-GATE_CONFIRM_WRITE=$(cat .planning/config.json 2>/dev/null | grep -o '"confirm_write"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+GATE_CONFIRM_WRITE=$(cat docs/config.json 2>/dev/null | grep -o '"confirm_write"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
 
 # Safety: always_confirm_destructive — force confirmation for destructive ops
-SAFETY_DESTRUCTIVE=$(cat .planning/config.json 2>/dev/null | grep -o '"always_confirm_destructive"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+SAFETY_DESTRUCTIVE=$(cat docs/config.json 2>/dev/null | grep -o '"always_confirm_destructive"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
 ```
 
 Check for existing SUMMARY.md:
@@ -70,9 +70,9 @@ SUMMARY_PATH="${ARGUMENTS/PLAN.md/SUMMARY.md}"
 
 ```bash
 PLAN_CONTENT=$(cat "$ARGUMENTS")
-STATE_CONTENT=$(cat .planning/STATE.md)
-PROJECT_CONTENT=$(cat .planning/PROJECT.md)
-ARGMAP_CONTENT=$(cat .planning/structure/argument-map.md 2>/dev/null)
+STATE_CONTENT=$(cat docs/STATE.md)
+PROJECT_CONTENT=$(cat docs/PROJECT.md)
+ARGMAP_CONTENT=$(cat docs/structure/argument-map.md 2>/dev/null)
 
 # Derive section dir from plan path
 SECTION_DIR=$(dirname "$ARGUMENTS")
@@ -120,7 +120,7 @@ Writing prompt includes: `<plan>` with full PLAN.md content, `<project_context>`
 ## 6. Goal-Backward Verification (if enabled)
 
 ```bash
-WORKFLOW_VERIFIER=$(cat .planning/config.json 2>/dev/null | grep -o '"verifier"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+WORKFLOW_VERIFIER=$(cat docs/config.json 2>/dev/null | grep -o '"verifier"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
 ```
 
 **If verifier is true:**
@@ -142,21 +142,21 @@ Spawn `wtfp-argument-verifier` with written content + PLAN goals + argument-map.
 Before any git commit, check commit_docs setting:
 
 ```bash
-COMMIT_DOCS=$(cat .planning/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+COMMIT_DOCS=$(cat docs/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
 ```
 
 **If commit_docs = "false":**
-- Skip `git add` for any `.planning/` paths
+- Skip `git add` for any `docs/` paths
 - Only commit paper content files (e.g., `paper/*.md`)
-- Log: "Skipping planning docs commit (commit_docs: false)"
+- Log: "Skipping docs commit (commit_docs: false)"
 
 **If commit_docs = "true" (default):**
-- Include `.planning/` files in commits as normal
+- Include `docs/` files in commits as normal
 
 ## 7. Git Branch Merge (if section branch strategy)
 
 ```bash
-BRANCH_STRATEGY=$(cat .planning/config.json 2>/dev/null | grep -o '"branching_strategy"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "none")
+BRANCH_STRATEGY=$(cat docs/config.json 2>/dev/null | grep -o '"branching_strategy"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "none")
 CURRENT_BRANCH=$(git branch --show-current 2>/dev/null)
 ```
 
@@ -164,12 +164,12 @@ CURRENT_BRANCH=$(git branch --show-current 2>/dev/null)
 
 1. Read squash_on_merge setting:
    ```bash
-   SQUASH=$(cat .planning/config.json 2>/dev/null | grep -o '"squash_on_merge"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "false")
+   SQUASH=$(cat docs/config.json 2>/dev/null | grep -o '"squash_on_merge"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "false")
    ```
 
 2. Read base branch stored during plan-section:
    ```bash
-   BASE_BRANCH=$(cat .planning/.section_base_branch 2>/dev/null || echo "main")
+   BASE_BRANCH=$(cat docs/.section_base_branch 2>/dev/null || echo "main")
    ```
 
 3. Perform merge based on squash setting:
@@ -190,7 +190,7 @@ CURRENT_BRANCH=$(git branch --show-current 2>/dev/null)
 4. Delete section branch:
    ```bash
    git branch -d "$CURRENT_BRANCH"
-   rm -f .planning/.section_base_branch
+   rm -f docs/.section_base_branch
    ```
 
 5. Log: "Merged section branch: $CURRENT_BRANCH -> $BASE_BRANCH"

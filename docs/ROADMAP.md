@@ -83,7 +83,7 @@ Maintain a stable, organized canonical library of academic skills, commands, ref
 **Success Criteria** (what must be TRUE):
   1. New maintainers can follow the docs without historical context.
   2. The docs describe the current system, not the migration.
-  3. Quick-task guidance stays available under `.planning/quick/`.
+  3. Quick-task guidance stays available under `docs/quick/`.
 **Plans**: TBD
 
 ## Progress

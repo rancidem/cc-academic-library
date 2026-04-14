@@ -18,7 +18,7 @@ allowed-tools:
 <objective>
 Index existing source materials (literature, data, prior drafts) for a writing project.
 
-**Orchestrator role:** Detect existing materials, resolve model profile, create `.planning/sources/` with organized references, commit.
+**Orchestrator role:** Detect existing materials, resolve model profile, create `docs/sources/` with organized references, commit.
 
 Use before `/wtfp:new-paper` on existing writing projects.
 </objective>
@@ -32,14 +32,14 @@ No arguments. Scans current directory for existing materials.
 ## 1. Validate Environment and Resolve Model Profile
 
 ```bash
-MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+MODEL_PROFILE=$(cat docs/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
 
 ## 2. Detect Existing Materials
 
 ```bash
 find . -name "*.bib" -o -name "references.md" -o -name "bibliography.md" 2>/dev/null | head -20
-find . -name "*.tex" -o -name "*.md" -o -name "*.docx" 2>/dev/null | grep -v node_modules | grep -v .planning | head -20
+find . -name "*.tex" -o -name "*.md" -o -name "*.docx" 2>/dev/null | grep -v node_modules | grep -v docs | head -20
 find . -name "*.csv" -o -name "*.json" -o -name "*.xlsx" 2>/dev/null | head -20
 find . -name "*.png" -o -name "*.pdf" -o -name "*.svg" -o -name "*.jpg" 2>/dev/null | head -20
 ```
@@ -47,31 +47,31 @@ find . -name "*.png" -o -name "*.pdf" -o -name "*.svg" -o -name "*.jpg" 2>/dev/n
 ## 3. Create Sources Directory
 
 ```bash
-mkdir -p .planning/sources
+mkdir -p docs/sources
 ```
 
 ## 4. Index Literature
 
 If .bib files found, parse via `node ~/.claude/bin/bib-index.js index [file]`.
 
-Write `.planning/sources/literature.md`: Core References table (key, citation, relevance, status), Background Reading, To Find list, source paths.
+Write `docs/sources/literature.md`: Core References table (key, citation, relevance, status), Background Reading, To Find list, source paths.
 
 ## 5. Index Data and Evidence
 
 Scan for figures, tables, data files.
 
-Write `.planning/sources/data.md`: Figures table (ID, file, description, status, target section), Tables, Data Files, Statistics.
+Write `docs/sources/data.md`: Figures table (ID, file, description, status, target section), Tables, Data Files, Statistics.
 
 ## 6. Index Prior Drafts
 
 Scan for existing writing.
 
-Write `.planning/sources/prior-drafts.md`: Existing Documents table (file, type, description, usable, target section), Key Passages, Material to Avoid.
+Write `docs/sources/prior-drafts.md`: Existing Documents table (file, type, description, usable, target section), Key Passages, Material to Avoid.
 
 ## 7. Commit
 
 ```bash
-git add .planning/sources/
+git add docs/sources/
 git commit -m "docs: index source materials"
 ```
 
@@ -83,9 +83,9 @@ git commit -m "docs: index source materials"
  WTF-P ► SOURCES INDEXED ✓
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-- Literature: .planning/sources/literature.md ([N] references)
-- Data: .planning/sources/data.md ([N] figures, [N] tables)
-- Prior Drafts: .planning/sources/prior-drafts.md ([N] documents)
+- Literature: docs/sources/literature.md ([N] references)
+- Data: docs/sources/data.md ([N] figures, [N] tables)
+- Prior Drafts: docs/sources/prior-drafts.md ([N] documents)
 
 ───────────────────────────────────────────
 

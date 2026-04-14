@@ -23,7 +23,7 @@ Git commit preserves historical record of what was removed.
 **Verify project and section:**
 
 ```bash
-[ ! -f .planning/ROADMAP.md ] && echo "ERROR: No roadmap found" && exit 1
+[ ! -f docs/ROADMAP.md ] && echo "ERROR: No roadmap found" && exit 1
 ```
 
 Check section exists and hasn't been started:
@@ -65,7 +65,7 @@ Sections to renumber:
 - ...
 
 Files to delete:
-- .planning/sections/[NN]-[name]/
+- docs/sections/[NN]-[name]/
 ```
 
 Use AskUserQuestion:
@@ -82,7 +82,7 @@ Use AskUserQuestion:
 
 1. Delete section directory:
 ```bash
-rm -rf ".planning/sections/[NN]-[name]/"
+rm -rf "docs/sections/[NN]-[name]/"
 ```
 
 2. Update ROADMAP.md:
@@ -91,7 +91,7 @@ rm -rf ".planning/sections/[NN]-[name]/"
 
 3. Rename subsequent section directories:
 ```bash
-mv ".planning/sections/[N+1]-[name]/" ".planning/sections/[N]-[name]/"
+mv "docs/sections/[N+1]-[name]/" "docs/sections/[N]-[name]/"
 # ... for all subsequent sections
 ```
 
@@ -101,7 +101,7 @@ mv ".planning/sections/[N+1]-[name]/" ".planning/sections/[N]-[name]/"
 
 <step name="commit">
 ```bash
-git add .planning/
+git add docs/
 git commit -m "$(cat <<'EOF'
 docs: remove Section [N] - [name]
 

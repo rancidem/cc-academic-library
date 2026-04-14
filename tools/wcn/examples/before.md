@@ -12,7 +12,7 @@ Read STATE.md before any operation to load project context.
 Before any operation, read project state:
 
 ```bash
-cat .planning/STATE.md 2>/dev/null
+cat docs/STATE.md 2>/dev/null
 ```
 
 **If file exists:** Parse and internalize:
@@ -22,7 +22,7 @@ cat .planning/STATE.md 2>/dev/null
 - Argument strength (what's been established)
 - Open questions (things to watch for)
 
-**If file missing but .planning/ exists:**
+**If file missing but docs/ exists:**
 
 ```
 STATE.md missing but planning artifacts exist.
@@ -31,7 +31,7 @@ Options:
 2. Continue without project state (may lose accumulated context)
 ```
 
-**If .planning/ doesn't exist:** Error - project not initialized.
+**If docs/ doesn't exist:** Error - project not initialized.
 
 This ensures every writing session has full project context.
 </step>
@@ -43,9 +43,9 @@ Find the next plan to execute:
 - Identify first plan without corresponding SUMMARY
 
 ```bash
-cat .planning/ROADMAP.md
-ls .planning/sections/XX-name/*-PLAN.md 2>/dev/null | sort
-ls .planning/sections/XX-name/*-SUMMARY.md 2>/dev/null | sort
+cat docs/ROADMAP.md
+ls docs/sections/XX-name/*-PLAN.md 2>/dev/null | sort
+ls docs/sections/XX-name/*-SUMMARY.md 2>/dev/null | sort
 ```
 
 **If mode="yolo":**
@@ -142,11 +142,11 @@ ls .planning/sections/XX-name/*-SUMMARY.md 2>/dev/null | sort
 </verification>
 
 <context>
-@.planning/PROJECT.md
-@.planning/ROADMAP.md
-@.planning/STATE.md
-@.planning/structure/argument-map.md
-@.planning/sources/literature.md
+@docs/PROJECT.md
+@docs/ROADMAP.md
+@docs/STATE.md
+@docs/structure/argument-map.md
+@docs/sources/literature.md
 </context>
 
 <routing>

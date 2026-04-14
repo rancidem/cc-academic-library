@@ -1,6 +1,6 @@
 # Research Template
 
-Template for `.planning/sections/XX-name/{section}-RESEARCH.md` - comprehensive literature research before planning.
+Template for `docs/sections/XX-name/{section}-RESEARCH.md` - comprehensive literature research before planning.
 
 **Purpose:** Document what Claude needs to know to write a section well - not just "which approach" but "what does the field say."
 
@@ -379,6 +379,6 @@ Key finding: Most literature focuses on undergraduate writing; PhD/researcher us
 - Quotes can be used directly in draft
 
 **After creation:**
-- File lives in section directory: `.planning/sections/XX-name/{section}-RESEARCH.md`
+- File lives in section directory: `docs/sections/XX-name/{section}-RESEARCH.md`
 - Referenced during planning workflow
 - plan-section loads it automatically when present

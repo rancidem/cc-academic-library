@@ -1,6 +1,6 @@
 # Roadmap Template
 
-Template for `.planning/ROADMAP.md`.
+Template for `docs/ROADMAP.md`.
 
 ## Initial Roadmap (Paper/Grant)
 
@@ -21,9 +21,9 @@ Template for `.planning/ROADMAP.md`.
 
 [Paths to domain knowledge that inform writing. These documents serve as indexes — during section planning, read them to find relevant context.]
 
-- .planning/structure/argument-map.md
-- .planning/structure/outline.md
-- .planning/sources/literature.md
+- docs/structure/argument-map.md
+- docs/structure/outline.md
+- docs/sources/literature.md
 
 Or: None — new project
 

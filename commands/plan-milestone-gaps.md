@@ -22,7 +22,7 @@ User can execute fix plans with existing writing commands.
 **Step 1: Validate Audit Exists**
 
 ```bash
-[ ! -f .planning/MILESTONE-AUDIT.md ] && echo "ERROR: No MILESTONE-AUDIT.md found. Run /wtfp:audit-milestone first." && exit 1
+[ ! -f docs/MILESTONE-AUDIT.md ] && echo "ERROR: No MILESTONE-AUDIT.md found. Run /wtfp:audit-milestone first." && exit 1
 ```
 
 </step>
@@ -43,7 +43,7 @@ Reading MILESTONE-AUDIT.md...
 <step name="parse_audit">
 **Step 3: Parse MILESTONE-AUDIT.md**
 
-Read `.planning/MILESTONE-AUDIT.md`.
+Read `docs/MILESTONE-AUDIT.md`.
 
 Extract all gaps (sections under "## Gaps" with "Status: gap"):
 - Gap name (check name)
@@ -98,7 +98,7 @@ PLAN_3: Citations - {undefined citations across multiple sections}
 
 For each grouped plan, create a fix plan file.
 
-**Location:** `.planning/sections/XX-name/{section}-fix-{N}-PLAN.md`
+**Location:** `docs/sections/XX-name/{section}-fix-{N}-PLAN.md`
 
 **Plan structure (following plan-format.md):**
 
@@ -122,8 +122,8 @@ Purpose: Address audit findings before submission.
 </objective>
 
 <context>
-@.planning/MILESTONE-AUDIT.md
-@.planning/sections/XX-name/{relevant summaries}
+@docs/MILESTONE-AUDIT.md
+@docs/sections/XX-name/{relevant summaries}
 @{paper content file}
 </context>
 

@@ -14,15 +14,15 @@ Read STATE.md before any operation to load project context.
 <process>
 
 [step:load_project_state p=1]
-RUN: cat .planning/STATE.md 2>/dev/null
+RUN: cat docs/STATE.md 2>/dev/null
 PARSE: current, word, argument, open
 IF file_exists → parse_fields
-IF file_missing_but_.planning/_exists → ```
-IF .planning/_doesnt_exist → ERROR ""
+IF file_missing_but_docs/_exists → ```
+IF docs/_doesnt_exist → ERROR ""
 [/step]
 
 [step:identify_plan]
-RUN: cat .planning/ROADMAP.md
+RUN: cat docs/ROADMAP.md
 IF mode=yolo → - Auto-approved execution
 IF mode=interactive → - Present plan for confirmation
 IF mode=scaffold → - Claude outlines, user fills

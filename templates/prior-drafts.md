@@ -1,6 +1,6 @@
 # Prior Drafts Template
 
-Template for `.planning/sources/prior-drafts.md` — index of existing material to incorporate.
+Template for `docs/sources/prior-drafts.md` — index of existing material to incorporate.
 
 **Purpose:** Track existing text, notes, and drafts that can inform or be incorporated into the paper.
 

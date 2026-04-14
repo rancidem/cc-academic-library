@@ -30,7 +30,7 @@ Verbose markdown steps become compact step blocks.
 Before any operation, read project state:
 
 ```bash
-cat .planning/STATE.md 2>/dev/null
+cat docs/STATE.md 2>/dev/null
 ```
 
 **If file exists:** Parse and internalize:
@@ -40,7 +40,7 @@ cat .planning/STATE.md 2>/dev/null
 - Argument strength (what's been established)
 - Open questions (things to watch for)
 
-**If file missing but .planning/ exists:**
+**If file missing but docs/ exists:**
 
 ```
 STATE.md missing but planning artifacts exist.
@@ -49,7 +49,7 @@ Options:
 2. Continue without project state
 ```
 
-**If .planning/ doesn't exist:** Error - project not initialized.
+**If docs/ doesn't exist:** Error - project not initialized.
 
 This ensures every writing session has full project context.
 </step>
@@ -58,11 +58,11 @@ This ensures every writing session has full project context.
 **After (WCN):**
 ```wcn
 [step:load_state p=1]
-RUN: cat .planning/STATE.md
+RUN: cat docs/STATE.md
 PARSE: position, word_count, argument_strength, open_questions
 IF exists → parse fields above
-IF missing+.planning → OFFER reconstruct|continue
-IF no.planning → ERROR "not initialized"
+IF missing+docs → OFFER reconstruct|continue
+IF nodocs → ERROR "not initialized"
 [/step]
 ```
 
@@ -138,9 +138,9 @@ Common operations become single-line commands.
 
 | Command | Meaning | Example |
 |---------|---------|---------|
-| `RUN:` | Execute bash | `RUN: cat .planning/STATE.md` |
-| `READ:` | Load file context | `READ: @.planning/PROJECT.md` |
-| `WRITE:` | Create/update file | `WRITE: .planning/sections/{N}/PLAN.md` |
+| `RUN:` | Execute bash | `RUN: cat docs/STATE.md` |
+| `READ:` | Load file context | `READ: @docs/PROJECT.md` |
+| `WRITE:` | Create/update file | `WRITE: docs/sections/{N}/PLAN.md` |
 | `PARSE:` | Extract fields | `PARSE: position, word_count, status` |
 | `ASK:` | User question | `ASK: "Continue?" [yes|no|skip]` |
 | `COMMIT:` | Git commit | `COMMIT: "docs: {message}"` |
@@ -154,10 +154,10 @@ External file references use compact notation.
 **Before:**
 ```markdown
 <context>
-@.planning/PROJECT.md
-@.planning/ROADMAP.md
-@.planning/structure/argument-map.md
-@.planning/sources/literature.md
+@docs/PROJECT.md
+@docs/ROADMAP.md
+@docs/structure/argument-map.md
+@docs/sources/literature.md
 </context>
 ```
 

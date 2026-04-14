@@ -1,6 +1,6 @@
 # UAT Template
 
-Template for `.planning/sections/XX-name/UAT.md` - section acceptance testing state file.
+Template for `docs/sections/XX-name/UAT.md` - section acceptance testing state file.
 
 ---
 
@@ -68,7 +68,7 @@ Transitions are one-way: `pending -> pass | skip | issue`. A test cannot return 
 
 **File location:** UAT.md lives in the section directory alongside PLAN.md and SUMMARY.md:
 ```
-.planning/sections/XX-name/
+docs/sections/XX-name/
   XX-YY-PLAN.md
   XX-YY-SUMMARY.md
   UAT.md           <-- this file

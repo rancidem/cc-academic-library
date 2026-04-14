@@ -10,7 +10,7 @@ This repository is a canonical index for an academic skills library. It is not a
 - `agents/`, `commands/`, `references/`, `scripts/`, `skills/`, `templates/`, and `tools/` hold the canonicalized outputs and supporting docs.
 - `resources/source-references.md` links each upstream bundle to its local clone and canonical subtree mapping.
 - `inventory.json` is the machine-readable snapshot that records the current repository shape and file kinds.
-- `.planning/` stores project state, roadmap, and codebase mapping artifacts.
+- `docs/` stores project state, roadmap, and codebase mapping artifacts.
 
 ## Content Flow
 

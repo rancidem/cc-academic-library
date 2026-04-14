@@ -28,10 +28,10 @@ Output: [Word count] words covering [topics]
 </objective>
 
 <context>
-@.planning/PROJECT.md
-@.planning/ROADMAP.md
-@.planning/structure/argument-map.md
-@.planning/sources/literature.md
+@docs/PROJECT.md
+@docs/ROADMAP.md
+@docs/structure/argument-map.md
+@docs/sources/literature.md
 </context>
 
 <tasks>
@@ -245,12 +245,12 @@ Use @file references to load context:
 
 ```markdown
 <context>
-@.planning/PROJECT.md           # Paper vision and thesis
-@.planning/ROADMAP.md           # Section structure
-@.planning/structure/argument-map.md  # Claims and evidence
-@.planning/structure/outline.md       # Section skeleton
-@.planning/sources/literature.md      # Citations available
-@.planning/sections/01-intro/01-01-SUMMARY.md  # Prior section
+@docs/PROJECT.md           # Paper vision and thesis
+@docs/ROADMAP.md           # Section structure
+@docs/structure/argument-map.md  # Claims and evidence
+@docs/structure/outline.md       # Section skeleton
+@docs/sources/literature.md      # Citations available
+@docs/sections/01-intro/01-01-SUMMARY.md  # Prior section
 </context>
 ```
 

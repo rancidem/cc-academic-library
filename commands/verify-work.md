@@ -37,16 +37,16 @@ Section: $ARGUMENTS (section number or name)
 ## 1. Validate Environment
 
 ```bash
-[ ! -f ".planning/PROJECT.md" ] && echo "ERROR: No project initialized. Run /wtfp:new-paper first." && exit 1
+[ ! -f "docs/PROJECT.md" ] && echo "ERROR: No project initialized. Run /wtfp:new-paper first." && exit 1
 ```
 
 Resolve section from $ARGUMENTS:
-- If numeric (e.g., "3"): find `.planning/sections/03-*`
-- If name (e.g., "methods"): find `.planning/sections/*-methods*`
+- If numeric (e.g., "3"): find `docs/sections/03-*`
+- If name (e.g., "methods"): find `docs/sections/*-methods*`
 
 ```bash
-SECTION_DIR=$(ls -d .planning/sections/${SECTION}-* 2>/dev/null | head -1)
-[ -z "$SECTION_DIR" ] && echo "ERROR: Section '$ARGUMENTS' not found in .planning/sections/" && exit 1
+SECTION_DIR=$(ls -d docs/sections/${SECTION}-* 2>/dev/null | head -1)
+[ -z "$SECTION_DIR" ] && echo "ERROR: Section '$ARGUMENTS' not found in docs/sections/" && exit 1
 ```
 
 Verify section was written (SUMMARY.md exists):
@@ -97,7 +97,7 @@ Extract each `- [ ]` item from `<success_criteria>`. Each becomes a test tagged 
 
 **Source 2: Argument-map claims**
 ```bash
-cat .planning/structure/argument-map.md 2>/dev/null
+cat docs/structure/argument-map.md 2>/dev/null
 ```
 Find claims assigned to this section. Each becomes a test tagged `[argument-map]`.
 

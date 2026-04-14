@@ -20,7 +20,7 @@ Uses the wtfp-marp skill to compile to PDF.
 
 <process>
 ## Step 1: Content Synthesis
-- Read `.planning/PROJECT.md` and any drafted sections.
+- Read `docs/PROJECT.md` and any drafted sections.
 - Identify the core narrative and supporting claims.
 
 ## Step 2: User Interview

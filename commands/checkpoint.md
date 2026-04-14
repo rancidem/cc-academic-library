@@ -26,7 +26,7 @@ Subcommand: $ARGUMENTS
 - `list` — Show available checkpoints
 
 **Load project state:**
-@.planning/STATE.md
+@docs/STATE.md
 </context>
 
 <process>
@@ -45,7 +45,7 @@ Default: `save` if no subcommand provided, with auto-generated label from STATE.
 node -e "
 const cp = require('$HOME/.claude/bin/lib/checkpoint.js');
 const result = cp.createCheckpoint({
-  planningDir: '.planning',
+  docsDir: 'docs',
   label: '[label]',
   note: '[current position from STATE.md]'
 });

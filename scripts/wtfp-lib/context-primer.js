@@ -53,12 +53,12 @@ function filterProject(projectContent, taskType) {
 
 /**
  * Extract relevant structure files for a section type
- * @param {string} planningDir - Path to .planning directory
+ * @param {string} docsDir - Path to docs directory
  * @param {string} sectionSlug - Section slug (e.g., 'introduction', 'methods')
  * @returns {Object} - Map of filename → content
  */
-function getStructureContext(planningDir, sectionSlug) {
-  const structureDir = path.join(planningDir, 'structure');
+function getStructureContext(docsDir, sectionSlug) {
+  const structureDir = path.join(docsDir, 'structure');
   const result = {};
 
   // Normalize section slug for lookup
@@ -102,7 +102,7 @@ function getSectionContext(sectionDir) {
 
 /**
  * Get prior section summaries relevant to current section
- * @param {string} sectionsDir - Path to .planning/sections/
+ * @param {string} sectionsDir - Path to docs/sections/
  * @param {number} currentSection - Current section number
  * @param {number} limit - Max characters to return
  * @returns {string} - Concatenated relevant summaries
@@ -138,18 +138,18 @@ function getPriorSummaries(sectionsDir, currentSection, limit = 3000) {
 /**
  * Build complete primed context for an agent spawn
  * @param {Object} options
- * @param {string} options.planningDir - Path to .planning/
+ * @param {string} options.docsDir - Path to docs/
  * @param {string} options.sectionDir - Path to section directory
  * @param {number} options.sectionNumber - Section number
  * @param {string} options.sectionSlug - Section slug
  * @param {string} options.taskType - plan|write|review|research|polish
  * @returns {Object} - All context pieces, filtered for relevance
  */
-function primeContext({ planningDir, sectionDir, sectionNumber, sectionSlug, taskType }) {
-  const projectPath = path.join(planningDir, 'PROJECT.md');
-  const statePath = path.join(planningDir, 'STATE.md');
-  const roadmapPath = path.join(planningDir, 'ROADMAP.md');
-  const sectionsDir = path.join(planningDir, 'sections');
+function primeContext({ docsDir, sectionDir, sectionNumber, sectionSlug, taskType }) {
+  const projectPath = path.join(docsDir, 'PROJECT.md');
+  const statePath = path.join(docsDir, 'STATE.md');
+  const roadmapPath = path.join(docsDir, 'ROADMAP.md');
+  const sectionsDir = path.join(docsDir, 'sections');
 
   const projectContent = fs.existsSync(projectPath)
     ? fs.readFileSync(projectPath, 'utf8') : '';
@@ -158,7 +158,7 @@ function primeContext({ planningDir, sectionDir, sectionNumber, sectionSlug, tas
     project: filterProject(projectContent, taskType),
     state: fs.existsSync(statePath) ? fs.readFileSync(statePath, 'utf8') : '',
     roadmap: fs.existsSync(roadmapPath) ? fs.readFileSync(roadmapPath, 'utf8') : '',
-    structure: getStructureContext(planningDir, sectionSlug),
+    structure: getStructureContext(docsDir, sectionSlug),
     section: getSectionContext(sectionDir),
     priorSummaries: getPriorSummaries(sectionsDir, sectionNumber),
   };

@@ -23,7 +23,7 @@ Gaps, flaws, and enhancements discovered during writing. Not critical — addres
 
 **When to create:** First time an enhancement is deferred during writing.
 
-**Location:** `.planning/ISSUES.md`
+**Location:** `docs/ISSUES.md`
 
 **ISS numbering:** Auto-increment from highest existing number.
 

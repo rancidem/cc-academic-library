@@ -186,7 +186,7 @@ function compile(markdown) {
   result = result.replace(/<context>\s*([\s\S]*?)<\/context>/g, (match, content) => {
     const files = content.match(/@[^\s\n]+/g) || [];
     if (files.length === 0) return '';
-    const simplified = files.map(f => f.replace('@.planning/', ''));
+    const simplified = files.map(f => f.replace('@docs/', ''));
     return `@context{${simplified.join(',')}}`;
   });
 

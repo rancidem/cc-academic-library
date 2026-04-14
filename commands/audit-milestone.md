@@ -29,9 +29,9 @@ Produces MILESTONE-AUDIT.md with pass/gap for each criterion.
 **Step 1: Validate Environment**
 
 ```bash
-[ ! -f .planning/PROJECT.md ] && echo "ERROR: No PROJECT.md found" && exit 1
-[ ! -f .planning/ROADMAP.md ] && echo "ERROR: No ROADMAP.md found" && exit 1
-[ ! -f .planning/STATE.md ] && echo "ERROR: No STATE.md found" && exit 1
+[ ! -f docs/PROJECT.md ] && echo "ERROR: No PROJECT.md found" && exit 1
+[ ! -f docs/ROADMAP.md ] && echo "ERROR: No ROADMAP.md found" && exit 1
+[ ! -f docs/STATE.md ] && echo "ERROR: No STATE.md found" && exit 1
 ```
 
 </step>
@@ -77,7 +77,7 @@ CHECK_1_GAPS="{list of incomplete section names, if any}"
 <step name="check_arguments">
 **Check 2: Argument Coverage**
 
-Read `.planning/structure/argument-map.md` if it exists.
+Read `docs/structure/argument-map.md` if it exists.
 
 Extract all claims (lines starting with `- **Claim**:` or numbered claims).
 
@@ -107,7 +107,7 @@ CHECK_2_DETAIL="No argument-map.md found"
 <step name="check_words">
 **Check 3: Word Targets**
 
-Read `.planning/structure/outline.md` for word budget per section.
+Read `docs/structure/outline.md` for word budget per section.
 
 For each section:
 - Count actual words in the paper content file
@@ -145,7 +145,7 @@ Scan all paper content files for citation patterns:
 
 Cross-reference with bibliography file:
 - `references.bib` (BibTeX)
-- `.planning/sources/bibliography.md`
+- `docs/sources/bibliography.md`
 - Any `.bib` files in project
 
 Check for:
@@ -175,7 +175,7 @@ CHECK_4_DETAIL="No bibliography file found"
 **Check 5: Review Status**
 
 For each section:
-- Check if review SUMMARY.md exists in `.planning/sections/{section}/`
+- Check if review SUMMARY.md exists in `docs/sections/{section}/`
 - Or check if "review: pass" noted in section summary
 
 **Result:**
@@ -198,7 +198,7 @@ Determine overall status:
 - `OVERALL="PASS"` if all checks pass or skip
 - `OVERALL="GAPS FOUND"` if any check has GAP status
 
-Write `.planning/MILESTONE-AUDIT.md`:
+Write `docs/MILESTONE-AUDIT.md`:
 
 ```markdown
 # Milestone Audit
@@ -256,7 +256,7 @@ Results:
 
 {Use ✓ for PASS, ✗ for GAP, — for SKIP}
 
-Audit saved to: .planning/MILESTONE-AUDIT.md
+Audit saved to: docs/MILESTONE-AUDIT.md
 
 ───────────────────────────────────────────
 

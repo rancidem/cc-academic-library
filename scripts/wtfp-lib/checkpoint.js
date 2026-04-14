@@ -1,7 +1,7 @@
 /**
  * Checkpoint - Save and restore paper state bundles
  *
- * Captures complete .planning/ state as a git-tagged checkpoint
+ * Captures complete docs/ state as a git-tagged checkpoint
  * that can be restored in a new session for full context recovery.
  */
 
@@ -12,25 +12,25 @@ const { execSync } = require('child_process');
 /**
  * Create a checkpoint of current paper state
  * @param {Object} options
- * @param {string} options.planningDir - Path to .planning/
+ * @param {string} options.docsDir - Path to docs/
  * @param {string} options.label - Checkpoint label (e.g., "pre-discussion", "draft-1")
  * @param {string} [options.note] - Optional note about checkpoint context
  * @returns {Object} - { tag, files, timestamp }
  */
-function createCheckpoint({ planningDir, label, note }) {
-  if (!fs.existsSync(planningDir)) {
-    throw new Error('.planning/ directory not found');
+function createCheckpoint({ docsDir, label, note }) {
+  if (!fs.existsSync(docsDir)) {
+    throw new Error('docs/ directory not found');
   }
 
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
   const tag = `wtfp-checkpoint/${label}-${timestamp}`;
 
   // Collect all state files
-  const files = collectFiles(planningDir);
+  const files = collectFiles(docsDir);
 
-  // Stage all planning files
+  // Stage all docs files
   try {
-    execSync(`git add ${planningDir}`, { stdio: 'pipe' });
+    execSync(`git add ${docsDir}`, { stdio: 'pipe' });
   } catch (e) {
     // May fail if no changes — that's OK
   }
@@ -70,9 +70,9 @@ function restoreCheckpoint(tag) {
     throw new Error(`Checkpoint tag not found: ${tag}`);
   }
 
-  // Restore .planning/ from the tagged commit
+  // Restore docs/ from the tagged commit
   try {
-    execSync(`git checkout "${tag}" -- .planning/`, { stdio: 'pipe' });
+    execSync(`git checkout "${tag}" -- docs/`, { stdio: 'pipe' });
     return { restored: true, tag };
   } catch (e) {
     throw new Error(`Failed to restore checkpoint: ${e.message}`);
@@ -113,12 +113,12 @@ function listCheckpoints() {
 
 /**
  * Generate a handoff document for session continuity
- * @param {string} planningDir - Path to .planning/
+ * @param {string} docsDir - Path to docs/
  * @returns {string} - Markdown content for HANDOFF.md
  */
-function generateHandoff(planningDir) {
-  const statePath = path.join(planningDir, 'STATE.md');
-  const configPath = path.join(planningDir, 'config.json');
+function generateHandoff(docsDir) {
+  const statePath = path.join(docsDir, 'STATE.md');
+  const configPath = path.join(docsDir, 'config.json');
 
   const state = fs.existsSync(statePath) ? fs.readFileSync(statePath, 'utf8') : '';
   let config = {};

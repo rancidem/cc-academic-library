@@ -17,7 +17,7 @@ Check writing progress, summarize recent work, and intelligently route to the ne
 </objective>
 
 <context>
-No arguments. Reads project state from .planning/.
+No arguments. Reads project state from docs/.
 </context>
 
 <process>
@@ -25,10 +25,10 @@ No arguments. Reads project state from .planning/.
 ## 1. Validate Environment
 
 ```bash
-ls .planning/STATE.md .planning/ROADMAP.md .planning/PROJECT.md 2>/dev/null
+ls docs/STATE.md docs/ROADMAP.md docs/PROJECT.md 2>/dev/null
 ```
 
-If missing `.planning/` → suggest `/wtfp:new-paper`.
+If missing `docs/` → suggest `/wtfp:new-paper`.
 If missing STATE.md or ROADMAP.md → suggest what's needed.
 
 ## 2. Load Project Context
@@ -36,7 +36,7 @@ If missing STATE.md or ROADMAP.md → suggest what's needed.
 Read: STATE.md, ROADMAP.md, PROJECT.md, config.json (for model_profile).
 
 ```bash
-MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+MODEL_PROFILE=$(cat docs/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
 
 ## 3. Gather Recent Work
@@ -72,7 +72,7 @@ If LATEST exists and CURRENT < LATEST, append ` ▲ update` to statusline.
 
 **Pending todos:** Count files:
 ```bash
-PENDING_TODOS=$(ls -1 .planning/todos/pending/*.md 2>/dev/null | wc -l | tr -d ' ')
+PENDING_TODOS=$(ls -1 docs/todos/pending/*.md 2>/dev/null | wc -l | tr -d ' ')
 ```
 
 ## 5. Present Status Report
@@ -112,9 +112,9 @@ CONTEXT: [✓ | -]
 
 **Count files in current section:**
 ```bash
-ls -1 .planning/sections/[dir]/*-PLAN.md 2>/dev/null | wc -l
-ls -1 .planning/sections/[dir]/*-SUMMARY.md 2>/dev/null | wc -l
-ls -1 .planning/sections/[dir]/*-ISSUES.md 2>/dev/null | wc -l
+ls -1 docs/sections/[dir]/*-PLAN.md 2>/dev/null | wc -l
+ls -1 docs/sections/[dir]/*-SUMMARY.md 2>/dev/null | wc -l
+ls -1 docs/sections/[dir]/*-ISSUES.md 2>/dev/null | wc -l
 ```
 
 **Route A — Unexecuted plan exists** (summaries < plans):

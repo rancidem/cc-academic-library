@@ -1,6 +1,6 @@
 # Continue-Here Template
 
-Copy and fill this structure for `.planning/sections/XX-name/.continue-here.md`:
+Copy and fill this structure for `docs/sections/XX-name/.continue-here.md`:
 
 ```yaml
 ---

@@ -25,7 +25,7 @@ Ensures all in-text citations have BibTeX entries, all entries are cited, and re
 BibTeX file: $ARGUMENTS (optional — auto-detects .bib files)
 
 **Load project state:**
-@.planning/STATE.md
+@docs/STATE.md
 </context>
 
 <process>
@@ -38,7 +38,7 @@ grep -rl "\\\\cite\|\\[@\|\\[.*\\]" --include="*.tex" --include="*.md" . 2>/dev/
 ```
 
 ```bash
-MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+MODEL_PROFILE=$(cat docs/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
 
 | Agent | quality | balanced | budget |

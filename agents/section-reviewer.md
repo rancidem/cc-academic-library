@@ -165,7 +165,7 @@ Persona: {persona used}
 
 Total: {N} issues ({blockers} blockers, {major} major, {minor} minor)
 
-Issues file: .planning/sections/{section}/{plan}-ISSUES.md
+Issues file: docs/sections/{section}/{plan}-ISSUES.md
 
 Recommendation: {revise/proceed/minor-fixes}
 ```

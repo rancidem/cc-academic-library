@@ -1,6 +1,6 @@
 # Section Context Template
 
-Template for `.planning/SECTION-CONTEXT.md` - temporary handoff file from discuss-section to plan-section.
+Template for `docs/SECTION-CONTEXT.md` - temporary handoff file from discuss-section to plan-section.
 
 **Purpose:** Persist section discussion context so `/clear` can be used between commands. This file is consumed by `/wtfp:plan-section` and deleted after the plan is created.
 

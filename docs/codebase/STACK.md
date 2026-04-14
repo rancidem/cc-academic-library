@@ -8,7 +8,7 @@
 
 ## Primary Languages And Formats
 
-- Markdown is the dominant format across `README.md`, skill files, commands, and planning docs.
+- Markdown is the dominant format across `README.md`, skill files, commands, and docs.
 - Python appears in the mirrored source bundles, especially `resources/cc-academic-sources/claude-scientific-writer/` and `resources/cc-academic-sources/scientific-agent-skills/`.
 - JavaScript appears in the mirrored `wtf-p` bundle and in `tools/wcn/package.json`.
 - JSON is used for plugin manifests, hook configuration, inventory snapshots, and source-reference metadata.

@@ -1,6 +1,6 @@
 # Writing Tools Configuration
 
-Template for `.planning/sources/tools.md` — configuration for writing tools and environments.
+Template for `docs/sources/tools.md` — configuration for writing tools and environments.
 
 **Purpose:** Document the tools, formats, and technical setup for this writing project.
 

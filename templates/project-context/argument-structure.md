@@ -1,6 +1,6 @@
 # Argument Structure Template
 
-Template for `.planning/structure/argument-map.md` — the logical structure of your paper.
+Template for `docs/structure/argument-map.md` — the logical structure of your paper.
 
 **Purpose:** Map the logical flow from claims to evidence to conclusions. This is the "skeleton" of your argument that all writing builds upon.
 

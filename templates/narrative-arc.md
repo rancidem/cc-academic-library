@@ -1,6 +1,6 @@
 # Narrative Arc Template
 
-Template for `.planning/structure/narrative-arc.md` — the story structure of your paper.
+Template for `docs/structure/narrative-arc.md` — the story structure of your paper.
 
 **Purpose:** Map the narrative flow that makes your paper compelling beyond the logical argument.
 

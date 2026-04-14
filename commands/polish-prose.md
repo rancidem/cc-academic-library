@@ -27,7 +27,7 @@ Polish prose to eliminate robotic AI-sounding text and improve academic voice.
 Target: $ARGUMENTS (section number, file path, or "all" for full manuscript)
 
 **Load project state:**
-@.planning/STATE.md
+@docs/STATE.md
 </context>
 
 <process>
@@ -39,7 +39,7 @@ ls paper/*.md 2>/dev/null || echo "No content in paper/ directory"
 ```
 
 ```bash
-MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+MODEL_PROFILE=$(cat docs/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
 
 | Agent | quality | balanced | budget |
@@ -63,9 +63,9 @@ Use AskUserQuestion:
 
 ```bash
 TARGET_CONTENT=$(cat paper/[target].md 2>/dev/null)
-STYLE_CONTENT=$(cat .planning/sources/style-guide.md 2>/dev/null)
+STYLE_CONTENT=$(cat docs/sources/style-guide.md 2>/dev/null)
 
-SECTION_DIR=$(ls -d .planning/sections/${SECTION}-* 2>/dev/null | head -1)
+SECTION_DIR=$(ls -d docs/sections/${SECTION}-* 2>/dev/null | head -1)
 CONTEXT_CONTENT=$(cat "${SECTION_DIR}"/*-CONTEXT.md 2>/dev/null)
 ```
 

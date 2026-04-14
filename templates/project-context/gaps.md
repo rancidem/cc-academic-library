@@ -1,6 +1,6 @@
 # Research Gaps Template
 
-Template for `.planning/structure/gaps.md` — tracking research and evidence gaps.
+Template for `docs/structure/gaps.md` — tracking research and evidence gaps.
 
 **Purpose:** Identify and track gaps in your argument that need addressing before submission.
 

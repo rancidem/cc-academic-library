@@ -330,7 +330,7 @@ Why bad: "Good" is meaningless. Specify: accuracy, completeness, tone.
 
 ## Gate Integration
 
-Checkpoints respect gate settings from `.planning/config.json`. This allows authors to control how much confirmation they want during execution.
+Checkpoints respect gate settings from `docs/config.json`. This allows authors to control how much confirmation they want during execution.
 
 ### Gate Behavior
 

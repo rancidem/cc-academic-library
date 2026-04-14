@@ -1,6 +1,6 @@
 # Revision Issues Template
 
-Template for `.planning/sections/XX-name/{section}-{plan}-ISSUES.md` - section-scoped issues discovered during verification.
+Template for `docs/sections/XX-name/{section}-{plan}-ISSUES.md` - section-scoped issues discovered during verification.
 
 **Purpose:** Capture issues found during `/wtfp:review-section`. Unlike global ISSUES.md (for deferred enhancements), this file tracks problems in specific written sections.
 
@@ -84,7 +84,7 @@ Template for `.planning/sections/XX-name/{section}-{plan}-ISSUES.md` - section-s
 # Revision Issues: Section 3 Plan 1
 
 **Reviewed:** 2025-01-15
-**Source:** .planning/sections/03-methods/03-01-SUMMARY.md
+**Source:** docs/sections/03-methods/03-01-SUMMARY.md
 **Reviewer:** User via /wtfp:review-section
 
 ## Open Issues
@@ -143,7 +143,7 @@ Template for `.planning/sections/XX-name/{section}-{plan}-ISSUES.md` - section-s
 - One file per plan reviewed
 
 **Location:**
-- `.planning/sections/XX-name/{section}-{plan}-ISSUES.md`
+- `docs/sections/XX-name/{section}-{plan}-ISSUES.md`
 - Lives alongside SUMMARY.md being reviewed
 
 **Difference from global ISSUES.md:**

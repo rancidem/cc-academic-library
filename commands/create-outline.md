@@ -27,7 +27,7 @@ Create the document outline and section roadmap for an initialized paper.
 </objective>
 
 <context>
-No arguments. Requires `.planning/PROJECT.md` to exist.
+No arguments. Requires `docs/PROJECT.md` to exist.
 </context>
 
 <process>
@@ -35,15 +35,15 @@ No arguments. Requires `.planning/PROJECT.md` to exist.
 ## 1. Validate Environment and Resolve Model Profile
 
 ```bash
-[ ! -f .planning/PROJECT.md ] && echo "ERROR: No project. Run /wtfp:new-paper" && exit 1
-[ -f .planning/ROADMAP.md ] && echo "ERROR: Outline exists. Use /wtfp:progress" && exit 1
-ls .planning/ 2>/dev/null
+[ ! -f docs/PROJECT.md ] && echo "ERROR: No project. Run /wtfp:new-paper" && exit 1
+[ -f docs/ROADMAP.md ] && echo "ERROR: Outline exists. Use /wtfp:progress" && exit 1
+ls docs/ 2>/dev/null
 ```
 
 **Resolve model profile:**
 
 ```bash
-MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+MODEL_PROFILE=$(cat docs/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
 
 **Model lookup table:**
@@ -54,22 +54,22 @@ MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"
 
 **Resolve gate flag:**
 ```bash
-GATE_CONFIRM_OUTLINE=$(cat .planning/config.json 2>/dev/null | grep -o '"confirm_outline"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+GATE_CONFIRM_OUTLINE=$(cat docs/config.json 2>/dev/null | grep -o '"confirm_outline"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
 ```
 
 ## 2. Read Context Files
 
 ```bash
-PROJECT_CONTENT=$(cat .planning/PROJECT.md)
-CONFIG_CONTENT=$(cat .planning/config.json 2>/dev/null)
-EXISTING_STRUCTURE=$(cat .planning/structure/*.md 2>/dev/null)
+PROJECT_CONTENT=$(cat docs/PROJECT.md)
+CONFIG_CONTENT=$(cat docs/config.json 2>/dev/null)
+EXISTING_STRUCTURE=$(cat docs/structure/*.md 2>/dev/null)
 ```
 
 ## 3. Ensure Structure Directory
 
 ```bash
-mkdir -p .planning/structure
-mkdir -p .planning/sections
+mkdir -p docs/structure
+mkdir -p docs/sections
 ```
 
 ## 4. Gate Check: Confirm Before Outlining
@@ -120,25 +120,25 @@ After successful outlining, the orchestrator handles:
 
 **Create section directories** from ROADMAP.md sections:
 ```bash
-mkdir -p .planning/sections/01-[section-slug]
-mkdir -p .planning/sections/02-[section-slug]
+mkdir -p docs/sections/01-[section-slug]
+mkdir -p docs/sections/02-[section-slug]
 # ... for all sections listed in ROADMAP.md
 ```
 
 ## 8. Commit (with commit_docs Guard)
 
 ```bash
-COMMIT_DOCS=$(cat .planning/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+COMMIT_DOCS=$(cat docs/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
 ```
 
 **If commit_docs = "true" (default):**
 ```bash
-git add .planning/ROADMAP.md .planning/STATE.md .planning/sections/ .planning/structure/
+git add docs/ROADMAP.md docs/STATE.md docs/sections/ docs/structure/
 git commit -m "docs: create document outline -- [N] sections, [X] words target"
 ```
 
 **If commit_docs = "false":**
-Skip git add and commit for planning docs. Log: "Skipping planning docs commit (commit_docs: false)"
+Skip git add and commit for docs. Log: "Skipping docs commit (commit_docs: false)"
 
 ## 9. Present Final Status
 
@@ -150,10 +150,10 @@ Skip git add and commit for planning docs. Log: "Skipping planning docs commit (
  WTF-P ► OUTLINE CREATED ✓
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-- Roadmap: .planning/ROADMAP.md ([N] sections, [X] words)
-- State: .planning/STATE.md
-- Structure: .planning/structure/ (outline, argument-map, narrative-arc)
-- Sections: .planning/sections/ ([N] directories)
+- Roadmap: docs/ROADMAP.md ([N] sections, [X] words)
+- State: docs/STATE.md
+- Structure: docs/structure/ (outline, argument-map, narrative-arc)
+- Sections: docs/sections/ ([N] directories)
 
 | # | Section | Words | Wave |
 |---|---------|-------|------|

@@ -1,6 +1,6 @@
 # Section Archive Template
 
-Template for `.planning/archive/round-[N]/` - preserves state after completing a submission round.
+Template for `docs/archive/round-[N]/` - preserves state after completing a submission round.
 
 **Purpose:** Snapshot the project state before major transitions (submission, revision, resubmission) for context preservation and rollback capability.
 
@@ -9,7 +9,7 @@ Template for `.planning/archive/round-[N]/` - preserves state after completing a
 ## Directory Structure
 
 ```
-.planning/
+docs/
 ├── archive/
 │   ├── round-1/                    # Initial submission
 │   │   ├── PROJECT.md             # Copy of project state
@@ -112,7 +112,7 @@ Template for `.planning/archive/round-[N]/` - preserves state after completing a
 **Workflow:**
 1. /wtfp:submit-milestone creates archive
 2. Archive preserves state for reference
-3. New revision work starts fresh in .planning/
+3. New revision work starts fresh in docs/
 4. Can reference archive for context during revision
 </guidelines>
 

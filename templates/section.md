@@ -1,6 +1,6 @@
 # Section Entry Template
 
-Add this entry to `.planning/SECTIONS.md` when completing a section:
+Add this entry to `docs/SECTIONS.md` when completing a section:
 
 ```markdown
 ## Section [X]: [Name] (Completed: YYYY-MM-DD)

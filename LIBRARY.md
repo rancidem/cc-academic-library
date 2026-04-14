@@ -48,7 +48,7 @@ This dashboard is organized by repository first. If you are new to this library,
 - `sources/` contains the cloned upstream repositories and should stay read-only during indexing.
 - `library/` contains the project’s canonical indexes, templates, and tag rules.
 - `notes/` contains maintenance logs and comparison notes.
-- `.planning/` stores project memory, roadmap, requirements, and work state.
+- `docs/` stores project memory, roadmap, requirements, and work state.
 
 ## Current State
 

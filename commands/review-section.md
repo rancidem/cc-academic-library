@@ -37,12 +37,12 @@ Section: $ARGUMENTS (section number or path)
 
 ```bash
 ls paper/*.md 2>/dev/null || echo "No content in paper/ directory"
-ls .planning/ 2>/dev/null
+ls docs/ 2>/dev/null
 ```
 
 **Resolve model profile:**
 ```bash
-MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+MODEL_PROFILE=$(cat docs/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
 
 | Agent | quality | balanced | budget |
@@ -64,12 +64,12 @@ Use AskUserQuestion:
 
 ```bash
 SECTION_CONTENT=$(cat paper/*.md 2>/dev/null)
-PROJECT_CONTENT=$(cat .planning/PROJECT.md)
-ARGMAP_CONTENT=$(cat .planning/structure/argument-map.md 2>/dev/null)
-OUTLINE_CONTENT=$(cat .planning/structure/outline.md 2>/dev/null)
-SUMMARY_CONTENT=$(cat .planning/sections/*/SUMMARY.md 2>/dev/null | head -200)
+PROJECT_CONTENT=$(cat docs/PROJECT.md)
+ARGMAP_CONTENT=$(cat docs/structure/argument-map.md 2>/dev/null)
+OUTLINE_CONTENT=$(cat docs/structure/outline.md 2>/dev/null)
+SUMMARY_CONTENT=$(cat docs/sections/*/SUMMARY.md 2>/dev/null | head -200)
 
-SECTION_DIR=$(ls -d .planning/sections/${SECTION}-* 2>/dev/null | head -1)
+SECTION_DIR=$(ls -d docs/sections/${SECTION}-* 2>/dev/null | head -1)
 CONTEXT_CONTENT=$(cat "${SECTION_DIR}"/*-CONTEXT.md 2>/dev/null)
 ```
 

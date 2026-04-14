@@ -34,7 +34,7 @@ Section number: $ARGUMENTS (optional - auto-detects next unplanned section if no
 ## 1. Validate Environment and Resolve Model Profile
 
 ```bash
-ls .planning/ 2>/dev/null
+ls docs/ 2>/dev/null
 ```
 
 **If not found:** Error - user should run `/wtfp:new-paper` first.
@@ -42,7 +42,7 @@ ls .planning/ 2>/dev/null
 **Resolve model profile:**
 
 ```bash
-MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+MODEL_PROFILE=$(cat docs/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
 
 **Model lookup table:**
@@ -55,13 +55,13 @@ MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"
 **Resolve gate flag:**
 ```bash
 # Gate: confirm_plan — skip confirmation if false
-GATE_CONFIRM_PLAN=$(cat .planning/config.json 2>/dev/null | grep -o '"confirm_plan"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+GATE_CONFIRM_PLAN=$(cat docs/config.json 2>/dev/null | grep -o '"confirm_plan"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
 ```
 
 ## 1b. Git Branch Setup
 
 ```bash
-BRANCH_STRATEGY=$(cat .planning/config.json 2>/dev/null | grep -o '"branching_strategy"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "none")
+BRANCH_STRATEGY=$(cat docs/config.json 2>/dev/null | grep -o '"branching_strategy"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "none")
 ```
 
 **If branching_strategy = "section":**
@@ -72,11 +72,11 @@ BRANCH_STRATEGY=$(cat .planning/config.json 2>/dev/null | grep -o '"branching_st
 4. Store current branch as base branch for later merge:
    ```bash
    BASE_BRANCH=$(git branch --show-current 2>/dev/null || echo "main")
-   echo "$BASE_BRANCH" > .planning/.section_base_branch
+   echo "$BASE_BRANCH" > docs/.section_base_branch
    ```
 5. Create and checkout section branch:
    ```bash
-   SECTION_BRANCH_TEMPLATE=$(cat .planning/config.json 2>/dev/null | grep -o '"section_branch_template"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "wtfp/section-{section}-{slug}")
+   SECTION_BRANCH_TEMPLATE=$(cat docs/config.json 2>/dev/null | grep -o '"section_branch_template"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "wtfp/section-{section}-{slug}")
    BRANCH_NAME=$(echo "$SECTION_BRANCH_TEMPLATE" | sed "s/{section}/${SECTION_NUM}/" | sed "s/{slug}/${SECTION_SLUG}/")
    git checkout -b "$BRANCH_NAME"
    ```
@@ -89,13 +89,13 @@ BRANCH_STRATEGY=$(cat .planning/config.json 2>/dev/null | grep -o '"branching_st
 Extract section number from $ARGUMENTS. If no section number, detect next unplanned section from roadmap.
 
 ```bash
-ls .planning/sections/*/ 2>/dev/null | head -10
+ls docs/sections/*/ 2>/dev/null | head -10
 ```
 
 ## 3. Validate Section
 
 ```bash
-grep -A5 "Section" .planning/ROADMAP.md 2>/dev/null
+grep -A5 "Section" docs/ROADMAP.md 2>/dev/null
 ```
 
 Extract section number, name, description.
@@ -103,7 +103,7 @@ Extract section number, name, description.
 ## 4. Ensure Section Directory and Load CONTEXT.md
 
 ```bash
-SECTION_DIR=$(ls -d .planning/sections/${SECTION}-* 2>/dev/null | head -1)
+SECTION_DIR=$(ls -d docs/sections/${SECTION}-* 2>/dev/null | head -1)
 CONTEXT_CONTENT=$(cat "${SECTION_DIR}"/*-CONTEXT.md 2>/dev/null)
 ```
 
@@ -112,13 +112,13 @@ CONTEXT_CONTENT=$(cat "${SECTION_DIR}"/*-CONTEXT.md 2>/dev/null)
 ## 5. Read Context Files
 
 ```bash
-STATE_CONTENT=$(cat .planning/STATE.md)
-ROADMAP_CONTENT=$(cat .planning/ROADMAP.md)
-PROJECT_CONTENT=$(cat .planning/PROJECT.md)
-ARGMAP_CONTENT=$(cat .planning/structure/argument-map.md 2>/dev/null)
-OUTLINE_CONTENT=$(cat .planning/structure/outline.md 2>/dev/null)
+STATE_CONTENT=$(cat docs/STATE.md)
+ROADMAP_CONTENT=$(cat docs/ROADMAP.md)
+PROJECT_CONTENT=$(cat docs/PROJECT.md)
+ARGMAP_CONTENT=$(cat docs/structure/argument-map.md 2>/dev/null)
+OUTLINE_CONTENT=$(cat docs/structure/outline.md 2>/dev/null)
 RESEARCH_CONTENT=$(cat "${SECTION_DIR}"/*-RESEARCH.md 2>/dev/null)
-PRIOR_SUMMARIES=$(cat .planning/sections/*/SUMMARY.md 2>/dev/null | head -200)
+PRIOR_SUMMARIES=$(cat docs/sections/*/SUMMARY.md 2>/dev/null | head -200)
 ```
 
 If RESEARCH.md missing for a literature-heavy section, suggest `/wtfp:research-gap` first.
@@ -163,7 +163,7 @@ Planning prompt includes: `<planning_context>` with STATE, ROADMAP, PROJECT, arg
 ## 8. Plan-Check-Revise Loop (if enabled)
 
 ```bash
-WORKFLOW_PLAN_CHECK=$(cat .planning/config.json 2>/dev/null | grep -o '"plan_check"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+WORKFLOW_PLAN_CHECK=$(cat docs/config.json 2>/dev/null | grep -o '"plan_check"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
 ```
 
 **If plan_check is true:**
@@ -201,7 +201,7 @@ Verification: {Passed | Passed with override | Skipped}
 
 **Execute writing** — run the plan
 
-`/wtfp:write-section .planning/sections/XX-name/XX-YY-PLAN.md`
+`/wtfp:write-section docs/sections/XX-name/XX-YY-PLAN.md`
 
 <sub>`/clear` first → fresh context window</sub>
 
@@ -210,7 +210,7 @@ Verification: {Passed | Passed with override | Skipped}
 </offer_next>
 
 <success_criteria>
-- [ ] .planning/ directory validated
+- [ ] docs/ directory validated
 - [ ] Section validated against roadmap
 - [ ] CONTEXT.md loaded early and passed to ALL agents
 - [ ] RESEARCH.md auto-loaded if exists

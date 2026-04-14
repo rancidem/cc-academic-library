@@ -33,7 +33,7 @@
 - Keep `sources/` aligned with upstream repositories.
 - Note significant refreshes in `notes/maintenance.md`.
 - Update the library when new command, agent, skill, tool, notable workflow, raw download path, or install/setup path appears.
-- Keep the dashboard, library pages, and planning files aligned.
+- Keep the dashboard, library pages, and docs aligned.
 
 ## Non-Goals
 
@@ -44,7 +44,7 @@
 ## Acceptance Criteria
 
 - The project lives in `projects/cc-academic`.
-- The planning files describe the project clearly.
+- The docs describe the project clearly.
 - The repository index is ready for expansion with consistent structure across all item types.
 - Temporary desktop metadata files are removed from the workspace.
 - The dashboard and per-repo summaries support quick personal reuse.

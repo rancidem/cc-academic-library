@@ -1,6 +1,6 @@
 # State Template
 
-Template for `.planning/STATE.md` — the writing project's living memory.
+Template for `docs/STATE.md` — the writing project's living memory.
 
 ---
 
@@ -11,7 +11,7 @@ Template for `.planning/STATE.md` — the writing project's living memory.
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated [date])
+See: docs/PROJECT.md (updated [date])
 
 **Core argument:** [One-liner from PROJECT.md Core Argument section]
 **Current focus:** [Current section name]

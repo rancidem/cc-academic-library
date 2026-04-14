@@ -29,9 +29,9 @@ Output: REFS.md with citation strategy mapped to paper sections.
 BibTeX file: $ARGUMENTS (optional — auto-detects .bib files if not provided)
 
 **Load project context:**
-@.planning/PROJECT.md
-@.planning/config.json
-@.planning/structure/outline.md
+@docs/PROJECT.md
+@docs/config.json
+@docs/structure/outline.md
 </context>
 
 <process>
@@ -45,7 +45,7 @@ find . -name "*.bib" -type f 2>/dev/null | grep -v node_modules | grep -v .git |
 If multiple found, ask via AskUserQuestion. If none found, exit with error.
 
 ```bash
-MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+MODEL_PROFILE=$(cat docs/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
 ```
 
 | Agent | quality | balanced | budget |
@@ -64,8 +64,8 @@ Capture JSON output from indexer and impact analysis results.
 ## 3. Read Context Files
 
 ```bash
-PROJECT_CONTENT=$(cat .planning/PROJECT.md)
-OUTLINE_CONTENT=$(cat .planning/structure/outline.md 2>/dev/null)
+PROJECT_CONTENT=$(cat docs/PROJECT.md)
+OUTLINE_CONTENT=$(cat docs/structure/outline.md 2>/dev/null)
 ```
 
 ## 4. Spawn citation-expert Agent
@@ -85,7 +85,7 @@ Task(
 )
 ```
 
-Analysis prompt includes: `<bib_index>` with parsed entries, `<impact_analysis>` with metrics, `<project_context>` with PROJECT + outline, `<output>` targeting `.planning/sources/REFS.md`.
+Analysis prompt includes: `<bib_index>` with parsed entries, `<impact_analysis>` with metrics, `<project_context>` with PROJECT + outline, `<output>` targeting `docs/sources/REFS.md`.
 
 Agent performs: temporal analysis, topic clustering, seminal work identification, section mapping, gap identification.
 
@@ -98,7 +98,7 @@ Agent performs: temporal analysis, topic clustering, seminal work identification
 ## 6. Commit
 
 ```bash
-git add .planning/sources/REFS.md
+git add docs/sources/REFS.md
 git commit -m "refs: analyze bibliography for citation strategy"
 ```
 
@@ -113,7 +113,7 @@ git commit -m "refs: analyze bibliography for citation strategy"
 - Entries: [N]
 - Topic clusters: [N]
 - Seminal works: [N]
-- Citation map: .planning/sources/REFS.md
+- Citation map: docs/sources/REFS.md
 
 ───────────────────────────────────────────
 

@@ -1,6 +1,6 @@
 # PROJECT.md Template
 
-Template for `.planning/PROJECT.md` — the living writing project context document.
+Template for `docs/PROJECT.md` — the living writing project context document.
 
 <template>
 
@@ -174,7 +174,7 @@ STATE.md references PROJECT.md:
 ```markdown
 ## Project Reference
 
-See: .planning/PROJECT.md (updated [date])
+See: docs/PROJECT.md (updated [date])
 
 **Core argument:** [One-liner from Core Argument section]
 **Current focus:** [Current section name]

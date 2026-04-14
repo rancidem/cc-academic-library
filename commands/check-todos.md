@@ -14,7 +14,7 @@ Review pending todos. For each, user decides: act on it, defer it, dismiss it, o
 </objective>
 
 <context>
-No arguments. Reads from .planning/todos/pending/.
+No arguments. Reads from docs/todos/pending/.
 </context>
 
 <process>
@@ -22,10 +22,10 @@ No arguments. Reads from .planning/todos/pending/.
 ## 1. Validate Environment
 
 ```bash
-ls .planning/ 2>/dev/null
+ls docs/ 2>/dev/null
 ```
 
-If `.planning/` does not exist, output error and exit:
+If `docs/` does not exist, output error and exit:
 ```
 Error: No project found. Run /wtfp:new-paper first.
 ```
@@ -33,7 +33,7 @@ Error: No project found. Run /wtfp:new-paper first.
 ## 2. List Pending Todos
 
 ```bash
-ls -1 .planning/todos/pending/*.md 2>/dev/null
+ls -1 docs/todos/pending/*.md 2>/dev/null
 ```
 
 If no files found:
@@ -58,7 +58,7 @@ Initialize counters:
 - dismissed = 0
 - done = 0
 
-For each file in `.planning/todos/pending/`:
+For each file in `docs/todos/pending/`:
 
 1. Read the file. Parse frontmatter (created, context) and body (description).
 
@@ -88,16 +88,16 @@ For each file in `.planning/todos/pending/`:
 
    **"Dismiss":**
    ```bash
-   mkdir -p .planning/todos/dismissed
-   mv {file} .planning/todos/dismissed/
+   mkdir -p docs/todos/dismissed
+   mv {file} docs/todos/dismissed/
    ```
    - Increment dismissed counter
    - Continue to next
 
    **"Done":**
    ```bash
-   mkdir -p .planning/todos/done
-   mv {file} .planning/todos/done/
+   mkdir -p docs/todos/done
+   mv {file} docs/todos/done/
    ```
    - Increment done counter
    - Continue to next
@@ -110,7 +110,7 @@ For each file in `.planning/todos/pending/`:
 
 Count remaining pending todos:
 ```bash
-ls -1 .planning/todos/pending/*.md 2>/dev/null | wc -l
+ls -1 docs/todos/pending/*.md 2>/dev/null | wc -l
 ```
 
 Read STATE.md. Update "### Pending Todos" section with new count:

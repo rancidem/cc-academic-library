@@ -28,7 +28,7 @@ Prioritizes blockers, then major issues, then minor issues.
 **Verify issues exist:**
 
 ```bash
-ISSUES_FILE=".planning/sections/[section-dir]/$ARGUMENTS-ISSUES.md"
+ISSUES_FILE="docs/sections/[section-dir]/$ARGUMENTS-ISSUES.md"
 [ ! -f "$ISSUES_FILE" ] && echo "ERROR: No issues file found at $ISSUES_FILE" && exit 1
 ```
 
@@ -84,8 +84,8 @@ Fixes: [N] issues ([blockers] blockers, [major] major, [minor] minor)
 </execution_context>
 
 <context>
-@.planning/sections/XX-name/XX-YY-ISSUES.md
-@.planning/sections/XX-name/XX-YY-SUMMARY.md
+@docs/sections/XX-name/XX-YY-ISSUES.md
+@docs/sections/XX-name/XX-YY-SUMMARY.md
 @paper/[section].md
 </context>
 
@@ -129,7 +129,7 @@ Fixes: [N] issues ([blockers] blockers, [major] major, [minor] minor)
 
 <step name="commit">
 ```bash
-git add .planning/sections/XX-name/XX-YY-REVISION.md
+git add docs/sections/XX-name/XX-YY-REVISION.md
 git commit -m "$(cat <<'EOF'
 plan(XX-YY): revision plan
 
@@ -147,7 +147,7 @@ EOF
 ```
 Revision plan created:
 
-- Plan: .planning/sections/XX-name/XX-YY-REVISION.md
+- Plan: docs/sections/XX-name/XX-YY-REVISION.md
 - Issues addressed: [N]
 - Scope: [blockers/major/all]
 
@@ -160,7 +160,7 @@ Revision plan created:
 
 **Execute revision** — apply fixes
 
-`/wtfp:write-section .planning/sections/XX-name/XX-YY-REVISION.md`
+`/wtfp:write-section docs/sections/XX-name/XX-YY-REVISION.md`
 
 <sub>`/clear` first → fresh context window</sub>
 

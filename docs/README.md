@@ -1,6 +1,6 @@
-# Planning Files
+# Documentation Files
 
-This directory holds the living project metadata for the canonical library. The files here are small on purpose: they capture the current project definition, roadmap, and state without duplicating the source bundles themselves.
+This directory holds the living project documentation for the canonical library. The files here are small on purpose: they capture the current project definition, roadmap, and state without duplicating the source bundles themselves.
 
 ## Files
 

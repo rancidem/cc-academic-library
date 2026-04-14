@@ -22,7 +22,7 @@ Shows current position, recent progress, and offers appropriate next actions.
 **Verify project exists:**
 
 ```bash
-[ ! -f .planning/STATE.md ] && echo "ERROR: No project state found. Run /wtfp:new-paper first" && exit 1
+[ ! -f docs/STATE.md ] && echo "ERROR: No project state found. Run /wtfp:new-paper first" && exit 1
 ```
 
 </step>
@@ -40,7 +40,7 @@ Shows current position, recent progress, and offers appropriate next actions.
 **Check for handoff file:**
 
 ```bash
-find .planning/sections -name ".continue-here.md" 2>/dev/null | head -1
+find docs/sections -name ".continue-here.md" 2>/dev/null | head -1
 ```
 
 If handoff file exists:
@@ -124,8 +124,8 @@ For full status: `/wtfp:progress`
 If user proceeds with next action, the handoff file should be removed:
 
 ```bash
-rm .planning/sections/XX-name/.continue-here.md
-git add .planning/sections/XX-name/
+rm docs/sections/XX-name/.continue-here.md
+git add docs/sections/XX-name/
 git commit -m "docs: resume [section name] from handoff"
 ```
 

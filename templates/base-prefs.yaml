@@ -1,8 +1,8 @@
 # WTF-P User Preferences
 # Global defaults — install to ~/.wtfp/base.yaml
-# Per-project overrides in .planning/prefs.yaml
+# Per-project overrides in docs/prefs.yaml
 #
-# Inheritance: base.yaml → .planning/prefs.yaml → config.json (runtime)
+# Inheritance: base.yaml → docs/prefs.yaml → config.json (runtime)
 # Values here are defaults. Override per-project as needed.
 
 # Writing style preferences

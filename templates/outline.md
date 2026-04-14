@@ -1,6 +1,6 @@
 # Document Outline Template
 
-Template for `.planning/structure/outline.md` — the section skeleton with word budgets.
+Template for `docs/structure/outline.md` — the section skeleton with word budgets.
 
 **Purpose:** Define the detailed structure of your document before writing.
 

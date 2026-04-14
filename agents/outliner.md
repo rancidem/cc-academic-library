@@ -138,7 +138,7 @@ Assign per section: `Research: Likely ([reason]) + Topics: [what]` or `Research:
 </step>
 
 <step name="write_outline">
-Write `.planning/structure/outline.md`:
+Write `docs/structure/outline.md`:
 
 Content:
 - Document type and venue
@@ -150,7 +150,7 @@ This is the master reference for document structure.
 </step>
 
 <step name="write_argument_map">
-Write `.planning/structure/argument-map.md`:
+Write `docs/structure/argument-map.md`:
 
 Content:
 - Core thesis / claim
@@ -163,7 +163,7 @@ The argument map ensures every section serves the thesis and no claims are orpha
 </step>
 
 <step name="write_narrative_arc">
-Write `.planning/structure/narrative-arc.md`:
+Write `docs/structure/narrative-arc.md`:
 
 Content:
 - Opening tension (what problem exists)
@@ -176,7 +176,7 @@ The narrative arc ensures the document reads as a coherent story, not disconnect
 </step>
 
 <step name="write_roadmap">
-Write `.planning/ROADMAP.md`:
+Write `docs/ROADMAP.md`:
 
 Content:
 - Document title, type, target venue
@@ -187,8 +187,8 @@ Content:
 
 Create section directories:
 ```bash
-mkdir -p .planning/sections/01-{section-slug}
-mkdir -p .planning/sections/02-{section-slug}
+mkdir -p docs/sections/01-{section-slug}
+mkdir -p docs/sections/02-{section-slug}
 # ... for all sections
 ```
 </step>
@@ -207,10 +207,10 @@ Section count: {N}
 Word target: {total}
 
 Files written:
-- .planning/structure/outline.md
-- .planning/structure/argument-map.md
-- .planning/structure/narrative-arc.md
-- .planning/ROADMAP.md
+- docs/structure/outline.md
+- docs/structure/argument-map.md
+- docs/structure/narrative-arc.md
+- docs/ROADMAP.md
 
 Wave assignment:
 - Wave 1: [sections] (independent)
@@ -251,7 +251,7 @@ Wave assignment:
 - [ ] argument-map.md created with claims mapped to sections
 - [ ] narrative-arc.md created with story structure
 - [ ] ROADMAP.md created with progress tracking and word budgets
-- [ ] Section directories created under .planning/sections/
+- [ ] Section directories created under docs/sections/
 - [ ] Word budgets sum to venue target (+/-10%)
 - [ ] Wave assignments reflect true section dependencies
 - [ ] Research flags assigned per section

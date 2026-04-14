@@ -1,6 +1,6 @@
 # Summary Template
 
-Template for `.planning/sections/XX-name/{section}-{plan}-SUMMARY.md` - section completion documentation.
+Template for `docs/sections/XX-name/{section}-{plan}-SUMMARY.md` - section completion documentation.
 
 ---
 
@@ -111,7 +111,7 @@ Each task was committed atomically:
 
 ### Deferred Enhancements
 
-Logged to .planning/ISSUES.md for future consideration:
+Logged to docs/ISSUES.md for future consideration:
 - ISS-XXX: [Brief description] (discovered in Task [N])
 - ISS-XXX: [Brief description] (discovered in Task [N])
 

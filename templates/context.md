@@ -1,6 +1,6 @@
 # Section Context Template
 
-Template for `.planning/sections/XX-name/{section}-CONTEXT.md` - captures the user's vision for a section.
+Template for `docs/sections/XX-name/{section}-CONTEXT.md` - captures the user's vision for a section.
 
 **Purpose:** Document how the user imagines the section working. This is vision context, not technical analysis. Research details come from the research workflow.
 
@@ -173,7 +173,7 @@ The user does NOT know (and shouldn't be asked):
 - Detailed structure
 
 **After creation:**
-- File lives in section directory: `.planning/sections/XX-name/{section}-CONTEXT.md`
+- File lives in section directory: `docs/sections/XX-name/{section}-CONTEXT.md`
 - Research phase adds investigation results if needed
 - Planning phase creates executable tasks informed by both vision AND research
 </guidelines>

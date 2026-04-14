@@ -2,7 +2,7 @@
 
 ## Repo hygiene
 
-- The repo had `.DS_Store` noise at the repo root, in `.planning/`, `commands/`, `resources/`, `templates/`, and inside `resources/cc-academic-sources/`; that cleanup is now complete.
+- The repo had `.DS_Store` noise at the repo root, in `docs/`, `commands/`, `resources/`, `templates/`, and inside `resources/cc-academic-sources/`; that cleanup is now complete.
 - A repo-level ignore rule is still worth adding so the files do not come back and pollute future diffs or inventory refreshes.
 
 ## Source-bundle traceability

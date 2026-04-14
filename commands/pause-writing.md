@@ -21,7 +21,7 @@ Creates .continue-here.md with current state and updates STATE.md.
 **Verify project exists:**
 
 ```bash
-[ ! -f .planning/STATE.md ] && echo "ERROR: No project state found" && exit 1
+[ ! -f docs/STATE.md ] && echo "ERROR: No project state found" && exit 1
 ```
 
 </step>
@@ -93,7 +93,7 @@ Add to Session Continuity section:
 ```markdown
 ## Session Continuity
 - Last session: [timestamp]
-- Handoff: .planning/sections/XX-name/.continue-here.md
+- Handoff: docs/sections/XX-name/.continue-here.md
 - Status: [in_progress/blocked]
 ```
 
@@ -101,7 +101,7 @@ Add to Session Continuity section:
 
 <step name="commit">
 ```bash
-git add .planning/sections/XX-name/.continue-here.md .planning/STATE.md
+git add docs/sections/XX-name/.continue-here.md docs/STATE.md
 git commit -m "$(cat <<'EOF'
 wip: pause [section name]
 
@@ -118,8 +118,8 @@ EOF
 ```
 Work paused:
 
-- Handoff: .planning/sections/XX-name/.continue-here.md
-- State: .planning/STATE.md updated
+- Handoff: docs/sections/XX-name/.continue-here.md
+- State: docs/STATE.md updated
 - Position: Task [X] of [Y]
 
 ## To Resume

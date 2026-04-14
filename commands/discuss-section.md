@@ -27,20 +27,20 @@ Output: CONTEXT.md file in the section directory capturing vision, essential con
 Section number: $ARGUMENTS (required)
 
 **Load project state first:**
-@.planning/STATE.md
+@docs/STATE.md
 
 **Load roadmap:**
-@.planning/ROADMAP.md
+@docs/ROADMAP.md
 
 **Load structure documents:**
-@.planning/structure/argument-map.md
-@.planning/structure/outline.md
+@docs/structure/argument-map.md
+@docs/structure/outline.md
 </context>
 
 <process>
 
 <step name="verify">
-1. Check .planning/ directory exists (error if not - user should run /wtfp:new-paper)
+1. Check docs/ directory exists (error if not - user should run /wtfp:new-paper)
 2. Validate section number provided via $ARGUMENTS
 3. Validate section exists in roadmap
 </step>

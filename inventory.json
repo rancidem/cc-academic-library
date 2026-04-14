@@ -1,8 +1,8 @@
 {
   "directories": [
-    ".planning",
     "agents",
     "commands",
+    "docs",
     "library",
     "notes",
     "references",
@@ -26,86 +26,6 @@
       "size": 226
     },
     {
-      "kind": "file",
-      "path": ".planning/codebase/ARCHITECTURE.md",
-      "size": 2478
-    },
-    {
-      "kind": "file",
-      "path": ".planning/codebase/CONCERNS.md",
-      "size": 1788
-    },
-    {
-      "kind": "file",
-      "path": ".planning/codebase/CONVENTIONS.md",
-      "size": 2031
-    },
-    {
-      "kind": "file",
-      "path": ".planning/codebase/INTEGRATIONS.md",
-      "size": 2549
-    },
-    {
-      "kind": "file",
-      "path": ".planning/codebase/STACK.md",
-      "size": 2615
-    },
-    {
-      "kind": "file",
-      "path": ".planning/codebase/STRUCTURE.md",
-      "size": 3927
-    },
-    {
-      "kind": "file",
-      "path": ".planning/codebase/TESTING.md",
-      "size": 2175
-    },
-    {
-      "kind": "file",
-      "path": ".planning/config.json",
-      "size": 202
-    },
-    {
-      "kind": "file",
-      "path": ".planning/PROJECT.md",
-      "size": 2826
-    },
-    {
-      "kind": "file",
-      "path": ".planning/quick/.gitkeep",
-      "size": 1
-    },
-    {
-      "kind": "file",
-      "path": ".planning/quick/1-clone-github-repos-into-personal-library/1-PLAN.md",
-      "size": 2381
-    },
-    {
-      "kind": "file",
-      "path": ".planning/quick/README.md",
-      "size": 445
-    },
-    {
-      "kind": "file",
-      "path": ".planning/README.md",
-      "size": 1172
-    },
-    {
-      "kind": "file",
-      "path": ".planning/REQUIREMENTS.md",
-      "size": 2703
-    },
-    {
-      "kind": "file",
-      "path": ".planning/ROADMAP.md",
-      "size": 5300
-    },
-    {
-      "kind": "file",
-      "path": ".planning/STATE.md",
-      "size": 1685
-    },
-    {
       "kind": "agent",
       "path": "agents/argument-verifier.md",
       "size": 5516
@@ -123,7 +43,7 @@
     {
       "kind": "agent",
       "path": "agents/coherence-checker.md",
-      "size": 5490
+      "size": 5470
     },
     {
       "kind": "agent",
@@ -188,7 +108,7 @@
     {
       "kind": "agent",
       "path": "agents/outliner.md",
-      "size": 8559
+      "size": 8504
     },
     {
       "kind": "agent",
@@ -203,12 +123,12 @@
     {
       "kind": "agent",
       "path": "agents/README.md",
-      "size": 1218
+      "size": 1208
     },
     {
       "kind": "agent",
       "path": "agents/research-synthesizer.md",
-      "size": 6431
+      "size": 6426
     },
     {
       "kind": "agent",
@@ -218,42 +138,42 @@
     {
       "kind": "agent",
       "path": "agents/section-reviewer.md",
-      "size": 5962
+      "size": 5957
     },
     {
       "kind": "agent",
       "path": "agents/section-writer.md",
-      "size": 10624
+      "size": 10599
     },
     {
       "kind": "command",
       "path": "commands/add-todo.md",
-      "size": 2148
+      "size": 2113
     },
     {
       "kind": "command",
       "path": "commands/analyze-bib.md",
-      "size": 4069
+      "size": 4024
     },
     {
       "kind": "command",
       "path": "commands/audit-milestone.md",
-      "size": 7009
+      "size": 6964
     },
     {
       "kind": "command",
       "path": "commands/check-refs.md",
-      "size": 4020
+      "size": 4010
     },
     {
       "kind": "command",
       "path": "commands/check-todos.md",
-      "size": 3230
+      "size": 3180
     },
     {
       "kind": "command",
       "path": "commands/checkpoint.md",
-      "size": 2598
+      "size": 2584
     },
     {
       "kind": "command",
@@ -263,27 +183,27 @@
     {
       "kind": "command",
       "path": "commands/create-outline.md",
-      "size": 6140
+      "size": 6012
     },
     {
       "kind": "command",
       "path": "commands/create-poster.md",
-      "size": 1034
+      "size": 1029
     },
     {
       "kind": "command",
       "path": "commands/create-slides.md",
-      "size": 1018
+      "size": 1013
     },
     {
       "kind": "command",
       "path": "commands/discuss-section.md",
-      "size": 1817
+      "size": 1792
     },
     {
       "kind": "command",
       "path": "commands/execute-outline.md",
-      "size": 8344
+      "size": 8279
     },
     {
       "kind": "command",
@@ -293,22 +213,22 @@
     {
       "kind": "command",
       "path": "commands/help.md",
-      "size": 9390
+      "size": 9360
     },
     {
       "kind": "command",
       "path": "commands/insert-section.md",
-      "size": 2596
+      "size": 2571
     },
     {
       "kind": "command",
       "path": "commands/list-assumptions.md",
-      "size": 2507
+      "size": 2497
     },
     {
       "kind": "command",
       "path": "commands/map-project.md",
-      "size": 3304
+      "size": 3249
     },
     {
       "kind": "command",
@@ -318,52 +238,52 @@
     {
       "kind": "command",
       "path": "commands/new-paper.md",
-      "size": 6169
+      "size": 6104
     },
     {
       "kind": "command",
       "path": "commands/pause-writing.md",
-      "size": 2669
+      "size": 2639
     },
     {
       "kind": "command",
       "path": "commands/plan-milestone-gaps.md",
-      "size": 6512
+      "size": 6487
     },
     {
       "kind": "command",
       "path": "commands/plan-revision.md",
-      "size": 3549
+      "size": 3519
     },
     {
       "kind": "command",
       "path": "commands/plan-section.md",
-      "size": 7545
+      "size": 7455
     },
     {
       "kind": "command",
       "path": "commands/polish-prose.md",
-      "size": 3737
+      "size": 3717
     },
     {
       "kind": "command",
       "path": "commands/progress.md",
-      "size": 4333
+      "size": 4283
     },
     {
       "kind": "command",
       "path": "commands/quick.md",
-      "size": 3014
+      "size": 2989
     },
     {
       "kind": "command",
       "path": "commands/README.md",
-      "size": 1161
+      "size": 1151
     },
     {
       "kind": "command",
       "path": "commands/remove-section.md",
-      "size": 2706
+      "size": 2676
     },
     {
       "kind": "command",
@@ -378,17 +298,17 @@
     {
       "kind": "command",
       "path": "commands/research-gap.md",
-      "size": 8259
+      "size": 8214
     },
     {
       "kind": "command",
       "path": "commands/resume-writing.md",
-      "size": 2621
+      "size": 2601
     },
     {
       "kind": "command",
       "path": "commands/review-section.md",
-      "size": 3974
+      "size": 3939
     },
     {
       "kind": "command",
@@ -398,12 +318,12 @@
     {
       "kind": "command",
       "path": "commands/settings.md",
-      "size": 5527
+      "size": 5507
     },
     {
       "kind": "command",
       "path": "commands/submit-milestone.md",
-      "size": 8991
+      "size": 8808
     },
     {
       "kind": "command",
@@ -413,12 +333,92 @@
     {
       "kind": "command",
       "path": "commands/verify-work.md",
-      "size": 7089
+      "size": 7059
     },
     {
       "kind": "command",
       "path": "commands/write-section.md",
-      "size": 7637
+      "size": 7553
+    },
+    {
+      "kind": "file",
+      "path": "docs/codebase/ARCHITECTURE.md",
+      "size": 2473
+    },
+    {
+      "kind": "file",
+      "path": "docs/codebase/CONCERNS.md",
+      "size": 1783
+    },
+    {
+      "kind": "file",
+      "path": "docs/codebase/CONVENTIONS.md",
+      "size": 2031
+    },
+    {
+      "kind": "file",
+      "path": "docs/codebase/INTEGRATIONS.md",
+      "size": 2549
+    },
+    {
+      "kind": "file",
+      "path": "docs/codebase/STACK.md",
+      "size": 2606
+    },
+    {
+      "kind": "file",
+      "path": "docs/codebase/STRUCTURE.md",
+      "size": 3922
+    },
+    {
+      "kind": "file",
+      "path": "docs/codebase/TESTING.md",
+      "size": 2175
+    },
+    {
+      "kind": "file",
+      "path": "docs/config.json",
+      "size": 202
+    },
+    {
+      "kind": "file",
+      "path": "docs/PROJECT.md",
+      "size": 2821
+    },
+    {
+      "kind": "file",
+      "path": "docs/quick/.gitkeep",
+      "size": 1
+    },
+    {
+      "kind": "file",
+      "path": "docs/quick/1-clone-github-repos-into-personal-library/1-PLAN.md",
+      "size": 2381
+    },
+    {
+      "kind": "file",
+      "path": "docs/quick/README.md",
+      "size": 445
+    },
+    {
+      "kind": "file",
+      "path": "docs/README.md",
+      "size": 1182
+    },
+    {
+      "kind": "file",
+      "path": "docs/REQUIREMENTS.md",
+      "size": 2683
+    },
+    {
+      "kind": "file",
+      "path": "docs/ROADMAP.md",
+      "size": 5295
+    },
+    {
+      "kind": "file",
+      "path": "docs/STATE.md",
+      "size": 1680
     },
     {
       "kind": "file",
@@ -428,12 +428,12 @@
     {
       "kind": "file",
       "path": "inventory.json",
-      "size": 653627
+      "size": 653542
     },
     {
       "kind": "file",
       "path": "LIBRARY.md",
-      "size": 6961
+      "size": 6956
     },
     {
       "kind": "file",
@@ -453,7 +453,7 @@
     {
       "kind": "file",
       "path": "library/commands.md",
-      "size": 29763
+      "size": 29693
     },
     {
       "kind": "file",
@@ -478,7 +478,7 @@
     {
       "kind": "file",
       "path": "library/inventory.md",
-      "size": 180008
+      "size": 179938
     },
     {
       "kind": "file",
@@ -523,7 +523,7 @@
     {
       "kind": "file",
       "path": "notes/maintenance.md",
-      "size": 3757
+      "size": 3752
     },
     {
       "kind": "file",
@@ -533,7 +533,7 @@
     {
       "kind": "file",
       "path": "README.md",
-      "size": 3826
+      "size": 3772
     },
     {
       "kind": "reference",
@@ -548,27 +548,27 @@
     {
       "kind": "reference",
       "path": "references/README.md",
-      "size": 1183
+      "size": 1173
     },
     {
       "kind": "reference",
       "path": "references/wtfp/agent-model-matrix.md",
-      "size": 3076
+      "size": 3056
     },
     {
       "kind": "reference",
       "path": "references/wtfp/checkpoints.md",
-      "size": 12025
+      "size": 12020
     },
     {
       "kind": "reference",
       "path": "references/wtfp/context-fidelity.md",
-      "size": 4402
+      "size": 4392
     },
     {
       "kind": "reference",
       "path": "references/wtfp/continuation-format.md",
-      "size": 4089
+      "size": 4079
     },
     {
       "kind": "reference",
@@ -578,7 +578,7 @@
     {
       "kind": "reference",
       "path": "references/wtfp/git-integration.md",
-      "size": 9464
+      "size": 9419
     },
     {
       "kind": "reference",
@@ -598,17 +598,17 @@
     {
       "kind": "reference",
       "path": "references/wtfp/orchestrator-pattern.md",
-      "size": 5691
+      "size": 5671
     },
     {
       "kind": "reference",
       "path": "references/wtfp/plan-format.md",
-      "size": 10204
+      "size": 10154
     },
     {
       "kind": "reference",
       "path": "references/wtfp/planning-config.md",
-      "size": 9782
+      "size": 9759
     },
     {
       "kind": "reference",
@@ -10458,7 +10458,7 @@
     {
       "kind": "script",
       "path": "scripts/wtfp-lib/checkpoint.js",
-      "size": 5087
+      "size": 5017
     },
     {
       "kind": "script",
@@ -10473,7 +10473,7 @@
     {
       "kind": "script",
       "path": "scripts/wtfp-lib/context-primer.js",
-      "size": 6969
+      "size": 6914
     },
     {
       "kind": "script",
@@ -10498,7 +10498,7 @@
     {
       "kind": "script",
       "path": "scripts/wtfp-lib/wcn-compiler.js",
-      "size": 7986
+      "size": 7981
     },
     {
       "kind": "skill",
@@ -18483,7 +18483,7 @@
     {
       "kind": "skill",
       "path": "skills/README.md",
-      "size": 2560
+      "size": 2550
     },
     {
       "kind": "skill",
@@ -20008,7 +20008,7 @@
     {
       "kind": "template",
       "path": "templates/base-prefs.yaml",
-      "size": 1465
+      "size": 1455
     },
     {
       "kind": "template",
@@ -20018,27 +20018,27 @@
     {
       "kind": "template",
       "path": "templates/context.md",
-      "size": 5155
+      "size": 5145
     },
     {
       "kind": "template",
       "path": "templates/continue-here.md",
-      "size": 3825
+      "size": 3820
     },
     {
       "kind": "template",
       "path": "templates/data-inventory.md",
-      "size": 4058
+      "size": 4053
     },
     {
       "kind": "template",
       "path": "templates/discovery.md",
-      "size": 3922
+      "size": 3912
     },
     {
       "kind": "template",
       "path": "templates/issues.md",
-      "size": 1992
+      "size": 1987
     },
     {
       "kind": "template",
@@ -20048,17 +20048,17 @@
     {
       "kind": "template",
       "path": "templates/narrative-arc.md",
-      "size": 6469
+      "size": 6464
     },
     {
       "kind": "template",
       "path": "templates/outline.md",
-      "size": 6413
+      "size": 6408
     },
     {
       "kind": "template",
       "path": "templates/phase-prompt.md",
-      "size": 10681
+      "size": 10601
     },
     {
       "kind": "template",
@@ -20068,22 +20068,22 @@
     {
       "kind": "template",
       "path": "templates/prior-drafts.md",
-      "size": 5844
+      "size": 5839
     },
     {
       "kind": "template",
       "path": "templates/project-context/argument-structure.md",
-      "size": 7541
+      "size": 7536
     },
     {
       "kind": "template",
       "path": "templates/project-context/bibliography.md",
-      "size": 4615
+      "size": 4610
     },
     {
       "kind": "template",
       "path": "templates/project-context/gaps.md",
-      "size": 2900
+      "size": 2895
     },
     {
       "kind": "template",
@@ -20098,57 +20098,57 @@
     {
       "kind": "template",
       "path": "templates/project-context/style-guide.md",
-      "size": 5276
+      "size": 5271
     },
     {
       "kind": "template",
       "path": "templates/project-context/tools.md",
-      "size": 3458
+      "size": 3453
     },
     {
       "kind": "template",
       "path": "templates/project.md",
-      "size": 5319
+      "size": 5309
     },
     {
       "kind": "template",
       "path": "templates/README.md",
-      "size": 1194
+      "size": 1184
     },
     {
       "kind": "template",
       "path": "templates/research.md",
-      "size": 11016
+      "size": 11006
     },
     {
       "kind": "template",
       "path": "templates/review-comments.md",
-      "size": 5474
+      "size": 5469
     },
     {
       "kind": "template",
       "path": "templates/revision-issues.md",
-      "size": 5555
+      "size": 5540
     },
     {
       "kind": "template",
       "path": "templates/roadmap.md",
-      "size": 5341
+      "size": 5321
     },
     {
       "kind": "template",
       "path": "templates/section-archive.md",
-      "size": 4304
+      "size": 4289
     },
     {
       "kind": "template",
       "path": "templates/section-context.md",
-      "size": 2746
+      "size": 2741
     },
     {
       "kind": "template",
       "path": "templates/section.md",
-      "size": 3802
+      "size": 3797
     },
     {
       "kind": "template",
@@ -20158,17 +20158,17 @@
     {
       "kind": "template",
       "path": "templates/state.md",
-      "size": 6834
+      "size": 6824
     },
     {
       "kind": "template",
       "path": "templates/summary.md",
-      "size": 8487
+      "size": 8477
     },
     {
       "kind": "template",
       "path": "templates/UAT.md",
-      "size": 2406
+      "size": 2396
     },
     {
       "kind": "tool",
@@ -20188,12 +20188,12 @@
     {
       "kind": "tool",
       "path": "tools/wcn/examples/after.wcn.md",
-      "size": 1722
+      "size": 1702
     },
     {
       "kind": "tool",
       "path": "tools/wcn/examples/before.md",
-      "size": 4410
+      "size": 4355
     },
     {
       "kind": "tool",
@@ -20203,7 +20203,7 @@
     {
       "kind": "tool",
       "path": "tools/wcn/SPEC.md",
-      "size": 9444
+      "size": 9379
     },
     {
       "kind": "tool",
@@ -20212,5 +20212,5 @@
     }
   ],
   "format": "cc-academic-canonical-inventory/v1",
-  "generated": "2026-04-14T12:09:31.630Z"
+  "generated": "2026-04-14T12:13:43.296Z"
 }

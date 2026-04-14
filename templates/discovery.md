@@ -1,6 +1,6 @@
 # Discovery Template
 
-Template for `.planning/sections/XX-name/DISCOVERY.md` - shallow research for writing decisions.
+Template for `docs/sections/XX-name/DISCOVERY.md` - shallow research for writing decisions.
 
 **Purpose:** Answer "which approach should we use" questions during mandatory discovery in plan-section.
 
@@ -71,7 +71,7 @@ Before completing discovery, verify:
 
 
 <output_structure>
-Create `.planning/sections/XX-name/DISCOVERY.md`:
+Create `docs/sections/XX-name/DISCOVERY.md`:
 
 ```markdown
 # [Topic] Discovery

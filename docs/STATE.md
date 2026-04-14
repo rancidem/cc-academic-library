@@ -2,7 +2,7 @@
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-04-14)
+See: docs/PROJECT.md (updated 2026-04-14)
 
 **Core value:** Keep the canonical library organized, accurate, and easy to sync back to upstream sources.
 **Current focus:** Maintenance rollout complete; keep registry, traceability, inventory, and docs synchronized

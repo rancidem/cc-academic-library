@@ -10,16 +10,16 @@ Canonical home for the academic skills library. This repo mirrors upstream bundl
 | Registry | `resources/bundle-registry.json` | Authoritative bundle-to-canonical mapping |
 | Traceability | `resources/source-references.md` | Generated source map for humans |
 | Snapshot | `inventory.json` | Generated filesystem snapshot for drift checks |
-| State | `.planning/STATE.md` | Current work position and continuity |
-| Roadmap | `.planning/ROADMAP.md` | Phase plan and maintenance sequence |
+| State | `docs/STATE.md` | Current work position and continuity |
+| Roadmap | `docs/ROADMAP.md` | Phase plan and maintenance sequence |
 
 ## Quick Links
 
 | Go to | Open |
 |---|---|
-| Current model | [.planning/PROJECT.md](.planning/PROJECT.md) |
-| Current state | [.planning/STATE.md](.planning/STATE.md) |
-| Phase plan | [.planning/ROADMAP.md](.planning/ROADMAP.md) |
+| Current model | [docs/PROJECT.md](docs/PROJECT.md) |
+| Current state | [docs/STATE.md](docs/STATE.md) |
+| Phase plan | [docs/ROADMAP.md](docs/ROADMAP.md) |
 | Source map | [resources/source-references.md](resources/source-references.md) |
 | Registry | [resources/bundle-registry.json](resources/bundle-registry.json) |
 | Maintenance script | [scripts/maintenance/refresh.js](scripts/maintenance/refresh.js) |
@@ -60,8 +60,8 @@ Canonical home for the academic skills library. This repo mirrors upstream bundl
 | Refresh registry, traceability, inventory, and status | `./scripts/maintenance/refresh.js` |
 | Audit the current state | `./scripts/maintenance/refresh.js audit` |
 | Add or move source-bundle content | Update `resources/bundle-registry.json`, then refresh |
-| Review the current model | Open `.planning/PROJECT.md` |
-| Check execution state | Open `.planning/STATE.md` |
+| Review the current model | Open `docs/PROJECT.md` |
+| Check execution state | Open `docs/STATE.md` |
 
 ## Adding New Content
 
@@ -77,4 +77,4 @@ Canonical home for the academic skills library. This repo mirrors upstream bundl
 - Keep `.DS_Store` ignored and out of the inventory.
 - Regenerate the registry-derived docs together.
 - Prefer small, reviewable maintenance updates over broad reorganizations.
-- Use the planning files for state, roadmap, and quick-task continuity.
+- Use the docs files for state, roadmap, and quick-task continuity.

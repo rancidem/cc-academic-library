@@ -41,15 +41,15 @@ The orchestrator provides user decisions in `<user_decisions>` tags.
 Before any operation, read project state:
 
 ```bash
-cat .planning/STATE.md 2>/dev/null
+cat docs/STATE.md 2>/dev/null
 ```
 
 Parse: Current position, accumulated decisions, blockers/concerns.
 
 **Load planning config:**
 ```bash
-COMMIT_PLANNING_DOCS=$(cat .planning/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
-git check-ignore -q .planning 2>/dev/null && COMMIT_PLANNING_DOCS=false
+COMMIT_PLANNING_DOCS=$(cat docs/config.json 2>/dev/null | grep -o '"commit_docs"[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo "true")
+git check-ignore -q docs 2>/dev/null && COMMIT_PLANNING_DOCS=false
 ```
 </step>
 
@@ -120,7 +120,7 @@ Visual format: `@~/.claude/write-the-f-paper/references/ui-brand.md`
 1. **checkpoint:decision** → ALWAYS pause. Decisions require human input by definition.
 2. **checkpoint:human-action** → ALWAYS pause. Agent cannot fabricate human input.
 3. **checkpoint:human-verify:**
-   a. Read `gates.confirm_write` from `.planning/config.json`
+   a. Read `gates.confirm_write` from `docs/config.json`
    b. If `mode: "yolo"` → auto-approve, log `[Checkpoint auto-approved: yolo mode]`
    c. If `confirm_write: false` → auto-approve, log `[Checkpoint auto-approved: gate disabled]`
    d. Otherwise → pause and present to author
@@ -265,7 +265,7 @@ Tasks: {completed}/{total}
 
 Files written:
 - paper/{section}.md
-- .planning/sections/{section}/{plan}-SUMMARY.md
+- docs/sections/{section}/{plan}-SUMMARY.md
 
 Issues: {count or "None"}
 ```

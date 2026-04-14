@@ -25,8 +25,8 @@ Use for small targeted tasks: fix a paragraph, add a citation, tweak wording, ex
 Task: $ARGUMENTS (natural language description of what to do)
 
 **Load project state:**
-@.planning/STATE.md
-@.planning/config.json
+@docs/STATE.md
+@docs/config.json
 </context>
 
 <process>
@@ -34,7 +34,7 @@ Task: $ARGUMENTS (natural language description of what to do)
 ## 1. Validate Environment
 
 ```bash
-ls .planning/ 2>/dev/null || echo "No project — will work on files directly"
+ls docs/ 2>/dev/null || echo "No project — will work on files directly"
 ls paper/*.md 2>/dev/null
 ```
 
@@ -49,8 +49,8 @@ Classify $ARGUMENTS into task type:
 ## 3. Load Minimal Context
 
 ```bash
-MODEL_PROFILE=$(cat .planning/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
-STATE_CONTENT=$(cat .planning/STATE.md 2>/dev/null)
+MODEL_PROFILE=$(cat docs/config.json 2>/dev/null | grep -o '"model_profile"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '"[^"]*"$' | tr -d '"' || echo "balanced")
+STATE_CONTENT=$(cat docs/STATE.md 2>/dev/null)
 ```
 
 Only load files directly relevant to the task. No full context dump.

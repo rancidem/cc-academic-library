@@ -1,6 +1,6 @@
 # Section Prompt Template
 
-Template for `.planning/sections/XX-name/{section}-{plan}-PLAN.md` - executable section plans.
+Template for `docs/sections/XX-name/{section}-{plan}-PLAN.md` - executable section plans.
 
 **Naming:** Use `{section}-{plan}-PLAN.md` format (e.g., `01-02-PLAN.md` for Section 1, Plan 2)
 
@@ -31,15 +31,15 @@ Word target: [Target word count for this plan]
 </execution_context>
 
 <context>
-@.planning/PROJECT.md
-@.planning/ROADMAP.md
-@.planning/structure/argument-map.md
+@docs/PROJECT.md
+@docs/ROADMAP.md
+@docs/structure/argument-map.md
 [If section context exists:]
-@.planning/sections/XX-name/CONTEXT.md
+@docs/sections/XX-name/CONTEXT.md
 [If prior sections relevant:]
-@.planning/sections/YY-name/{section}-SUMMARY.md
+@docs/sections/YY-name/{section}-SUMMARY.md
 [Relevant source files:]
-@.planning/sources/literature.md
+@docs/sources/literature.md
 @paper/prior-section.md
 </context>
 
@@ -124,7 +124,7 @@ Before declaring section complete:
 </success_criteria>
 
 <output>
-After completion, create `.planning/sections/XX-name/{section}-{plan}-SUMMARY.md`:
+After completion, create `docs/sections/XX-name/{section}-{plan}-SUMMARY.md`:
 
 # Section [X] Plan [Y]: [Name] Summary
 
@@ -234,11 +234,11 @@ Word target: 800 words
 </execution_context>
 
 <context>
-@.planning/PROJECT.md
-@.planning/ROADMAP.md
-@.planning/structure/argument-map.md
-@.planning/sections/01-introduction/CONTEXT.md
-@.planning/sources/literature.md
+@docs/PROJECT.md
+@docs/ROADMAP.md
+@docs/structure/argument-map.md
+@docs/sections/01-introduction/CONTEXT.md
+@docs/sources/literature.md
 </context>
 
 <tasks>
@@ -292,7 +292,7 @@ Before declaring section complete:
 </success_criteria>
 
 <output>
-After completion, create `.planning/sections/01-introduction/01-01-SUMMARY.md`
+After completion, create `docs/sections/01-introduction/01-01-SUMMARY.md`
 </output>
 ```
 
@@ -335,7 +335,7 @@ This is useless. No XML structure, no @context, no verification, no specificity.
 **Context references:**
 
 - Use @path/to/file.md to load files
-- Always include @.planning/PROJECT.md and @.planning/ROADMAP.md
+- Always include @docs/PROJECT.md and @docs/ROADMAP.md
 - Include argument-map.md for coherence
 - Include relevant source files (literature, prior sections)
 - Include workflow/template references

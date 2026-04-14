@@ -1,6 +1,6 @@
 # Style Guide Template
 
-Template for `.planning/sources/style-guide.md` — writing conventions for this paper.
+Template for `docs/sources/style-guide.md` — writing conventions for this paper.
 
 **Purpose:** Document the stylistic conventions to follow. Ensures consistency and meets venue requirements.
 

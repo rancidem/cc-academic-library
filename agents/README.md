@@ -16,7 +16,7 @@ Orchestration and reviewer agents live here. This is the canonical home for agen
 | Source map | [resources/source-references.md](resources/source-references.md) |
 | Registry | [resources/bundle-registry.json](resources/bundle-registry.json) |
 | Snapshot | [inventory.json](inventory.json) |
-| State | [.planning/STATE.md](.planning/STATE.md) |
+| State | [docs/STATE.md](docs/STATE.md) |
 
 ## Common Files
 

@@ -1,6 +1,6 @@
 # Review Comments Template
 
-Template for `.planning/revisions/round-[N]/reviewer-comments.md` — importing reviewer feedback.
+Template for `docs/revisions/round-[N]/reviewer-comments.md` — importing reviewer feedback.
 
 **Purpose:** Capture and organize reviewer comments for systematic response.
 
