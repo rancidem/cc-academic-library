@@ -2,24 +2,22 @@
 
 ## Verification
 
-- Missing skill identities: none
-- Extra skill identities: none
-- Missing wtf-p commands: none
-- Extra wtf-p commands: none
-- Missing wtf-p library files: none
-- Extra wtf-p library files: none
-- Missing wcn files: none
-- Extra wcn files: none
+- Source bundles tracked: 6
+- Canonical destination groups tracked: 27
+- .DS_Store entries in inventory: 0
+- Matsen sidecar entries in inventory: 0
+- Registry-driven maintenance rollout: complete
 
-## Completion
+## Current Model
 
-- `paper-2-web`, `matlab`, and `pyzotero` copied into the canonical skills tree
-- `scripts/wtfp-commands` populated from `wtf-p/bin/commands`
-- `scripts/wtfp-lib` populated from `wtf-p/bin/lib`
-- `tools/wcn` mirrored, including examples
-- `matsengrp/plugins` copied into `agents/matsengrp-agents` and `commands/matsengrp-agents`
-- Upstream source bundles moved into `resources/cc-academic-sources/` with local traceability links
-- `inventory.json` generated for future sync checks
-- `resources/source-references.md` added for source bundle traceability and canonical subtree mapping
-- `skills/README.md` added for skills maintenance
-- Remaining delta: zero
+- `resources/cc-academic-sources/` is the upstream mirror.
+- `agents/`, `commands/`, `references/`, `scripts/`, `skills/`, `templates/`, and `tools/` are the canonical published surfaces.
+- `resources/bundle-registry.json` is the authoritative bundle registry.
+- `resources/source-references.md` is generated from the registry.
+- `inventory.json` is generated from the live filesystem.
+
+## Maintenance Notes
+
+- The Matsen plugin sidecar at `resources/matsengrp-agents` remains removed.
+- `.DS_Store` entries are ignored and stripped from the inventory snapshot.
+- Refresh the registry, traceability doc, and inventory together after any source-bundle change.

@@ -7,7 +7,7 @@
 
 ## Source-bundle traceability
 
-- `resources/source-references.md` now points to absolute local clone paths under `/Users/emersonburke/Documents/developer/experiments/cc-academic-library/resources/cc-academic-sources/`. That is accurate for this machine, but it is not portable to other checkouts without regeneration.
+- `resources/source-references.md` now points to relative clone paths under `resources/cc-academic-sources/`. That is portable across checkouts, but it still needs regeneration after bundle moves or renames.
 - The Matsen plugin subtree was flattened into tracked files by removing its nested `.git/` directory. That makes the bundle diffable here, but it also means upstream provenance now depends entirely on the reference table and the local clone path.
 
 ## Maintenance risk

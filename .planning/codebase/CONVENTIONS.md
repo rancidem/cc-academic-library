@@ -17,6 +17,7 @@
 
 ## Traceability and sync rules
 
+- `resources/bundle-registry.json` is the authoritative bundle registry and should be updated before derived docs.
 - `resources/source-references.md` is the authoritative source-to-canonical map for the bundled upstream repos.
 - `inventory.json` is the machine-readable snapshot used for sync checks and drift detection.
 - `skills/README.md` states that any add, move, or delete should be followed by an `inventory.json` refresh and a source-to-canonical diff.

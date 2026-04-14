@@ -1,39 +1,29 @@
 # cc-academic canonical library
 
-This folder is the canonical index for the academic skills library. It mirrors six source bundles:
+This repository is the canonical index for the academic skills library. It mirrors upstream bundles into a stable local layout so agents, commands, references, and tools stay organized and traceable.
 
-- `academic-paper-skills`
-- `claude-scientific-writer`
-- `MySkills`
-- `scientific-agent-skills`
-- `wtf-p`
-- `matsengrp/plugins`
+## What to know
 
-The upstream source repos are stored locally under `resources/cc-academic-sources/` so the traceability links in `resources/source-references.md` point at on-disk clones instead of remote paths.
+- `resources/cc-academic-sources/` is the upstream mirror.
+- `resources/bundle-registry.json` is the source-of-truth registry for bundle mappings.
+- `resources/source-references.md` is generated from the registry and stays human-readable.
+- `inventory.json` is generated from the filesystem and used for drift checks.
+- `resources/matsengrp-agents` has been removed; Matsen content is canonical only in `agents/matsengrp-agents` and `commands/matsengrp-agents`.
 
-## Current status
-
-- Missing skill identities synced: `paper-2-web`, `matlab`, `pyzotero`
-- `wtf-p` command inventory mirrored into `scripts/wtfp-commands`
-- `wtfp` library inventory mirrored into `scripts/wtfp-lib`
-- `tools/wcn` package mirrored, including examples
-- Verification target: no remaining source-to-canonical delta except any deliberate aliasing or deduplication
-- `inventory.json` provides a machine-readable snapshot for future sync checks
-- `resources/source-references.md` tracks the upstream source bundles and canonical subtree mapping
-- `skills/README.md` documents how to create, reorganize, and maintain canonical skills
-
-## Layout
+## Canonical surface
 
 - `agents/` - orchestration and reviewer agents
 - `commands/` - command entrypoints and workflows
 - `references/` - cross-cutting documentation and examples
-- `scripts/` - mirrored `wtf-p` command and library inventory
+- `scripts/` - mirrored command and library utilities
 - `skills/` - canonical skill identities
-- `resources/` - source references and sync metadata
-- `resources/cc-academic-sources/` - local clones of upstream source bundles
 - `templates/` - reusable prompt and document templates
 - `tools/` - mirrored auxiliary tooling, including `wcn`
 
-## Regeneration
+## Maintenance
 
-The canonical tree is built by copying the source bundles into the folder layout above and then re-running the source-to-canonical diff.
+- Run `./scripts/maintenance/refresh.js` to regenerate the registry-derived traceability doc, inventory snapshot, and status summary.
+- Update the bundle registry first when source bundles change.
+- Regenerate `resources/source-references.md` and `inventory.json` together.
+- Keep `.DS_Store` ignored and out of the inventory.
+- Use `.planning/STATE.md` for current work position and `.planning/ROADMAP.md` for the phase plan.

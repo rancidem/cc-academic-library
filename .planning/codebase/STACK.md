@@ -27,6 +27,8 @@
 - `wtf-p` includes Node scripts for preflight, release, and test coverage under `scripts/` and `test/`.
 - `claude-scientific-writer` includes packaging, CLI, verification, and release scripts in `scripts/` plus an example API usage file.
 - `scientific-agent-skills` includes a `scan_skills.py` utility for skill inventory work.
+- `scripts/maintenance/refresh.js` regenerates the registry-derived traceability doc, inventory snapshot, and status summary.
+- `resources/bundle-registry.json` is the authoritative bundle registry used by the maintenance workflow.
 - `inventory.json` is the machine-readable snapshot used to track the canonical tree.
 
 ## Practical Stack Summary

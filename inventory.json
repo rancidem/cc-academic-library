@@ -13,13 +13,58 @@
   "entries": [
     {
       "kind": "file",
+      "path": ".gitignore",
+      "size": 23
+    },
+    {
+      "kind": "file",
+      "path": ".planning/codebase/ARCHITECTURE.md",
+      "size": 2478
+    },
+    {
+      "kind": "file",
+      "path": ".planning/codebase/CONCERNS.md",
+      "size": 1788
+    },
+    {
+      "kind": "file",
+      "path": ".planning/codebase/CONVENTIONS.md",
+      "size": 2031
+    },
+    {
+      "kind": "file",
+      "path": ".planning/codebase/INTEGRATIONS.md",
+      "size": 2549
+    },
+    {
+      "kind": "file",
+      "path": ".planning/codebase/STACK.md",
+      "size": 2615
+    },
+    {
+      "kind": "file",
+      "path": ".planning/codebase/STRUCTURE.md",
+      "size": 3927
+    },
+    {
+      "kind": "file",
+      "path": ".planning/codebase/TESTING.md",
+      "size": 2175
+    },
+    {
+      "kind": "file",
       "path": ".planning/PROJECT.md",
-      "size": 2330
+      "size": 2826
     },
     {
       "kind": "file",
       "path": ".planning/quick/.gitkeep",
       "size": 1
+    },
+    {
+      "kind": "file",
+      "path": ".planning/quick/README.md",
+      "size": 445
     },
     {
       "kind": "file",
@@ -29,12 +74,12 @@
     {
       "kind": "file",
       "path": ".planning/ROADMAP.md",
-      "size": 2366
+      "size": 5300
     },
     {
       "kind": "file",
       "path": ".planning/STATE.md",
-      "size": 1358
+      "size": 1685
     },
     {
       "kind": "agent",
@@ -344,12 +389,12 @@
     {
       "kind": "file",
       "path": "inventory.json",
-      "size": 650372
+      "size": 648991
     },
     {
       "kind": "file",
       "path": "README.md",
-      "size": 1772
+      "size": 1545
     },
     {
       "kind": "reference",
@@ -440,6 +485,11 @@
       "kind": "reference",
       "path": "references/wtfp/ui-brand.md",
       "size": 6207
+    },
+    {
+      "kind": "resource",
+      "path": "resources/bundle-registry.json",
+      "size": 3699
     },
     {
       "kind": "resource",
@@ -10179,7 +10229,17 @@
     {
       "kind": "resource",
       "path": "resources/source-references.md",
-      "size": 3931
+      "size": 3245
+    },
+    {
+      "kind": "script",
+      "path": "scripts/maintenance/README.md",
+      "size": 1095
+    },
+    {
+      "kind": "script",
+      "path": "scripts/maintenance/refresh.js",
+      "size": 7324
     },
     {
       "kind": "script",
@@ -18204,7 +18264,7 @@
     {
       "kind": "skill",
       "path": "skills/README.md",
-      "size": 1674
+      "size": 1874
     },
     {
       "kind": "skill",
@@ -19709,7 +19769,7 @@
     {
       "kind": "file",
       "path": "STATUS.md",
-      "size": 962
+      "size": 919
     },
     {
       "kind": "template",
@@ -19908,5 +19968,5 @@
     }
   ],
   "format": "cc-academic-canonical-inventory/v1",
-  "generated": "2026-04-14T11:20:01.285Z"
+  "generated": "2026-04-14T11:32:17.380Z"
 }

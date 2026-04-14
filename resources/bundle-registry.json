@@ -1,0 +1,88 @@
+{
+  "version": "1",
+  "updated": "2026-04-14",
+  "notes": "Relative paths are anchored at the repository root so the registry can move across machines without rewriting the file.",
+  "bundles": [
+    {
+      "name": "academic-paper-skills",
+      "summary": "Systematic philosophy and interdisciplinary paper-writing workflows with strategist and composer skills, validation gates, and research-to-manuscript support.",
+      "sourcePath": "resources/cc-academic-sources/academic-paper-skills",
+      "sourceReadme": "resources/cc-academic-sources/academic-paper-skills/README.md",
+      "canonicalDestinations": [
+        "skills/writing-research/academic-paper-composer",
+        "skills/writing-research/academic-paper-strategist",
+        "references/examples"
+      ],
+      "promotion": "partial"
+    },
+    {
+      "name": "claude-scientific-writer",
+      "summary": "Claude Code plugin and Python package for deep research writing, citation-backed scientific documents, and related academic outputs.",
+      "sourcePath": "resources/cc-academic-sources/claude-scientific-writer",
+      "sourceReadme": "resources/cc-academic-sources/claude-scientific-writer/README.md",
+      "canonicalDestinations": [
+        "commands/scientific-writer-init.md",
+        "skills/writing-research/paper-2-web",
+        "scripts/academic-paper-composer",
+        "scripts/academic-paper-strategist"
+      ],
+      "promotion": "partial"
+    },
+    {
+      "name": "MySkills",
+      "summary": "Paper Visualizer skill bundle focused on turning papers into high-fidelity technical schematics and related visual outputs.",
+      "sourcePath": "resources/cc-academic-sources/MySkills",
+      "sourceReadme": "resources/cc-academic-sources/MySkills/README.md",
+      "canonicalDestinations": [
+        "skills/visualization/visual-architect"
+      ],
+      "promotion": "partial"
+    },
+    {
+      "name": "scientific-agent-skills",
+      "summary": "Large Agent Skills collection covering scientific libraries, databases, workflows, and domain-specific research operations.",
+      "sourcePath": "resources/cc-academic-sources/scientific-agent-skills",
+      "sourceReadme": "resources/cc-academic-sources/scientific-agent-skills/README.md",
+      "canonicalDestinations": [
+        "skills/bioinformatics",
+        "skills/cheminformatics",
+        "skills/clinical-medical",
+        "skills/computational-biology",
+        "skills/data-science",
+        "skills/document-formats",
+        "skills/earth-geo-astro",
+        "skills/lab-automation",
+        "skills/machine-learning",
+        "skills/misc",
+        "skills/quantum-computing",
+        "skills/visualization",
+        "skills/writing-research"
+      ],
+      "promotion": "partial"
+    },
+    {
+      "name": "wtf-p",
+      "summary": "WTF-P writing framework for structured academic authoring, citation grounding, outline execution, and quality checks.",
+      "sourcePath": "resources/cc-academic-sources/wtf-p",
+      "sourceReadme": "resources/cc-academic-sources/wtf-p/README.md",
+      "canonicalDestinations": [
+        "references/wtfp",
+        "scripts/wtfp-commands",
+        "scripts/wtfp-lib",
+        "tools/wcn"
+      ],
+      "promotion": "partial"
+    },
+    {
+      "name": "matsengrp/plugins",
+      "summary": "Claude Code plugin with specialized agents, a pre-PR checklist command, and desktop notification hooks.",
+      "sourcePath": "resources/cc-academic-sources/matsengrp/plugins",
+      "sourceReadme": "resources/cc-academic-sources/matsengrp/plugins/README.md",
+      "canonicalDestinations": [
+        "agents/matsengrp-agents",
+        "commands/matsengrp-agents"
+      ],
+      "promotion": "split"
+    }
+  ]
+}

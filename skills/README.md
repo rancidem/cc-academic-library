@@ -11,15 +11,16 @@ This directory is the canonical skills index. Keep it stable, deterministic, and
 - When a source bundle uses a nested package layout, flatten only if the canonical path already establishes a better home; otherwise mirror the source structure.
 - Do not leave empty category directories unless they are intentional placeholders.
 - If a skill is renamed in canonical form, record the alias in the root inventory or status file so sync checks can still trace it.
-- After any add, move, or delete, regenerate `inventory.json` and re-run the source-to-canonical diff.
+- After any add, move, or delete, update the bundle registry if the source bundle mapping changed, regenerate `resources/source-references.md`, regenerate `inventory.json`, and re-run the source-to-canonical diff.
 
 ## Maintenance Workflow
 
 1. Copy new source files into the canonical path.
 2. Confirm the skill name and frontmatter match the source identity.
-3. Update the inventory snapshot.
-4. Check for duplicate identities, missing companions, and empty directories.
-5. Update the root `STATUS.md` if the sync state changed.
+3. Update the bundle registry if the mapping changed.
+4. Regenerate `resources/source-references.md` and `inventory.json`.
+5. Check for duplicate identities, missing companions, and empty directories.
+6. Update the root `STATUS.md` if the sync state changed.
 
 ## Suggested Layout
 

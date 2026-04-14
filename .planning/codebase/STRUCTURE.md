@@ -40,6 +40,7 @@
   - `scientific-agent-skills`
   - `wtf-p`
   - `matsengrp/plugins`
+- `resources/bundle-registry.json` defines the bundle-to-canonical mapping.
 - `resources/source-references.md` is the main traceability table from upstream bundle to local clone and canonical mapping.
 
 ### `scripts/`
@@ -48,6 +49,7 @@
 - `scripts/wtfp-lib/` holds the library-side mirroring of `wtf-p`.
 - `scripts/academic-paper-composer/` and `scripts/academic-paper-strategist/` are populated from the paper-writing bundle.
 - `scripts/scientific/` is present as a grouped area for scientific utilities.
+- `scripts/maintenance/` contains the refresh and audit entrypoints for registry, inventory, and status maintenance.
 
 ### `skills/`
 

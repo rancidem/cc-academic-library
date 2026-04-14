@@ -14,12 +14,14 @@ Keep the canonical library organized, accurate, and easy to sync back to upstrea
 
 - ✓ Existing academic skills tree remains stable and navigable
 - ✓ Imported source bundles retain traceable upstream provenance
+- ✓ The Matsen plugin sidecar `resources/matsengrp-agents` has been removed
 
 ### Active
 
 - [ ] New upstream bundles can be added without breaking the canonical layout
 - [ ] Quick tasks can track work in `.planning/quick/`
 - [ ] Source-to-canonical mapping stays explicit in metadata
+- [ ] Registry, traceability doc, inventory, and status stay synchronized
 
 ### Out of Scope
 
@@ -28,24 +30,27 @@ Keep the canonical library organized, accurate, and easy to sync back to upstrea
 
 ## Context
 
-- The tree already contains multiple academic skill families, command entrypoints, and reference bundles.
-- The Matsen Group plugin bundle was added as a grouped subtree under `agents/`, `commands/`, and `resources/`.
-- The upstream source bundles are now stored locally under `resources/cc-academic-sources/` and the reference table points at those clones.
-- The repository is now initialized as a git repository so future imports can be committed cleanly.
+- `resources/cc-academic-sources/` is the upstream mirror and local source-bundle workspace.
+- `agents/`, `commands/`, `references/`, `scripts/`, `skills/`, `templates/`, and `tools/` are the canonical published surfaces.
+- `resources/bundle-registry.json` is the authoritative bundle registry.
+- `resources/source-references.md` is generated from the registry for human-readable traceability.
+- `inventory.json` is generated from the live filesystem for drift detection.
 
 ## Constraints
 
 - **Organization**: Keep each imported bundle grouped under a distinct subtree — avoid mixing source identities.
-- **Traceability**: Update `resources/source-references.md` and `inventory.json` whenever source bundles change.
-- **Low drift**: Prefer small, reviewable metadata updates over broad reorganizations.
+- **Traceability**: Update the bundle registry, `resources/source-references.md`, `STATUS.md`, and `inventory.json` together whenever source bundles change.
+- **Low drift**: Prefer generated metadata plus small, reviewable maintenance updates over broad reorganizations.
+- **Hygiene**: Ignore `.DS_Store` and remove other local noise before committing maintenance snapshots.
 
 ## Key Decisions
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Group `matsengrp/plugins` under dedicated subtrees | Preserves upstream identity without colliding with existing academic skills | ✓ Good |
+| Group `matsengrp/plugins` under dedicated canonical subtrees | Preserves upstream identity without colliding with existing academic skills | ✓ Good |
+| Remove `resources/matsengrp-agents` from the canonical tree | Avoids a redundant metadata sidecar with no active consumer | ✓ Good |
 | Treat the repo as a canonical index rather than a code project | Matches the existing library structure and keeps maintenance simple | ✓ Good |
-| Track source provenance in `resources/source-references.md` and `inventory.json` | Makes sync checks and future imports auditable | ✓ Good |
+| Track source provenance in a registry plus generated traceability docs | Makes sync checks and future imports auditable | ✓ Good |
 
 ---
-*Last updated: 2026-04-14 after Matsen Group plugin import*
+*Last updated: 2026-04-14 during registry and maintenance automation rollout*

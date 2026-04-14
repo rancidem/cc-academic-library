@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-04-14)
 
 **Core value:** Keep the canonical library organized, accurate, and easy to sync back to upstream sources.
-**Current focus:** Source-bundle relocation and traceability update
+**Current focus:** Maintenance rollout complete; keep registry, traceability, inventory, and docs synchronized
 
 ## Current Position
 
-Phase: 2 of 3 (Quick-task tracking)
-Plan: 0 of TBD in current phase
-Status: Ready to plan
-Last activity: 2026-04-14 — Moved upstream source bundles into `resources/cc-academic-sources/` and rewrote local traceability links
+Phase: 7 of 7 (Stabilize The Maintenance Docs)
+Plan: 1 of TBD in current phase
+Status: Complete
+Last activity: 2026-04-14 — Completed registry-driven maintenance rollout, regenerated traceability and inventory, and removed the Matsen sidecar plus .DS_Store noise
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
@@ -33,7 +33,7 @@ Progress: [░░░░░░░░░░] 0%
 - Last 5 plans: none
 - Trend: Stable
 
-*Updated after initialization*
+*Updated during autonomous maintenance rollout*
 
 ## Accumulated Context
 
@@ -43,7 +43,10 @@ Decisions are logged in PROJECT.md Key Decisions table.
 Recent decisions affecting current work:
 
 - [Init]: Dedicated subtree for `matsengrp/plugins`
-- [Update]: Local source bundles now live in `resources/cc-academic-sources/`
+- [Update]: Local source bundles live in `resources/cc-academic-sources/`
+- [Update]: `resources/matsengrp-agents` removed from the canonical tree
+- [Update]: `resources/bundle-registry.json` is now the bundle source of truth
+- [Update]: Registry-driven maintenance workflow implemented with refresh and audit entrypoints
 
 ### Pending Todos
 
@@ -56,5 +59,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-04-14 00:00
-Stopped at: Updated source references and regenerated the inventory snapshot
+Stopped at: Completed registry-driven maintenance rollout
 Resume file: None

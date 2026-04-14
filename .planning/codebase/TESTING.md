@@ -8,6 +8,7 @@
 
 ## Repo-local checks that act like tests
 
+- `scripts/maintenance/refresh.js audit` verifies bundle paths, canonical destinations, `.DS_Store` leakage, and removed Matsen sidecar references.
 - `skills/README.md` instructs maintainers to regenerate `inventory.json` after any add, move, or delete.
 - The same workflow expects a source-to-canonical diff rerun after each structural change.
 - `STATUS.md` provides the visible verification summary, including missing/extra identity counts and the remaining delta.
@@ -23,6 +24,7 @@
 ## Recommended check sequence for mapping work
 
 - Inspect the changed docs and source-reference rows.
+- Run `node scripts/maintenance/refresh.js`.
 - Regenerate `inventory.json`.
 - Confirm the inventory line counts and source paths still match the filesystem.
 - Review `STATUS.md` for any remaining delta or sync warning.

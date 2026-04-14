@@ -16,6 +16,7 @@
 
 ## Upstream Repositories And Local Traceability
 
+- `resources/bundle-registry.json` is the registry that drives the generated traceability doc and the refresh workflow.
 - `resources/source-references.md` is the cross-reference table that maps each upstream source bundle to its local clone and canonical subtree.
 - The mapped source bundles currently include `academic-paper-skills`, `claude-scientific-writer`, `MySkills`, `scientific-agent-skills`, `wtf-p`, and `matsengrp/plugins`.
 - The upstream source repos are stored locally under `resources/cc-academic-sources/`, not referenced only by remote URLs.
@@ -30,5 +31,5 @@
 
 ## Integration Summary
 
-- The repo bridges local documentation with upstream source clones, while preserving remote provenance in a single markdown table.
+- The repo bridges local documentation with upstream source clones, while preserving provenance in a generated markdown table backed by a registry.
 - The main live integrations are Claude Code plugin hooks, macOS notifications, and the runtimes required by the mirrored Python and Node subprojects.
