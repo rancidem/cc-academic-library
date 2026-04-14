@@ -3,6 +3,9 @@
 ## 2026-04-14
 
 - Added task categories and featured workflow stacks to the library so the dashboard now feels closer to a curated skills catalog.
+- Added `library/start-here.md` and `library/glossary.md` so the repo-first dashboard is usable for non-experts without extra explanation.
+- Normalized the repository summary page so every repo now uses the same plain-language schema for first step, install/setup, raw download, use, why choose it, and caution.
+- Added best-first item callouts to the dashboard and plain-language starter guidance to the inventory, commands, agents, skills, and tools indexes.
 - Re-centered the dashboard around repository-first navigation with repo summaries as the main path and task/category pages as helpers.
 - Refreshed the `.planning` docs so the project scope, requirements, roadmap, stack, integrations, and state all describe the action-first install/download workflow.
 - Added action-first navigation for review, download, and install/setup workflows.

@@ -13,6 +13,8 @@ Curated supporting references, docs, manifests, and maintenance pages for the li
 
 | Need | Resource | Why it matters | Open |
 |---|---|---|---|
+| Start from zero | library/start-here.md | Plain-language first path through the library | [open](start-here.md) |
+| Clarify terms | library/glossary.md | Short definitions for skills, commands, plugins, raw links, and install paths | [open](glossary.md) |
 | Browse by task | library/categories.md | Category-style navigation for review, download, and install flows | [open](categories.md) |
 | Featured stacks | library/stacks.md | Curated workflow bundles with the shortest path to use | [open](stacks.md) |
 | Review raw skill files | library/skills.md | Direct raw `SKILL.md` links and folder contents for download | [open](skills.md) |
@@ -30,6 +32,8 @@ Curated supporting references, docs, manifests, and maintenance pages for the li
 | Project | repos/README.md | Quick navigation table for the cloned repositories | [open](../repos/README.md) |
 | Library | library/inventory.md | Master catalog of commands, agents, skills, and tools | [open](inventory.md) |
 | Library | library/repositories.md | Detailed per-repo comparison and usage notes | [open](repositories.md) |
+| Library | library/start-here.md | Beginner guide with first-step and recommended-path notes | [open](start-here.md) |
+| Library | library/glossary.md | Definitions for core repo, install, and raw-link terms | [open](glossary.md) |
 | Library | library/taxonomy.md | Controlled tags and search terms | [open](taxonomy.md) |
 | Library | library/entry-template.md | Shared schema for new entries | [open](entry-template.md) |
 | Library | library/commands.md | Command entry index | [open](commands.md) |

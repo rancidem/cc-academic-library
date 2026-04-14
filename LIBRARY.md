@@ -6,20 +6,22 @@ Last refreshed: 2026-04-14.
 
 ## Start Here
 
-This dashboard is organized by repository first. Pick a repo, then use the repo summary to reach the exact install, download, or use path.
+This dashboard is organized by repository first. If you are new to this library, open `library/start-here.md` first, then pick a repo and use the repo summary to reach the exact install, download, or use path.
 
 ### Repositories
 
-| Repo | Best for | Open |
-|---|---|---|
-| MySkills | One reusable skill and the simplest skill bundle pattern | [summary](library/repositories.md#myskills) |
-| academic-paper-skills | Paper planning and composition with checkpoints | [summary](library/repositories.md#academic-paper-skills) |
-| wtf-p | Installable command-first academic writing workflows | [summary](library/repositories.md#wtf-p) |
-| claude-scientific-writer | Research-backed writing with plugin, CLI, and package support | [summary](library/repositories.md#claude-scientific-writer) |
-| scientific-agent-skills | Broad scientific Agent Skills catalog | [summary](library/repositories.md#scientific-agent-skills) |
+| Repo | Best for | Best first item | Open |
+|---|---|---|---|
+| MySkills | One reusable skill and the simplest skill bundle pattern | `paper-visualizer` | [summary](library/repositories.md#myskills) |
+| academic-paper-skills | Paper planning and composition with checkpoints | `academic-paper-strategist` | [summary](library/repositories.md#academic-paper-skills) |
+| wtf-p | Installable command-first academic writing workflows | `/wtfp:create-outline` | [summary](library/repositories.md#wtf-p) |
+| claude-scientific-writer | Research-backed writing with plugin, CLI, and package support | `scientific-writing` | [summary](library/repositories.md#claude-scientific-writer) |
+| scientific-agent-skills | Broad scientific Agent Skills catalog | `scientific-brainstorming` | [summary](library/repositories.md#scientific-agent-skills) |
 
 ### Fast Access
 
+- [Start here guide](library/start-here.md) - plain-language beginner path through the library
+- [Glossary](library/glossary.md) - short definitions for skills, commands, agents, plugins, raw links, and install paths
 - [Repo quick-nav](repos/README.md) - direct links to each cloned repository
 - [Repository summaries](library/repositories.md) - detailed per-repo comparison and usage notes
 - [Library inventory](library/inventory.md) - full cross-type catalog for quick review
@@ -31,8 +33,8 @@ This dashboard is organized by repository first. Pick a repo, then use the repo 
 
 ### Helper Views
 
-- [Browse by task](library/categories.md) - task-first entry points
-- [Featured stacks](library/stacks.md) - curated workflow combinations
+- [Browse by task](library/categories.md) - backup task-first entry points
+- [Featured stacks](library/stacks.md) - optional curated workflow combinations
 - [Entry template](library/entry-template.md) - shared schema for new entries
 - [Taxonomy](library/taxonomy.md) - controlled tags and search terms
 
@@ -51,14 +53,17 @@ This dashboard is organized by repository first. Pick a repo, then use the repo 
 ## Current State
 
 - The dashboard is repository-first and optimized for quick personal navigation.
+- The beginner path now starts with `library/start-here.md` and `library/glossary.md`.
 - The repo summaries expose install, download, and use paths directly.
-- The helper views remain available for task browsing and curated stacks.
+- The helper views remain available for task browsing and curated stacks, but they are secondary to the repo summaries.
 - Phase 4 is focused on maintenance, refreshes, and personal usability.
 - The next useful work is tightening summaries and keeping the repo pages easy to scan.
 
 ## Most Useful Now
 
 - `library/repositories.md` - best when you want the fastest route to a specific repo and its install/use path.
+- `library/start-here.md` - best when you want a plain-language first path through the library.
+- `library/glossary.md` - best when terms like skill, command, plugin, or raw link are unclear.
 - `repos/README.md` - best when you want a compact repo selector.
 - `library/inventory.md` - best when you want every command, agent, skill, and tool in one place.
 - `library/categories.md` - best when you want a task-first starting point instead of a repo-first index.
@@ -119,6 +124,7 @@ This dashboard is organized by repository first. Pick a repo, then use the repo 
 ## Maintenance Rules
 
 - Keep `LIBRARY.md` as the first page you open.
+- Keep `library/start-here.md` and `library/glossary.md` aligned with the repo summaries.
 - Use `library/inventory.md` for the full command, agent, skill, and tool catalog.
 - Use `library/commands.md`, `library/agents.md`, `library/skills.md`, and `library/tools.md` for type-specific browsing.
 - Use `library/repositories.md` for detailed repo comparison.

@@ -3,6 +3,18 @@
 Inventory of commands discovered across the cloned repositories.
 Use the repo sections below to browse commands, then open the local link for in-project inspection or the raw link for the source file.
 
+## Beginner Use
+
+- Start with [repositories.md](repositories.md) if you are not sure whether you need commands or skills.
+- Open the repo's `Best first` file before scanning the command table.
+- Use the `Raw` link when you want the exact command file.
+- Use `How to use` as the plain-language instruction line.
+
+## Best First Commands
+
+- wtf-p: `/wtfp:create-outline`
+- claude-scientific-writer: `/scientific-writer:init`
+
 ## Repository Summary
 
 | Repo | Commands | Agents | Skills | Tools | Total | Best first | Notes |

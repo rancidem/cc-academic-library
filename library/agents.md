@@ -3,6 +3,17 @@
 Inventory of agents discovered across the cloned repositories.
 Use the repo sections below to browse agents, then open the local link for in-project inspection or the raw link for the source file.
 
+## Beginner Use
+
+- Start with [repositories.md](repositories.md) if you are not sure whether you need an agent or a command.
+- Only `wtf-p` currently contributes agent files in this library.
+- Open the repo's `Best first` file before scanning the agent table.
+- Use the `Raw` link when you want the exact agent file.
+
+## Best First Agent
+
+- wtf-p: `wtfp-section-planner`
+
 ## Repository Summary
 
 | Repo | Commands | Agents | Skills | Tools | Total | Best first | Notes |

@@ -3,6 +3,22 @@
 Inventory of skills discovered across the cloned repositories.
 Use the repo sections below to browse skills, then open the local link for in-project inspection or the raw link for the source file.
 
+## Beginner Use
+
+- Start with [repositories.md](repositories.md) if you do not know which skill repo to choose.
+- Open the repo's `Best first` file before scanning the skill rows.
+- Use the `Raw` link when you want the exact `SKILL.md` file.
+- Use the `Contents` column to see whether you also need `references/`, `scripts/`, `assets/`, or `examples/`.
+- Use `How to use` as the plain-language install or copy step.
+
+## Best First Skills
+
+- MySkills: `paper-visualizer`
+- academic-paper-skills: `academic-paper-strategist`
+- wtf-p: `wtfp-marp`
+- claude-scientific-writer: `scientific-writing`
+- scientific-agent-skills: `scientific-brainstorming`
+
 ## Download And Install
 
 - Use the `Raw` link in each row when you want the exact `SKILL.md` file.

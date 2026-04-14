@@ -1,6 +1,6 @@
 # Task Categories
 
-Use this page when you want a backup task-first view rather than the repository-first dashboard.
+Use this page only when you want a backup task-first view rather than the repository-first dashboard.
 
 ## Review, Download, Install
 

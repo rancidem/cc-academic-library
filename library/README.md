@@ -5,6 +5,8 @@ This folder is the working index for the project, but `../LIBRARY.md` is the das
 ## What Lives Here
 
 - [`../LIBRARY.md`](../LIBRARY.md) - master catalog and personal dashboard
+- [Start here](start-here.md) - plain-language beginner guide
+- [Glossary](glossary.md) - short definitions for common library terms
 - [Browse by task](categories.md) - backup task-first entry points for review, download, and install flows
 - [Featured stacks](stacks.md) - curated workflow combinations
 - [Library inventory](inventory.md) - full command, agent, skill, and tool catalog
@@ -20,13 +22,14 @@ This folder is the working index for the project, but `../LIBRARY.md` is the das
 ## How To Use It
 
 1. Start with `../LIBRARY.md` for the current state and best entry points.
-2. Use `repositories.md` when you want the fastest path to a whole repo's open/download/install/use flow.
-3. Use `categories.md` when you want a task-first entry point.
-4. Use `stacks.md` when you want a curated workflow bundle.
-5. Use `inventory.md` when you want the complete catalog across commands, agents, skills, and tools.
-6. Use `commands.md`, `agents.md`, `skills.md`, and `tools.md` when you want a type-specific index.
-7. Use `resources.md` when you want reusable references, not just repo navigation.
-8. Tag new entries with the controlled taxonomy before expanding the index.
+2. If you are new to the library terms or workflow, use `start-here.md` and `glossary.md`.
+3. Use `repositories.md` when you want the fastest path to a whole repo's open/download/install/use flow.
+4. Use `categories.md` only when you want a task-first entry point.
+5. Use `stacks.md` only when you want a curated workflow bundle.
+6. Use `inventory.md` when you want the complete catalog across commands, agents, skills, and tools.
+7. Use `commands.md`, `agents.md`, `skills.md`, and `tools.md` when you want a type-specific index.
+8. Use `resources.md` when you want reusable references, not just repo navigation.
+9. Tag new entries with the controlled taxonomy before expanding the index.
 
 ## Status
 

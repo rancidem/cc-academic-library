@@ -2,6 +2,18 @@
 
 Use this template for every item in the library so tools, skills, and resources stay comparable.
 
+## Repository Summary Schema
+
+Use this structure for every repo summary in `library/repositories.md`.
+
+- What it is
+- What do I do first?
+- Install / setup
+- Download / raw
+- How to use
+- Why choose it
+- Caution
+
 ## Required Fields
 
 - Name
@@ -58,6 +70,7 @@ Use this template for every item in the library so tools, skills, and resources 
 ## Usage Rules
 
 - Keep fields in the same order across entries.
+- Keep repo summaries in the same order as the repository summary schema.
 - Use short controlled tags instead of free-form prose keywords.
 - Prefer explicit source paths over vague references.
 - Keep the first line summary short enough for quick scanning.

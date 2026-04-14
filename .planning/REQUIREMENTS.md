@@ -6,6 +6,9 @@
 - Keep `LIBRARY.md` as the first-page dashboard.
 - Keep `LIBRARY.md` repository-first so a beginner can reach the right repo quickly.
 - Keep `LIBRARY.md` organized for review, raw download, and install/setup workflows.
+- Keep `library/start-here.md` as the plain-language beginner guide.
+- Keep `library/glossary.md` as the short definitions page for library terms.
+- Keep the type indexes readable for beginners with plain-language starter notes and best-first item callouts.
 - Keep task-first browsing and featured workflow bundles available from the dashboard.
 - Keep `library/inventory.md` as the full command, agent, skill, and tool inventory.
 - Keep `library/repositories.md` as the detailed per-repo summary page.
@@ -21,6 +24,7 @@
 
 - Each command, agent, skill, and tool entry must explain what it does, what it contains, when to use it, where to open or download it, and how to install or set it up when relevant.
 - Each repository summary must show the best first document to open.
+- Each repository summary must use the same plain-language schema for what it is, first step, install/setup, raw download, use, why choose it, and caution.
 - Each entry should include useful tags, keywords, or related links when applicable.
 - Tool and skill entries should expose raw source links prominently for direct download.
 

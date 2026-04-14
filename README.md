@@ -11,6 +11,8 @@ Build a structured, searchable, and maintainable inventory of Claude Code tools,
 ## Layout
 
 - `LIBRARY.md` - single canonical dashboard and master catalog
+- `library/start-here.md` - plain-language beginner guide
+- `library/glossary.md` - short definitions for common library terms
 - `repos/README.md` - quick navigation table for the cloned repositories
 - `library/README.md` - library-folder landing page
 - `library/categories.md` - backup task-first catalog navigation
@@ -31,6 +33,7 @@ Build a structured, searchable, and maintainable inventory of Claude Code tools,
 
 - The project is organized around a single dashboard-first workflow.
 - `LIBRARY.md` is the canonical start page.
+- `library/start-here.md` and `library/glossary.md` support beginner use without changing the repo-first structure.
 - The repo summaries are the primary navigation layer, with quick-nav, task categories, featured stacks, and indexed command/agent/skill/tool inventories available as helpers.
 - The planning docs and maintenance notes are synchronized with the current library structure.
 - The local source set has been trimmed toward Claude Code-only usage where runtime mirrors were redundant.
@@ -40,8 +43,8 @@ Build a structured, searchable, and maintainable inventory of Claude Code tools,
 ## Next Steps
 
 1. Keep the repo summaries current when upstream READMEs or structures change.
-2. Use `LIBRARY.md` as the main start page, `library/repositories.md` for deep comparison, and `library/categories.md` only as a helper view.
+2. Use `LIBRARY.md` as the main start page, `library/start-here.md` and `library/glossary.md` when terms or next steps are unclear, and `library/repositories.md` for deep comparison.
 3. Keep source sync notes and index refreshes in `.planning/` and `notes/`.
 4. Expand tool and resource entries as new reusable items are discovered.
 5. Keep the dashboard concise so it stays useful at a glance.
-6. Keep the task categories and featured stacks aligned with the underlying repository summaries.
+6. Keep the task categories and featured stacks aligned with the underlying repository summaries and secondary to them.

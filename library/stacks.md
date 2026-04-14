@@ -1,6 +1,6 @@
 # Featured Stacks
 
-Curated workflow bundles for the most common ways to use this library.
+Curated workflow bundles for the most common ways to use this library after you have already picked a repo or use case.
 
 ## Stack Overview
 
@@ -15,6 +15,7 @@ Curated workflow bundles for the most common ways to use this library.
 ## How To Use This Page
 
 - Pick the stack that matches your intent first, then open the matching repository summary.
+- Treat this page as a helper, not the main dashboard.
 - Open the `Best first` link when you want the source repo overview.
 - Use the `Install / setup` notes when you want the shortest path to a usable local setup.
 - Use the `Download / raw` notes when you want the source files directly.

@@ -3,6 +3,18 @@
 Inventory of tools discovered across the cloned repositories.
 Use the repo sections below to browse tools, then open the local link for in-project inspection or the raw link for the source file.
 
+## Beginner Use
+
+- Start with [repositories.md](repositories.md) if you are not sure whether you need a tool root or a skill file.
+- Open the repo's `Best first` file before scanning the tool table.
+- Use the `Raw` link when you want the exact manifest, package file, or tool root entry file.
+- Use `How to use` as the plain-language install or runtime note.
+
+## Best First Tools
+
+- wtf-p: `Claude plugin manifest`
+- claude-scientific-writer: `Scientific Writer package`
+
 ## Download And Install
 
 - Use the `Raw` link in each row when you want the exact source file.

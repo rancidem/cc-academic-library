@@ -3,6 +3,22 @@
 Inventory of commands, agents, skills, and tools discovered across the cloned repositories.
 Use the repo sections below to browse items, then open the local link for in-project inspection or the raw link for the download-ready source.
 
+## Beginner Use
+
+- Start with [repositories.md](repositories.md) if you do not know which repo to pick yet.
+- Use the repo rows below when you already know you want one repo's commands, agents, skills, or tools.
+- Open the `Best first` file before scanning long tables.
+- Use the `Raw` link when you want the exact source file.
+- Use `How to use` as the plain-language instruction line.
+
+## Best First Items
+
+- MySkills: `paper-visualizer`
+- academic-paper-skills: `academic-paper-strategist`
+- wtf-p: `/wtfp:create-outline`
+- claude-scientific-writer: `scientific-writing`
+- scientific-agent-skills: `scientific-brainstorming`
+
 ## Repository Summary
 
 | Repo | Commands | Agents | Skills | Tools | Total | Best first | Notes |
