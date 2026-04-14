@@ -422,11 +422,6 @@
     },
     {
       "kind": "file",
-      "path": "IDEA.md",
-      "size": 1235
-    },
-    {
-      "kind": "file",
       "path": "inventory.json",
       "size": 653542
     },
@@ -20212,5 +20207,5 @@
     }
   ],
   "format": "cc-academic-canonical-inventory/v1",
-  "generated": "2026-04-14T12:13:43.296Z"
+  "generated": "2026-04-14T12:16:48.030Z"
 }
