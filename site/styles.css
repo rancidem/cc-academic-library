@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root{
   --bg:#ffffff;
@@ -11,6 +12,11 @@
   --rust:#ae3300;
   --line:#000000;
   --soft:#f5f5f5;
+
+  /* Font stack */
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  --font-mono: 'Courier New', Courier, monospace;
 
   /* Domain accent colors — applied to .p1 on domain and skill entry pages */
   --accent-bioinformatics:    #2e7d32;
@@ -39,15 +45,24 @@ html,body{
   padding:0;
   background:var(--bg);
   color:var(--text);
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:var(--font-body);
   font-size:16px;
-  line-height:1.55;
+  line-height:1.6;
 }
 a{color:var(--link);text-decoration:underline}
 a:visited{color:var(--visited)}
 a:hover{background:var(--gold); color:#000}
 .skip-to-content{position:absolute;top:-40px;left:0;background:var(--dark);color:#fff;padding:8px 12px;text-decoration:none;z-index:100}
 .skip-to-content:focus{top:0}
+
+/* Display font for headings and titles */
+.site-title,
+.section-title,
+.sub-title,
+.entry-title-bar,
+.panel-head {
+  font-family: var(--font-display);
+}
 
 .page{
   width:100%;
@@ -58,9 +73,9 @@ a:hover{background:var(--gold); color:#000}
 
 .site-title{
   margin:0 0 4px 0;
-  font-size:34px;
-  font-weight:normal;
-  letter-spacing:.02em;
+  font-size:36px;
+  font-weight:400;
+  letter-spacing:-.01em;
 }
 .top-meta{
   font-size:12px;
@@ -106,8 +121,8 @@ a:hover{background:var(--gold); color:#000}
   background:var(--dark);
   color:#fff;
   font-size:11px;
-  font-weight:bold;
-  letter-spacing:.1em;
+  font-weight:600;
+  letter-spacing:.12em;
   border-left:4px solid var(--gold);
 }
 .system-subhead{
@@ -115,8 +130,8 @@ a:hover{background:var(--gold); color:#000}
   border-bottom:1px solid #ddd;
   background:#f8f8f4;
   font-size:10px;
-  font-weight:bold;
-  letter-spacing:.1em;
+  font-weight:500;
+  letter-spacing:.12em;
   color:#777;
   border-left:4px solid #ddd;
 }
@@ -263,8 +278,9 @@ a:hover{background:var(--gold); color:#000}
 .doc-desc{
   text-transform:none;
   max-width:68ch;
+  line-height:1.65;
 }
-.breadcrumb{font-size:12px;margin-bottom:10px}
+.breadcrumb{font-size:12px;font-weight:500;letter-spacing:.04em;margin-bottom:10px}
 .notice{
   border:2px solid var(--line);
   background:var(--soft);
@@ -281,13 +297,13 @@ a:hover{background:var(--gold); color:#000}
 }
 .section-title{
   margin:0 0 10px 0;
-  font-size:24px;
-  font-weight:bold;
+  font-size:26px;
+  font-weight:700;
 }
 .sub-title{
   margin:20px 0 8px 0;
-  font-size:18px;
-  font-weight:bold;
+  font-size:19px;
+  font-weight:600;
 }
 .rule{
   border-top:2px solid var(--line);
@@ -316,7 +332,7 @@ a:hover{background:var(--gold); color:#000}
   padding:10px;
   vertical-align:top;
 }
-.panel-head{font-size:16px;font-weight:bold;margin:0 0 6px 0}
+.panel-head{font-size:17px;font-weight:600;margin:0 0 6px 0}
 .panel-repos{background:var(--olive)}
 .panel-skills{background:var(--green)}
 .panel-commands{background:var(--dark); color:#fff}
@@ -346,7 +362,7 @@ a:hover{background:var(--gold); color:#000}
 .doc-block pre{
   margin:8px 0 0 0;
   white-space:pre-wrap;
-  font-family:'Courier New', Courier, monospace;
+  font-family:var(--font-mono);
   font-size:14px;
 }
 .entry-header{
@@ -385,8 +401,8 @@ a:hover{background:var(--gold); color:#000}
   display:block;
   margin-bottom:6px;
   font-size:12px;
-  font-weight:bold;
-  letter-spacing:.08em;
+  font-weight:600;
+  letter-spacing:.1em;
 }
 .tag{
   display:inline-block;
@@ -445,7 +461,7 @@ a:hover{background:var(--gold); color:#000}
 .entry-meta td:nth-child(odd){background:var(--soft)}
 
 /* Install block */
-.install-block{border:1px solid var(--line);background:var(--soft);padding:10px 12px;margin:10px 0;font-family:'Courier New',Courier,monospace;font-size:13px}
+.install-block{border:1px solid var(--line);background:var(--soft);padding:10px 12px;margin:10px 0;font-family:var(--font-mono);font-size:13px}
 
 @media (max-width: 900px){
   .layout,.layout tbody,.layout tr,.layout td{display:block;width:100%}
@@ -543,5 +559,5 @@ a:hover{background:var(--gold); color:#000}
   word-break:break-word;
   max-height:600px;
   overflow-y:auto;
-  font-family:monospace;
+  font-family:var(--font-mono);
 }
