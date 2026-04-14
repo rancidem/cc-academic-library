@@ -399,12 +399,12 @@
     {
       "kind": "file",
       "path": "inventory.json",
-      "size": 649538
+      "size": 649543
     },
     {
       "kind": "file",
       "path": "README.md",
-      "size": 3173
+      "size": 3826
     },
     {
       "kind": "reference",
@@ -490,6 +490,11 @@
       "kind": "reference",
       "path": "references/wtfp/questioning.md",
       "size": 5031
+    },
+    {
+      "kind": "reference",
+      "path": "references/wtfp/README.md",
+      "size": 1647
     },
     {
       "kind": "reference",
@@ -11003,6 +11008,11 @@
     },
     {
       "kind": "skill",
+      "path": "skills/bioinformatics/README.md",
+      "size": 820
+    },
+    {
+      "kind": "skill",
       "path": "skills/bioinformatics/scanpy/assets/analysis_template.py",
       "size": 9515
     },
@@ -11315,6 +11325,11 @@
       "kind": "skill",
       "path": "skills/cheminformatics/rdkit/SKILL.md",
       "size": 20421
+    },
+    {
+      "kind": "skill",
+      "path": "skills/cheminformatics/README.md",
+      "size": 762
     },
     {
       "kind": "skill",
@@ -12018,6 +12033,11 @@
     },
     {
       "kind": "skill",
+      "path": "skills/clinical-medical/README.md",
+      "size": 820
+    },
+    {
+      "kind": "skill",
       "path": "skills/clinical-medical/treatment-plans/assets/chronic_disease_management_plan.tex",
       "size": 29371
     },
@@ -12503,6 +12523,11 @@
     },
     {
       "kind": "skill",
+      "path": "skills/computational-biology/README.md",
+      "size": 782
+    },
+    {
+      "kind": "skill",
       "path": "skills/computational-biology/rowan/SKILL.md",
       "size": 36910
     },
@@ -12805,6 +12830,11 @@
       "kind": "skill",
       "path": "skills/data-science/pymoo/SKILL.md",
       "size": 16753
+    },
+    {
+      "kind": "skill",
+      "path": "skills/data-science/README.md",
+      "size": 759
     },
     {
       "kind": "skill",
@@ -15728,6 +15758,11 @@
     },
     {
       "kind": "skill",
+      "path": "skills/document-formats/README.md",
+      "size": 788
+    },
+    {
+      "kind": "skill",
       "path": "skills/document-formats/xlsx/LICENSE.txt",
       "size": 1467
     },
@@ -16423,6 +16458,11 @@
     },
     {
       "kind": "skill",
+      "path": "skills/earth-geo-astro/README.md",
+      "size": 731
+    },
+    {
+      "kind": "skill",
       "path": "skills/lab-automation/adaptyv/references/api-endpoints.md",
       "size": 20101
     },
@@ -16768,6 +16808,11 @@
     },
     {
       "kind": "skill",
+      "path": "skills/lab-automation/README.md",
+      "size": 786
+    },
+    {
+      "kind": "skill",
       "path": "skills/machine-learning/pufferlib/references/environments.md",
       "size": 12489
     },
@@ -16860,6 +16905,11 @@
       "kind": "skill",
       "path": "skills/machine-learning/pytorch-lightning/SKILL.md",
       "size": 6675
+    },
+    {
+      "kind": "skill",
+      "path": "skills/machine-learning/README.md",
+      "size": 775
     },
     {
       "kind": "skill",
@@ -17953,6 +18003,11 @@
     },
     {
       "kind": "skill",
+      "path": "skills/misc/README.md",
+      "size": 791
+    },
+    {
+      "kind": "skill",
       "path": "skills/misc/usfiscaldata/references/api-basics.md",
       "size": 2846
     },
@@ -18283,6 +18338,11 @@
     },
     {
       "kind": "skill",
+      "path": "skills/quantum-computing/README.md",
+      "size": 663
+    },
+    {
+      "kind": "skill",
       "path": "skills/README.md",
       "size": 2560
     },
@@ -18350,6 +18410,11 @@
       "kind": "skill",
       "path": "skills/visualization/matplotlib/SKILL.md",
       "size": 11454
+    },
+    {
+      "kind": "skill",
+      "path": "skills/visualization/README.md",
+      "size": 841
     },
     {
       "kind": "skill",
@@ -19258,6 +19323,11 @@
     },
     {
       "kind": "skill",
+      "path": "skills/writing-research/README.md",
+      "size": 898
+    },
+    {
+      "kind": "skill",
       "path": "skills/writing-research/research-grants/assets/budget_justification_template.md",
       "size": 21866
     },
@@ -19998,5 +20068,5 @@
     }
   ],
   "format": "cc-academic-canonical-inventory/v1",
-  "generated": "2026-04-14T11:47:38.733Z"
+  "generated": "2026-04-14T11:50:48.691Z"
 }

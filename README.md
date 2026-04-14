@@ -34,6 +34,18 @@ Canonical home for the academic skills library. This repo mirrors upstream bundl
 - `templates/` - reusable prompt and document templates
 - `tools/` - auxiliary tooling, including `wcn`
 
+## Nested Hubs
+
+- [agents/README.md](agents/README.md) - agent navigation and review prompts
+- [commands/README.md](commands/README.md) - slash command entrypoints
+- [references/README.md](references/README.md) - examples and policy notes
+- [scripts/README.md](scripts/README.md) - mirrored runtime and maintenance utilities
+- [skills/README.md](skills/README.md) - domain skill index
+- [templates/README.md](templates/README.md) - reusable template library
+- [tools/README.md](tools/README.md) - auxiliary tooling index
+- [references/wtfp/README.md](references/wtfp/README.md) - WTF-P reference hub
+- `skills/*/README.md` - domain-specific skill hubs
+
 ## Source Bundle Model
 
 - Mirrored upstream content stays under `resources/cc-academic-sources/`.
