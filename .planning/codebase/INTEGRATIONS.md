@@ -5,7 +5,7 @@
 - `resources/cc-academic-sources/matsengrp/plugins/` is a Claude Code plugin bundle.
 - Its `.claude-plugin/plugin.json` declares the plugin name, homepage, license, agent directory, and hook entrypoint.
 - The bundle includes `agents/`, `commands/pre-pr-check.md`, and `hooks/hooks.json`.
-- `resources/matsengrp-agents/` is the canonical mirrored destination for the plugin content in this library.
+- The plugin content is now represented canonically only by `agents/matsengrp-agents/` and `commands/matsengrp-agents/`.
 
 ## External Tooling And Services
 

@@ -26,7 +26,7 @@ This repository is a canonical index for an academic skills library. It is not a
 - `MySkills` maps into `skills/visualization/visual-architect`.
 - `scientific-agent-skills` maps into the scientific domain skill families under `skills/`.
 - `wtf-p` maps into `references/wtfp`, `scripts/wtfp-commands`, `scripts/wtfp-lib`, and `tools/wcn`.
-- `matsengrp/plugins` maps into `agents/matsengrp-agents`, `commands/matsengrp-agents`, and `resources/matsengrp-agents`.
+- `matsengrp/plugins` maps into `agents/matsengrp-agents` and `commands/matsengrp-agents`.
 
 ## Design Principles
 

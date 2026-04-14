@@ -2,8 +2,8 @@
 
 ## Repo hygiene
 
-- The working tree still contains `.DS_Store` noise at the repo root, in `.planning/`, `commands/`, `resources/`, `templates/`, and inside `resources/cc-academic-sources/`. This will keep producing unrelated diffs until the files are removed or ignored.
-- `inventory.json` currently records those `.DS_Store` entries as tracked inventory items, so any future snapshot refresh will continue to surface them unless the hygiene issue is cleaned up first.
+- The repo had `.DS_Store` noise at the repo root, in `.planning/`, `commands/`, `resources/`, `templates/`, and inside `resources/cc-academic-sources/`; that cleanup is now complete.
+- A repo-level ignore rule is still worth adding so the files do not come back and pollute future diffs or inventory refreshes.
 
 ## Source-bundle traceability
 

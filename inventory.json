@@ -13,16 +13,6 @@
   "entries": [
     {
       "kind": "file",
-      "path": ".DS_Store",
-      "size": 6148
-    },
-    {
-      "kind": "file",
-      "path": ".planning/.DS_Store",
-      "size": 6148
-    },
-    {
-      "kind": "file",
       "path": ".planning/PROJECT.md",
       "size": 2330
     },
@@ -363,11 +353,6 @@
     },
     {
       "kind": "reference",
-      "path": "references/.DS_Store",
-      "size": 6148
-    },
-    {
-      "kind": "reference",
       "path": "references/examples/ai-ethics-paper.md",
       "size": 5678
     },
@@ -455,16 +440,6 @@
       "kind": "reference",
       "path": "references/wtfp/ui-brand.md",
       "size": 6207
-    },
-    {
-      "kind": "resource",
-      "path": "resources/.DS_Store",
-      "size": 6148
-    },
-    {
-      "kind": "resource",
-      "path": "resources/cc-academic-sources/.DS_Store",
-      "size": 6148
     },
     {
       "kind": "resource",
@@ -2613,11 +2588,6 @@
     },
     {
       "kind": "resource",
-      "path": "resources/cc-academic-sources/matsengrp/.DS_Store",
-      "size": 6148
-    },
-    {
-      "kind": "resource",
       "path": "resources/cc-academic-sources/matsengrp/plugins/.claude-plugin/marketplace.json",
       "size": 416
     },
@@ -2625,11 +2595,6 @@
       "kind": "resource",
       "path": "resources/cc-academic-sources/matsengrp/plugins/.claude-plugin/plugin.json",
       "size": 495
-    },
-    {
-      "kind": "resource",
-      "path": "resources/cc-academic-sources/matsengrp/plugins/.DS_Store",
-      "size": 6148
     },
     {
       "kind": "resource",
@@ -2718,11 +2683,6 @@
     },
     {
       "kind": "resource",
-      "path": "resources/cc-academic-sources/MySkills/.DS_Store",
-      "size": 6148
-    },
-    {
-      "kind": "resource",
       "path": "resources/cc-academic-sources/MySkills/.gitignore",
       "size": 81
     },
@@ -2745,16 +2705,6 @@
       "kind": "resource",
       "path": "resources/cc-academic-sources/MySkills/README.md",
       "size": 4435
-    },
-    {
-      "kind": "resource",
-      "path": "resources/cc-academic-sources/MySkills/skills/.DS_Store",
-      "size": 6148
-    },
-    {
-      "kind": "resource",
-      "path": "resources/cc-academic-sources/MySkills/skills/visual-architect/.DS_Store",
-      "size": 6148
     },
     {
       "kind": "resource",
@@ -9233,11 +9183,6 @@
     },
     {
       "kind": "resource",
-      "path": "resources/cc-academic-sources/wtf-p/.DS_Store",
-      "size": 6148
-    },
-    {
-      "kind": "resource",
       "path": "resources/cc-academic-sources/wtf-p/.github/workflows/ci.yml",
       "size": 268
     },
@@ -9973,11 +9918,6 @@
     },
     {
       "kind": "resource",
-      "path": "resources/cc-academic-sources/wtf-p/vendors/.DS_Store",
-      "size": 6148
-    },
-    {
-      "kind": "resource",
       "path": "resources/cc-academic-sources/wtf-p/vendors/claude/.claude-plugin/plugin.json",
       "size": 449
     },
@@ -10238,38 +10178,8 @@
     },
     {
       "kind": "resource",
-      "path": "resources/matsengrp-agents/hooks.json",
-      "size": 491
-    },
-    {
-      "kind": "resource",
-      "path": "resources/matsengrp-agents/marketplace.json",
-      "size": 416
-    },
-    {
-      "kind": "resource",
-      "path": "resources/matsengrp-agents/plugin.json",
-      "size": 495
-    },
-    {
-      "kind": "resource",
-      "path": "resources/matsengrp-agents/QUICKSTART.md",
-      "size": 4048
-    },
-    {
-      "kind": "resource",
-      "path": "resources/matsengrp-agents/README.md",
-      "size": 3910
-    },
-    {
-      "kind": "resource",
       "path": "resources/source-references.md",
-      "size": 3961
-    },
-    {
-      "kind": "script",
-      "path": "scripts/.DS_Store",
-      "size": 6148
+      "size": 3931
     },
     {
       "kind": "script",
@@ -10365,11 +10275,6 @@
       "kind": "script",
       "path": "scripts/wtfp-lib/wcn-compiler.js",
       "size": 7986
-    },
-    {
-      "kind": "skill",
-      "path": "skills/.DS_Store",
-      "size": 6148
     },
     {
       "kind": "skill",
@@ -16438,11 +16343,6 @@
     },
     {
       "kind": "skill",
-      "path": "skills/lab-automation/.DS_Store",
-      "size": 6148
-    },
-    {
-      "kind": "skill",
       "path": "skills/lab-automation/adaptyv/references/api-endpoints.md",
       "size": 20101
     },
@@ -18578,11 +18478,6 @@
     },
     {
       "kind": "skill",
-      "path": "skills/visualization/visual-architect/.DS_Store",
-      "size": 6148
-    },
-    {
-      "kind": "skill",
       "path": "skills/visualization/visual-architect/example/Anthropic_Console.jpg",
       "size": 660183
     },
@@ -18610,11 +18505,6 @@
       "kind": "skill",
       "path": "skills/visualization/visual-architect/SKILL.md",
       "size": 4424
-    },
-    {
-      "kind": "skill",
-      "path": "skills/writing-research/.DS_Store",
-      "size": 6148
     },
     {
       "kind": "skill",
@@ -19798,11 +19688,6 @@
     },
     {
       "kind": "skill",
-      "path": "skills/writing-research/what-if-oracle/.DS_Store",
-      "size": 6148
-    },
-    {
-      "kind": "skill",
       "path": "skills/writing-research/what-if-oracle/references/scenario-templates.md",
       "size": 4150
     },
@@ -19824,7 +19709,7 @@
     {
       "kind": "file",
       "path": "STATUS.md",
-      "size": 993
+      "size": 962
     },
     {
       "kind": "template",
@@ -20023,5 +19908,5 @@
     }
   ],
   "format": "cc-academic-canonical-inventory/v1",
-  "generated": "2026-04-14T11:05:42.618Z"
+  "generated": "2026-04-14T11:20:01.285Z"
 }

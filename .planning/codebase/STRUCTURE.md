@@ -40,7 +40,6 @@
   - `scientific-agent-skills`
   - `wtf-p`
   - `matsengrp/plugins`
-- `resources/matsengrp-agents/` contains the plugin metadata that supports the canonical Matsen agent subtree.
 - `resources/source-references.md` is the main traceability table from upstream bundle to local clone and canonical mapping.
 
 ### `scripts/`
@@ -69,10 +68,10 @@
 
 - `README.md` and `STATUS.md` describe the repo as a canonical library and point users to the source-bundle mirror.
 - `inventory.json` enumerates files by kind and path for sync and diff checks.
-- The Matsen plugin bundle is organized as a three-way split:
+- The Matsen plugin bundle is organized as a two-way canonical split:
   - `agents/matsengrp-agents/`
   - `commands/matsengrp-agents/`
-  - `resources/matsengrp-agents/`
+  - plugin metadata remains in the source-bundle mirror under `resources/cc-academic-sources/matsengrp/plugins/`
 
 ## Organization Pattern
 

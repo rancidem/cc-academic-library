@@ -21,7 +21,7 @@ This page records the upstream source bundles that feed the canonical index.
 | `MySkills` | `skills/visualization/visual-architect` |
 | `scientific-agent-skills` | `skills/bioinformatics`, `skills/cheminformatics`, `skills/clinical-medical`, `skills/computational-biology`, `skills/data-science`, `skills/document-formats`, `skills/earth-geo-astro`, `skills/lab-automation`, `skills/machine-learning`, `skills/misc`, `skills/quantum-computing`, `skills/visualization`, `skills/writing-research` |
 | `wtf-p` | `references/wtfp`, `scripts/wtfp-commands`, `scripts/wtfp-lib`, `tools/wcn` |
-| `matsengrp/plugins` | `agents/matsengrp-agents`, `commands/matsengrp-agents`, `resources/matsengrp-agents` |
+| `matsengrp/plugins` | `agents/matsengrp-agents`, `commands/matsengrp-agents` |
 
 ## Usage
 
