@@ -3,10 +3,14 @@
     ".planning",
     "agents",
     "commands",
+    "library",
+    "notes",
     "references",
+    "repos",
     "resources",
     "scripts",
     "skills",
+    "sources",
     "templates",
     "tools"
   ],
@@ -15,6 +19,11 @@
       "kind": "file",
       "path": ".gitignore",
       "size": 23
+    },
+    {
+      "kind": "file",
+      "path": ".mise.toml",
+      "size": 226
     },
     {
       "kind": "file",
@@ -53,6 +62,11 @@
     },
     {
       "kind": "file",
+      "path": ".planning/config.json",
+      "size": 202
+    },
+    {
+      "kind": "file",
       "path": ".planning/PROJECT.md",
       "size": 2826
     },
@@ -63,6 +77,11 @@
     },
     {
       "kind": "file",
+      "path": ".planning/quick/1-clone-github-repos-into-personal-library/1-PLAN.md",
+      "size": 2381
+    },
+    {
+      "kind": "file",
       "path": ".planning/quick/README.md",
       "size": 445
     },
@@ -70,6 +89,11 @@
       "kind": "file",
       "path": ".planning/README.md",
       "size": 1172
+    },
+    {
+      "kind": "file",
+      "path": ".planning/REQUIREMENTS.md",
+      "size": 2703
     },
     {
       "kind": "file",
@@ -398,8 +422,113 @@
     },
     {
       "kind": "file",
+      "path": "IDEA.md",
+      "size": 1235
+    },
+    {
+      "kind": "file",
       "path": "inventory.json",
-      "size": 649543
+      "size": 653627
+    },
+    {
+      "kind": "file",
+      "path": "LIBRARY.md",
+      "size": 6961
+    },
+    {
+      "kind": "file",
+      "path": "library/.gitkeep",
+      "size": 1
+    },
+    {
+      "kind": "file",
+      "path": "library/agents.md",
+      "size": 11461
+    },
+    {
+      "kind": "file",
+      "path": "library/categories.md",
+      "size": 2239
+    },
+    {
+      "kind": "file",
+      "path": "library/commands.md",
+      "size": 29763
+    },
+    {
+      "kind": "file",
+      "path": "library/entry-template.md",
+      "size": 2036
+    },
+    {
+      "kind": "file",
+      "path": "library/generated/.gitkeep",
+      "size": 1
+    },
+    {
+      "kind": "file",
+      "path": "library/glossary.md",
+      "size": 1770
+    },
+    {
+      "kind": "file",
+      "path": "library/index.md",
+      "size": 293
+    },
+    {
+      "kind": "file",
+      "path": "library/inventory.md",
+      "size": 180008
+    },
+    {
+      "kind": "file",
+      "path": "library/README.md",
+      "size": 2181
+    },
+    {
+      "kind": "file",
+      "path": "library/repositories.md",
+      "size": 8086
+    },
+    {
+      "kind": "file",
+      "path": "library/resources.md",
+      "size": 6127
+    },
+    {
+      "kind": "file",
+      "path": "library/skills.md",
+      "size": 139348
+    },
+    {
+      "kind": "file",
+      "path": "library/stacks.md",
+      "size": 2066
+    },
+    {
+      "kind": "file",
+      "path": "library/start-here.md",
+      "size": 2947
+    },
+    {
+      "kind": "file",
+      "path": "library/taxonomy.md",
+      "size": 1935
+    },
+    {
+      "kind": "file",
+      "path": "library/tools.md",
+      "size": 8960
+    },
+    {
+      "kind": "file",
+      "path": "notes/maintenance.md",
+      "size": 3757
+    },
+    {
+      "kind": "file",
+      "path": "notes/README.md",
+      "size": 294
     },
     {
       "kind": "file",
@@ -507,9 +636,14 @@
       "size": 6207
     },
     {
+      "kind": "file",
+      "path": "repos/README.md",
+      "size": 1942
+    },
+    {
       "kind": "resource",
       "path": "resources/bundle-registry.json",
-      "size": 3699
+      "size": 4140
     },
     {
       "kind": "resource",
@@ -4679,22 +4813,22 @@
     {
       "kind": "resource",
       "path": "resources/cc-academic-sources/scientific-agent-skills/scientific-skills/geomaster/README.md",
-      "size": 3323
+      "size": 3218
     },
     {
       "kind": "resource",
       "path": "resources/cc-academic-sources/scientific-agent-skills/scientific-skills/geomaster/references/advanced-gis.md",
-      "size": 11121
+      "size": 10745
     },
     {
       "kind": "resource",
       "path": "resources/cc-academic-sources/scientific-agent-skills/scientific-skills/geomaster/references/big-data.md",
-      "size": 8818
+      "size": 8455
     },
     {
       "kind": "resource",
       "path": "resources/cc-academic-sources/scientific-agent-skills/scientific-skills/geomaster/references/code-examples.md",
-      "size": 13023
+      "size": 12492
     },
     {
       "kind": "resource",
@@ -4704,47 +4838,47 @@
     {
       "kind": "resource",
       "path": "resources/cc-academic-sources/scientific-agent-skills/scientific-skills/geomaster/references/core-libraries.md",
-      "size": 6866
+      "size": 6593
     },
     {
       "kind": "resource",
       "path": "resources/cc-academic-sources/scientific-agent-skills/scientific-skills/geomaster/references/data-sources.md",
-      "size": 9331
+      "size": 9001
     },
     {
       "kind": "resource",
       "path": "resources/cc-academic-sources/scientific-agent-skills/scientific-skills/geomaster/references/gis-software.md",
-      "size": 9284
+      "size": 8915
     },
     {
       "kind": "resource",
       "path": "resources/cc-academic-sources/scientific-agent-skills/scientific-skills/geomaster/references/industry-applications.md",
-      "size": 13491
+      "size": 13071
     },
     {
       "kind": "resource",
       "path": "resources/cc-academic-sources/scientific-agent-skills/scientific-skills/geomaster/references/machine-learning.md",
-      "size": 13245
+      "size": 12783
     },
     {
       "kind": "resource",
       "path": "resources/cc-academic-sources/scientific-agent-skills/scientific-skills/geomaster/references/programming-languages.md",
-      "size": 11417
+      "size": 11024
     },
     {
       "kind": "resource",
       "path": "resources/cc-academic-sources/scientific-agent-skills/scientific-skills/geomaster/references/remote-sensing.md",
-      "size": 10474
+      "size": 10104
     },
     {
       "kind": "resource",
       "path": "resources/cc-academic-sources/scientific-agent-skills/scientific-skills/geomaster/references/scientific-domains.md",
-      "size": 11027
+      "size": 10611
     },
     {
       "kind": "resource",
       "path": "resources/cc-academic-sources/scientific-agent-skills/scientific-skills/geomaster/references/specialized-topics.md",
-      "size": 11114
+      "size": 10686
     },
     {
       "kind": "resource",
@@ -4754,7 +4888,7 @@
     {
       "kind": "resource",
       "path": "resources/cc-academic-sources/scientific-agent-skills/scientific-skills/geomaster/SKILL.md",
-      "size": 12110
+      "size": 11745
     },
     {
       "kind": "resource",
@@ -10249,7 +10383,12 @@
     {
       "kind": "resource",
       "path": "resources/source-references.md",
-      "size": 3245
+      "size": 3809
+    },
+    {
+      "kind": "script",
+      "path": "scripts/generate_skills_index.py",
+      "size": 34508
     },
     {
       "kind": "script",
@@ -10259,7 +10398,7 @@
     {
       "kind": "script",
       "path": "scripts/maintenance/refresh.js",
-      "size": 7324
+      "size": 7919
     },
     {
       "kind": "script",
@@ -16344,22 +16483,22 @@
     {
       "kind": "skill",
       "path": "skills/earth-geo-astro/geomaster/README.md",
-      "size": 3323
+      "size": 3218
     },
     {
       "kind": "skill",
       "path": "skills/earth-geo-astro/geomaster/references/advanced-gis.md",
-      "size": 11121
+      "size": 10745
     },
     {
       "kind": "skill",
       "path": "skills/earth-geo-astro/geomaster/references/big-data.md",
-      "size": 8818
+      "size": 8455
     },
     {
       "kind": "skill",
       "path": "skills/earth-geo-astro/geomaster/references/code-examples.md",
-      "size": 13023
+      "size": 12492
     },
     {
       "kind": "skill",
@@ -16369,47 +16508,47 @@
     {
       "kind": "skill",
       "path": "skills/earth-geo-astro/geomaster/references/core-libraries.md",
-      "size": 6866
+      "size": 6593
     },
     {
       "kind": "skill",
       "path": "skills/earth-geo-astro/geomaster/references/data-sources.md",
-      "size": 9331
+      "size": 9001
     },
     {
       "kind": "skill",
       "path": "skills/earth-geo-astro/geomaster/references/gis-software.md",
-      "size": 9284
+      "size": 8915
     },
     {
       "kind": "skill",
       "path": "skills/earth-geo-astro/geomaster/references/industry-applications.md",
-      "size": 13491
+      "size": 13071
     },
     {
       "kind": "skill",
       "path": "skills/earth-geo-astro/geomaster/references/machine-learning.md",
-      "size": 13245
+      "size": 12783
     },
     {
       "kind": "skill",
       "path": "skills/earth-geo-astro/geomaster/references/programming-languages.md",
-      "size": 11417
+      "size": 11024
     },
     {
       "kind": "skill",
       "path": "skills/earth-geo-astro/geomaster/references/remote-sensing.md",
-      "size": 10474
+      "size": 10104
     },
     {
       "kind": "skill",
       "path": "skills/earth-geo-astro/geomaster/references/scientific-domains.md",
-      "size": 11027
+      "size": 10611
     },
     {
       "kind": "skill",
       "path": "skills/earth-geo-astro/geomaster/references/specialized-topics.md",
-      "size": 11114
+      "size": 10686
     },
     {
       "kind": "skill",
@@ -16419,7 +16558,7 @@
     {
       "kind": "skill",
       "path": "skills/earth-geo-astro/geomaster/SKILL.md",
-      "size": 12110
+      "size": 11745
     },
     {
       "kind": "skill",
@@ -19858,6 +19997,11 @@
     },
     {
       "kind": "file",
+      "path": "sources/.gitkeep",
+      "size": 1
+    },
+    {
+      "kind": "file",
       "path": "STATUS.md",
       "size": 919
     },
@@ -20068,5 +20212,5 @@
     }
   ],
   "format": "cc-academic-canonical-inventory/v1",
-  "generated": "2026-04-14T11:50:48.691Z"
+  "generated": "2026-04-14T12:06:05.278Z"
 }

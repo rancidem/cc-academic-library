@@ -1,11 +1,13 @@
 {
   "version": "1",
   "updated": "2026-04-14",
+  "referenceListUrl": "https://github.com/stars/rancidem/lists/cc-academic",
   "notes": "Relative paths are anchored at the repository root so the registry can move across machines without rewriting the file.",
   "bundles": [
     {
       "name": "academic-paper-skills",
       "summary": "Systematic philosophy and interdisciplinary paper-writing workflows with strategist and composer skills, validation gates, and research-to-manuscript support.",
+      "upstreamUrl": null,
       "sourcePath": "resources/cc-academic-sources/academic-paper-skills",
       "sourceReadme": "resources/cc-academic-sources/academic-paper-skills/README.md",
       "canonicalDestinations": [
@@ -18,6 +20,7 @@
     {
       "name": "claude-scientific-writer",
       "summary": "Claude Code plugin and Python package for deep research writing, citation-backed scientific documents, and related academic outputs.",
+      "upstreamUrl": "https://github.com/K-Dense-AI/claude-scientific-writer",
       "sourcePath": "resources/cc-academic-sources/claude-scientific-writer",
       "sourceReadme": "resources/cc-academic-sources/claude-scientific-writer/README.md",
       "canonicalDestinations": [
@@ -31,6 +34,7 @@
     {
       "name": "MySkills",
       "summary": "Paper Visualizer skill bundle focused on turning papers into high-fidelity technical schematics and related visual outputs.",
+      "upstreamUrl": "https://github.com/rancidem/MySkills",
       "sourcePath": "resources/cc-academic-sources/MySkills",
       "sourceReadme": "resources/cc-academic-sources/MySkills/README.md",
       "canonicalDestinations": [
@@ -41,6 +45,7 @@
     {
       "name": "scientific-agent-skills",
       "summary": "Large Agent Skills collection covering scientific libraries, databases, workflows, and domain-specific research operations.",
+      "upstreamUrl": "https://github.com/K-Dense-AI/scientific-agent-skills",
       "sourcePath": "resources/cc-academic-sources/scientific-agent-skills",
       "sourceReadme": "resources/cc-academic-sources/scientific-agent-skills/README.md",
       "canonicalDestinations": [
@@ -63,6 +68,7 @@
     {
       "name": "wtf-p",
       "summary": "WTF-P writing framework for structured academic authoring, citation grounding, outline execution, and quality checks.",
+      "upstreamUrl": "https://github.com/akougkas/wtf-p",
       "sourcePath": "resources/cc-academic-sources/wtf-p",
       "sourceReadme": "resources/cc-academic-sources/wtf-p/README.md",
       "canonicalDestinations": [
@@ -76,6 +82,7 @@
     {
       "name": "matsengrp/plugins",
       "summary": "Claude Code plugin with specialized agents, a pre-PR checklist command, and desktop notification hooks.",
+      "upstreamUrl": "https://github.com/matsengrp/plugins",
       "sourcePath": "resources/cc-academic-sources/matsengrp/plugins",
       "sourceReadme": "resources/cc-academic-sources/matsengrp/plugins/README.md",
       "canonicalDestinations": [

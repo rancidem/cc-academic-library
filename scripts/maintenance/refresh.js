@@ -32,18 +32,28 @@ function bundleRegistry() {
   return readJson(registryPath);
 }
 
+function formatMarkdownLink(label, url) {
+  return url ? `[${label}](${url})` : label;
+}
+
 function formatBundleReferences(registry) {
   const lines = [];
   lines.push('# Source References');
   lines.push('');
   lines.push('This page records the upstream source bundles that feed the canonical index.');
   lines.push('');
-  lines.push('| Repo | Summary | Source path | Link |');
-  lines.push('|---|---|---|---|');
+  if (registry.referenceListUrl) {
+    lines.push(`Curated reference list: [cc-academic stars list](${registry.referenceListUrl})`);
+    lines.push('');
+  }
+  lines.push('| Repo | Summary | Upstream repo | Source path | Local README |');
+  lines.push('|---|---|---|---|---|');
 
   for (const bundle of registry.bundles) {
+    const upstreamLink = bundle.upstreamUrl || registry.referenceListUrl || null;
+    const upstreamLabel = bundle.upstreamUrl ? 'Repo' : 'Browse list';
     lines.push(
-      `| \`${bundle.name}\` | ${bundle.summary} | \`${bundle.sourcePath}\` | [README.md](${bundle.sourceReadme}) |`
+      `| \`${bundle.name}\` | ${bundle.summary} | ${formatMarkdownLink(upstreamLabel, upstreamLink)} | \`${bundle.sourcePath}\` | [README.md](${bundle.sourceReadme}) |`
     );
   }
 
@@ -62,6 +72,7 @@ function formatBundleReferences(registry) {
   lines.push('## Usage');
   lines.push('');
   lines.push('- Use this table when checking source parity or tracing a canonical item back to its upstream origin.');
+  lines.push('- Use the curated reference list link above when you want to browse the source bundles as a set.');
   lines.push('- Update this page whenever a source bundle is added, renamed, or replaced.');
   lines.push('- Keep summaries short and factual so the table stays readable in diffs.');
   lines.push('');

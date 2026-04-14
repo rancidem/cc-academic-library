@@ -2,14 +2,16 @@
 
 This page records the upstream source bundles that feed the canonical index.
 
-| Repo | Summary | Source path | Link |
-|---|---|---|---|
-| `academic-paper-skills` | Systematic philosophy and interdisciplinary paper-writing workflows with strategist and composer skills, validation gates, and research-to-manuscript support. | `resources/cc-academic-sources/academic-paper-skills` | [README.md](resources/cc-academic-sources/academic-paper-skills/README.md) |
-| `claude-scientific-writer` | Claude Code plugin and Python package for deep research writing, citation-backed scientific documents, and related academic outputs. | `resources/cc-academic-sources/claude-scientific-writer` | [README.md](resources/cc-academic-sources/claude-scientific-writer/README.md) |
-| `MySkills` | Paper Visualizer skill bundle focused on turning papers into high-fidelity technical schematics and related visual outputs. | `resources/cc-academic-sources/MySkills` | [README.md](resources/cc-academic-sources/MySkills/README.md) |
-| `scientific-agent-skills` | Large Agent Skills collection covering scientific libraries, databases, workflows, and domain-specific research operations. | `resources/cc-academic-sources/scientific-agent-skills` | [README.md](resources/cc-academic-sources/scientific-agent-skills/README.md) |
-| `wtf-p` | WTF-P writing framework for structured academic authoring, citation grounding, outline execution, and quality checks. | `resources/cc-academic-sources/wtf-p` | [README.md](resources/cc-academic-sources/wtf-p/README.md) |
-| `matsengrp/plugins` | Claude Code plugin with specialized agents, a pre-PR checklist command, and desktop notification hooks. | `resources/cc-academic-sources/matsengrp/plugins` | [README.md](resources/cc-academic-sources/matsengrp/plugins/README.md) |
+Curated reference list: [cc-academic stars list](https://github.com/stars/rancidem/lists/cc-academic)
+
+| Repo | Summary | Upstream repo | Source path | Local README |
+|---|---|---|---|---|
+| `academic-paper-skills` | Systematic philosophy and interdisciplinary paper-writing workflows with strategist and composer skills, validation gates, and research-to-manuscript support. | [Browse list](https://github.com/stars/rancidem/lists/cc-academic) | `resources/cc-academic-sources/academic-paper-skills` | [README.md](resources/cc-academic-sources/academic-paper-skills/README.md) |
+| `claude-scientific-writer` | Claude Code plugin and Python package for deep research writing, citation-backed scientific documents, and related academic outputs. | [Repo](https://github.com/K-Dense-AI/claude-scientific-writer) | `resources/cc-academic-sources/claude-scientific-writer` | [README.md](resources/cc-academic-sources/claude-scientific-writer/README.md) |
+| `MySkills` | Paper Visualizer skill bundle focused on turning papers into high-fidelity technical schematics and related visual outputs. | [Repo](https://github.com/rancidem/MySkills) | `resources/cc-academic-sources/MySkills` | [README.md](resources/cc-academic-sources/MySkills/README.md) |
+| `scientific-agent-skills` | Large Agent Skills collection covering scientific libraries, databases, workflows, and domain-specific research operations. | [Repo](https://github.com/K-Dense-AI/scientific-agent-skills) | `resources/cc-academic-sources/scientific-agent-skills` | [README.md](resources/cc-academic-sources/scientific-agent-skills/README.md) |
+| `wtf-p` | WTF-P writing framework for structured academic authoring, citation grounding, outline execution, and quality checks. | [Repo](https://github.com/akougkas/wtf-p) | `resources/cc-academic-sources/wtf-p` | [README.md](resources/cc-academic-sources/wtf-p/README.md) |
+| `matsengrp/plugins` | Claude Code plugin with specialized agents, a pre-PR checklist command, and desktop notification hooks. | [Repo](https://github.com/matsengrp/plugins) | `resources/cc-academic-sources/matsengrp/plugins` | [README.md](resources/cc-academic-sources/matsengrp/plugins/README.md) |
 
 
 ## Canonical Mapping
@@ -26,6 +28,7 @@ This page records the upstream source bundles that feed the canonical index.
 ## Usage
 
 - Use this table when checking source parity or tracing a canonical item back to its upstream origin.
+- Use the curated reference list link above when you want to browse the source bundles as a set.
 - Update this page whenever a source bundle is added, renamed, or replaced.
 - Keep summaries short and factual so the table stays readable in diffs.
 
