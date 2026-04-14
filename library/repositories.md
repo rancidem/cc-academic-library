@@ -4,6 +4,11 @@ Detailed comparison notes for the five cloned repositories.
 
 Use `library/inventory.md` for item-level browsing across commands, agents, skills, and tools. Use this page when you want the repo-level comparison first.
 
+## Install And Download Paths
+
+- Use the `Raw` links in `library/skills.md` and `library/tools.md` when you want direct downloads of individual files.
+- Use the repo sections below when you want the fastest install or setup path for a whole repository.
+
 ## Comparison Matrix
 
 | Repository | Size | Format / Runtime | Why It Matters Here | Strengths | Cautions | Best First | Tags |
@@ -22,6 +27,8 @@ Use `library/inventory.md` for item-level browsing across commands, agents, skil
 - What it is good for: quickly understanding one self-contained Anthropic Skill and extracting a useful pattern from it.
 - Notable structure: `skills/`
 - Best first: open `README.md`, then `skills/visual-architect/SKILL.md`
+- Install / setup: copy `skills/visual-architect/` into your Claude Code project knowledge or user skills path.
+- Download / raw: use the raw `SKILL.md` link in `library/skills.md` when you want the exact skill file, or copy the whole `skills/visual-architect/` folder when you want the bundled example assets.
 - Strengths: minimal, direct, and easy to inspect in one sitting
 - Cautions: too small to serve as a broad reusable library on its own
 - Status: imported and indexed
@@ -35,6 +42,8 @@ Use `library/inventory.md` for item-level browsing across commands, agents, skil
 - What it is good for: planning a paper, generating a detailed outline, and then composing the manuscript with validation gates.
 - Notable structure: `strategist/`, `composer/`, `examples/`
 - Best first: open `README.md`, then `strategist/SKILL.md`
+- Install / setup: copy `strategist/` and `composer/` into `~/.claude/skills`.
+- Download / raw: use the raw `SKILL.md` links in `library/skills.md` and keep the `references/` and `scripts/` folders when you need the full workflow.
 - Strengths: clear stage separation and strong quality checkpoints
 - Cautions: focused on a specific paper-writing workflow and lighter on runtime integrations
 - Status: imported and indexed
@@ -49,6 +58,8 @@ Use `library/inventory.md` for item-level browsing across commands, agents, skil
 - What it is good for: papers, proposals, presentations, and posters when you want the assistant to behave like a structured writing system.
 - Notable structure: `commands/`, `agents/`, `skills/`, `docs/`, `templates/`
 - Best first: open `README.md`, then `docs/BUILD_AND_RELEASE.md`, then `bin/commands/`
+- Install / setup: run `npx wtf-p` for the default Claude Code install, `npx wtf-p --global` for a persistent install, or `npx wtf-p --local` for a project-only install.
+- Download / raw: use `library/tools.md`, `library/commands.md`, and `library/skills.md` for raw links to the plugin manifest, workflow compressor, and runtime helpers.
 - Strengths: strong orchestration, runtime support, and a documented install/update path
 - Cautions: larger learning curve and more packaging overhead than a plain skill repo
 - Status: imported and indexed
@@ -63,6 +74,8 @@ Use `library/inventory.md` for item-level browsing across commands, agents, skil
 - What it is good for: research-backed scientific writing where you need citations, conversion, figures, and a broad workflow toolkit.
 - Notable structure: `commands/`, `.claude/`, `templates/`, `scientific_writer/`, `.claude-plugin/`
 - Best first: open `README.md`, then `docs/DOCUMENTATION_INDEX.md`, then `.claude/skills/`
+- Install / setup: install the plugin with `/plugin marketplace add https://github.com/K-Dense-AI/claude-scientific-writer` followed by `/plugin install claude-scientific-writer`, or use `pip install scientific-writer`, or clone the repo and run `uv sync`.
+- Download / raw: use `library/tools.md` and `library/skills.md` for raw links to the package metadata, plugin manifest, and bundled skill files.
 - Strengths: deep package structure, broad skill coverage, and practical plugin integration
 - Cautions: broader and more complex than the small academic paper repos
 - Status: imported and indexed
@@ -76,6 +89,8 @@ Use `library/inventory.md` for item-level browsing across commands, agents, skil
 - What it is good for: broad research assistance when you need the largest available scientific skill catalog and many domain-specific entry points.
 - Notable structure: `scientific-skills/`, `docs/`, `.github/`
 - Best first: open `README.md`, then `docs/scientific-skills.md`, then `scientific-skills/`
+- Install / setup: run `npx skills add K-Dense-AI/scientific-agent-skills`; install `uv` first if you want the optional dependency or scanner workflows.
+- Download / raw: use `library/skills.md` for direct `SKILL.md` downloads and copy the full skill folder when the row's Contents column mentions `references/`, `scripts/`, or `assets/`.
 - Strengths: widest coverage, specialized workflows, and explicit safety guidance
 - Cautions: the largest review surface in the library and the highest operational complexity
 - Status: imported and indexed

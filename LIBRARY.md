@@ -6,6 +6,17 @@ Last refreshed: 2026-04-14.
 
 ## Start Here
 
+### Review, download, install
+
+Use the sections below based on what you want to do right now.
+
+- [Library inventory](library/inventory.md) - full cross-type catalog for quick review
+- [Repository summaries](library/repositories.md) - repo-level comparison plus install/setup notes
+- [Skills inventory](library/skills.md) - raw skill-file links and folder contents for direct download
+- [Tools index](library/tools.md) - raw tool links and installable package/setup notes
+- [Resources index](library/resources.md) - manifests, docs, and setup references
+- [Entry template](library/entry-template.md) - shared fields for download, install, and verification notes
+
 ### Browse by repo
 
 - This page is the canonical dashboard.

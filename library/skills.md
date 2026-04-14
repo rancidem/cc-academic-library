@@ -3,6 +3,15 @@
 Inventory of skills discovered across the cloned repositories.
 Use the repo sections below to browse skills, then open the local link for in-project inspection or the raw link for the source file.
 
+## Download And Install
+
+- Use the `Raw` link in each row when you want the exact `SKILL.md` file.
+- Use the `Contents` column when the skill depends on `references/`, `scripts/`, or `examples/` folders.
+- Copy `skills/visual-architect/` from `sources/MySkills` to your Claude Code skill path if you want the compact visual-architecture skill.
+- Copy `strategist/` and `composer/` from `sources/academic-paper-skills` into `~/.claude/skills` if you want the paper-planning workflow.
+- Run `npx skills add K-Dense-AI/scientific-agent-skills` if you want the large scientific Agent Skills catalog.
+- Use the skill-specific install notes in `library/repositories.md` when you want the full repo-level setup path.
+
 ## Repository Summary
 
 | Repo | Commands | Agents | Skills | Tools | Total | Best first | Notes |

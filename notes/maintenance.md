@@ -2,6 +2,10 @@
 
 ## 2026-04-14
 
+- Added action-first navigation for review, download, and install/setup workflows.
+- Added install/setup fields to the shared entry template so tool and skill entries can carry verification and prerequisite notes.
+- Added repo-level install and raw-download guidance to the repository summaries.
+- Added raw-download and install guidance to the skills and tools indexes and the supporting resources page.
 - Tightened the navigation hierarchy so `LIBRARY.md` is the single canonical dashboard.
 - Converted `library/index.md` into a pointer page so `library/README.md` remains the only library intro page.
 - Added task-based shortcuts at the top of `LIBRARY.md` for browsing by repo, item type, or maintenance/history.

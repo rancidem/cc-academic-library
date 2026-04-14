@@ -23,6 +23,10 @@ Use this template for every item in the library so tools, skills, and resources 
 - Size or scale
 - Strengths
 - Tradeoffs
+- Download target
+- Install or setup method
+- Prerequisites
+- Verification step
 - Maintenance notes
 
 ## Template
@@ -45,6 +49,10 @@ Use this template for every item in the library so tools, skills, and resources 
 - Size or scale: small | medium | large | very large
 - Strengths: what makes it worth using
 - Tradeoffs: limits, risk, or maintenance cost
+- Download target: direct raw file, archive, package, or folder path
+- Install or setup method: copy, plugin install, npx, pip, uv, or n/a
+- Prerequisites: runtime, permissions, API keys, or companion tools
+- Verification step: command or check that confirms the item is usable
 ```
 
 ## Usage Rules

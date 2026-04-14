@@ -7,6 +7,18 @@ Curated supporting references, docs, manifests, and maintenance pages for the li
 - Use this page for supporting docs rather than entry-point commands, agents, skills, or tools.
 - Keep the highest-value references here so the main inventory stays focused.
 
+## Download And Setup
+
+| Need | Resource | Why it matters | Open |
+|---|---|---|---|
+| Review raw skill files | library/skills.md | Direct raw `SKILL.md` links and folder contents for download | [open](skills.md) |
+| Review raw tool files | library/tools.md | Direct raw source links for tool roots, packages, and manifests | [open](tools.md) |
+| Install WTF-P | sources/wtf-p/README.md | Exact `npx wtf-p` install, update, and uninstall commands | [open](../sources/wtf-p/README.md) |
+| Install Scientific Writer | sources/claude-scientific-writer/README.md | Plugin, PyPI, and `uv` source install paths | [open](../sources/claude-scientific-writer/README.md) |
+| Install Agent Skills | sources/scientific-agent-skills/README.md | `npx skills add` flow plus prerequisite guidance | [open](../sources/scientific-agent-skills/README.md) |
+| Install paper skills | sources/academic-paper-skills/README.md | Copy paths for strategist and composer skills | [open](../sources/academic-paper-skills/README.md) |
+| Install MySkills | sources/MySkills/README.md | Copy the single visual-architect skill folder | [open](../sources/MySkills/README.md) |
+
 | Area | Resource | Why it matters | Open |
 |---|---|---|---|
 | Project | README.md | Project overview and the main dashboard link | [open](../README.md) |

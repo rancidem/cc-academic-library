@@ -3,6 +3,13 @@
 Inventory of tools discovered across the cloned repositories.
 Use the repo sections below to browse tools, then open the local link for in-project inspection or the raw link for the source file.
 
+## Download And Install
+
+- Use the `Raw` link in each row when you want the exact source file.
+- Use the `Contents` column to decide whether you need a single manifest, a package directory, or a full tool root.
+- Start with the repo-level install note under each repository section when you want the shortest setup path.
+- Use the repo summaries in `library/repositories.md` for complete installation and copy instructions.
+
 ## Repository Summary
 
 | Repo | Commands | Agents | Skills | Tools | Total | Best first | Notes |
@@ -37,9 +44,16 @@ Use the repo sections below to browse tools, then open the local link for in-pro
 - Local clone: `sources/wtf-p`
 - Summary: Command-driven academic writing system with installer, commands, agents, and verification loops.
 - Best first: README.md, then `docs/BUILD_AND_RELEASE.md` and `bin/commands/`
-- How to use: Run `npx wtf-p`, then invoke the `/wtfp:*` commands in your assistant.
+- How to use: Run `npx wtf-p` for the default Claude Code install, or `npx wtf-p --global` for a persistent install; then invoke the `/wtfp:*` commands in your assistant.
 - Notes: Best when you want the assistant to behave like a structured writing tool; local clone keeps the Claude Code vendor tree only.
 - Counts: 36 commands, 11 agents, 2 skills, 3 tools
+
+### Install / Setup
+
+- `npx wtf-p` for the default Claude Code install
+- `npx wtf-p --global` for a persistent install across projects
+- `npx wtf-p --local` for a project-only install
+- Use the raw links in the rows below when you need the plugin manifest, WCN spec, or runtime source
 
 ### Tools
 
@@ -58,6 +72,14 @@ Use the repo sections below to browse tools, then open the local link for in-pro
 - How to use: Install the plugin, or use `pip install scientific-writer` / `uv sync`, then follow the skill prompts.
 - Notes: Best for research-backed scientific output with citations, conversion, and figure generation; local clone keeps the canonical Claude Code skill tree only.
 - Counts: 1 commands, 0 agents, 27 skills, 3 tools
+
+### Install / Setup
+
+- `/plugin marketplace add https://github.com/K-Dense-AI/claude-scientific-writer`
+- `/plugin install claude-scientific-writer`
+- `pip install scientific-writer`
+- `git clone https://github.com/K-Dense-AI/claude-scientific-writer.git && cd claude-scientific-writer && uv sync`
+- Use the raw links in the rows below when you want the plugin manifest, package metadata, or maintenance scripts
 
 ### Tools
 
