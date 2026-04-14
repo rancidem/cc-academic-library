@@ -1,0 +1,13 @@
+[tools]
+node = "lts"
+python = "3.12"
+
+[env]
+NODE_ENV = "development"
+PYTHONDONTWRITEBYTECODE = "1"
+
+[tasks.index]
+run = "echo 'Add indexing scripts here'"
+
+[tasks.sync]
+run = "echo 'Clone or refresh source repositories here'"

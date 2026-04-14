@@ -1,0 +1,8 @@
+.DS_Store
+.claude/
+.omc/
+sources/*
+!sources/.gitkeep
+library/generated/*
+!library/generated/.gitkeep
+notes/*.tmp

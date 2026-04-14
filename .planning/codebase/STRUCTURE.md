@@ -1,0 +1,110 @@
+# Structure
+
+## Workspace Tree
+
+```text
+cc-academic/
+├── README.md
+├── IDEA.md
+├── library/
+│   ├── index.md
+│   └── repositories.md
+├── notes/
+│   ├── README.md
+│   └── maintenance.md
+├── sources/
+│   ├── academic-paper-skills/
+│   ├── wtf-p/
+│   ├── MySkills/
+│   ├── claude-scientific-writer/
+│   └── scientific-agent-skills/
+└── .planning/
+    ├── ROADMAP.md
+    ├── STATE.md
+    └── codebase/
+        ├── STACK.md
+        ├── INTEGRATIONS.md
+        ├── ARCHITECTURE.md
+        └── STRUCTURE.md
+```
+
+## Source Repository Structures
+
+### `academic-paper-skills`
+
+```text
+academic-paper-skills/
+├── strategist/
+│   ├── SKILL.md
+│   ├── references/
+│   └── scripts/
+├── composer/
+│   ├── SKILL.md
+│   ├── references/
+│   └── scripts/
+└── examples/
+```
+
+### `wtf-p`
+
+```text
+wtf-p/
+├── bin/
+│   ├── install.js
+│   └── uninstall.js
+├── core/
+├── docs/
+├── scripts/
+├── test/
+├── tests/
+├── tools/
+├── vendors/
+└── package.json
+```
+
+### `MySkills`
+
+```text
+MySkills/
+├── skills/
+│   └── visual-architect/
+├── README.md
+├── index.html
+└── marketplace.json
+```
+
+### `claude-scientific-writer`
+
+```text
+claude-scientific-writer/
+├── commands/
+├── docs/
+├── scripts/
+├── skills/
+├── templates/
+├── scientific_writer/
+├── .claude/
+├── .claude-plugin/
+├── .cursor/
+└── pyproject.toml
+```
+
+### `scientific-agent-skills`
+
+```text
+scientific-agent-skills/
+├── docs/
+├── scientific-skills/
+├── scan_skills.py
+├── pyproject.toml
+└── uv.lock
+```
+
+## Structural Notes
+
+- The workspace root is documentation-heavy and intentionally light on application code
+- The source clones are the only places where behavior, commands, and skill definitions live
+- The richest structure is in `scientific-agent-skills/`, but it is still organized as a catalog of independent skill units rather than a single app
+- The most package-like source is `claude-scientific-writer/`, which combines implementation code with plugin and workflow metadata
+- `library/` is the only part of the workspace that should be treated as the public index surface
+
