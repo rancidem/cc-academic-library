@@ -2,11 +2,20 @@
 
 Auxiliary tooling lives here. This area is intentionally small and focused on the mirrored `wcn` package.
 
-## Navigate
+## At A Glance
 
 | Area | Path | Purpose |
 |---|---|---|
 | WCN tool | `tools/wcn/` | Mirrored package, CLI, examples, and spec |
+
+## Quick Links
+
+| Go to | Open |
+|---|---|
+| Source map | [resources/source-references.md](resources/source-references.md) |
+| Registry | [resources/bundle-registry.json](resources/bundle-registry.json) |
+| Snapshot | [inventory.json](inventory.json) |
+| Spec | [tools/wcn/SPEC.md](tools/wcn/SPEC.md) |
 
 ## Common Files
 

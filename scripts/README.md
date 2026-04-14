@@ -2,7 +2,7 @@
 
 Mirrored command and library utilities live here. The folder is organized by source bundle and maintenance support.
 
-## Navigate
+## At A Glance
 
 | Area | Path | Purpose |
 |---|---|---|
@@ -11,6 +11,15 @@ Mirrored command and library utilities live here. The folder is organized by sou
 | Academic strategist | `scripts/academic-paper-strategist/` | Mirrored strategist utilities |
 | WTF-P commands | `scripts/wtfp-commands/` | Command-side runtime helpers |
 | WTF-P library | `scripts/wtfp-lib/` | Library-side runtime helpers |
+
+## Quick Links
+
+| Go to | Open |
+|---|---|
+| Source map | [resources/source-references.md](resources/source-references.md) |
+| Registry | [resources/bundle-registry.json](resources/bundle-registry.json) |
+| Snapshot | [inventory.json](inventory.json) |
+| Maintenance script | [scripts/maintenance/refresh.js](scripts/maintenance/refresh.js) |
 
 ## Common Entry Points
 

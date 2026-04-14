@@ -2,12 +2,21 @@
 
 Slash commands and workflow entrypoints live here. This is the canonical command surface for the library.
 
-## Navigate
+## At A Glance
 
 | Area | Path | Purpose |
 |---|---|---|
 | General commands | `commands/*.md` | Core workflow commands and utilities |
 | Matsen commands | `commands/matsengrp-agents/` | Imported plugin command mirrors |
+
+## Quick Links
+
+| Go to | Open |
+|---|---|
+| Source map | [resources/source-references.md](resources/source-references.md) |
+| Registry | [resources/bundle-registry.json](resources/bundle-registry.json) |
+| Snapshot | [inventory.json](inventory.json) |
+| State | [.planning/STATE.md](.planning/STATE.md) |
 
 ## Common Files
 

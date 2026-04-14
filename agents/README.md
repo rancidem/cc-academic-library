@@ -2,12 +2,21 @@
 
 Orchestration and reviewer agents live here. This is the canonical home for agent prompts that coordinate writing, review, and quality checks.
 
-## Navigate
+## At A Glance
 
 | Area | Path | Purpose |
 |---|---|---|
 | General agents | `agents/*.md` | Core orchestration and review behavior |
 | Matsen agents | `agents/matsengrp-agents/` | Imported plugin agents for the Matsen bundle |
+
+## Quick Links
+
+| Go to | Open |
+|---|---|
+| Source map | [resources/source-references.md](resources/source-references.md) |
+| Registry | [resources/bundle-registry.json](resources/bundle-registry.json) |
+| Snapshot | [inventory.json](inventory.json) |
+| State | [.planning/STATE.md](.planning/STATE.md) |
 
 ## Common Files
 

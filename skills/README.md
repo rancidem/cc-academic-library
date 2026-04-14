@@ -2,7 +2,7 @@
 
 Canonical skill identities grouped by domain live here. Keep the tree stable, deterministic, and easy to diff.
 
-## Navigate
+## At A Glance
 
 | Area | Path | Purpose |
 |---|---|---|
@@ -11,6 +11,15 @@ Canonical skill identities grouped by domain live here. Keep the tree stable, de
 | Lab automation | `skills/lab-automation/` | Protocol and instrument integrations |
 | Biological domains | `skills/bioinformatics/`, `skills/cheminformatics/`, `skills/clinical-medical/`, `skills/computational-biology/` | Domain-specific scientific skills |
 | General utilities | `skills/misc/` | Cross-cutting or low-frequency utilities |
+
+## Quick Links
+
+| Go to | Open |
+|---|---|
+| Source map | [resources/source-references.md](resources/source-references.md) |
+| Registry | [resources/bundle-registry.json](resources/bundle-registry.json) |
+| Snapshot | [inventory.json](inventory.json) |
+| State | [.planning/STATE.md](.planning/STATE.md) |
 
 ## Rules
 

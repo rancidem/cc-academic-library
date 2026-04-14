@@ -2,13 +2,22 @@
 
 Reusable prompt and document templates live here. The folder is the canonical template library for the repo.
 
-## Navigate
+## At A Glance
 
 | Area | Path | Purpose |
 |---|---|---|
 | Project context | `templates/project-context/` | Focused guidance files for planning and writing |
 | Slides | `templates/slides/` | Slide-oriented template variants |
 | Posters | `templates/posters/` | Poster-oriented template variants |
+
+## Quick Links
+
+| Go to | Open |
+|---|---|
+| Source map | [resources/source-references.md](resources/source-references.md) |
+| Registry | [resources/bundle-registry.json](resources/bundle-registry.json) |
+| Snapshot | [inventory.json](inventory.json) |
+| State | [.planning/STATE.md](.planning/STATE.md) |
 
 ## Common Files
 

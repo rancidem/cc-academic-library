@@ -2,12 +2,21 @@
 
 Supporting reference material, examples, and policy notes live here.
 
-## Navigate
+## At A Glance
 
 | Area | Path | Purpose |
 |---|---|---|
 | Examples | `references/examples/` | Canonical sample outputs |
 | WTF-P references | `references/wtfp/` | Workflow and policy guidance |
+
+## Quick Links
+
+| Go to | Open |
+|---|---|
+| Source map | [resources/source-references.md](resources/source-references.md) |
+| Registry | [resources/bundle-registry.json](resources/bundle-registry.json) |
+| Snapshot | [inventory.json](inventory.json) |
+| State | [.planning/STATE.md](.planning/STATE.md) |
 
 ## Common Files
 
