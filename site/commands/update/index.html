@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>UPDATE — COMMANDS — CC ACADEMIC LIBRARY</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../search-index.js" defer></script>
+  <script src="../../search.js" defer></script>
+</head>
+<body class="section-commands">
+<a class="skip-to-content" href="#main-content">Skip to content</a>
+<div class="page">
+  <h1 class="site-title">CC ACADEMIC LIBRARY</h1>
+  <div class="top-meta">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>UPDATE</strong></div>
+
+  <table class="palette-bar" aria-hidden="true">
+    <tr><td class="p1"></td><td class="p2"></td><td class="p3"></td><td class="p4"></td><td class="p5"></td></tr>
+  </table>
+
+  <table class="layout">
+    <tr>
+      <td class="sidebar">
+        <div class="sidebar-inner">
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM PANEL</div>
+            <div class="system-subhead">SITE NAVIGATION</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../../index.html"><span class="icon icon-dot"></span>HOME</a></td></tr>
+                <tr><td><a href="../../skills/index.html"><span class="icon icon-skill"></span>SKILLS <span class="nav-count">[143]</span></a></td></tr>
+                <tr><td><a class="active" href="../index.html"><span class="icon icon-note"></span>COMMANDS <span class="nav-count">[37]</span></a></td></tr>
+                <tr><td><a href="../../agents/index.html"><span class="icon icon-dot"></span>AGENTS <span class="nav-count">[11]</span></a></td></tr>
+                <tr><td><a href="../../templates/index.html"><span class="icon icon-folder"></span>TEMPLATES</a></td></tr>
+                <tr><td><a href="../../tools/index.html"><span class="icon icon-folder"></span>TOOLS</a></td></tr>
+                <tr><td><a href="../../resources/index.html"><span class="icon icon-dot"></span>RESOURCES</a></td></tr>
+                <tr><td><a href="../../status/index.html"><span class="icon icon-dot"></span>STATUS</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">QUICK FIND</div>
+            <div class="system-body">
+              <div class="search-row">
+                <input type="text" placeholder="SKILLS / COMMANDS / AGENTS" aria-label="Search">
+                <button>SEARCH</button>
+              </div>
+            </div>
+            <div class="search-results" id="search-results"></div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM INFO</div>
+            <div class="system-body">
+              <table class="meta-table">
+                <tr><td class="meta-key">COMMAND</td><td>UPDATE</td></tr>
+                <tr><td class="meta-key">STAGE</td><td>LIFECYCLE</td></tr>
+                <tr><td class="meta-key">DATE</td><td>2026-04-14</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">ALL COMMANDS</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../index.html">&larr; COMMANDS INDEX</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </td>
+      <td class="content">
+        <div class="content-inner" id="main-content">
+
+          <div class="breadcrumb">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>UPDATE</strong></div>
+          <div class="marquee-line"><strong>COMMAND:</strong> UPDATE / STAGE: LIFECYCLE</div>
+          <h2 class="section-title">UPDATE</h2>
+          <div class="rule"></div>
+
+          <table class="meta-table">
+            <tr><td class="meta-key">SOURCE FILE</td><td>commands/update.md</td></tr>
+            <tr><td class="meta-key">WORKFLOW STAGE</td><td>LIFECYCLE</td></tr>
+            <tr><td class="meta-key">INVOCATION</td><td>/wtfp:update</td></tr>
+            <tr><td class="meta-key">TOOLS</td><td>Read, Bash, AskUserQuestion</td></tr>
+          </table>
+
+          <div class="dotted-rule"></div>
+
+          <div class="intro-panel intro-panel--commands">
+            <div class="intro-panel-head">DESCRIPTION</div>
+            <div class="intro-panel-body">Check for updates and install newer version</div>
+          </div>
+
+          <h3 class="sub-title">RAW FILES</h3>
+          <table class="list-table">
+            <tr><th>FILE</th><th>DOWNLOAD</th></tr>
+            <tr><td>update.md</td><td><a href="raw/update.md" download>DOWNLOAD</a></td></tr>
+          </table>
+
+          <h3 class="sub-title">FULL CONTENT</h3>
+          <div class="skill-body">
+            <pre class="raw-content">&lt;objective&gt;
+Check npm registry for newer version, show what changed, offer to update.
+&lt;/objective&gt;
+
+&lt;context&gt;
+No arguments. Checks current installed version against npm registry.
+&lt;/context&gt;
+
+&lt;process&gt;
+
+## 1. Get Current Version
+
+Try global install first:
+```bash
+CURRENT=$(node -e &quot;console.log(require('$(npm root -g)/wtf-p/package.json').version)&quot; 2&gt;/dev/null || echo &quot;&quot;)
+```
+
+If empty, try local:
+```bash
+CURRENT=$(node -e &quot;console.log(require('./package.json').version)&quot; 2&gt;/dev/null || echo &quot;unknown&quot;)
+```
+
+If still unknown, notify user:
+```
+Could not determine current WTF-P version.
+```
+
+## 2. Check npm Registry
+
+```bash
+LATEST=$(npm view wtf-p version 2&gt;/dev/null || echo &quot;&quot;)
+```
+
+If empty:
+```
+Could not reach npm registry. Check your connection.
+```
+Exit.
+
+## 3. Compare Versions
+
+If CURRENT == LATEST:
+```
+WTF-P is up to date (v{CURRENT}).
+```
+Exit.
+
+If CURRENT &lt; LATEST, continue to show update available.
+
+## 4. Fetch Changelog
+
+Attempt to get changelog information:
+```bash
+npm view wtf-p readme 2&gt;/dev/null | head -80
+```
+
+Or read from installed path if available:
+```bash
+cat $(npm root -g)/wtf-p/CHANGELOG.md 2&gt;/dev/null | head -100
+```
+
+Extract relevant changes between current and latest versions.
+
+## 5. Present Update Option
+
+Use AskUserQuestion:
+- header: &quot;Update Available&quot;
+- question: &quot;WTF-P v{CURRENT} -&gt; v{LATEST}\n\n{changelog excerpt showing new features/fixes}&quot;
+- options:
+  - &quot;Update now&quot;
+  - &quot;Skip for now&quot;
+  - &quot;Show full changelog&quot;
+
+## 6. Handle Response
+
+**&quot;Update now&quot;:**
+```bash
+npm install -g wtf-p@latest
+```
+
+Confirm:
+```
+Updated to v{LATEST}. Restart your terminal for changes to take effect.
+```
+
+**&quot;Skip for now&quot;:**
+```
+Update skipped. Run /wtfp:update when ready.
+```
+Exit.
+
+**&quot;Show full changelog&quot;:**
+Display more changelog content, then ask again (Update now / Skip for now).
+
+&lt;/process&gt;
+
+&lt;success_criteria&gt;
+- [ ] Current and latest version compared
+- [ ] Changelog diff shown when update available
+- [ ] User can update or skip
+- [ ] npm install -g runs on confirm
+- [ ] Restart reminder shown after update
+&lt;/success_criteria&gt;</pre>
+          </div>
+
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer">CC ACADEMIC LIBRARY / CLAUDE CODE / ACADEMIC + SCIENTIFIC SKILLS / STATIC HTML / ZERO DEPENDENCIES</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RESOURCES — CC ACADEMIC LIBRARY</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../search-index.js" defer></script>
+  <script src="../search.js" defer></script>
+</head>
+<body class="section-resources">
+<a class="skip-to-content" href="#main-content">Skip to content</a>
+<div class="page">
+  <h1 class="site-title">CC ACADEMIC LIBRARY</h1>
+  <div class="top-meta">YOU ARE HERE: <a href="../index.html">HOME</a> / <strong>RESOURCES</strong></div>
+
+  <table class="palette-bar" aria-hidden="true">
+    <tr><td class="p1"></td><td class="p2"></td><td class="p3"></td><td class="p4"></td><td class="p5"></td></tr>
+  </table>
+
+  <table class="layout">
+    <tr>
+      <td class="sidebar">
+        <div class="sidebar-inner">
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM PANEL</div>
+            <div class="system-subhead">SITE NAVIGATION</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../index.html"><span class="icon icon-dot"></span>HOME</a></td></tr>
+                <tr><td><a href="../skills/index.html"><span class="icon icon-skill"></span>SKILLS <span class="nav-count">[143]</span></a></td></tr>
+                <tr><td><a href="../commands/index.html"><span class="icon icon-note"></span>COMMANDS <span class="nav-count">[37]</span></a></td></tr>
+                <tr><td><a href="../agents/index.html"><span class="icon icon-dot"></span>AGENTS <span class="nav-count">[11]</span></a></td></tr>
+                <tr><td><a href="../templates/index.html"><span class="icon icon-folder"></span>TEMPLATES</a></td></tr>
+                <tr><td><a href="../tools/index.html"><span class="icon icon-folder"></span>TOOLS</a></td></tr>
+                <tr><td><a class="active" href="index.html"><span class="icon icon-dot"></span>RESOURCES</a></td></tr>
+                <tr><td><a href="../status/index.html"><span class="icon icon-dot"></span>STATUS</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">QUICK FIND</div>
+            <div class="system-body">
+              <div class="search-row">
+                <input type="text" placeholder="SKILLS / COMMANDS / AGENTS" aria-label="Search">
+                <button>SEARCH</button>
+              </div>
+            </div>
+            <div class="search-results" id="search-results"></div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM INFO</div>
+            <div class="system-body">
+              <table class="meta-table">
+                <tr><td class="meta-key">DATE</td><td>2026-04-14</td></tr>
+                <tr><td class="meta-key">SKILLS</td><td>~143</td></tr>
+                <tr><td class="meta-key">DOMAINS</td><td>13</td></tr>
+                <tr><td class="meta-key">COMMANDS</td><td>37</td></tr>
+                <tr><td class="meta-key">AGENTS</td><td>11</td></tr>
+                <tr><td class="meta-key">STYLE</td><td>90S / WHITE BASE</td></tr>
+                <tr><td class="meta-key">FONT</td><td>ARIAL</td></tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </td>
+      <td class="content">
+        <div class="content-inner" id="main-content">
+
+          <div class="breadcrumb">YOU ARE HERE: <a href="../index.html">HOME</a> / <strong>RESOURCES</strong></div>
+          <div class="marquee-line"><strong>SECTION: RESOURCES</strong> / SOURCE REPOS / CANONICAL MAPPING</div>
+          <h2 class="section-title">RESOURCES</h2>
+          <div class="rule"></div>
+
+          <div class="intro-panel">
+            <div class="intro-panel-head">ABOUT RESOURCES</div>
+            <div class="intro-panel-body">UPSTREAM SOURCE REPOSITORIES THAT FEED THE CANONICAL CC ACADEMIC LIBRARY. USE THIS TABLE TO TRACE ANY SKILL, COMMAND, OR AGENT BACK TO ITS ORIGIN REPO AND CHECK SOURCE PARITY.</div>
+          </div>
+
+          <div class="dotted-rule"></div>
+          <h3 class="sub-title">SOURCE REPOSITORIES</h3>
+          <table class="list-table">
+            <tr><th>REPO</th><th>SUMMARY</th></tr>
+            <tr>
+              <td>academic-paper-skills</td>
+              <td>Systematic philosophy and interdisciplinary paper-writing workflows with strategist and composer skills, validation gates, and research-to-manuscript support.</td>
+            </tr>
+            <tr>
+              <td>claude-scientific-writer</td>
+              <td>Claude Code plugin and Python package for deep research writing, citation-backed scientific documents, and related academic outputs.</td>
+            </tr>
+            <tr>
+              <td>MySkills</td>
+              <td>Paper Visualizer skill bundle focused on turning papers into high-fidelity technical schematics and related visual outputs.</td>
+            </tr>
+            <tr>
+              <td>scientific-agent-skills</td>
+              <td>Large agent skills collection covering scientific libraries, databases, workflows, and domain-specific research operations.</td>
+            </tr>
+            <tr>
+              <td>wtf-p</td>
+              <td>WTF-P writing framework for structured academic authoring, citation grounding, outline execution, and quality checks.</td>
+            </tr>
+            <tr>
+              <td>matsengrp/plugins</td>
+              <td>Claude Code plugin with specialized agents, a pre-PR checklist command, and desktop notification hooks.</td>
+            </tr>
+          </table>
+
+          <div class="dotted-rule"></div>
+          <h3 class="sub-title">CANONICAL MAPPING</h3>
+          <table class="list-table">
+            <tr><th>REPO</th><th>CANONICAL SUBTREES</th></tr>
+            <tr><td>academic-paper-skills</td><td>skills/writing-research/academic-paper-composer, skills/writing-research/academic-paper-strategist, references/examples</td></tr>
+            <tr><td>claude-scientific-writer</td><td>commands/scientific-writer-init.md, skills/writing-research/paper-2-web, scripts/academic-paper-composer, scripts/academic-paper-strategist</td></tr>
+            <tr><td>MySkills</td><td>skills/visualization/visual-architect</td></tr>
+            <tr><td>scientific-agent-skills</td><td>skills/bioinformatics, skills/cheminformatics, skills/clinical-medical, skills/computational-biology, skills/data-science, skills/document-formats, skills/earth-geo-astro, skills/lab-automation, skills/machine-learning, skills/misc, skills/quantum-computing, skills/visualization, skills/writing-research</td></tr>
+            <tr><td>wtf-p</td><td>references/wtfp, scripts/wtfp-commands, scripts/wtfp-lib, tools/wcn</td></tr>
+            <tr><td>matsengrp/plugins</td><td>agents/matsengrp-agents, commands/matsengrp-agents</td></tr>
+          </table>
+
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer">CC ACADEMIC LIBRARY / CLAUDE CODE / ACADEMIC + SCIENTIFIC SKILLS / STATIC HTML / ZERO DEPENDENCIES</div>
+</div>
+</body>
+</html>

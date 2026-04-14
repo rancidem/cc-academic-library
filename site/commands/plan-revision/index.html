@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PLAN-REVISION — COMMANDS — CC ACADEMIC LIBRARY</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../search-index.js" defer></script>
+  <script src="../../search.js" defer></script>
+</head>
+<body class="section-commands">
+<a class="skip-to-content" href="#main-content">Skip to content</a>
+<div class="page">
+  <h1 class="site-title">CC ACADEMIC LIBRARY</h1>
+  <div class="top-meta">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>PLAN-REVISION</strong></div>
+
+  <table class="palette-bar" aria-hidden="true">
+    <tr><td class="p1"></td><td class="p2"></td><td class="p3"></td><td class="p4"></td><td class="p5"></td></tr>
+  </table>
+
+  <table class="layout">
+    <tr>
+      <td class="sidebar">
+        <div class="sidebar-inner">
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM PANEL</div>
+            <div class="system-subhead">SITE NAVIGATION</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../../index.html"><span class="icon icon-dot"></span>HOME</a></td></tr>
+                <tr><td><a href="../../skills/index.html"><span class="icon icon-skill"></span>SKILLS <span class="nav-count">[143]</span></a></td></tr>
+                <tr><td><a class="active" href="../index.html"><span class="icon icon-note"></span>COMMANDS <span class="nav-count">[37]</span></a></td></tr>
+                <tr><td><a href="../../agents/index.html"><span class="icon icon-dot"></span>AGENTS <span class="nav-count">[11]</span></a></td></tr>
+                <tr><td><a href="../../templates/index.html"><span class="icon icon-folder"></span>TEMPLATES</a></td></tr>
+                <tr><td><a href="../../tools/index.html"><span class="icon icon-folder"></span>TOOLS</a></td></tr>
+                <tr><td><a href="../../resources/index.html"><span class="icon icon-dot"></span>RESOURCES</a></td></tr>
+                <tr><td><a href="../../status/index.html"><span class="icon icon-dot"></span>STATUS</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">QUICK FIND</div>
+            <div class="system-body">
+              <div class="search-row">
+                <input type="text" placeholder="SKILLS / COMMANDS / AGENTS" aria-label="Search">
+                <button>SEARCH</button>
+              </div>
+            </div>
+            <div class="search-results" id="search-results"></div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM INFO</div>
+            <div class="system-body">
+              <table class="meta-table">
+                <tr><td class="meta-key">COMMAND</td><td>PLAN-REVISION</td></tr>
+                <tr><td class="meta-key">STAGE</td><td>REVIEW</td></tr>
+                <tr><td class="meta-key">DATE</td><td>2026-04-14</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">ALL COMMANDS</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../index.html">&larr; COMMANDS INDEX</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </td>
+      <td class="content">
+        <div class="content-inner" id="main-content">
+
+          <div class="breadcrumb">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>PLAN-REVISION</strong></div>
+          <div class="marquee-line"><strong>COMMAND:</strong> PLAN-REVISION / STAGE: REVIEW</div>
+          <h2 class="section-title">PLAN-REVISION</h2>
+          <div class="rule"></div>
+
+          <table class="meta-table">
+            <tr><td class="meta-key">SOURCE FILE</td><td>commands/plan-revision.md</td></tr>
+            <tr><td class="meta-key">WORKFLOW STAGE</td><td>REVIEW</td></tr>
+            <tr><td class="meta-key">INVOCATION</td><td>/wtfp:plan-revision</td></tr>
+            <tr><td class="meta-key">TOOLS</td><td>Read, Bash, Write, AskUserQuestion</td></tr>
+          </table>
+
+          <div class="dotted-rule"></div>
+
+          <div class="intro-panel intro-panel--commands">
+            <div class="intro-panel-head">DESCRIPTION</div>
+            <div class="intro-panel-body">Create revision plan from review issues</div>
+          </div>
+
+          <h3 class="sub-title">RAW FILES</h3>
+          <table class="list-table">
+            <tr><th>FILE</th><th>DOWNLOAD</th></tr>
+            <tr><td>plan-revision.md</td><td><a href="raw/plan-revision.md" download>DOWNLOAD</a></td></tr>
+          </table>
+
+          <h3 class="sub-title">FULL CONTENT</h3>
+          <div class="skill-body">
+            <pre class="raw-content">&lt;objective&gt;
+Create targeted revision plan from review issues.
+
+Reads ISSUES.md and creates a REVISION.md plan to address identified problems.
+
+Prioritizes blockers, then major issues, then minor issues.
+&lt;/objective&gt;
+
+&lt;execution_context&gt;
+@~/.claude/write-the-f-paper/workflows/plan-section.md
+@~/.claude/write-the-f-paper/references/plan-format.md
+&lt;/execution_context&gt;
+
+&lt;process&gt;
+
+&lt;step name=&quot;verify&quot;&gt;
+**Verify issues exist:**
+
+```bash
+ISSUES_FILE=&quot;docs/sections/[section-dir]/$ARGUMENTS-ISSUES.md&quot;
+[ ! -f &quot;$ISSUES_FILE&quot; ] &amp;&amp; echo &quot;ERROR: No issues file found at $ISSUES_FILE&quot; &amp;&amp; exit 1
+```
+
+&lt;/step&gt;
+
+&lt;step name=&quot;load&quot;&gt;
+**Load context:**
+
+- Read the ISSUES.md file
+- Read original PLAN.md for context
+- Read SUMMARY.md for what was written
+- Read the actual section content (paper/[section].md)
+- Read PROJECT.md for requirements reference
+&lt;/step&gt;
+
+&lt;step name=&quot;triage&quot;&gt;
+**Triage issues:**
+
+Group by severity:
+- **Blockers:** Must fix before submission
+- **Major:** Should fix, impacts quality
+- **Minor:** Nice to fix if time allows
+
+Use AskUserQuestion:
+- header: &quot;Revision Scope&quot;
+- question: &quot;Which issues should we address?&quot;
+- options:
+  - &quot;Blockers only&quot; — Fix critical issues
+  - &quot;Blockers + Major&quot; — Fix important issues
+  - &quot;All issues&quot; — Comprehensive revision
+  - &quot;Let me select&quot; — I'll specify which
+
+&lt;/step&gt;
+
+&lt;step name=&quot;create_revision&quot;&gt;
+**Create REVISION.md:**
+
+```markdown
+---
+section: XX-name
+plan: YY-REVISION
+issues_addressed: [list of issue IDs]
+---
+
+&lt;objective&gt;
+Address review issues from [section] verification.
+
+Fixes: [N] issues ([blockers] blockers, [major] major, [minor] minor)
+&lt;/objective&gt;
+
+&lt;execution_context&gt;
+@~/.claude/write-the-f-paper/workflows/execute-section.md
+&lt;/execution_context&gt;
+
+&lt;context&gt;
+@docs/sections/XX-name/XX-YY-ISSUES.md
+@docs/sections/XX-name/XX-YY-SUMMARY.md
+@paper/[section].md
+&lt;/context&gt;
+
+&lt;tasks&gt;
+
+&lt;task type=&quot;auto&quot;&gt;
+  &lt;name&gt;Fix [ISSUE-ID]: [description]&lt;/name&gt;
+  &lt;issue&gt;[Full issue description]&lt;/issue&gt;
+  &lt;location&gt;[Where in document]&lt;/location&gt;
+  &lt;action&gt;
+    [Specific fix instructions]
+  &lt;/action&gt;
+  &lt;verify&gt;
+    - [ ] Issue resolved
+    - [ ] No new issues introduced
+  &lt;/verify&gt;
+&lt;/task&gt;
+
+[... task per issue ...]
+
+&lt;/tasks&gt;
+
+&lt;verification&gt;
+- [ ] All addressed issues resolved
+- [ ] No regression in other checks
+- [ ] Word count still within target
+&lt;/verification&gt;
+
+&lt;success_criteria&gt;
+- [ ] [N] issues fixed
+- [ ] Section passes re-verification
+&lt;/success_criteria&gt;
+
+&lt;output&gt;
+- Updated paper/[section].md
+- REVISION-SUMMARY.md
+&lt;/output&gt;
+```
+
+&lt;/step&gt;
+
+&lt;step name=&quot;commit&quot;&gt;
+```bash
+git add docs/sections/XX-name/XX-YY-REVISION.md
+git commit -m &quot;$(cat &lt;&lt;'EOF'
+plan(XX-YY): revision plan
+
+Addresses: [N] issues
+Scope: [blockers/major/all]
+EOF
+)&quot;
+```
+
+&lt;/step&gt;
+
+&lt;step name=&quot;done&quot;&gt;
+**Present completion:**
+
+```
+Revision plan created:
+
+- Plan: docs/sections/XX-name/XX-YY-REVISION.md
+- Issues addressed: [N]
+- Scope: [blockers/major/all]
+
+## Issues to Fix
+[List of issues]
+
+---
+
+## ▶ Next Up
+
+**Execute revision** — apply fixes
+
+`/wtfp:write-section docs/sections/XX-name/XX-YY-REVISION.md`
+
+&lt;sub&gt;`/clear` first → fresh context window&lt;/sub&gt;
+
+---
+```
+
+&lt;/step&gt;
+
+&lt;/process&gt;
+
+&lt;success_criteria&gt;
+- [ ] Issues triaged by severity
+- [ ] User selected scope
+- [ ] REVISION.md created with specific fixes
+- [ ] Each issue has a targeted task
+- [ ] Clear verification criteria
+&lt;/success_criteria&gt;</pre>
+          </div>
+
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer">CC ACADEMIC LIBRARY / CLAUDE CODE / ACADEMIC + SCIENTIFIC SKILLS / STATIC HTML / ZERO DEPENDENCIES</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PROGRESS — COMMANDS — CC ACADEMIC LIBRARY</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../search-index.js" defer></script>
+  <script src="../../search.js" defer></script>
+</head>
+<body class="section-commands">
+<a class="skip-to-content" href="#main-content">Skip to content</a>
+<div class="page">
+  <h1 class="site-title">CC ACADEMIC LIBRARY</h1>
+  <div class="top-meta">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>PROGRESS</strong></div>
+
+  <table class="palette-bar" aria-hidden="true">
+    <tr><td class="p1"></td><td class="p2"></td><td class="p3"></td><td class="p4"></td><td class="p5"></td></tr>
+  </table>
+
+  <table class="layout">
+    <tr>
+      <td class="sidebar">
+        <div class="sidebar-inner">
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM PANEL</div>
+            <div class="system-subhead">SITE NAVIGATION</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../../index.html"><span class="icon icon-dot"></span>HOME</a></td></tr>
+                <tr><td><a href="../../skills/index.html"><span class="icon icon-skill"></span>SKILLS <span class="nav-count">[143]</span></a></td></tr>
+                <tr><td><a class="active" href="../index.html"><span class="icon icon-note"></span>COMMANDS <span class="nav-count">[37]</span></a></td></tr>
+                <tr><td><a href="../../agents/index.html"><span class="icon icon-dot"></span>AGENTS <span class="nav-count">[11]</span></a></td></tr>
+                <tr><td><a href="../../templates/index.html"><span class="icon icon-folder"></span>TEMPLATES</a></td></tr>
+                <tr><td><a href="../../tools/index.html"><span class="icon icon-folder"></span>TOOLS</a></td></tr>
+                <tr><td><a href="../../resources/index.html"><span class="icon icon-dot"></span>RESOURCES</a></td></tr>
+                <tr><td><a href="../../status/index.html"><span class="icon icon-dot"></span>STATUS</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">QUICK FIND</div>
+            <div class="system-body">
+              <div class="search-row">
+                <input type="text" placeholder="SKILLS / COMMANDS / AGENTS" aria-label="Search">
+                <button>SEARCH</button>
+              </div>
+            </div>
+            <div class="search-results" id="search-results"></div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM INFO</div>
+            <div class="system-body">
+              <table class="meta-table">
+                <tr><td class="meta-key">COMMAND</td><td>PROGRESS</td></tr>
+                <tr><td class="meta-key">STAGE</td><td>LIFECYCLE</td></tr>
+                <tr><td class="meta-key">DATE</td><td>2026-04-14</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">ALL COMMANDS</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../index.html">&larr; COMMANDS INDEX</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </td>
+      <td class="content">
+        <div class="content-inner" id="main-content">
+
+          <div class="breadcrumb">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>PROGRESS</strong></div>
+          <div class="marquee-line"><strong>COMMAND:</strong> PROGRESS / STAGE: LIFECYCLE</div>
+          <h2 class="section-title">PROGRESS</h2>
+          <div class="rule"></div>
+
+          <table class="meta-table">
+            <tr><td class="meta-key">SOURCE FILE</td><td>commands/progress.md</td></tr>
+            <tr><td class="meta-key">WORKFLOW STAGE</td><td>LIFECYCLE</td></tr>
+            <tr><td class="meta-key">INVOCATION</td><td>/wtfp:progress</td></tr>
+            <tr><td class="meta-key">TOOLS</td><td>Read, Bash, Glob, Grep, Task, AskUserQuestion</td></tr>
+          </table>
+
+          <div class="dotted-rule"></div>
+
+          <div class="intro-panel intro-panel--commands">
+            <div class="intro-panel-head">DESCRIPTION</div>
+            <div class="intro-panel-body">Show writing progress and suggest next step</div>
+          </div>
+
+          <h3 class="sub-title">RAW FILES</h3>
+          <table class="list-table">
+            <tr><th>FILE</th><th>DOWNLOAD</th></tr>
+            <tr><td>progress.md</td><td><a href="raw/progress.md" download>DOWNLOAD</a></td></tr>
+          </table>
+
+          <h3 class="sub-title">FULL CONTENT</h3>
+          <div class="skill-body">
+            <pre class="raw-content">&lt;objective&gt;
+Check writing progress, summarize recent work, and intelligently route to the next action.
+
+**Orchestrator role:** Load state files, calculate progress metrics, present rich status report, determine and offer the next logical command.
+&lt;/objective&gt;
+
+&lt;context&gt;
+No arguments. Reads project state from docs/.
+&lt;/context&gt;
+
+&lt;process&gt;
+
+## 1. Validate Environment
+
+```bash
+ls docs/STATE.md docs/ROADMAP.md docs/PROJECT.md 2&gt;/dev/null
+```
+
+If missing `docs/` → suggest `/wtfp:new-paper`.
+If missing STATE.md or ROADMAP.md → suggest what's needed.
+
+## 2. Load Project Context
+
+Read: STATE.md, ROADMAP.md, PROJECT.md, config.json (for model_profile).
+
+```bash
+MODEL_PROFILE=$(cat docs/config.json 2&gt;/dev/null | grep -o '&quot;model_profile&quot;[[:space:]]*:[[:space:]]*&quot;[^&quot;]*&quot;' | grep -o '&quot;[^&quot;]*&quot;$' | tr -d '&quot;' || echo &quot;balanced&quot;)
+```
+
+## 3. Gather Recent Work
+
+Find 2-3 most recent SUMMARY.md files. Extract: what was written, key decisions, issues.
+
+## 4. Parse Current Position
+
+From STATE.md: current section, plan number, status, word count.
+Calculate: total plans, completed, remaining. Total words vs target.
+Check for CONTEXT.md in current section directory.
+
+## 4b. Build Statusline
+
+Build the statusline string:
+```
+WTF-P ► {section progress} ◆ {word count} ► {model_profile}
+```
+
+**Section progress:** `{completed}/{total} sections` (count SUMMARY.md files vs total sections)
+
+**Word count:** `{current_words}/{target_words}w` (from STATE.md and PROJECT.md)
+
+**Model profile:** from config.json (quality/balanced/budget)
+
+**Update indicator:** Check for newer version quietly:
+```bash
+CURRENT=$(node -e &quot;console.log(require('$(npm root -g)/wtf-p/package.json').version)&quot; 2&gt;/dev/null || echo &quot;&quot;)
+LATEST=$(npm view wtf-p version 2&gt;/dev/null || echo &quot;&quot;)
+```
+
+If LATEST exists and CURRENT &lt; LATEST, append ` ▲ update` to statusline.
+
+**Pending todos:** Count files:
+```bash
+PENDING_TODOS=$(ls -1 docs/todos/pending/*.md 2&gt;/dev/null | wc -l | tr -d ' ')
+```
+
+## 5. Present Status Report
+
+**Display statusline FIRST** (before all other output):
+```
+WTF-P ► 3/6 sections ◆ 4200/8000w ► balanced ▲ update
+```
+
+Then the detailed status report:
+
+```
+# [Paper Title]
+
+**Progress:** [████████░░] 8/10 sections drafted
+**Words:** [current] / [target] ([percentage]%)
+**Profile:** [quality/balanced/budget]
+
+## Recent Work
+- [Section X]: [1-line summary]
+
+## Current Position
+Section [N] of [total]: [name] — [status]
+CONTEXT: [✓ | -]
+
+## Key Decisions
+- [from STATE.md]
+
+## Open Issues
+- [deferred items]
+
+## Pending Todos
+{PENDING_TODOS} pending (run /wtfp:check-todos to review)
+```
+
+## 6. Route to Next Action
+
+**Count files in current section:**
+```bash
+ls -1 docs/sections/[dir]/*-PLAN.md 2&gt;/dev/null | wc -l
+ls -1 docs/sections/[dir]/*-SUMMARY.md 2&gt;/dev/null | wc -l
+ls -1 docs/sections/[dir]/*-ISSUES.md 2&gt;/dev/null | wc -l
+```
+
+**Route A — Unexecuted plan exists** (summaries &lt; plans):
+Find first PLAN.md without SUMMARY.md. Offer `/wtfp:write-section [path]`.
+
+**Route B — Section needs planning** (plans = 0):
+If CONTEXT.md exists → offer `/wtfp:plan-section {N}`.
+If not → offer `/wtfp:discuss-section {N}` or `/wtfp:plan-section {N}`.
+
+**Route C — Section complete, more remain** (summaries = plans, not last section):
+Offer `/wtfp:plan-section {N+1}`. Also: `/wtfp:review-section {N}`.
+
+**Route D — Draft complete** (all sections done):
+Offer `/wtfp:review-section` and `/wtfp:export-latex`.
+
+**Route E — Review issues need revision** (ISSUES.md without REVISION.md):
+Offer `/wtfp:plan-revision {plan}`.
+
+&lt;/process&gt;
+
+&lt;offer_next&gt;
+
+Show the routed next action with clear command and `/clear` suggestion.
+
+&lt;/offer_next&gt;
+
+&lt;success_criteria&gt;
+- [ ] Statusline displayed first: WTF-P ► {sections} ◆ {words} ► {profile} [▲ update]
+- [ ] Update indicator shown when newer version available
+- [ ] Pending todo count shown
+- [ ] Rich context provided (recent work, word counts, decisions)
+- [ ] Current position clear with visual progress
+- [ ] Model profile shown
+- [ ] Smart routing to next command
+- [ ] User confirms before any action
+&lt;/success_criteria&gt;</pre>
+          </div>
+
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer">CC ACADEMIC LIBRARY / CLAUDE CODE / ACADEMIC + SCIENTIFIC SKILLS / STATIC HTML / ZERO DEPENDENCIES</div>
+</div>
+</body>
+</html>

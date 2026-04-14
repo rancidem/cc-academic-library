@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TEMPLATES — CC ACADEMIC LIBRARY</title>
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../search-index.js" defer></script>
+  <script src="../search.js" defer></script>
+</head>
+<body>
+<a class="skip-to-content" href="#main-content">Skip to content</a>
+<div class="page">
+  <h1 class="site-title">CC ACADEMIC LIBRARY</h1>
+  <div class="top-meta">YOU ARE HERE: <a href="../index.html">HOME</a> / <strong>TEMPLATES</strong></div>
+
+  <table class="palette-bar" aria-hidden="true">
+    <tr><td class="p1"></td><td class="p2"></td><td class="p3"></td><td class="p4"></td><td class="p5"></td></tr>
+  </table>
+
+  <table class="layout">
+    <tr>
+      <td class="sidebar">
+        <div class="sidebar-inner">
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM PANEL</div>
+            <div class="system-subhead">SITE NAVIGATION</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../index.html"><span class="icon icon-dot"></span>HOME</a></td></tr>
+                <tr><td><a href="../skills/index.html"><span class="icon icon-skill"></span>SKILLS <span class="nav-count">[143]</span></a></td></tr>
+                <tr><td><a href="../commands/index.html"><span class="icon icon-note"></span>COMMANDS <span class="nav-count">[37]</span></a></td></tr>
+                <tr><td><a href="../agents/index.html"><span class="icon icon-dot"></span>AGENTS <span class="nav-count">[11]</span></a></td></tr>
+                <tr><td><a class="active" href="index.html"><span class="icon icon-folder"></span>TEMPLATES</a></td></tr>
+                <tr><td><a href="../tools/index.html"><span class="icon icon-folder"></span>TOOLS</a></td></tr>
+                <tr><td><a href="../resources/index.html"><span class="icon icon-dot"></span>RESOURCES</a></td></tr>
+                <tr><td><a href="../status/index.html"><span class="icon icon-dot"></span>STATUS</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">QUICK FIND</div>
+            <div class="system-body">
+              <div class="search-row">
+                <input type="text" placeholder="SKILLS / COMMANDS / AGENTS" aria-label="Search">
+                <button>SEARCH</button>
+              </div>
+            </div>
+            <div class="search-results" id="search-results"></div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM INFO</div>
+            <div class="system-body">
+              <table class="meta-table">
+                <tr><td class="meta-key">DATE</td><td>2026-04-14</td></tr>
+                <tr><td class="meta-key">SKILLS</td><td>~143</td></tr>
+                <tr><td class="meta-key">DOMAINS</td><td>13</td></tr>
+                <tr><td class="meta-key">COMMANDS</td><td>37</td></tr>
+                <tr><td class="meta-key">AGENTS</td><td>11</td></tr>
+                <tr><td class="meta-key">STYLE</td><td>90S / WHITE BASE</td></tr>
+                <tr><td class="meta-key">FONT</td><td>ARIAL</td></tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </td>
+      <td class="content">
+        <div class="content-inner" id="main-content">
+
+          <div class="breadcrumb">YOU ARE HERE: <a href="../index.html">HOME</a> / <strong>TEMPLATES</strong></div>
+          <div class="marquee-line"><strong>SECTION: TEMPLATES</strong> / PROJECT CONTEXT FILES / WRITING WORKFLOW SCAFFOLDING</div>
+          <h2 class="section-title">TEMPLATES</h2>
+          <div class="rule"></div>
+
+          <div class="intro-panel">
+            <div class="intro-panel-head">ABOUT TEMPLATES</div>
+            <div class="intro-panel-body">REUSABLE CONTEXT FILE TEMPLATES FOR ACADEMIC WRITING PROJECTS. THESE FILES SCAFFOLD A NEW PAPER PROJECT WITH STRUCTURED SLOTS FOR MANUSCRIPT STATE, OUTLINE, RESEARCH NOTES, AND SECTION CONTEXT.</div>
+          </div>
+
+          <div class="dotted-rule"></div>
+          <h3 class="sub-title">PROJECT CONTEXT TEMPLATES</h3>
+          <table class="list-table">
+            <tr><th>TEMPLATE</th><th>PURPOSE</th></tr>
+            <tr><td>base-prefs.yaml</td><td>Author preferences: voice, citation style, journal target</td></tr>
+            <tr><td>config.json</td><td>Project configuration: paper ID, phase, milestone</td></tr>
+            <tr><td>context.md</td><td>Top-level project context loaded at session start</td></tr>
+            <tr><td>continue-here.md</td><td>Session resume pointer: where writing left off</td></tr>
+            <tr><td>data-inventory.md</td><td>Inventory of datasets, figures, and supplementary files</td></tr>
+            <tr><td>discovery.md</td><td>Literature discovery notes and candidate citations</td></tr>
+            <tr><td>issues.md</td><td>Known issues, reviewer comments, open questions</td></tr>
+            <tr><td>manuscript.md</td><td>Main manuscript draft (full text)</td></tr>
+            <tr><td>narrative-arc.md</td><td>Story structure: argument flow and section transitions</td></tr>
+            <tr><td>outline.md</td><td>Structured paper outline with section targets</td></tr>
+            <tr><td>phase-prompt.md</td><td>Current phase instructions for the writing agent</td></tr>
+            <tr><td>prior-drafts.md</td><td>Archive of superseded draft sections</td></tr>
+            <tr><td>project.md</td><td>Project brief: hypothesis, aims, and scope</td></tr>
+            <tr><td>research.md</td><td>Research synthesis: key findings and evidence</td></tr>
+            <tr><td>review-comments.md</td><td>Peer review comments and planned responses</td></tr>
+            <tr><td>revision-issues.md</td><td>Revision task list from reviewer feedback</td></tr>
+            <tr><td>roadmap.md</td><td>Milestone schedule and completion targets</td></tr>
+            <tr><td>section-archive.md</td><td>Archived section drafts for reference</td></tr>
+            <tr><td>section-context.md</td><td>Active section context for write-section commands</td></tr>
+            <tr><td>section.md</td><td>Current section being written</td></tr>
+            <tr><td>state.md</td><td>Current workflow state: phase, section, checkpoint</td></tr>
+            <tr><td>summary.md</td><td>Abstract and executive summary drafts</td></tr>
+            <tr><td>UAT.md</td><td>User acceptance criteria for manuscript quality gates</td></tr>
+          </table>
+
+          <div class="dotted-rule"></div>
+          <h3 class="sub-title">POSTER + SLIDES TEMPLATES</h3>
+          <table class="list-table">
+            <tr><th>TEMPLATE</th><th>PURPOSE</th></tr>
+            <tr><td>posters/</td><td>Conference poster scaffold templates</td></tr>
+            <tr><td>slides/</td><td>Presentation slide scaffold templates</td></tr>
+          </table>
+
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer">CC ACADEMIC LIBRARY / CLAUDE CODE / ACADEMIC + SCIENTIFIC SKILLS / STATIC HTML / ZERO DEPENDENCIES</div>
+</div>
+</body>
+</html>

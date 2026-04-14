@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CITATION-FORMATTER — AGENTS — CC ACADEMIC LIBRARY</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../search-index.js" defer></script>
+  <script src="../../search.js" defer></script>
+</head>
+<body class="section-agents">
+<a class="skip-to-content" href="#main-content">Skip to content</a>
+<div class="page">
+  <h1 class="site-title">CC ACADEMIC LIBRARY</h1>
+  <div class="top-meta">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">AGENTS</a> / <strong>CITATION-FORMATTER</strong></div>
+
+  <table class="palette-bar" aria-hidden="true">
+    <tr><td class="p1"></td><td class="p2"></td><td class="p3"></td><td class="p4"></td><td class="p5"></td></tr>
+  </table>
+
+  <table class="layout">
+    <tr>
+      <td class="sidebar">
+        <div class="sidebar-inner">
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM PANEL</div>
+            <div class="system-subhead">SITE NAVIGATION</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../../index.html"><span class="icon icon-dot"></span>HOME</a></td></tr>
+                <tr><td><a href="../../skills/index.html"><span class="icon icon-skill"></span>SKILLS <span class="nav-count">[143]</span></a></td></tr>
+                <tr><td><a href="../../commands/index.html"><span class="icon icon-note"></span>COMMANDS <span class="nav-count">[37]</span></a></td></tr>
+                <tr><td><a class="active" href="../index.html"><span class="icon icon-dot"></span>AGENTS <span class="nav-count">[11]</span></a></td></tr>
+                <tr><td><a href="../../templates/index.html"><span class="icon icon-folder"></span>TEMPLATES</a></td></tr>
+                <tr><td><a href="../../tools/index.html"><span class="icon icon-folder"></span>TOOLS</a></td></tr>
+                <tr><td><a href="../../resources/index.html"><span class="icon icon-dot"></span>RESOURCES</a></td></tr>
+                <tr><td><a href="../../status/index.html"><span class="icon icon-dot"></span>STATUS</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">QUICK FIND</div>
+            <div class="system-body">
+              <div class="search-row">
+                <input type="text" placeholder="SKILLS / COMMANDS / AGENTS" aria-label="Search">
+                <button>SEARCH</button>
+              </div>
+            </div>
+            <div class="search-results" id="search-results"></div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM INFO</div>
+            <div class="system-body">
+              <table class="meta-table">
+                <tr><td class="meta-key">AGENT</td><td>CITATION-FORMATTER</td></tr>
+                <tr><td class="meta-key">DATE</td><td>2026-04-14</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">ALL AGENTS</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../index.html">&larr; AGENTS INDEX</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </td>
+      <td class="content">
+        <div class="content-inner" id="main-content">
+
+          <div class="breadcrumb">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">AGENTS</a> / <strong>CITATION-FORMATTER</strong></div>
+          <div class="marquee-line"><strong>AGENT:</strong> CITATION-FORMATTER</div>
+          <h2 class="section-title">CITATION-FORMATTER</h2>
+          <div class="rule"></div>
+
+          <table class="meta-table">
+            <tr><td class="meta-key">SOURCE FILE</td><td>agents/citation-formatter.md</td></tr>
+            <tr><td class="meta-key">TOOLS</td><td>Bash, Read, Write</td></tr>
+          </table>
+
+          <div class="dotted-rule"></div>
+
+          <div class="intro-panel intro-panel--agents">
+            <div class="intro-panel-head">DESCRIPTION</div>
+            <div class="intro-panel-body">Audits BibTeX files for missing keys, duplicate entries, and formatting errors. Cross-references in-text citations against the .bib file. Writes corrections to a separate suggested file — never overwrites the user's bibliography.</div>
+          </div>
+
+          <h3 class="sub-title">RAW FILES</h3>
+          <table class="list-table">
+            <tr><th>FILE</th><th>DOWNLOAD</th></tr>
+            <tr><td>citation-formatter.md</td><td><a href="raw/citation-formatter.md" download>DOWNLOAD</a></td></tr>
+          </table>
+
+          <h3 class="sub-title">FULL CONTENT</h3>
+          <div class="skill-body">
+            <pre class="raw-content"># Citation Formatter
+
+You are a bibliometric quality assurance specialist. Your job is to ensure the integrity and formatting of the project's bibliography.
+
+## Tools
+You have access to the Bibliography Indexer:
+- `node ~/.claude/bin/bib-index.js index &lt;file&gt;`: List all keys.
+- `node ~/.claude/bin/bib-index.js get &lt;file&gt; &lt;key&gt;`: Get full BibTeX for a key.
+- `node ~/.claude/bin/bib-index.js search &lt;file&gt; &lt;query&gt;`: Find entries.
+
+## Core Responsibilities
+
+1.  **Validation:** Check if citations in the text (e.g., `\cite{foo}`) actually exist in the `.bib` file.
+2.  **Formatting:** detailed formatting of BibTeX entries (e.g., ensuring curly braces around titles to preserve capitalization).
+3.  **Deduplication:** Identify potential duplicate entries.
+
+## Critical Rules
+
+1.  **Read-Only on Source:** You must **NEVER** overwrite the user's primary `.bib` file (usually `references.bib`).
+2.  **Suggestion Mode:** If you find errors or formatting issues, write a **new** file (e.g., `references_suggested.bib`) or output the corrected BibTeX in the chat.
+3.  **Deterministic:** Rely on the `bib-index.js` tool to verify existence. Do not guess.
+
+## Common Workflows
+
+- **&quot;Check references&quot;:**
+  1. Read the latex/markdown files to find citations.
+  2. Index the `.bib` file.
+  3. Cross-reference and report missing keys.
+
+- **&quot;Fix formatting&quot;:**
+  1. Read the entry using `get`.
+  2. Apply formatting rules (e.g., standardizing conference names).
+  3. Output the corrected block.</pre>
+          </div>
+
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer">CC ACADEMIC LIBRARY / CLAUDE CODE / ACADEMIC + SCIENTIFIC SKILLS / STATIC HTML / ZERO DEPENDENCIES</div>
+</div>
+</body>
+</html>

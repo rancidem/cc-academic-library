@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>NEW-PAPER — COMMANDS — CC ACADEMIC LIBRARY</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../search-index.js" defer></script>
+  <script src="../../search.js" defer></script>
+</head>
+<body class="section-commands">
+<a class="skip-to-content" href="#main-content">Skip to content</a>
+<div class="page">
+  <h1 class="site-title">CC ACADEMIC LIBRARY</h1>
+  <div class="top-meta">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>NEW-PAPER</strong></div>
+
+  <table class="palette-bar" aria-hidden="true">
+    <tr><td class="p1"></td><td class="p2"></td><td class="p3"></td><td class="p4"></td><td class="p5"></td></tr>
+  </table>
+
+  <table class="layout">
+    <tr>
+      <td class="sidebar">
+        <div class="sidebar-inner">
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM PANEL</div>
+            <div class="system-subhead">SITE NAVIGATION</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../../index.html"><span class="icon icon-dot"></span>HOME</a></td></tr>
+                <tr><td><a href="../../skills/index.html"><span class="icon icon-skill"></span>SKILLS <span class="nav-count">[143]</span></a></td></tr>
+                <tr><td><a class="active" href="../index.html"><span class="icon icon-note"></span>COMMANDS <span class="nav-count">[37]</span></a></td></tr>
+                <tr><td><a href="../../agents/index.html"><span class="icon icon-dot"></span>AGENTS <span class="nav-count">[11]</span></a></td></tr>
+                <tr><td><a href="../../templates/index.html"><span class="icon icon-folder"></span>TEMPLATES</a></td></tr>
+                <tr><td><a href="../../tools/index.html"><span class="icon icon-folder"></span>TOOLS</a></td></tr>
+                <tr><td><a href="../../resources/index.html"><span class="icon icon-dot"></span>RESOURCES</a></td></tr>
+                <tr><td><a href="../../status/index.html"><span class="icon icon-dot"></span>STATUS</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">QUICK FIND</div>
+            <div class="system-body">
+              <div class="search-row">
+                <input type="text" placeholder="SKILLS / COMMANDS / AGENTS" aria-label="Search">
+                <button>SEARCH</button>
+              </div>
+            </div>
+            <div class="search-results" id="search-results"></div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM INFO</div>
+            <div class="system-body">
+              <table class="meta-table">
+                <tr><td class="meta-key">COMMAND</td><td>NEW-PAPER</td></tr>
+                <tr><td class="meta-key">STAGE</td><td>PLANNING</td></tr>
+                <tr><td class="meta-key">DATE</td><td>2026-04-14</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">ALL COMMANDS</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../index.html">&larr; COMMANDS INDEX</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </td>
+      <td class="content">
+        <div class="content-inner" id="main-content">
+
+          <div class="breadcrumb">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>NEW-PAPER</strong></div>
+          <div class="marquee-line"><strong>COMMAND:</strong> NEW-PAPER / STAGE: PLANNING</div>
+          <h2 class="section-title">NEW-PAPER</h2>
+          <div class="rule"></div>
+
+          <table class="meta-table">
+            <tr><td class="meta-key">SOURCE FILE</td><td>commands/new-paper.md</td></tr>
+            <tr><td class="meta-key">WORKFLOW STAGE</td><td>PLANNING</td></tr>
+            <tr><td class="meta-key">INVOCATION</td><td>/wtfp:new-paper</td></tr>
+            <tr><td class="meta-key">TOOLS</td><td>Read, Bash, Write, Glob, Grep, Task, AskUserQuestion</td></tr>
+          </table>
+
+          <div class="dotted-rule"></div>
+
+          <div class="intro-panel intro-panel--commands">
+            <div class="intro-panel-head">DESCRIPTION</div>
+            <div class="intro-panel-body">Start a new paper with guided interview and setup</div>
+          </div>
+
+          <h3 class="sub-title">RAW FILES</h3>
+          <table class="list-table">
+            <tr><th>FILE</th><th>DOWNLOAD</th></tr>
+            <tr><td>new-paper.md</td><td><a href="raw/new-paper.md" download>DOWNLOAD</a></td></tr>
+          </table>
+
+          <h3 class="sub-title">FULL CONTENT</h3>
+          <div class="skill-body">
+            <pre class="raw-content">&lt;execution_context&gt;
+@~/.claude/write-the-f-paper/references/principles.md
+@~/.claude/write-the-f-paper/references/questioning.md
+@~/.claude/write-the-f-paper/templates/project.md
+@~/.claude/write-the-f-paper/templates/config.json
+@~/.claude/write-the-f-paper/venues/
+&lt;/execution_context&gt;
+
+&lt;objective&gt;
+Initialize a new academic paper through comprehensive context gathering.
+
+**Orchestrator role:** Check preconditions, detect brownfield projects, gather paper vision through batched questioning, synthesize PROJECT.md + config.json + structure documents, commit.
+
+Creates `docs/` with PROJECT.md, config.json, and structure documents.
+&lt;/objective&gt;
+
+&lt;context&gt;
+No arguments. Runs in current directory.
+&lt;/context&gt;
+
+&lt;process&gt;
+
+## 1. Validate Environment
+
+```bash
+[ -f docs/PROJECT.md ] &amp;&amp; echo &quot;ERROR: Paper already initialized. Use /wtfp:progress&quot; &amp;&amp; exit 1
+```
+
+Initialize git if needed:
+```bash
+[ -d .git ] || [ -f .git ] || git init
+```
+
+## 2. Brownfield Detection
+
+```bash
+WRITING_FILES=$(find . -name &quot;*.tex&quot; -o -name &quot;*.md&quot; -o -name &quot;*.bib&quot; -o -name &quot;*.docx&quot; 2&gt;/dev/null | grep -v node_modules | grep -v .git | grep -v docs | head -20)
+HAS_SOURCES=$([ -d sources ] || [ -d references ] || [ -d literature ] &amp;&amp; echo &quot;yes&quot;)
+HAS_SOURCE_MAP=$([ -d docs/sources ] &amp;&amp; echo &quot;yes&quot;)
+```
+
+**If materials detected and no source map:** Offer `/wtfp:map-project` first via AskUserQuestion.
+
+## 3. Gather Core Context (Batched)
+
+Use AskUserQuestion — collect foundations in one turn:
+- header: &quot;Paper Foundations&quot;
+- question: &quot;1. **Type** (Research paper, Grant, Thesis)\n2. **Venue** (NeurIPS, CHI, Nature, etc.)\n3. **Core Argument** (one thing you're proving)\n4. **Audience** (who is this for?)&quot;
+- options: &quot;I provided the details&quot; | &quot;Guide me step-by-step&quot;
+
+If step-by-step selected, ask Type → Venue → Argument sequentially.
+
+## 4. Venue Template Selection
+
+If ambiguous, ask via AskUserQuestion:
+- header: &quot;Venue Structure&quot;
+- options: &quot;ACM CS&quot; | &quot;IEEE CS&quot; | &quot;ML/AI&quot; | &quot;Nature/Science&quot; | &quot;Thesis&quot;
+
+Load corresponding YAML from `~/.claude/write-the-f-paper/venues/`.
+
+## 5. Sharpen Core Argument
+
+If core_argument was weak, drill down:
+- header: &quot;Refine Core&quot;
+- question: &quot;If reviewers remember ONE thing, what is it?&quot;
+- options: &quot;The Method&quot; | &quot;The Findings&quot; | &quot;The Theory&quot; | &quot;The System&quot;
+
+## 6. Gather Constraints
+
+- header: &quot;Scope &amp; Limits&quot;
+- question: &quot;1. **Out of Scope?** 2. **Hard Constraints?** (page limits, deadlines)&quot;
+- options: &quot;Provided details&quot; | &quot;No constraints&quot;
+
+## 7. Synthesize PROJECT.md
+
+Write `docs/PROJECT.md` using template from `~/.claude/write-the-f-paper/templates/project.md`.
+
+Populate: What This Is, Core Argument, Requirements (Must/Should/Out of Scope), Target Audience, Constraints, Key Decisions.
+
+## 8. Create Structure Documents
+
+Create `docs/structure/` with:
+- **argument-map.md** — Central thesis, supporting claims, logical flow, gaps
+- **outline.md** — Venue template sections, word budget table
+- **narrative-arc.md** — Problem/Journey/Resolution, reader experience
+
+## 9. Workflow Mode &amp; Config
+
+Ask mode (Interactive / Flow) and depth (Quick / Standard / Comprehensive) via AskUserQuestion.
+
+## 9b. Git &amp; Planning Settings
+
+Ask about git tracking via AskUserQuestion:
+- header: &quot;Git &amp; Planning&quot;
+- question: &quot;Track planning documents in git?&quot;
+- options:
+  - &quot;Yes (default)&quot; -- commit_docs: true, planning artifacts are version-controlled
+  - &quot;No&quot; -- commit_docs: false, only paper content is committed
+
+Use the answer to set `planning.commit_docs` in config.json.
+
+Ask about branching strategy via AskUserQuestion:
+- header: &quot;Git Branching&quot;
+- question: &quot;Branch strategy for git history?&quot;
+- options:
+  - &quot;None (default)&quot; -- all commits on current branch, git.branching_strategy: &quot;none&quot;
+  - &quot;Section branches&quot; -- one branch per section, merged on review pass, git.branching_strategy: &quot;section&quot;
+  - &quot;Submission branches&quot; -- branch per milestone/submission target, git.branching_strategy: &quot;submission&quot;
+
+Use the answer to set `git.branching_strategy` in config.json.
+
+## 9c. Write Config
+
+Write `docs/config.json` with the full v0.5.0 schema: mode, depth, document_type, output_format, model_profile (&quot;balanced&quot;), venue_template, gates (8 gate types: confirm_outline, confirm_plan, confirm_write, confirm_review, execute_next_section, issues_review, confirm_transition, confirm_submission), writing, workflow, verification, planning (commit_docs, search_gitignored), parallelization, safety (always_confirm_destructive, always_confirm_external_services, backup_before_major_edits), git (branching_strategy, section_branch_template, submission_branch_template, squash_on_merge).
+
+## 10. Commit
+
+```bash
+git add docs/PROJECT.md docs/config.json docs/structure/
+git commit -m &quot;docs: initialize [paper-title]&quot;
+```
+
+&lt;/process&gt;
+
+&lt;offer_next&gt;
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► PAPER INITIALIZED ✓
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- Project: docs/PROJECT.md
+- Config: docs/config.json (mode: [chosen])
+- Structure: docs/structure/
+
+───────────────────────────────────────────
+
+## ▶ Next Up
+
+**Create section outline**
+
+`/wtfp:create-outline`
+
+&lt;sub&gt;`/clear` first → fresh context window&lt;/sub&gt;
+
+───────────────────────────────────────────
+
+&lt;/offer_next&gt;
+
+&lt;success_criteria&gt;
+- [ ] Deep questioning completed (not rushed)
+- [ ] PROJECT.md captures paper vision with core argument
+- [ ] Structure documents created (argument-map, outline, narrative-arc)
+- [ ] config.json has gates, safety, planning, and git sections
+- [ ] config.json has workflow mode and model_profile
+- [ ] All committed to git
+&lt;/success_criteria&gt;</pre>
+          </div>
+
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer">CC ACADEMIC LIBRARY / CLAUDE CODE / ACADEMIC + SCIENTIFIC SKILLS / STATIC HTML / ZERO DEPENDENCIES</div>
+</div>
+</body>
+</html>

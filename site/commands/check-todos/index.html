@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CHECK-TODOS — COMMANDS — CC ACADEMIC LIBRARY</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../search-index.js" defer></script>
+  <script src="../../search.js" defer></script>
+</head>
+<body class="section-commands">
+<a class="skip-to-content" href="#main-content">Skip to content</a>
+<div class="page">
+  <h1 class="site-title">CC ACADEMIC LIBRARY</h1>
+  <div class="top-meta">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>CHECK-TODOS</strong></div>
+
+  <table class="palette-bar" aria-hidden="true">
+    <tr><td class="p1"></td><td class="p2"></td><td class="p3"></td><td class="p4"></td><td class="p5"></td></tr>
+  </table>
+
+  <table class="layout">
+    <tr>
+      <td class="sidebar">
+        <div class="sidebar-inner">
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM PANEL</div>
+            <div class="system-subhead">SITE NAVIGATION</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../../index.html"><span class="icon icon-dot"></span>HOME</a></td></tr>
+                <tr><td><a href="../../skills/index.html"><span class="icon icon-skill"></span>SKILLS <span class="nav-count">[143]</span></a></td></tr>
+                <tr><td><a class="active" href="../index.html"><span class="icon icon-note"></span>COMMANDS <span class="nav-count">[37]</span></a></td></tr>
+                <tr><td><a href="../../agents/index.html"><span class="icon icon-dot"></span>AGENTS <span class="nav-count">[11]</span></a></td></tr>
+                <tr><td><a href="../../templates/index.html"><span class="icon icon-folder"></span>TEMPLATES</a></td></tr>
+                <tr><td><a href="../../tools/index.html"><span class="icon icon-folder"></span>TOOLS</a></td></tr>
+                <tr><td><a href="../../resources/index.html"><span class="icon icon-dot"></span>RESOURCES</a></td></tr>
+                <tr><td><a href="../../status/index.html"><span class="icon icon-dot"></span>STATUS</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">QUICK FIND</div>
+            <div class="system-body">
+              <div class="search-row">
+                <input type="text" placeholder="SKILLS / COMMANDS / AGENTS" aria-label="Search">
+                <button>SEARCH</button>
+              </div>
+            </div>
+            <div class="search-results" id="search-results"></div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM INFO</div>
+            <div class="system-body">
+              <table class="meta-table">
+                <tr><td class="meta-key">COMMAND</td><td>CHECK-TODOS</td></tr>
+                <tr><td class="meta-key">STAGE</td><td>LIFECYCLE</td></tr>
+                <tr><td class="meta-key">DATE</td><td>2026-04-14</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">ALL COMMANDS</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../index.html">&larr; COMMANDS INDEX</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </td>
+      <td class="content">
+        <div class="content-inner" id="main-content">
+
+          <div class="breadcrumb">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>CHECK-TODOS</strong></div>
+          <div class="marquee-line"><strong>COMMAND:</strong> CHECK-TODOS / STAGE: LIFECYCLE</div>
+          <h2 class="section-title">CHECK-TODOS</h2>
+          <div class="rule"></div>
+
+          <table class="meta-table">
+            <tr><td class="meta-key">SOURCE FILE</td><td>commands/check-todos.md</td></tr>
+            <tr><td class="meta-key">WORKFLOW STAGE</td><td>LIFECYCLE</td></tr>
+            <tr><td class="meta-key">INVOCATION</td><td>/wtfp:check-todos</td></tr>
+            <tr><td class="meta-key">TOOLS</td><td>Read, Bash, Write, Glob, AskUserQuestion</td></tr>
+          </table>
+
+          <div class="dotted-rule"></div>
+
+          <div class="intro-panel intro-panel--commands">
+            <div class="intro-panel-head">DESCRIPTION</div>
+            <div class="intro-panel-body">Review pending todos and act on, defer, or dismiss each</div>
+          </div>
+
+          <h3 class="sub-title">RAW FILES</h3>
+          <table class="list-table">
+            <tr><th>FILE</th><th>DOWNLOAD</th></tr>
+            <tr><td>check-todos.md</td><td><a href="raw/check-todos.md" download>DOWNLOAD</a></td></tr>
+          </table>
+
+          <h3 class="sub-title">FULL CONTENT</h3>
+          <div class="skill-body">
+            <pre class="raw-content">&lt;objective&gt;
+Review pending todos. For each, user decides: act on it, defer it, dismiss it, or mark done.
+&lt;/objective&gt;
+
+&lt;context&gt;
+No arguments. Reads from docs/todos/pending/.
+&lt;/context&gt;
+
+&lt;process&gt;
+
+## 1. Validate Environment
+
+```bash
+ls docs/ 2&gt;/dev/null
+```
+
+If `docs/` does not exist, output error and exit:
+```
+Error: No project found. Run /wtfp:new-paper first.
+```
+
+## 2. List Pending Todos
+
+```bash
+ls -1 docs/todos/pending/*.md 2&gt;/dev/null
+```
+
+If no files found:
+```
+No pending todos.
+```
+Exit.
+
+## 3. Display Banner
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► PENDING TODOS ({N})
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+## 4. Process Each Todo
+
+Initialize counters:
+- acted = 0
+- deferred = 0
+- dismissed = 0
+- done = 0
+
+For each file in `docs/todos/pending/`:
+
+1. Read the file. Parse frontmatter (created, context) and body (description).
+
+2. Present via AskUserQuestion:
+   - header: &quot;Todo #{N}&quot;
+   - question: &quot;{todo description}\n\nCreated: {date} | Context: {context}&quot;
+   - options:
+     - &quot;Act on it now&quot;
+     - &quot;Defer&quot;
+     - &quot;Dismiss&quot;
+     - &quot;Done&quot;
+     - &quot;Skip rest&quot;
+
+3. Handle response:
+
+   **&quot;Act on it now&quot;:**
+   - Display the full todo content
+   - Output: &quot;What would you like to do with this? (describe action or command)&quot;
+   - Let user take action manually
+   - Increment acted counter
+   - Keep file in pending (user will mark done when complete)
+
+   **&quot;Defer&quot;:**
+   - Keep file in pending
+   - Increment deferred counter
+   - Continue to next
+
+   **&quot;Dismiss&quot;:**
+   ```bash
+   mkdir -p docs/todos/dismissed
+   mv {file} docs/todos/dismissed/
+   ```
+   - Increment dismissed counter
+   - Continue to next
+
+   **&quot;Done&quot;:**
+   ```bash
+   mkdir -p docs/todos/done
+   mv {file} docs/todos/done/
+   ```
+   - Increment done counter
+   - Continue to next
+
+   **&quot;Skip rest&quot;:**
+   - Break out of loop
+   - All remaining todos stay deferred
+
+## 5. Update STATE.md
+
+Count remaining pending todos:
+```bash
+ls -1 docs/todos/pending/*.md 2&gt;/dev/null | wc -l
+```
+
+Read STATE.md. Update &quot;### Pending Todos&quot; section with new count:
+```
+### Pending Todos
+
+{N} pending todo(s).
+```
+
+Or if N = 0:
+```
+### Pending Todos
+
+None.
+```
+
+## 6. Summary
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► TODOS REVIEWED ✓
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Acted on: {N}
+Deferred: {N}
+Dismissed: {N}
+Done: {N}
+Still pending: {N}
+```
+
+&lt;/process&gt;
+
+&lt;success_criteria&gt;
+- [ ] Pending todos listed with count
+- [ ] Each todo presented with act/defer/dismiss/done/skip options
+- [ ] Files moved to dismissed/ or done/ subdirectories as appropriate
+- [ ] STATE.md pending count updated after review
+- [ ] Summary shows actions taken
+&lt;/success_criteria&gt;</pre>
+          </div>
+
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer">CC ACADEMIC LIBRARY / CLAUDE CODE / ACADEMIC + SCIENTIFIC SKILLS / STATIC HTML / ZERO DEPENDENCIES</div>
+</div>
+</body>
+</html>

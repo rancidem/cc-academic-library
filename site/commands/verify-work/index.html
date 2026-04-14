@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>VERIFY-WORK — COMMANDS — CC ACADEMIC LIBRARY</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../search-index.js" defer></script>
+  <script src="../../search.js" defer></script>
+</head>
+<body class="section-commands">
+<a class="skip-to-content" href="#main-content">Skip to content</a>
+<div class="page">
+  <h1 class="site-title">CC ACADEMIC LIBRARY</h1>
+  <div class="top-meta">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>VERIFY-WORK</strong></div>
+
+  <table class="palette-bar" aria-hidden="true">
+    <tr><td class="p1"></td><td class="p2"></td><td class="p3"></td><td class="p4"></td><td class="p5"></td></tr>
+  </table>
+
+  <table class="layout">
+    <tr>
+      <td class="sidebar">
+        <div class="sidebar-inner">
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM PANEL</div>
+            <div class="system-subhead">SITE NAVIGATION</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../../index.html"><span class="icon icon-dot"></span>HOME</a></td></tr>
+                <tr><td><a href="../../skills/index.html"><span class="icon icon-skill"></span>SKILLS <span class="nav-count">[143]</span></a></td></tr>
+                <tr><td><a class="active" href="../index.html"><span class="icon icon-note"></span>COMMANDS <span class="nav-count">[37]</span></a></td></tr>
+                <tr><td><a href="../../agents/index.html"><span class="icon icon-dot"></span>AGENTS <span class="nav-count">[11]</span></a></td></tr>
+                <tr><td><a href="../../templates/index.html"><span class="icon icon-folder"></span>TEMPLATES</a></td></tr>
+                <tr><td><a href="../../tools/index.html"><span class="icon icon-folder"></span>TOOLS</a></td></tr>
+                <tr><td><a href="../../resources/index.html"><span class="icon icon-dot"></span>RESOURCES</a></td></tr>
+                <tr><td><a href="../../status/index.html"><span class="icon icon-dot"></span>STATUS</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">QUICK FIND</div>
+            <div class="system-body">
+              <div class="search-row">
+                <input type="text" placeholder="SKILLS / COMMANDS / AGENTS" aria-label="Search">
+                <button>SEARCH</button>
+              </div>
+            </div>
+            <div class="search-results" id="search-results"></div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM INFO</div>
+            <div class="system-body">
+              <table class="meta-table">
+                <tr><td class="meta-key">COMMAND</td><td>VERIFY-WORK</td></tr>
+                <tr><td class="meta-key">STAGE</td><td>REVIEW</td></tr>
+                <tr><td class="meta-key">DATE</td><td>2026-04-14</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">ALL COMMANDS</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../index.html">&larr; COMMANDS INDEX</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </td>
+      <td class="content">
+        <div class="content-inner" id="main-content">
+
+          <div class="breadcrumb">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>VERIFY-WORK</strong></div>
+          <div class="marquee-line"><strong>COMMAND:</strong> VERIFY-WORK / STAGE: REVIEW</div>
+          <h2 class="section-title">VERIFY-WORK</h2>
+          <div class="rule"></div>
+
+          <table class="meta-table">
+            <tr><td class="meta-key">SOURCE FILE</td><td>commands/verify-work.md</td></tr>
+            <tr><td class="meta-key">WORKFLOW STAGE</td><td>REVIEW</td></tr>
+            <tr><td class="meta-key">INVOCATION</td><td>/wtfp:verify-work</td></tr>
+            <tr><td class="meta-key">TOOLS</td><td>Read, Bash, Write, Glob, Grep, AskUserQuestion</td></tr>
+          </table>
+
+          <div class="dotted-rule"></div>
+
+          <div class="intro-panel intro-panel--commands">
+            <div class="intro-panel-head">DESCRIPTION</div>
+            <div class="intro-panel-body">Test a written section against its plan, one check at a time</div>
+          </div>
+
+          <h3 class="sub-title">RAW FILES</h3>
+          <table class="list-table">
+            <tr><th>FILE</th><th>DOWNLOAD</th></tr>
+            <tr><td>verify-work.md</td><td><a href="raw/verify-work.md" download>DOWNLOAD</a></td></tr>
+          </table>
+
+          <h3 class="sub-title">FULL CONTENT</h3>
+          <div class="skill-body">
+            <pre class="raw-content">&lt;execution_context&gt;
+@~/.claude/write-the-f-paper/workflows/verify-work.md
+@~/.claude/write-the-f-paper/references/ui-brand.md
+&lt;/execution_context&gt;
+
+&lt;objective&gt;
+Conversational verification of a written section. Presents one test at a time.
+Persists state in UAT.md that survives /clear.
+
+**Orchestrator role:** Load UAT.md (or create from PLAN.md + argument-map),
+present next pending test, record result, update UAT.md, route on completion.
+
+**Why no subagent:** Verification is a conversation loop, not a creative task.
+The orchestrator reads artifacts, extracts tests, and guides the user through
+each one. State persists via UAT.md file reads/writes.
+&lt;/objective&gt;
+
+&lt;context&gt;
+Section: $ARGUMENTS (section number or name)
+&lt;/context&gt;
+
+&lt;process&gt;
+
+## 1. Validate Environment
+
+```bash
+[ ! -f &quot;docs/PROJECT.md&quot; ] &amp;&amp; echo &quot;ERROR: No project initialized. Run /wtfp:new-paper first.&quot; &amp;&amp; exit 1
+```
+
+Resolve section from $ARGUMENTS:
+- If numeric (e.g., &quot;3&quot;): find `docs/sections/03-*`
+- If name (e.g., &quot;methods&quot;): find `docs/sections/*-methods*`
+
+```bash
+SECTION_DIR=$(ls -d docs/sections/${SECTION}-* 2&gt;/dev/null | head -1)
+[ -z &quot;$SECTION_DIR&quot; ] &amp;&amp; echo &quot;ERROR: Section '$ARGUMENTS' not found in docs/sections/&quot; &amp;&amp; exit 1
+```
+
+Verify section was written (SUMMARY.md exists):
+
+```bash
+ls &quot;$SECTION_DIR&quot;/*-SUMMARY.md 2&gt;/dev/null
+```
+
+If no SUMMARY.md:
+```
+Section has not been written yet. Cannot verify unwritten content.
+
+Write it first: /wtfp:write-section [plan-path]
+```
+
+## 2. Load or Resume UAT
+
+```bash
+UAT_PATH=&quot;$SECTION_DIR/UAT.md&quot;
+```
+
+**If UAT.md exists (resuming):**
+
+Read UAT.md. Count tests by status:
+- Total tests
+- Passed (result: pass)
+- Skipped (result: skip)
+- Issues (result: issue)
+- Pending (result: pending)
+
+Report:
+```
+Resuming verification for Section [X]: [Name]
+[completed]/[total] tests evaluated ([pending] remaining)
+```
+
+Find the first test with `result: pending` and proceed to step 3.
+
+**If UAT.md does not exist (starting fresh):**
+
+Derive tests from two sources:
+
+**Source 1: PLAN.md success criteria**
+```bash
+cat &quot;$SECTION_DIR&quot;/*-PLAN.md
+```
+Extract each `- [ ]` item from `&lt;success_criteria&gt;`. Each becomes a test tagged `[plan]`.
+
+**Source 2: Argument-map claims**
+```bash
+cat docs/structure/argument-map.md 2&gt;/dev/null
+```
+Find claims assigned to this section. Each becomes a test tagged `[argument-map]`.
+
+Write UAT.md:
+
+```yaml
+---
+status: testing
+section: [section-dir-name]
+started: [ISO timestamp]
+last_test: 0
+---
+```
+
+Followed by `## Tests` with all derived tests (numbered, pending), `## Summary` with initial counts, empty `## Gaps`.
+
+Report:
+```
+Starting verification for Section [X]: [Name]
+[total] tests derived ([plan-count] from plan, [map-count] from argument-map)
+```
+
+## 3. Present Next Test
+
+Find the next test with `result: pending`.
+
+Display using branded checkpoint box:
+
+```
+════════════════════════════════════════
+VERIFICATION: Test {N} of {total}
+════════════════════════════════════════
+
+Source: {[plan] or [argument-map]}
+
+  {The criterion or claim being verified}
+
+Check: Does this section satisfy the above?
+════════════════════════════════════════
+```
+
+Use AskUserQuestion:
+- header: &quot;Verification&quot;
+- question: &quot;[The criterion or claim text]&quot;
+- options:
+  - &quot;Pass - meets criteria&quot;
+  - &quot;Skip - not applicable&quot;
+  - &quot;Issue - describe the problem&quot;
+
+## 4. Record and Continue
+
+Update UAT.md with the result:
+- Set `result:` to pass, skip, or issue
+- Set `reason:` to user explanation (empty for pass/skip unless user elaborated)
+- Update `last_test` in frontmatter
+
+**If &quot;Issue&quot; selected:**
+
+Ask for the problem description (user already selected &quot;Issue&quot; so get details):
+
+Then ask for severity:
+
+Use AskUserQuestion:
+- header: &quot;Severity&quot;
+- question: &quot;How severe is this issue?&quot;
+- options:
+  - &quot;Major - undermines argument, must fix&quot;
+  - &quot;Minor - weakens but doesn't invalidate&quot;
+  - &quot;Cosmetic - polish issue, fix during final pass&quot;
+
+Add to `## Gaps` section:
+```markdown
+- claim: &quot;[criterion or claim text]&quot;
+  status: issue
+  reason: &quot;[user's description]&quot;
+  severity: [major|minor|cosmetic]
+```
+
+**Write UAT.md to disk** after each result (persistence).
+
+**If more pending tests:** Return to step 3.
+
+**If all tests evaluated:** Proceed to step 5.
+
+## 5. Route on Completion
+
+Set `status: complete` in UAT.md frontmatter. Calculate final counts.
+
+**If no issues (all pass/skip):**
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► VERIFICATION PASSED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Section [X]: [Name]
+Tests: [passed] passed, [skipped] skipped, 0 issues
+
+───────────────────────────────────────────
+
+## ▶ Next Up
+
+**Check progress** — see overall paper status
+
+`/wtfp:progress`
+
+&lt;sub&gt;`/clear` first → fresh context window&lt;/sub&gt;
+
+───────────────────────────────────────────
+```
+
+**If issues found:**
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► VERIFICATION: ISSUES FOUND
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Section [X]: [Name]
+Tests: [passed] passed, [issues] issues, [skipped] skipped
+
+## Gap Summary
+
+| # | Claim/Criterion | Severity | Reason |
+|---|-----------------|----------|--------|
+| 1 | [text]          | major    | [reason] |
+| 2 | [text]          | minor    | [reason] |
+
+───────────────────────────────────────────
+
+## ▶ Next Up
+
+**Plan revision** — create fix plan for identified issues
+
+`/wtfp:plan-revision [section]`
+
+&lt;sub&gt;`/clear` first → fresh context window&lt;/sub&gt;
+
+───────────────────────────────────────────
+```
+
+&lt;/process&gt;
+
+&lt;success_criteria&gt;
+- [ ] Section resolved from arguments
+- [ ] SUMMARY.md validated (section was written)
+- [ ] Tests derived from PLAN.md success_criteria AND argument-map.md claims
+- [ ] UAT.md created or resumed
+- [ ] Each test presented one at a time
+- [ ] Results recorded with persistence (survives /clear)
+- [ ] Issues classified by severity
+- [ ] Routes to plan-revision when issues found
+- [ ] Routes to progress when verification passes
+&lt;/success_criteria&gt;</pre>
+          </div>
+
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer">CC ACADEMIC LIBRARY / CLAUDE CODE / ACADEMIC + SCIENTIFIC SKILLS / STATIC HTML / ZERO DEPENDENCIES</div>
+</div>
+</body>
+</html>

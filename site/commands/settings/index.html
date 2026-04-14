@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SETTINGS — COMMANDS — CC ACADEMIC LIBRARY</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../search-index.js" defer></script>
+  <script src="../../search.js" defer></script>
+</head>
+<body class="section-commands">
+<a class="skip-to-content" href="#main-content">Skip to content</a>
+<div class="page">
+  <h1 class="site-title">CC ACADEMIC LIBRARY</h1>
+  <div class="top-meta">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>SETTINGS</strong></div>
+
+  <table class="palette-bar" aria-hidden="true">
+    <tr><td class="p1"></td><td class="p2"></td><td class="p3"></td><td class="p4"></td><td class="p5"></td></tr>
+  </table>
+
+  <table class="layout">
+    <tr>
+      <td class="sidebar">
+        <div class="sidebar-inner">
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM PANEL</div>
+            <div class="system-subhead">SITE NAVIGATION</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../../index.html"><span class="icon icon-dot"></span>HOME</a></td></tr>
+                <tr><td><a href="../../skills/index.html"><span class="icon icon-skill"></span>SKILLS <span class="nav-count">[143]</span></a></td></tr>
+                <tr><td><a class="active" href="../index.html"><span class="icon icon-note"></span>COMMANDS <span class="nav-count">[37]</span></a></td></tr>
+                <tr><td><a href="../../agents/index.html"><span class="icon icon-dot"></span>AGENTS <span class="nav-count">[11]</span></a></td></tr>
+                <tr><td><a href="../../templates/index.html"><span class="icon icon-folder"></span>TEMPLATES</a></td></tr>
+                <tr><td><a href="../../tools/index.html"><span class="icon icon-folder"></span>TOOLS</a></td></tr>
+                <tr><td><a href="../../resources/index.html"><span class="icon icon-dot"></span>RESOURCES</a></td></tr>
+                <tr><td><a href="../../status/index.html"><span class="icon icon-dot"></span>STATUS</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">QUICK FIND</div>
+            <div class="system-body">
+              <div class="search-row">
+                <input type="text" placeholder="SKILLS / COMMANDS / AGENTS" aria-label="Search">
+                <button>SEARCH</button>
+              </div>
+            </div>
+            <div class="search-results" id="search-results"></div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM INFO</div>
+            <div class="system-body">
+              <table class="meta-table">
+                <tr><td class="meta-key">COMMAND</td><td>SETTINGS</td></tr>
+                <tr><td class="meta-key">STAGE</td><td>LIFECYCLE</td></tr>
+                <tr><td class="meta-key">DATE</td><td>2026-04-14</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">ALL COMMANDS</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../index.html">&larr; COMMANDS INDEX</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </td>
+      <td class="content">
+        <div class="content-inner" id="main-content">
+
+          <div class="breadcrumb">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>SETTINGS</strong></div>
+          <div class="marquee-line"><strong>COMMAND:</strong> SETTINGS / STAGE: LIFECYCLE</div>
+          <h2 class="section-title">SETTINGS</h2>
+          <div class="rule"></div>
+
+          <table class="meta-table">
+            <tr><td class="meta-key">SOURCE FILE</td><td>commands/settings.md</td></tr>
+            <tr><td class="meta-key">WORKFLOW STAGE</td><td>LIFECYCLE</td></tr>
+            <tr><td class="meta-key">INVOCATION</td><td>/wtfp:settings</td></tr>
+            <tr><td class="meta-key">TOOLS</td><td>Read, Bash, Write, AskUserQuestion</td></tr>
+          </table>
+
+          <div class="dotted-rule"></div>
+
+          <div class="intro-panel intro-panel--commands">
+            <div class="intro-panel-head">DESCRIPTION</div>
+            <div class="intro-panel-body">View and edit project settings interactively</div>
+          </div>
+
+          <h3 class="sub-title">RAW FILES</h3>
+          <table class="list-table">
+            <tr><th>FILE</th><th>DOWNLOAD</th></tr>
+            <tr><td>settings.md</td><td><a href="raw/settings.md" download>DOWNLOAD</a></td></tr>
+          </table>
+
+          <h3 class="sub-title">FULL CONTENT</h3>
+          <div class="skill-body">
+            <pre class="raw-content">&lt;objective&gt;
+Interactive config editor for docs/config.json.
+
+Reads current config, presents categories, allows edits, shows diff of changes before applying.
+
+No subagents needed - orchestrator handles all interaction directly.
+&lt;/objective&gt;
+
+&lt;context&gt;
+No arguments. Requires docs/config.json to exist.
+&lt;/context&gt;
+
+&lt;process&gt;
+
+## 1. Validate Environment
+
+```bash
+[ ! -f docs/config.json ] &amp;&amp; echo &quot;ERROR: No config. Run /wtfp:new-paper&quot; &amp;&amp; exit 1
+```
+
+Read current config:
+```bash
+CONFIG_CONTENT=$(cat docs/config.json)
+```
+
+Store original for diff comparison later.
+
+## 2. Display Current Settings
+
+Present settings organized by category (matching planning-config.md structure):
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► SETTINGS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+## General
+  mode: interactive
+  depth: standard
+  document_type: paper
+  output_format: markdown
+  model_profile: balanced
+  venue_template: (none)
+
+## Gates
+  confirm_outline: true
+  confirm_plan: true
+  confirm_write: true
+  confirm_review: true
+  execute_next_section: true
+  issues_review: true
+  confirm_transition: true
+  confirm_submission: true
+
+## Writing
+  claude_mode: co-author
+  citation_style: apa
+  verify_on_complete: true
+
+## Workflow
+  research: true
+  plan_check: true
+  verifier: true
+
+## Verification
+  citation_check: true
+  coherence_check: true
+  rubric_check: true
+
+## Planning
+  commit_docs: true
+  search_gitignored: false
+
+## Parallelization
+  enabled: false
+  plan_level: true
+  task_level: false
+  skip_checkpoints: true
+  max_concurrent_agents: 3
+  min_plans_for_parallel: 2
+
+## Safety
+  always_confirm_destructive: true
+  always_confirm_external_services: true
+  backup_before_major_edits: true
+
+## Git
+  branching_strategy: none
+  section_branch_template: wtfp/section-{section}-{slug}
+  submission_branch_template: wtfp/{milestone}-{slug}
+  squash_on_merge: false
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+## 3. Category Selection
+
+Use AskUserQuestion:
+- header: &quot;Edit Settings&quot;
+- question: &quot;Which category to modify?&quot;
+- options: &quot;General&quot; | &quot;Gates&quot; | &quot;Writing&quot; | &quot;Workflow&quot; | &quot;Verification&quot; | &quot;Planning&quot; | &quot;Parallelization&quot; | &quot;Safety&quot; | &quot;Git&quot; | &quot;Done&quot;
+
+**If &quot;Done&quot;:** Skip to Step 6.
+
+## 4. Edit Keys in Category
+
+For chosen category, present each key with current value and ask for new value.
+
+**For boolean keys:** Use AskUserQuestion:
+- options: &quot;true&quot; | &quot;false&quot; | &quot;Keep current&quot;
+
+**For string keys with known options:**
+- `mode`: &quot;interactive&quot; | &quot;yolo&quot; | &quot;Keep current&quot;
+- `depth`: &quot;quick&quot; | &quot;standard&quot; | &quot;thorough&quot; | &quot;Keep current&quot;
+- `document_type`: &quot;paper&quot; | &quot;thesis&quot; | &quot;proposal&quot; | &quot;report&quot; | &quot;Keep current&quot;
+- `output_format`: &quot;markdown&quot; | &quot;latex&quot; | &quot;Keep current&quot;
+- `model_profile`: &quot;quality&quot; | &quot;balanced&quot; | &quot;budget&quot; | &quot;Keep current&quot;
+- `claude_mode`: &quot;co-author&quot; | &quot;scaffold&quot; | &quot;reviewer&quot; | &quot;Keep current&quot;
+- `citation_style`: &quot;apa&quot; | &quot;ieee&quot; | &quot;chicago&quot; | &quot;mla&quot; | &quot;vancouver&quot; | &quot;Keep current&quot;
+- `branching_strategy`: &quot;none&quot; | &quot;section&quot; | &quot;submission&quot; | &quot;Keep current&quot;
+
+**For numeric keys:** Use AskUserQuestion with text input.
+- `max_concurrent_agents`: Accept integer value
+- `min_plans_for_parallel`: Accept integer value
+
+**For string template keys:** Use AskUserQuestion with text input.
+- `section_branch_template`: Accept string value
+- `submission_branch_template`: Accept string value
+- `venue_template`: Accept string value or &quot;none&quot;
+
+Track all changes made.
+
+## 5. Compute and Show Diff
+
+If any changes were made, show diff before applying:
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► SETTINGS CHANGED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Changes:
+  mode: interactive -&gt; yolo
+  gates.confirm_plan: true -&gt; false
+
+Apply changes?
+```
+
+Use AskUserQuestion:
+- header: &quot;Confirm Changes&quot;
+- question: &quot;Apply these changes?&quot;
+- options: &quot;Yes, apply&quot; | &quot;No, discard&quot; | &quot;Edit more&quot;
+
+**If &quot;Yes, apply&quot;:** Write updated config.json.
+
+**If &quot;No, discard&quot;:** Discard changes, return to category selection.
+
+**If &quot;Edit more&quot;:** Return to Step 3.
+
+## 6. Exit
+
+If no changes or after applying changes, show final banner:
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► SETTINGS SAVED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+Or if no changes:
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► SETTINGS UNCHANGED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+No git commit for settings changes (config.json is a working file).
+
+&lt;/process&gt;
+
+&lt;success_criteria&gt;
+- [ ] Current config displayed by category
+- [ ] User can select category and edit keys
+- [ ] Diff shown before applying
+- [ ] config.json updated if changes confirmed
+&lt;/success_criteria&gt;</pre>
+          </div>
+
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer">CC ACADEMIC LIBRARY / CLAUDE CODE / ACADEMIC + SCIENTIFIC SKILLS / STATIC HTML / ZERO DEPENDENCIES</div>
+</div>
+</body>
+</html>

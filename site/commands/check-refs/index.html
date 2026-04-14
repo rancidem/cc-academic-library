@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CHECK-REFS — COMMANDS — CC ACADEMIC LIBRARY</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../search-index.js" defer></script>
+  <script src="../../search.js" defer></script>
+</head>
+<body class="section-commands">
+<a class="skip-to-content" href="#main-content">Skip to content</a>
+<div class="page">
+  <h1 class="site-title">CC ACADEMIC LIBRARY</h1>
+  <div class="top-meta">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>CHECK-REFS</strong></div>
+
+  <table class="palette-bar" aria-hidden="true">
+    <tr><td class="p1"></td><td class="p2"></td><td class="p3"></td><td class="p4"></td><td class="p5"></td></tr>
+  </table>
+
+  <table class="layout">
+    <tr>
+      <td class="sidebar">
+        <div class="sidebar-inner">
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM PANEL</div>
+            <div class="system-subhead">SITE NAVIGATION</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../../index.html"><span class="icon icon-dot"></span>HOME</a></td></tr>
+                <tr><td><a href="../../skills/index.html"><span class="icon icon-skill"></span>SKILLS <span class="nav-count">[143]</span></a></td></tr>
+                <tr><td><a class="active" href="../index.html"><span class="icon icon-note"></span>COMMANDS <span class="nav-count">[37]</span></a></td></tr>
+                <tr><td><a href="../../agents/index.html"><span class="icon icon-dot"></span>AGENTS <span class="nav-count">[11]</span></a></td></tr>
+                <tr><td><a href="../../templates/index.html"><span class="icon icon-folder"></span>TEMPLATES</a></td></tr>
+                <tr><td><a href="../../tools/index.html"><span class="icon icon-folder"></span>TOOLS</a></td></tr>
+                <tr><td><a href="../../resources/index.html"><span class="icon icon-dot"></span>RESOURCES</a></td></tr>
+                <tr><td><a href="../../status/index.html"><span class="icon icon-dot"></span>STATUS</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">QUICK FIND</div>
+            <div class="system-body">
+              <div class="search-row">
+                <input type="text" placeholder="SKILLS / COMMANDS / AGENTS" aria-label="Search">
+                <button>SEARCH</button>
+              </div>
+            </div>
+            <div class="search-results" id="search-results"></div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM INFO</div>
+            <div class="system-body">
+              <table class="meta-table">
+                <tr><td class="meta-key">COMMAND</td><td>CHECK-REFS</td></tr>
+                <tr><td class="meta-key">STAGE</td><td>REVIEW</td></tr>
+                <tr><td class="meta-key">DATE</td><td>2026-04-14</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">ALL COMMANDS</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../index.html">&larr; COMMANDS INDEX</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </td>
+      <td class="content">
+        <div class="content-inner" id="main-content">
+
+          <div class="breadcrumb">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>CHECK-REFS</strong></div>
+          <div class="marquee-line"><strong>COMMAND:</strong> CHECK-REFS / STAGE: REVIEW</div>
+          <h2 class="section-title">CHECK-REFS</h2>
+          <div class="rule"></div>
+
+          <table class="meta-table">
+            <tr><td class="meta-key">SOURCE FILE</td><td>commands/check-refs.md</td></tr>
+            <tr><td class="meta-key">WORKFLOW STAGE</td><td>REVIEW</td></tr>
+            <tr><td class="meta-key">INVOCATION</td><td>/wtfp:check-refs</td></tr>
+            <tr><td class="meta-key">TOOLS</td><td>Read, Bash, Write, Edit, Glob, Grep, Task, AskUserQuestion</td></tr>
+          </table>
+
+          <div class="dotted-rule"></div>
+
+          <div class="intro-panel intro-panel--commands">
+            <div class="intro-panel-head">DESCRIPTION</div>
+            <div class="intro-panel-body">Audit BibTeX for missing, duplicate, or broken references</div>
+          </div>
+
+          <h3 class="sub-title">RAW FILES</h3>
+          <table class="list-table">
+            <tr><th>FILE</th><th>DOWNLOAD</th></tr>
+            <tr><td>check-refs.md</td><td><a href="raw/check-refs.md" download>DOWNLOAD</a></td></tr>
+          </table>
+
+          <h3 class="sub-title">FULL CONTENT</h3>
+          <div class="skill-body">
+            <pre class="raw-content">&lt;objective&gt;
+Audit citations for completeness and consistency.
+
+**Orchestrator role:** Locate bib and draft files, run deterministic indexer, resolve model profile, spawn citation-formatter agent for cross-referencing, present results, apply fixes.
+
+Ensures all in-text citations have BibTeX entries, all entries are cited, and references are properly formatted.
+&lt;/objective&gt;
+
+&lt;context&gt;
+BibTeX file: $ARGUMENTS (optional — auto-detects .bib files)
+
+**Load project state:**
+@docs/STATE.md
+&lt;/context&gt;
+
+&lt;process&gt;
+
+## 1. Validate Environment and Resolve Model Profile
+
+```bash
+find . -name &quot;*.bib&quot; -type f 2&gt;/dev/null | head -20
+grep -rl &quot;\\\\cite\|\\[@\|\\[.*\\]&quot; --include=&quot;*.tex&quot; --include=&quot;*.md&quot; . 2&gt;/dev/null
+```
+
+```bash
+MODEL_PROFILE=$(cat docs/config.json 2&gt;/dev/null | grep -o '&quot;model_profile&quot;[[:space:]]*:[[:space:]]*&quot;[^&quot;]*&quot;' | grep -o '&quot;[^&quot;]*&quot;$' | tr -d '&quot;' || echo &quot;balanced&quot;)
+```
+
+| Agent | quality | balanced | budget |
+|-------|---------|----------|--------|
+| citation-formatter | sonnet | sonnet | haiku |
+
+## 2. Run Deterministic Indexer
+
+```bash
+node ~/.claude/bin/bib-index.js index &quot;$BIB_FILE&quot;
+```
+
+## 3. Spawn citation-formatter Agent
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► AUDITING CITATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+```
+Task(
+  prompt=&quot;First, read ~/.claude/agents/wtfp/citation-formatter.md for your role.\n\n&quot; + audit_prompt,
+  subagent_type=&quot;general-purpose&quot;,
+  model=&quot;{formatter_model}&quot;,
+  description=&quot;Audit citations&quot;
+)
+```
+
+Audit prompt includes: `&lt;bib_index&gt;` with parsed entries, `&lt;draft_files&gt;` with paths to files containing citations, `&lt;state&gt;` with STATE.md.
+
+Agent performs: extract in-text citations, cross-reference vs BibTeX keys, check required fields by entry type, identify duplicates, flag suspicious years.
+
+## 4. Handle Formatter Return
+
+Present findings:
+- Missing BibTeX entries (cited but not in .bib)
+- Unused references (in .bib but never cited)
+- Incomplete entries (missing required fields)
+- Valid citation count
+
+**`## AUDIT BLOCKED`:** Present blocker (no .bib found, no .tex/.md to scan), ask user to provide file paths.
+
+## 5. Offer Fixes
+
+Ask via AskUserQuestion:
+- header: &quot;Fixes&quot;
+- question: &quot;How should I handle unused references?&quot;
+- options: &quot;Remove unused&quot; | &quot;Keep all&quot; | &quot;Comment out&quot;
+
+For missing entries, search using `node ~/.claude/bin/citation-fetcher.js &quot;title&quot;`.
+
+## 6. Apply Fixes and Commit
+
+```bash
+cp references.bib references.bib.backup
+# Apply approved edits
+git add *.bib
+git commit -m &quot;refs: audit and clean bibliography&quot;
+```
+
+&lt;/process&gt;
+
+&lt;offer_next&gt;
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► CITATION AUDIT COMPLETE ✓
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- Citations in text: [N]
+- BibTeX entries: [N]
+- Issues fixed: [N]
+- Issues flagged: [N]
+
+───────────────────────────────────────────
+
+## Next Up
+
+- `/wtfp:polish-prose` — Refine writing
+- `/wtfp:export-latex` — Generate LaTeX
+- `/wtfp:review-section` — Get reviewer feedback
+
+───────────────────────────────────────────
+
+&lt;/offer_next&gt;
+
+&lt;success_criteria&gt;
+- [ ] All in-text citations cross-referenced
+- [ ] Missing entries identified and searched
+- [ ] Incomplete entries flagged
+- [ ] Unused references handled per user choice
+- [ ] Changes committed to git
+&lt;/success_criteria&gt;</pre>
+          </div>
+
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer">CC ACADEMIC LIBRARY / CLAUDE CODE / ACADEMIC + SCIENTIFIC SKILLS / STATIC HTML / ZERO DEPENDENCIES</div>
+</div>
+</body>
+</html>

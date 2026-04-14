@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>REPORT-BUG — COMMANDS — CC ACADEMIC LIBRARY</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../search-index.js" defer></script>
+  <script src="../../search.js" defer></script>
+</head>
+<body class="section-commands">
+<a class="skip-to-content" href="#main-content">Skip to content</a>
+<div class="page">
+  <h1 class="site-title">CC ACADEMIC LIBRARY</h1>
+  <div class="top-meta">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>REPORT-BUG</strong></div>
+
+  <table class="palette-bar" aria-hidden="true">
+    <tr><td class="p1"></td><td class="p2"></td><td class="p3"></td><td class="p4"></td><td class="p5"></td></tr>
+  </table>
+
+  <table class="layout">
+    <tr>
+      <td class="sidebar">
+        <div class="sidebar-inner">
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM PANEL</div>
+            <div class="system-subhead">SITE NAVIGATION</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../../index.html"><span class="icon icon-dot"></span>HOME</a></td></tr>
+                <tr><td><a href="../../skills/index.html"><span class="icon icon-skill"></span>SKILLS <span class="nav-count">[143]</span></a></td></tr>
+                <tr><td><a class="active" href="../index.html"><span class="icon icon-note"></span>COMMANDS <span class="nav-count">[37]</span></a></td></tr>
+                <tr><td><a href="../../agents/index.html"><span class="icon icon-dot"></span>AGENTS <span class="nav-count">[11]</span></a></td></tr>
+                <tr><td><a href="../../templates/index.html"><span class="icon icon-folder"></span>TEMPLATES</a></td></tr>
+                <tr><td><a href="../../tools/index.html"><span class="icon icon-folder"></span>TOOLS</a></td></tr>
+                <tr><td><a href="../../resources/index.html"><span class="icon icon-dot"></span>RESOURCES</a></td></tr>
+                <tr><td><a href="../../status/index.html"><span class="icon icon-dot"></span>STATUS</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">QUICK FIND</div>
+            <div class="system-body">
+              <div class="search-row">
+                <input type="text" placeholder="SKILLS / COMMANDS / AGENTS" aria-label="Search">
+                <button>SEARCH</button>
+              </div>
+            </div>
+            <div class="search-results" id="search-results"></div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM INFO</div>
+            <div class="system-body">
+              <table class="meta-table">
+                <tr><td class="meta-key">COMMAND</td><td>REPORT-BUG</td></tr>
+                <tr><td class="meta-key">STAGE</td><td>UTILITY</td></tr>
+                <tr><td class="meta-key">DATE</td><td>2026-04-14</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">ALL COMMANDS</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../index.html">&larr; COMMANDS INDEX</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </td>
+      <td class="content">
+        <div class="content-inner" id="main-content">
+
+          <div class="breadcrumb">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>REPORT-BUG</strong></div>
+          <div class="marquee-line"><strong>COMMAND:</strong> REPORT-BUG / STAGE: UTILITY</div>
+          <h2 class="section-title">REPORT-BUG</h2>
+          <div class="rule"></div>
+
+          <table class="meta-table">
+            <tr><td class="meta-key">SOURCE FILE</td><td>commands/report-bug.md</td></tr>
+            <tr><td class="meta-key">WORKFLOW STAGE</td><td>UTILITY</td></tr>
+            <tr><td class="meta-key">INVOCATION</td><td>/wtfp:report-bug</td></tr>
+            <tr><td class="meta-key">TOOLS</td><td>Bash, Read, AskUserQuestion</td></tr>
+          </table>
+
+          <div class="dotted-rule"></div>
+
+          <div class="intro-panel intro-panel--commands">
+            <div class="intro-panel-head">DESCRIPTION</div>
+            <div class="intro-panel-body">Report a bug via GitHub issue</div>
+          </div>
+
+          <h3 class="sub-title">RAW FILES</h3>
+          <table class="list-table">
+            <tr><th>FILE</th><th>DOWNLOAD</th></tr>
+            <tr><td>report-bug.md</td><td><a href="raw/report-bug.md" download>DOWNLOAD</a></td></tr>
+          </table>
+
+          <h3 class="sub-title">FULL CONTENT</h3>
+          <div class="skill-body">
+            <pre class="raw-content">&lt;objective&gt;
+Help the user report a bug in WTF-P by creating a well-formatted GitHub issue.
+&lt;/objective&gt;
+
+&lt;context&gt;
+@~/.claude/write-the-f-paper/references/github-contrib.md
+&lt;/context&gt;
+
+&lt;process&gt;
+
+## Step 1: Verify GitHub CLI
+
+Check if `gh` is authenticated:
+
+```bash
+gh auth status 2&gt;&amp;1
+```
+
+If not authenticated, inform the user:
+&gt; To create GitHub issues, you need to authenticate the GitHub CLI.
+&gt; Run: `gh auth login`
+&gt; Then try this command again.
+
+## Step 2: Gather Bug Information
+
+Use AskUserQuestion to collect bug details:
+
+**Question 1: Bug Category**
+- Header: &quot;Bug Type&quot;
+- Options:
+  - &quot;Command fails&quot; - A /wtfp:* command doesn't work as expected
+  - &quot;Installation issue&quot; - Problems with npx wtf-p install/uninstall
+  - &quot;Workflow error&quot; - Writing workflow produces wrong output
+  - &quot;Documentation gap&quot; - Docs are missing or incorrect
+
+**Question 2: Bug Description**
+- Header: &quot;Description&quot;
+- Options:
+  - &quot;Let me describe it&quot; - User provides description
+  - &quot;Help me articulate&quot; - Claude helps user describe the bug
+
+If user needs help articulating, ask follow-up questions:
+- What were you trying to do?
+- What happened instead?
+- What did you expect to happen?
+
+## Step 3: Gather Environment Info
+
+Automatically collect:
+```bash
+npx wtf-p --version 2&gt;/dev/null || echo &quot;Not installed via npx&quot;
+node --version
+uname -s 2&gt;/dev/null || echo &quot;Unknown OS&quot;
+```
+
+## Step 4: Collect Reproduction Steps
+
+Ask user:
+- What command or action triggered the bug?
+- Can you reproduce it consistently?
+- Any error messages? (ask to paste them)
+
+## Step 5: Draft the Issue
+
+Create a draft and show it to the user:
+
+```markdown
+## Bug Description
+[From user input]
+
+## Steps to Reproduce
+1. [Step 1]
+2. [Step 2]
+3. [What happened vs expected]
+
+## Environment
+- WTF-P version: [collected]
+- Node.js version: [collected]
+- OS: [collected]
+
+## Additional Context
+[Error messages, logs, screenshots mentioned]
+```
+
+## Step 6: Confirm and Create
+
+Ask user to confirm:
+- &quot;Create this issue?&quot; with options: Yes / Edit first / Cancel
+
+If confirmed, create the issue:
+
+```bash
+gh issue create \
+  --repo akougkas/wtf-p \
+  --title &quot;bug: [SHORT_TITLE]&quot; \
+  --body &quot;$(cat &lt;&lt;'EOF'
+[FULL_BODY_HERE]
+EOF
+)&quot; \
+  --label &quot;bug&quot;
+```
+
+## Step 7: Report Success
+
+Show the user:
+- Issue URL (from gh output)
+- Issue number
+- What happens next (maintainer will review)
+
+&lt;/process&gt;
+
+&lt;error-handling&gt;
+
+**gh not installed**: Direct user to https://cli.github.com/
+
+**gh not authenticated**: Guide through `gh auth login`
+
+**Network error**: Save draft locally, retry later
+
+**Permission denied**: User may need to fork first for external contributors
+
+&lt;/error-handling&gt;</pre>
+          </div>
+
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer">CC ACADEMIC LIBRARY / CLAUDE CODE / ACADEMIC + SCIENTIFIC SKILLS / STATIC HTML / ZERO DEPENDENCIES</div>
+</div>
+</body>
+</html>

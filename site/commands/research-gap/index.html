@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RESEARCH-GAP — COMMANDS — CC ACADEMIC LIBRARY</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../search-index.js" defer></script>
+  <script src="../../search.js" defer></script>
+</head>
+<body class="section-commands">
+<a class="skip-to-content" href="#main-content">Skip to content</a>
+<div class="page">
+  <h1 class="site-title">CC ACADEMIC LIBRARY</h1>
+  <div class="top-meta">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>RESEARCH-GAP</strong></div>
+
+  <table class="palette-bar" aria-hidden="true">
+    <tr><td class="p1"></td><td class="p2"></td><td class="p3"></td><td class="p4"></td><td class="p5"></td></tr>
+  </table>
+
+  <table class="layout">
+    <tr>
+      <td class="sidebar">
+        <div class="sidebar-inner">
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM PANEL</div>
+            <div class="system-subhead">SITE NAVIGATION</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../../index.html"><span class="icon icon-dot"></span>HOME</a></td></tr>
+                <tr><td><a href="../../skills/index.html"><span class="icon icon-skill"></span>SKILLS <span class="nav-count">[143]</span></a></td></tr>
+                <tr><td><a class="active" href="../index.html"><span class="icon icon-note"></span>COMMANDS <span class="nav-count">[37]</span></a></td></tr>
+                <tr><td><a href="../../agents/index.html"><span class="icon icon-dot"></span>AGENTS <span class="nav-count">[11]</span></a></td></tr>
+                <tr><td><a href="../../templates/index.html"><span class="icon icon-folder"></span>TEMPLATES</a></td></tr>
+                <tr><td><a href="../../tools/index.html"><span class="icon icon-folder"></span>TOOLS</a></td></tr>
+                <tr><td><a href="../../resources/index.html"><span class="icon icon-dot"></span>RESOURCES</a></td></tr>
+                <tr><td><a href="../../status/index.html"><span class="icon icon-dot"></span>STATUS</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">QUICK FIND</div>
+            <div class="system-body">
+              <div class="search-row">
+                <input type="text" placeholder="SKILLS / COMMANDS / AGENTS" aria-label="Search">
+                <button>SEARCH</button>
+              </div>
+            </div>
+            <div class="search-results" id="search-results"></div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM INFO</div>
+            <div class="system-body">
+              <table class="meta-table">
+                <tr><td class="meta-key">COMMAND</td><td>RESEARCH-GAP</td></tr>
+                <tr><td class="meta-key">STAGE</td><td>PLANNING</td></tr>
+                <tr><td class="meta-key">DATE</td><td>2026-04-14</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">ALL COMMANDS</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../index.html">&larr; COMMANDS INDEX</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </td>
+      <td class="content">
+        <div class="content-inner" id="main-content">
+
+          <div class="breadcrumb">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>RESEARCH-GAP</strong></div>
+          <div class="marquee-line"><strong>COMMAND:</strong> RESEARCH-GAP / STAGE: PLANNING</div>
+          <h2 class="section-title">RESEARCH-GAP</h2>
+          <div class="rule"></div>
+
+          <table class="meta-table">
+            <tr><td class="meta-key">SOURCE FILE</td><td>commands/research-gap.md</td></tr>
+            <tr><td class="meta-key">WORKFLOW STAGE</td><td>PLANNING</td></tr>
+            <tr><td class="meta-key">INVOCATION</td><td>/wtfp:research-gap</td></tr>
+            <tr><td class="meta-key">TOOLS</td><td>Read, Bash, Write, Task, AskUserQuestion</td></tr>
+          </table>
+
+          <div class="dotted-rule"></div>
+
+          <div class="intro-panel intro-panel--commands">
+            <div class="intro-panel-head">DESCRIPTION</div>
+            <div class="intro-panel-body">Research literature and domain knowledge for a section</div>
+          </div>
+
+          <h3 class="sub-title">RAW FILES</h3>
+          <table class="list-table">
+            <tr><th>FILE</th><th>DOWNLOAD</th></tr>
+            <tr><td>research-gap.md</td><td><a href="raw/research-gap.md" download>DOWNLOAD</a></td></tr>
+          </table>
+
+          <h3 class="sub-title">FULL CONTENT</h3>
+          <div class="skill-body">
+            <pre class="raw-content">&lt;execution_context&gt;
+@~/.claude/write-the-f-paper/references/research-pitfalls.md
+&lt;/execution_context&gt;
+
+&lt;objective&gt;
+Perform comprehensive literature/domain research for a specific section.
+
+**Orchestrator role:** Validate project, scope research with user, resolve model profile, spawn research-synthesizer agent, present results.
+
+Creates RESEARCH.md with &quot;how experts write this&quot; knowledge, key citations, gaps, and positioning.
+&lt;/objective&gt;
+
+&lt;context&gt;
+Section: $ARGUMENTS (section number or name)
+&lt;/context&gt;
+
+&lt;process&gt;
+
+## 1. Validate Environment and Resolve Model Profile
+
+```bash
+[ ! -f docs/PROJECT.md ] &amp;&amp; echo &quot;ERROR: No project. Run /wtfp:new-paper&quot; &amp;&amp; exit 1
+[ ! -f docs/ROADMAP.md ] &amp;&amp; echo &quot;ERROR: No roadmap. Run /wtfp:create-outline&quot; &amp;&amp; exit 1
+```
+
+```bash
+MODEL_PROFILE=$(cat docs/config.json 2&gt;/dev/null | grep -o '&quot;model_profile&quot;[[:space:]]*:[[:space:]]*&quot;[^&quot;]*&quot;' | grep -o '&quot;[^&quot;]*&quot;$' | tr -d '&quot;' || echo &quot;balanced&quot;)
+```
+
+| Agent | quality | balanced | budget |
+|-------|---------|----------|--------|
+| research-synthesizer | opus | sonnet | haiku |
+
+## 1b. Parse Depth Flag
+
+Parse --depth from $ARGUMENTS:
+
+```bash
+# Extract depth from arguments (--depth=quick, --depth=standard, or --depth=deep)
+DEPTH_ARG=$(echo &quot;$ARGUMENTS&quot; | grep -oE '\-\-depth=(quick|standard|deep)' | cut -d= -f2)
+
+# If no --depth flag, read default from config
+if [ -z &quot;$DEPTH_ARG&quot; ]; then
+  DEPTH=$(cat docs/config.json 2&gt;/dev/null | grep -o '&quot;depth&quot;[[:space:]]*:[[:space:]]*&quot;[^&quot;]*&quot;' | grep -o '&quot;[^&quot;]*&quot;$' | tr -d '&quot;' || echo &quot;standard&quot;)
+else
+  DEPTH=&quot;$DEPTH_ARG&quot;
+fi
+```
+
+**Depth mapping:**
+
+| Depth | Behavior |
+|-------|----------|
+| quick | Quick verbal summary - no RESEARCH.md created, no git commit |
+| standard | Standard research (current behavior) - 10-20 sources, RESEARCH.md created |
+| deep | Exhaustive literature review - 20-50 papers, all categories mandatory |
+
+## 2. Define Research Scope
+
+Use AskUserQuestion:
+- header: &quot;Research Focus&quot;
+- question: &quot;What specifically do you need to understand for this section?&quot;
+- options:
+  - &quot;Key citations&quot; — Who are the must-cite authors/papers?
+  - &quot;Methodology&quot; — How do others approach this method?
+  - &quot;State of field&quot; — What's the current consensus/debate?
+  - &quot;Positioning&quot; — How to differentiate from existing work?
+
+## 3. Read Context Files
+
+```bash
+PROJECT_CONTENT=$(cat docs/PROJECT.md)
+ROADMAP_CONTENT=$(cat docs/ROADMAP.md)
+ARGMAP_CONTENT=$(cat docs/structure/argument-map.md 2&gt;/dev/null)
+LITERATURE_CONTENT=$(cat docs/sources/literature.md 2&gt;/dev/null)
+BIB_INDEX=$(node ~/.claude/bin/bib-index.js index references.bib 2&gt;/dev/null || echo &quot;No references.bib&quot;)
+
+SECTION_DIR=$(ls -d docs/sections/${SECTION}-* 2&gt;/dev/null | head -1)
+CONTEXT_CONTENT=$(cat &quot;${SECTION_DIR}&quot;/*-CONTEXT.md 2&gt;/dev/null)
+```
+
+## 3b. Quick Depth: Verbal Summary Only
+
+**If DEPTH is &quot;quick&quot;:**
+
+Skip agent spawn entirely. Orchestrator provides direct verbal synthesis.
+
+Read available context (PROJECT.md, argument-map, existing literature, CONTEXT_CONTENT) and synthesize a verbal summary directly to user:
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► QUICK RESEARCH SYNTHESIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Based on available context for Section {X}:
+
+[Synthesize key points from PROJECT, argument-map, and any existing literature.md]
+
+Key areas:
+- [Area 1]: [Brief synthesis]
+- [Area 2]: [Brief synthesis]
+
+Suggested citations to consider:
+- [If any mentioned in existing sources]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+**Note:** Quick research -- no RESEARCH.md written. Run with `--depth=standard` for persistent research.
+```
+
+No RESEARCH.md created. No git commit. Present summary and offer next steps, then exit workflow.
+
+**If DEPTH is &quot;standard&quot; or &quot;deep&quot;:** Continue to Step 4.
+
+## 4. Spawn wtfp-research-synthesizer Agent (standard/deep)
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► RESEARCHING SECTION {X} (depth: {DEPTH})
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+```
+Task(
+  prompt=&quot;First, read ~/.claude/agents/wtfp/research-synthesizer.md for your role and instructions.\n\n&quot; + filled_research_prompt,
+  subagent_type=&quot;general-purpose&quot;,
+  model=&quot;{researcher_model}&quot;,
+  description=&quot;Research Section {X}&quot;
+)
+```
+
+Research prompt includes: `&lt;research_scope&gt;` with user-selected scope, `&lt;project_context&gt;` with PROJECT + ROADMAP + argument-map, `&lt;existing_literature&gt;` with bib index and literature.md, `&lt;user_decisions&gt;` with CONTEXT_CONTENT, `&lt;output&gt;` with target RESEARCH.md path, `&lt;depth&gt;` with current depth setting.
+
+**Depth-specific instructions in prompt:**
+
+**If DEPTH is &quot;standard&quot;:**
+Add `&lt;depth_instruction&gt;Target 10-20 relevant sources across categories. Focus on most impactful papers for each category.&lt;/depth_instruction&gt;`
+
+**If DEPTH is &quot;deep&quot;:**
+Add `&lt;depth_instruction&gt;Perform exhaustive literature review. Target 20-50 papers across all categories. Include systematic field mapping: major research groups, funding bodies, key venues, citation networks. Map the intellectual lineage of the field. Identify ALL competing approaches, not just the main ones. Document methodology variations comprehensively. All 5 categories (foundational, recent, competing, gap, methods) are REQUIRED, not optional.&lt;/depth_instruction&gt;`
+
+**Source priority hierarchy (all depths):**
+Add `&lt;source_priority&gt;Source priority: Context7 MCP first (if available), official sources/databases second (Google Scholar, PubMed, IEEE, ACL, arXiv), WebSearch last.&lt;/source_priority&gt;`
+
+## 5. Handle Researcher Return
+
+**`## RESEARCH COMPLETE`:** Present findings summary.
+
+**`## RESEARCH BLOCKED`:** Show blocker, offer alternatives.
+
+## 6. Present Results
+
+&lt;/process&gt;
+
+&lt;offer_next&gt;
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► RESEARCH COMPLETE ✓
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Depth: {DEPTH}
+Citations found: {N}
+Confidence: {level}
+
+───────────────────────────────────────────
+
+## ▶ Next Up
+
+**Plan section** — create writing plan with research context
+
+`/wtfp:plan-section {section}`
+
+&lt;sub&gt;`/clear` first → fresh context window&lt;/sub&gt;
+
+───────────────────────────────────────────
+
+&lt;/offer_next&gt;
+
+&lt;offer_next_quick&gt;
+
+**For quick depth only (no RESEARCH.md written):**
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► QUICK RESEARCH COMPLETE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Quick research -- no RESEARCH.md written. Run with `--depth=standard` for persistent research.
+
+───────────────────────────────────────────
+
+## ▶ Next Up
+
+**Plan section** — proceed without literature doc
+
+`/wtfp:plan-section {section}`
+
+**Or deepen research:**
+
+`/wtfp:research-gap {section} --depth=standard`
+
+───────────────────────────────────────────
+
+&lt;/offer_next_quick&gt;
+
+&lt;success_criteria&gt;
+- [ ] Research scope defined with user
+- [ ] Research-synthesizer spawned with full context
+- [ ] RESEARCH.md created with key citations and gaps
+- [ ] User knows next steps
+&lt;/success_criteria&gt;</pre>
+          </div>
+
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer">CC ACADEMIC LIBRARY / CLAUDE CODE / ACADEMIC + SCIENTIFIC SKILLS / STATIC HTML / ZERO DEPENDENCIES</div>
+</div>
+</body>
+</html>

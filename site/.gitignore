@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Internal build and planning docs (contain absolute local paths)
+PLAN.md
+SITE-ARCHITECTURE.md
+
+# Claude Code session data
+.claude/

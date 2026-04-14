@@ -12,6 +12,7 @@ Canonical home for the academic skills library. This repo mirrors upstream bundl
 | Snapshot | `inventory.json` | Generated filesystem snapshot for drift checks |
 | State | `docs/STATE.md` | Current work position and continuity |
 | Roadmap | `docs/ROADMAP.md` | Phase plan and maintenance sequence |
+| Site | `site/` | Static HTML reference site generated from this library |
 
 ## Quick Links
 
@@ -63,6 +64,7 @@ Canonical home for the academic skills library. This repo mirrors upstream bundl
 | Add or move source-bundle content | Update `resources/bundle-registry.json`, then refresh |
 | Review the current model | Open `docs/PROJECT.md` |
 | Check execution state | Open `docs/STATE.md` |
+| Regenerate the reference site | `node site/generate.js` |
 
 ## Adding New Content
 

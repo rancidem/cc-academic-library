@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>POLISH-PROSE — COMMANDS — CC ACADEMIC LIBRARY</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../search-index.js" defer></script>
+  <script src="../../search.js" defer></script>
+</head>
+<body class="section-commands">
+<a class="skip-to-content" href="#main-content">Skip to content</a>
+<div class="page">
+  <h1 class="site-title">CC ACADEMIC LIBRARY</h1>
+  <div class="top-meta">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>POLISH-PROSE</strong></div>
+
+  <table class="palette-bar" aria-hidden="true">
+    <tr><td class="p1"></td><td class="p2"></td><td class="p3"></td><td class="p4"></td><td class="p5"></td></tr>
+  </table>
+
+  <table class="layout">
+    <tr>
+      <td class="sidebar">
+        <div class="sidebar-inner">
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM PANEL</div>
+            <div class="system-subhead">SITE NAVIGATION</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../../index.html"><span class="icon icon-dot"></span>HOME</a></td></tr>
+                <tr><td><a href="../../skills/index.html"><span class="icon icon-skill"></span>SKILLS <span class="nav-count">[143]</span></a></td></tr>
+                <tr><td><a class="active" href="../index.html"><span class="icon icon-note"></span>COMMANDS <span class="nav-count">[37]</span></a></td></tr>
+                <tr><td><a href="../../agents/index.html"><span class="icon icon-dot"></span>AGENTS <span class="nav-count">[11]</span></a></td></tr>
+                <tr><td><a href="../../templates/index.html"><span class="icon icon-folder"></span>TEMPLATES</a></td></tr>
+                <tr><td><a href="../../tools/index.html"><span class="icon icon-folder"></span>TOOLS</a></td></tr>
+                <tr><td><a href="../../resources/index.html"><span class="icon icon-dot"></span>RESOURCES</a></td></tr>
+                <tr><td><a href="../../status/index.html"><span class="icon icon-dot"></span>STATUS</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">QUICK FIND</div>
+            <div class="system-body">
+              <div class="search-row">
+                <input type="text" placeholder="SKILLS / COMMANDS / AGENTS" aria-label="Search">
+                <button>SEARCH</button>
+              </div>
+            </div>
+            <div class="search-results" id="search-results"></div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM INFO</div>
+            <div class="system-body">
+              <table class="meta-table">
+                <tr><td class="meta-key">COMMAND</td><td>POLISH-PROSE</td></tr>
+                <tr><td class="meta-key">STAGE</td><td>POLISH</td></tr>
+                <tr><td class="meta-key">DATE</td><td>2026-04-14</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">ALL COMMANDS</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../index.html">&larr; COMMANDS INDEX</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </td>
+      <td class="content">
+        <div class="content-inner" id="main-content">
+
+          <div class="breadcrumb">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>POLISH-PROSE</strong></div>
+          <div class="marquee-line"><strong>COMMAND:</strong> POLISH-PROSE / STAGE: POLISH</div>
+          <h2 class="section-title">POLISH-PROSE</h2>
+          <div class="rule"></div>
+
+          <table class="meta-table">
+            <tr><td class="meta-key">SOURCE FILE</td><td>commands/polish-prose.md</td></tr>
+            <tr><td class="meta-key">WORKFLOW STAGE</td><td>POLISH</td></tr>
+            <tr><td class="meta-key">INVOCATION</td><td>/wtfp:polish-prose</td></tr>
+            <tr><td class="meta-key">TOOLS</td><td>Read, Bash, Write, Edit, Glob, Grep, Task, AskUserQuestion</td></tr>
+          </table>
+
+          <div class="dotted-rule"></div>
+
+          <div class="intro-panel intro-panel--commands">
+            <div class="intro-panel-head">DESCRIPTION</div>
+            <div class="intro-panel-body">Improve clarity, flow, and academic voice in written prose</div>
+          </div>
+
+          <h3 class="sub-title">RAW FILES</h3>
+          <table class="list-table">
+            <tr><th>FILE</th><th>DOWNLOAD</th></tr>
+            <tr><td>polish-prose.md</td><td><a href="raw/polish-prose.md" download>DOWNLOAD</a></td></tr>
+          </table>
+
+          <h3 class="sub-title">FULL CONTENT</h3>
+          <div class="skill-body">
+            <pre class="raw-content">&lt;execution_context&gt;
+@~/.claude/write-the-f-paper/references/principles.md
+&lt;/execution_context&gt;
+
+&lt;objective&gt;
+Polish prose to eliminate robotic AI-sounding text and improve academic voice.
+
+**Orchestrator role:** Identify target files, gather voice preference, resolve model profile, spawn prose-polisher agent, present results.
+&lt;/objective&gt;
+
+&lt;context&gt;
+Target: $ARGUMENTS (section number, file path, or &quot;all&quot; for full manuscript)
+
+**Load project state:**
+@docs/STATE.md
+&lt;/context&gt;
+
+&lt;process&gt;
+
+## 1. Validate Environment and Resolve Model Profile
+
+```bash
+ls paper/*.md 2&gt;/dev/null || echo &quot;No content in paper/ directory&quot;
+```
+
+```bash
+MODEL_PROFILE=$(cat docs/config.json 2&gt;/dev/null | grep -o '&quot;model_profile&quot;[[:space:]]*:[[:space:]]*&quot;[^&quot;]*&quot;' | grep -o '&quot;[^&quot;]*&quot;$' | tr -d '&quot;' || echo &quot;balanced&quot;)
+```
+
+| Agent | quality | balanced | budget |
+|-------|---------|----------|--------|
+| prose-polisher | opus | sonnet | haiku |
+
+## 2. Identify Target and Gather Preferences
+
+Parse $ARGUMENTS to find target file(s).
+
+Use AskUserQuestion:
+- header: &quot;Voice&quot;
+- question: &quot;What tone should dominate this section?&quot;
+- options:
+  - &quot;Authoritative&quot; — Confident, direct claims
+  - &quot;Measured&quot; — Careful hedging, academic caution
+  - &quot;Accessible&quot; — Clear to non-specialists
+  - &quot;Technical&quot; — Dense, specialist terminology OK
+
+## 3. Read Context Files
+
+```bash
+TARGET_CONTENT=$(cat paper/[target].md 2&gt;/dev/null)
+STYLE_CONTENT=$(cat docs/sources/style-guide.md 2&gt;/dev/null)
+
+SECTION_DIR=$(ls -d docs/sections/${SECTION}-* 2&gt;/dev/null | head -1)
+CONTEXT_CONTENT=$(cat &quot;${SECTION_DIR}&quot;/*-CONTEXT.md 2&gt;/dev/null)
+```
+
+## 4. Spawn wtfp-prose-polisher Agent
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► POLISHING PROSE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+```
+Task(
+  prompt=&quot;First, read ~/.claude/agents/wtfp/prose-polisher.md for your role and instructions.\n\n&quot; + filled_polish_prompt,
+  subagent_type=&quot;general-purpose&quot;,
+  model=&quot;{polisher_model}&quot;,
+  description=&quot;Polish prose&quot;
+)
+```
+
+Polish prompt includes: `&lt;target_content&gt;` with section text, `&lt;voice_preference&gt;` with user selection, `&lt;style_guide&gt;` with style context, `&lt;user_decisions&gt;` with CONTEXT_CONTENT.
+
+## 5. Handle Polisher Return
+
+**`## POLISH COMPLETE`:** Present before/after summary.
+
+**`## POLISH BLOCKED`:** Present blocker, ask user how to proceed.
+
+## 6. Present Results
+
+&lt;/process&gt;
+
+&lt;offer_next&gt;
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► PROSE POLISHED ✓
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+───────────────────────────────────────────
+
+## Next Up
+
+- `/wtfp:review-section {N}` — Get reviewer feedback
+- `/wtfp:check-refs` — Verify citations
+- `/wtfp:export-latex` — Generate LaTeX
+
+───────────────────────────────────────────
+
+&lt;/offer_next&gt;
+
+&lt;success_criteria&gt;
+- [ ] Target file(s) identified
+- [ ] Voice preference gathered
+- [ ] Prose-polisher spawned with full context
+- [ ] Changes applied to paper/ files
+- [ ] User knows next steps
+&lt;/success_criteria&gt;</pre>
+          </div>
+
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer">CC ACADEMIC LIBRARY / CLAUDE CODE / ACADEMIC + SCIENTIFIC SKILLS / STATIC HTML / ZERO DEPENDENCIES</div>
+</div>
+</body>
+</html>

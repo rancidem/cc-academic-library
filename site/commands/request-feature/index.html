@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>REQUEST-FEATURE — COMMANDS — CC ACADEMIC LIBRARY</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../search-index.js" defer></script>
+  <script src="../../search.js" defer></script>
+</head>
+<body class="section-commands">
+<a class="skip-to-content" href="#main-content">Skip to content</a>
+<div class="page">
+  <h1 class="site-title">CC ACADEMIC LIBRARY</h1>
+  <div class="top-meta">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>REQUEST-FEATURE</strong></div>
+
+  <table class="palette-bar" aria-hidden="true">
+    <tr><td class="p1"></td><td class="p2"></td><td class="p3"></td><td class="p4"></td><td class="p5"></td></tr>
+  </table>
+
+  <table class="layout">
+    <tr>
+      <td class="sidebar">
+        <div class="sidebar-inner">
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM PANEL</div>
+            <div class="system-subhead">SITE NAVIGATION</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../../index.html"><span class="icon icon-dot"></span>HOME</a></td></tr>
+                <tr><td><a href="../../skills/index.html"><span class="icon icon-skill"></span>SKILLS <span class="nav-count">[143]</span></a></td></tr>
+                <tr><td><a class="active" href="../index.html"><span class="icon icon-note"></span>COMMANDS <span class="nav-count">[37]</span></a></td></tr>
+                <tr><td><a href="../../agents/index.html"><span class="icon icon-dot"></span>AGENTS <span class="nav-count">[11]</span></a></td></tr>
+                <tr><td><a href="../../templates/index.html"><span class="icon icon-folder"></span>TEMPLATES</a></td></tr>
+                <tr><td><a href="../../tools/index.html"><span class="icon icon-folder"></span>TOOLS</a></td></tr>
+                <tr><td><a href="../../resources/index.html"><span class="icon icon-dot"></span>RESOURCES</a></td></tr>
+                <tr><td><a href="../../status/index.html"><span class="icon icon-dot"></span>STATUS</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">QUICK FIND</div>
+            <div class="system-body">
+              <div class="search-row">
+                <input type="text" placeholder="SKILLS / COMMANDS / AGENTS" aria-label="Search">
+                <button>SEARCH</button>
+              </div>
+            </div>
+            <div class="search-results" id="search-results"></div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM INFO</div>
+            <div class="system-body">
+              <table class="meta-table">
+                <tr><td class="meta-key">COMMAND</td><td>REQUEST-FEATURE</td></tr>
+                <tr><td class="meta-key">STAGE</td><td>UTILITY</td></tr>
+                <tr><td class="meta-key">DATE</td><td>2026-04-14</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">ALL COMMANDS</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../index.html">&larr; COMMANDS INDEX</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </td>
+      <td class="content">
+        <div class="content-inner" id="main-content">
+
+          <div class="breadcrumb">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>REQUEST-FEATURE</strong></div>
+          <div class="marquee-line"><strong>COMMAND:</strong> REQUEST-FEATURE / STAGE: UTILITY</div>
+          <h2 class="section-title">REQUEST-FEATURE</h2>
+          <div class="rule"></div>
+
+          <table class="meta-table">
+            <tr><td class="meta-key">SOURCE FILE</td><td>commands/request-feature.md</td></tr>
+            <tr><td class="meta-key">WORKFLOW STAGE</td><td>UTILITY</td></tr>
+            <tr><td class="meta-key">INVOCATION</td><td>/wtfp:request-feature</td></tr>
+            <tr><td class="meta-key">TOOLS</td><td>Bash, Read, AskUserQuestion</td></tr>
+          </table>
+
+          <div class="dotted-rule"></div>
+
+          <div class="intro-panel intro-panel--commands">
+            <div class="intro-panel-head">DESCRIPTION</div>
+            <div class="intro-panel-body">Request a new feature via GitHub issue</div>
+          </div>
+
+          <h3 class="sub-title">RAW FILES</h3>
+          <table class="list-table">
+            <tr><th>FILE</th><th>DOWNLOAD</th></tr>
+            <tr><td>request-feature.md</td><td><a href="raw/request-feature.md" download>DOWNLOAD</a></td></tr>
+          </table>
+
+          <h3 class="sub-title">FULL CONTENT</h3>
+          <div class="skill-body">
+            <pre class="raw-content">&lt;objective&gt;
+Help the user request a new feature for WTF-P by creating a well-formatted GitHub issue.
+&lt;/objective&gt;
+
+&lt;context&gt;
+@~/.claude/write-the-f-paper/references/github-contrib.md
+&lt;/context&gt;
+
+&lt;process&gt;
+
+## Step 1: Verify GitHub CLI
+
+Check if `gh` is authenticated:
+
+```bash
+gh auth status 2&gt;&amp;1
+```
+
+If not authenticated, inform the user:
+&gt; To create GitHub issues, you need to authenticate the GitHub CLI.
+&gt; Run: `gh auth login`
+&gt; Then try this command again.
+
+## Step 2: Understand the Feature Request
+
+Use AskUserQuestion to understand what the user wants:
+
+**Question 1: Feature Category**
+- Header: &quot;Category&quot;
+- Options:
+  - &quot;New command&quot; - A new /wtfp:* slash command
+  - &quot;Workflow enhancement&quot; - Improve existing writing workflow
+  - &quot;Installation/CLI&quot; - Improve npx wtf-p experience
+  - &quot;Template/Format&quot; - New venue template or output format
+  - &quot;Integration&quot; - Connect with other tools (Zotero, Overleaf, etc.)
+
+**Question 2: Complexity**
+- Header: &quot;Scope&quot;
+- Options:
+  - &quot;Small tweak&quot; - Minor change to existing behavior
+  - &quot;New capability&quot; - Add something that doesn't exist
+  - &quot;Major feature&quot; - Significant new functionality
+
+## Step 3: Gather Feature Details
+
+Based on category, ask targeted questions:
+
+**For new command:**
+- What should `/wtfp:new-command` do?
+- When would you use it in your writing workflow?
+- What inputs does it need? What outputs?
+
+**For workflow enhancement:**
+- Which workflow needs improvement?
+- What's missing or frustrating?
+- How should it work differently?
+
+**For templates/formats:**
+- Which venue or format?
+- Do you have example requirements?
+
+## Step 4: Explore Use Case
+
+Ask user:
+- What problem does this solve for you?
+- How often would you use this?
+- Have you tried any workarounds?
+
+## Step 5: Check for Duplicates
+
+Search existing issues:
+```bash
+gh issue list --repo akougkas/wtf-p --search &quot;[KEYWORDS]&quot; --limit 5
+```
+
+If similar issues exist, show them to the user and ask:
+- &quot;These similar issues exist. Should we add to one of these, or create a new issue?&quot;
+
+## Step 6: Draft the Feature Request
+
+Create a draft:
+
+```markdown
+## Feature Description
+[Clear description of the feature]
+
+## Use Case
+[Why this is needed, what problem it solves]
+
+## Proposed Solution
+[How it should work, with examples]
+
+### Example Usage
+```
+/wtfp:new-command
+&gt; [Expected interaction]
+```
+
+## Alternatives Considered
+[Other approaches, if discussed]
+
+## Additional Context
+[Related features, prior art, mockups]
+```
+
+## Step 7: Offer Implementation Path
+
+Ask user:
+- Header: &quot;Next Step&quot;
+- Options:
+  - &quot;Create issue only&quot; - Submit as feature request for maintainers
+  - &quot;I'll implement it&quot; - Create issue + guide through PR process
+  - &quot;Help me implement&quot; - Claude assists with implementation
+
+If user wants to implement, transition to `/wtfp:contribute` workflow.
+
+## Step 8: Create the Issue
+
+If confirmed:
+
+```bash
+gh issue create \
+  --repo akougkas/wtf-p \
+  --title &quot;feat: [SHORT_TITLE]&quot; \
+  --body &quot;$(cat &lt;&lt;'EOF'
+[FULL_BODY_HERE]
+EOF
+)&quot; \
+  --label &quot;enhancement&quot;
+```
+
+## Step 9: Report Success
+
+Show the user:
+- Issue URL
+- Issue number
+- Encourage voting/commenting to show interest
+- If they want to implement: next steps
+
+&lt;/process&gt;
+
+&lt;tips&gt;
+
+**Good feature requests include:**
+- Specific use case (not just &quot;it would be nice&quot;)
+- Example of how it would work
+- Explanation of why existing features don't solve this
+
+**Signal boost:** Encourage users to share the issue link with others who might want the feature. More reactions = higher priority.
+
+&lt;/tips&gt;</pre>
+          </div>
+
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer">CC ACADEMIC LIBRARY / CLAUDE CODE / ACADEMIC + SCIENTIFIC SKILLS / STATIC HTML / ZERO DEPENDENCIES</div>
+</div>
+</body>
+</html>

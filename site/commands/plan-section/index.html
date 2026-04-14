@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PLAN-SECTION — COMMANDS — CC ACADEMIC LIBRARY</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../search-index.js" defer></script>
+  <script src="../../search.js" defer></script>
+</head>
+<body class="section-commands">
+<a class="skip-to-content" href="#main-content">Skip to content</a>
+<div class="page">
+  <h1 class="site-title">CC ACADEMIC LIBRARY</h1>
+  <div class="top-meta">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>PLAN-SECTION</strong></div>
+
+  <table class="palette-bar" aria-hidden="true">
+    <tr><td class="p1"></td><td class="p2"></td><td class="p3"></td><td class="p4"></td><td class="p5"></td></tr>
+  </table>
+
+  <table class="layout">
+    <tr>
+      <td class="sidebar">
+        <div class="sidebar-inner">
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM PANEL</div>
+            <div class="system-subhead">SITE NAVIGATION</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../../index.html"><span class="icon icon-dot"></span>HOME</a></td></tr>
+                <tr><td><a href="../../skills/index.html"><span class="icon icon-skill"></span>SKILLS <span class="nav-count">[143]</span></a></td></tr>
+                <tr><td><a class="active" href="../index.html"><span class="icon icon-note"></span>COMMANDS <span class="nav-count">[37]</span></a></td></tr>
+                <tr><td><a href="../../agents/index.html"><span class="icon icon-dot"></span>AGENTS <span class="nav-count">[11]</span></a></td></tr>
+                <tr><td><a href="../../templates/index.html"><span class="icon icon-folder"></span>TEMPLATES</a></td></tr>
+                <tr><td><a href="../../tools/index.html"><span class="icon icon-folder"></span>TOOLS</a></td></tr>
+                <tr><td><a href="../../resources/index.html"><span class="icon icon-dot"></span>RESOURCES</a></td></tr>
+                <tr><td><a href="../../status/index.html"><span class="icon icon-dot"></span>STATUS</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">QUICK FIND</div>
+            <div class="system-body">
+              <div class="search-row">
+                <input type="text" placeholder="SKILLS / COMMANDS / AGENTS" aria-label="Search">
+                <button>SEARCH</button>
+              </div>
+            </div>
+            <div class="search-results" id="search-results"></div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM INFO</div>
+            <div class="system-body">
+              <table class="meta-table">
+                <tr><td class="meta-key">COMMAND</td><td>PLAN-SECTION</td></tr>
+                <tr><td class="meta-key">STAGE</td><td>PLANNING</td></tr>
+                <tr><td class="meta-key">DATE</td><td>2026-04-14</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">ALL COMMANDS</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../index.html">&larr; COMMANDS INDEX</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </td>
+      <td class="content">
+        <div class="content-inner" id="main-content">
+
+          <div class="breadcrumb">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>PLAN-SECTION</strong></div>
+          <div class="marquee-line"><strong>COMMAND:</strong> PLAN-SECTION / STAGE: PLANNING</div>
+          <h2 class="section-title">PLAN-SECTION</h2>
+          <div class="rule"></div>
+
+          <table class="meta-table">
+            <tr><td class="meta-key">SOURCE FILE</td><td>commands/plan-section.md</td></tr>
+            <tr><td class="meta-key">WORKFLOW STAGE</td><td>PLANNING</td></tr>
+            <tr><td class="meta-key">INVOCATION</td><td>/wtfp:plan-section</td></tr>
+            <tr><td class="meta-key">TOOLS</td><td>Read, Bash, Write, Glob, Grep, Task, AskUserQuestion</td></tr>
+          </table>
+
+          <div class="dotted-rule"></div>
+
+          <div class="intro-panel intro-panel--commands">
+            <div class="intro-panel-head">DESCRIPTION</div>
+            <div class="intro-panel-body">Create detailed writing plan for a section</div>
+          </div>
+
+          <h3 class="sub-title">RAW FILES</h3>
+          <table class="list-table">
+            <tr><th>FILE</th><th>DOWNLOAD</th></tr>
+            <tr><td>plan-section.md</td><td><a href="raw/plan-section.md" download>DOWNLOAD</a></td></tr>
+          </table>
+
+          <h3 class="sub-title">FULL CONTENT</h3>
+          <div class="skill-body">
+            <pre class="raw-content">&lt;execution_context&gt;
+@~/.claude/write-the-f-paper/references/plan-format.md
+@~/.claude/write-the-f-paper/references/length-estimation.md
+&lt;/execution_context&gt;
+
+&lt;objective&gt;
+Create executable writing plan with context injection and task breakdown.
+
+**Orchestrator role:** Parse arguments, validate section, load context, resolve model profile, spawn section-planner agent, optionally verify plans with plan-checker, iterate until plans pass, present results.
+
+**Why subagents:** Planning and verification burn context fast. Fresh agents get peak quality. User sees flow between agents in main context.
+&lt;/objective&gt;
+
+&lt;context&gt;
+Section number: $ARGUMENTS (optional - auto-detects next unplanned section if not provided)
+&lt;/context&gt;
+
+&lt;process&gt;
+
+## 1. Validate Environment and Resolve Model Profile
+
+```bash
+ls docs/ 2&gt;/dev/null
+```
+
+**If not found:** Error - user should run `/wtfp:new-paper` first.
+
+**Resolve model profile:**
+
+```bash
+MODEL_PROFILE=$(cat docs/config.json 2&gt;/dev/null | grep -o '&quot;model_profile&quot;[[:space:]]*:[[:space:]]*&quot;[^&quot;]*&quot;' | grep -o '&quot;[^&quot;]*&quot;$' | tr -d '&quot;' || echo &quot;balanced&quot;)
+```
+
+**Model lookup table:**
+
+| Agent | quality | balanced | budget |
+|-------|---------|----------|--------|
+| section-planner | opus | opus | sonnet |
+| plan-checker | sonnet | sonnet | haiku |
+
+**Resolve gate flag:**
+```bash
+# Gate: confirm_plan — skip confirmation if false
+GATE_CONFIRM_PLAN=$(cat docs/config.json 2&gt;/dev/null | grep -o '&quot;confirm_plan&quot;[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo &quot;true&quot;)
+```
+
+## 1b. Git Branch Setup
+
+```bash
+BRANCH_STRATEGY=$(cat docs/config.json 2&gt;/dev/null | grep -o '&quot;branching_strategy&quot;[[:space:]]*:[[:space:]]*&quot;[^&quot;]*&quot;' | grep -o '&quot;[^&quot;]*&quot;$' | tr -d '&quot;' || echo &quot;none&quot;)
+```
+
+**If branching_strategy = &quot;section&quot;:**
+
+1. Read section_branch_template from config (default: `wtfp/section-{section}-{slug}`)
+2. Replace `{section}` with zero-padded section number (e.g., `01`, `02`)
+3. Replace `{slug}` with slugified section name (lowercase, hyphens)
+4. Store current branch as base branch for later merge:
+   ```bash
+   BASE_BRANCH=$(git branch --show-current 2&gt;/dev/null || echo &quot;main&quot;)
+   echo &quot;$BASE_BRANCH&quot; &gt; docs/.section_base_branch
+   ```
+5. Create and checkout section branch:
+   ```bash
+   SECTION_BRANCH_TEMPLATE=$(cat docs/config.json 2&gt;/dev/null | grep -o '&quot;section_branch_template&quot;[[:space:]]*:[[:space:]]*&quot;[^&quot;]*&quot;' | grep -o '&quot;[^&quot;]*&quot;$' | tr -d '&quot;' || echo &quot;wtfp/section-{section}-{slug}&quot;)
+   BRANCH_NAME=$(echo &quot;$SECTION_BRANCH_TEMPLATE&quot; | sed &quot;s/{section}/${SECTION_NUM}/&quot; | sed &quot;s/{slug}/${SECTION_SLUG}/&quot;)
+   git checkout -b &quot;$BRANCH_NAME&quot;
+   ```
+6. Log: &quot;Created section branch: $BRANCH_NAME&quot;
+
+**If branching_strategy = &quot;none&quot; or &quot;submission&quot;:** No branch action in plan-section.
+
+## 2. Parse and Normalize Arguments
+
+Extract section number from $ARGUMENTS. If no section number, detect next unplanned section from roadmap.
+
+```bash
+ls docs/sections/*/ 2&gt;/dev/null | head -10
+```
+
+## 3. Validate Section
+
+```bash
+grep -A5 &quot;Section&quot; docs/ROADMAP.md 2&gt;/dev/null
+```
+
+Extract section number, name, description.
+
+## 4. Ensure Section Directory and Load CONTEXT.md
+
+```bash
+SECTION_DIR=$(ls -d docs/sections/${SECTION}-* 2&gt;/dev/null | head -1)
+CONTEXT_CONTENT=$(cat &quot;${SECTION_DIR}&quot;/*-CONTEXT.md 2&gt;/dev/null)
+```
+
+**CRITICAL:** Store CONTEXT_CONTENT now. Pass to ALL downstream agents.
+
+## 5. Read Context Files
+
+```bash
+STATE_CONTENT=$(cat docs/STATE.md)
+ROADMAP_CONTENT=$(cat docs/ROADMAP.md)
+PROJECT_CONTENT=$(cat docs/PROJECT.md)
+ARGMAP_CONTENT=$(cat docs/structure/argument-map.md 2&gt;/dev/null)
+OUTLINE_CONTENT=$(cat docs/structure/outline.md 2&gt;/dev/null)
+RESEARCH_CONTENT=$(cat &quot;${SECTION_DIR}&quot;/*-RESEARCH.md 2&gt;/dev/null)
+PRIOR_SUMMARIES=$(cat docs/sections/*/SUMMARY.md 2&gt;/dev/null | head -200)
+```
+
+If RESEARCH.md missing for a literature-heavy section, suggest `/wtfp:research-gap` first.
+
+## 6. Gate Check: Confirm Before Planning
+
+**If GATE_CONFIRM_PLAN is &quot;true&quot; (default):**
+Present section context summary to user via AskUserQuestion and wait for confirmation before proceeding.
+
+**If GATE_CONFIRM_PLAN is &quot;false&quot;:**
+Skip confirmation and proceed directly to planning.
+
+## 7. Spawn wtfp-section-planner Agent
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► PLANNING SECTION {X}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+Fill prompt with inlined content and spawn:
+
+```
+Task(
+  prompt=&quot;First, read ~/.claude/agents/wtfp/section-planner.md for your role and instructions.\n\n&quot; + filled_planning_prompt,
+  subagent_type=&quot;general-purpose&quot;,
+  model=&quot;{planner_model}&quot;,
+  description=&quot;Plan Section {X}&quot;
+)
+```
+
+Planning prompt includes: `&lt;planning_context&gt;` with STATE, ROADMAP, PROJECT, argument-map, outline, RESEARCH, prior summaries. `&lt;user_decisions&gt;` with CONTEXT_CONTENT. `&lt;output&gt;` with target directory path.
+
+## 8. Handle Planner Return
+
+**`## PLANNING COMPLETE`:** Display plan count, proceed to verification check.
+
+**`## CHECKPOINT REACHED`:** Present to user, get response.
+
+**`## PLANNING INCONCLUSIVE`:** Show what was attempted, offer options.
+
+## 8. Plan-Check-Revise Loop (if enabled)
+
+```bash
+WORKFLOW_PLAN_CHECK=$(cat docs/config.json 2&gt;/dev/null | grep -o '&quot;plan_check&quot;[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo &quot;true&quot;)
+```
+
+**If plan_check is true:**
+
+Read plans for checker:
+```bash
+PLANS_CONTENT=$(cat &quot;${SECTION_DIR}&quot;/*-PLAN.md 2&gt;/dev/null)
+```
+
+Spawn `wtfp-plan-checker` with plans + ROADMAP + argument-map + CONTEXT.
+
+**If VERIFICATION PASSED:** Proceed to done.
+
+**If ISSUES FOUND and iteration &lt; 3:** Spawn planner in revision mode with issues. Re-check. Increment iteration.
+
+**If iteration &gt;= 3:** Present remaining issues to user with options: force proceed, provide guidance, abandon.
+
+## 9. Present Final Status
+
+&lt;/process&gt;
+
+&lt;offer_next&gt;
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► SECTION {X} PLANNED ✓
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+**Section {X}: {Name}** — {N} plan(s), {W} words target
+
+Verification: {Passed | Passed with override | Skipped}
+
+───────────────────────────────────────────
+
+## ▶ Next Up
+
+**Execute writing** — run the plan
+
+`/wtfp:write-section docs/sections/XX-name/XX-YY-PLAN.md`
+
+&lt;sub&gt;`/clear` first → fresh context window&lt;/sub&gt;
+
+───────────────────────────────────────────
+
+&lt;/offer_next&gt;
+
+&lt;success_criteria&gt;
+- [ ] docs/ directory validated
+- [ ] Section validated against roadmap
+- [ ] CONTEXT.md loaded early and passed to ALL agents
+- [ ] RESEARCH.md auto-loaded if exists
+- [ ] Section-planner spawned with full context
+- [ ] Plans created (PLANNING COMPLETE or CHECKPOINT handled)
+- [ ] Plan-checker spawned (if workflow.plan_check enabled)
+- [ ] Verification passed OR user override OR max iterations
+- [ ] User knows next steps
+&lt;/success_criteria&gt;</pre>
+          </div>
+
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer">CC ACADEMIC LIBRARY / CLAUDE CODE / ACADEMIC + SCIENTIFIC SKILLS / STATIC HTML / ZERO DEPENDENCIES</div>
+</div>
+</body>
+</html>

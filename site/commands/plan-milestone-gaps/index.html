@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>PLAN-MILESTONE-GAPS — COMMANDS — CC ACADEMIC LIBRARY</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../search-index.js" defer></script>
+  <script src="../../search.js" defer></script>
+</head>
+<body class="section-commands">
+<a class="skip-to-content" href="#main-content">Skip to content</a>
+<div class="page">
+  <h1 class="site-title">CC ACADEMIC LIBRARY</h1>
+  <div class="top-meta">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>PLAN-MILESTONE-GAPS</strong></div>
+
+  <table class="palette-bar" aria-hidden="true">
+    <tr><td class="p1"></td><td class="p2"></td><td class="p3"></td><td class="p4"></td><td class="p5"></td></tr>
+  </table>
+
+  <table class="layout">
+    <tr>
+      <td class="sidebar">
+        <div class="sidebar-inner">
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM PANEL</div>
+            <div class="system-subhead">SITE NAVIGATION</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../../index.html"><span class="icon icon-dot"></span>HOME</a></td></tr>
+                <tr><td><a href="../../skills/index.html"><span class="icon icon-skill"></span>SKILLS <span class="nav-count">[143]</span></a></td></tr>
+                <tr><td><a class="active" href="../index.html"><span class="icon icon-note"></span>COMMANDS <span class="nav-count">[37]</span></a></td></tr>
+                <tr><td><a href="../../agents/index.html"><span class="icon icon-dot"></span>AGENTS <span class="nav-count">[11]</span></a></td></tr>
+                <tr><td><a href="../../templates/index.html"><span class="icon icon-folder"></span>TEMPLATES</a></td></tr>
+                <tr><td><a href="../../tools/index.html"><span class="icon icon-folder"></span>TOOLS</a></td></tr>
+                <tr><td><a href="../../resources/index.html"><span class="icon icon-dot"></span>RESOURCES</a></td></tr>
+                <tr><td><a href="../../status/index.html"><span class="icon icon-dot"></span>STATUS</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">QUICK FIND</div>
+            <div class="system-body">
+              <div class="search-row">
+                <input type="text" placeholder="SKILLS / COMMANDS / AGENTS" aria-label="Search">
+                <button>SEARCH</button>
+              </div>
+            </div>
+            <div class="search-results" id="search-results"></div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM INFO</div>
+            <div class="system-body">
+              <table class="meta-table">
+                <tr><td class="meta-key">COMMAND</td><td>PLAN-MILESTONE-GAPS</td></tr>
+                <tr><td class="meta-key">STAGE</td><td>REVIEW</td></tr>
+                <tr><td class="meta-key">DATE</td><td>2026-04-14</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">ALL COMMANDS</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../index.html">&larr; COMMANDS INDEX</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </td>
+      <td class="content">
+        <div class="content-inner" id="main-content">
+
+          <div class="breadcrumb">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>PLAN-MILESTONE-GAPS</strong></div>
+          <div class="marquee-line"><strong>COMMAND:</strong> PLAN-MILESTONE-GAPS / STAGE: REVIEW</div>
+          <h2 class="section-title">PLAN-MILESTONE-GAPS</h2>
+          <div class="rule"></div>
+
+          <table class="meta-table">
+            <tr><td class="meta-key">SOURCE FILE</td><td>commands/plan-milestone-gaps.md</td></tr>
+            <tr><td class="meta-key">WORKFLOW STAGE</td><td>REVIEW</td></tr>
+            <tr><td class="meta-key">INVOCATION</td><td>/wtfp:plan-milestone-gaps</td></tr>
+            <tr><td class="meta-key">TOOLS</td><td>Read, Bash, Write, AskUserQuestion</td></tr>
+          </table>
+
+          <div class="dotted-rule"></div>
+
+          <div class="intro-panel intro-panel--commands">
+            <div class="intro-panel-head">DESCRIPTION</div>
+            <div class="intro-panel-body">Create fix plans for gaps found by audit-milestone</div>
+          </div>
+
+          <h3 class="sub-title">RAW FILES</h3>
+          <table class="list-table">
+            <tr><th>FILE</th><th>DOWNLOAD</th></tr>
+            <tr><td>plan-milestone-gaps.md</td><td><a href="raw/plan-milestone-gaps.md" download>DOWNLOAD</a></td></tr>
+          </table>
+
+          <h3 class="sub-title">FULL CONTENT</h3>
+          <div class="skill-body">
+            <pre class="raw-content">&lt;objective&gt;
+Read MILESTONE-AUDIT.md and create targeted fix plans for each gap.
+
+Each gap becomes a fix plan in the appropriate section directory.
+Plans follow the standard plan-format.md structure.
+User can execute fix plans with existing writing commands.
+&lt;/objective&gt;
+
+&lt;process&gt;
+
+&lt;step name=&quot;validate&quot;&gt;
+**Step 1: Validate Audit Exists**
+
+```bash
+[ ! -f docs/MILESTONE-AUDIT.md ] &amp;&amp; echo &quot;ERROR: No MILESTONE-AUDIT.md found. Run /wtfp:audit-milestone first.&quot; &amp;&amp; exit 1
+```
+
+&lt;/step&gt;
+
+&lt;step name=&quot;banner&quot;&gt;
+**Step 2: Display Banner**
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► PLANNING GAP FIXES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Reading MILESTONE-AUDIT.md...
+```
+
+&lt;/step&gt;
+
+&lt;step name=&quot;parse_audit&quot;&gt;
+**Step 3: Parse MILESTONE-AUDIT.md**
+
+Read `docs/MILESTONE-AUDIT.md`.
+
+Extract all gaps (sections under &quot;## Gaps&quot; with &quot;Status: gap&quot;):
+- Gap name (check name)
+- Finding (what's missing)
+- Affected (sections/claims/files)
+- Recommendation (what to do)
+
+If no gaps found (Overall: PASS):
+```
+No gaps found in audit. Paper is ready for submission.
+Run /wtfp:submit-milestone {version} to archive.
+```
+Exit early.
+
+&lt;/step&gt;
+
+&lt;step name=&quot;classify_gaps&quot;&gt;
+**Step 4: Classify Gaps by Fix Type**
+
+For each gap, determine fix type:
+
+| Gap Type | Fix Type | Action |
+|----------|----------|--------|
+| Section incomplete | section-write | Generate writing plan for incomplete section |
+| Argument not covered | targeted-write | Generate task to address specific claim in relevant section |
+| Word count over | revision-trim | Generate revision task to reduce word count |
+| Word count under | revision-expand | Generate revision task to expand content |
+| Citation undefined | citation-fix | Generate task to add missing citation |
+| Citation uncited | citation-fix | Generate task to cite or remove reference |
+| Section unreviewed | review-route | Route to /wtfp:review-section |
+
+&lt;/step&gt;
+
+&lt;step name=&quot;group_gaps&quot;&gt;
+**Step 5: Group Related Gaps**
+
+Group gaps that affect the same section:
+- Multiple issues in Section 2 -&gt; one fix plan for Section 2
+- Word count + argument issues in same section -&gt; combined plan
+
+Create plan groupings:
+```
+PLAN_1: Section 02 - {word count issue, argument issue}
+PLAN_2: Section 04 - {incomplete}
+PLAN_3: Citations - {undefined citations across multiple sections}
+```
+
+&lt;/step&gt;
+
+&lt;step name=&quot;generate_plans&quot;&gt;
+**Step 6: Generate Fix Plans**
+
+For each grouped plan, create a fix plan file.
+
+**Location:** `docs/sections/XX-name/{section}-fix-{N}-PLAN.md`
+
+**Plan structure (following plan-format.md):**
+
+```markdown
+---
+section: {section-number}
+plan: fix-{N}
+type: revision
+depends_on: []
+files_modified:
+  - {paper content file}
+autonomous: true
+---
+
+&lt;objective&gt;
+Fix {N} gap(s) identified in milestone audit:
+- {gap 1 summary}
+- {gap 2 summary}
+
+Purpose: Address audit findings before submission.
+&lt;/objective&gt;
+
+&lt;context&gt;
+@docs/MILESTONE-AUDIT.md
+@docs/sections/XX-name/{relevant summaries}
+@{paper content file}
+&lt;/context&gt;
+
+&lt;tasks&gt;
+
+&lt;task type=&quot;auto&quot;&gt;
+  &lt;name&gt;{fix task name}&lt;/name&gt;
+  &lt;files&gt;
+    {file to modify}
+  &lt;/files&gt;
+  &lt;action&gt;
+{Specific fix instructions based on gap type:}
+
+**For section incomplete:**
+Complete the section draft following the outline.
+- Address all planned subsections
+- Meet word target: {X} words
+- Include required citations
+
+**For argument not covered:**
+Add content to address claim: &quot;{claim}&quot;
+- Insert in section: {section}
+- Location: {suggested location}
+- Approximate addition: {X} words
+
+**For word count over:**
+Reduce word count in {section} by {N} words.
+- Current: {X} words
+- Target: {Y} words
+- Suggested cuts: {areas}
+
+**For word count under:**
+Expand content in {section} by {N} words.
+- Current: {X} words
+- Target: {Y} words
+- Suggested expansions: {areas}
+
+**For citation undefined:**
+Add citation for: {key}
+- Add to bibliography file
+- Verify citation format matches style guide
+
+**For citation uncited:**
+Either cite or remove: {key}
+- If relevant: add citation in appropriate section
+- If not relevant: remove from bibliography
+  &lt;/action&gt;
+  &lt;verify&gt;
+{Verification for fix type:}
+
+For section: Word count meets target, all subsections complete.
+For argument: Claim is now addressed in text.
+For word count: Section is within +/- 15% of target.
+For citation: Citation resolves correctly.
+  &lt;/verify&gt;
+  &lt;done&gt;
+{Done criteria: Gap resolved per audit check}
+  &lt;/done&gt;
+&lt;/task&gt;
+
+&lt;/tasks&gt;
+
+&lt;verification&gt;
+- Gap addressed per MILESTONE-AUDIT.md finding
+- No new issues introduced
+&lt;/verification&gt;
+
+&lt;success_criteria&gt;
+- [ ] {Gap 1} resolved
+- [ ] {Gap 2} resolved
+&lt;/success_criteria&gt;
+```
+
+**For unreviewed sections (review-route):**
+
+Don't generate a fix plan. Instead, note:
+```
+Section {X} needs review. Run: /wtfp:review-section {section}
+```
+
+&lt;/step&gt;
+
+&lt;step name=&quot;summary&quot;&gt;
+**Step 7: Present Summary**
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► GAP PLANS CREATED ✓
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Plans created: {N}
+
+| Plan | Section | Gaps Addressed |
+|------|---------|----------------|
+| {path} | {section} | {gap list} |
+| {path} | {section} | {gap list} |
+
+{If any review-route gaps:}
+Sections needing review (no plan created):
+- Section {X}: Run `/wtfp:review-section {section}`
+
+───────────────────────────────────────────
+
+## Next Up
+
+Execute fix plans:
+  `/wtfp:write-section {path-to-fix-plan}`
+
+Or fix one at a time:
+  Read the plan, then execute tasks manually
+
+After all fixes:
+  `/wtfp:audit-milestone` - Re-run audit to verify
+
+───────────────────────────────────────────
+```
+
+&lt;/step&gt;
+
+&lt;/process&gt;
+
+&lt;success_criteria&gt;
+- [ ] MILESTONE-AUDIT.md parsed successfully
+- [ ] Gaps classified by fix type
+- [ ] Related gaps grouped by section
+- [ ] Fix plans created for each gap group
+- [ ] Plans follow plan-format.md structure
+- [ ] User knows which plans to execute next
+&lt;/success_criteria&gt;</pre>
+          </div>
+
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer">CC ACADEMIC LIBRARY / CLAUDE CODE / ACADEMIC + SCIENTIFIC SKILLS / STATIC HTML / ZERO DEPENDENCIES</div>
+</div>
+</body>
+</html>

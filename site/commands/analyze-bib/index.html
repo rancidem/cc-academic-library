@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ANALYZE-BIB — COMMANDS — CC ACADEMIC LIBRARY</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../search-index.js" defer></script>
+  <script src="../../search.js" defer></script>
+</head>
+<body class="section-commands">
+<a class="skip-to-content" href="#main-content">Skip to content</a>
+<div class="page">
+  <h1 class="site-title">CC ACADEMIC LIBRARY</h1>
+  <div class="top-meta">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>ANALYZE-BIB</strong></div>
+
+  <table class="palette-bar" aria-hidden="true">
+    <tr><td class="p1"></td><td class="p2"></td><td class="p3"></td><td class="p4"></td><td class="p5"></td></tr>
+  </table>
+
+  <table class="layout">
+    <tr>
+      <td class="sidebar">
+        <div class="sidebar-inner">
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM PANEL</div>
+            <div class="system-subhead">SITE NAVIGATION</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../../index.html"><span class="icon icon-dot"></span>HOME</a></td></tr>
+                <tr><td><a href="../../skills/index.html"><span class="icon icon-skill"></span>SKILLS <span class="nav-count">[143]</span></a></td></tr>
+                <tr><td><a class="active" href="../index.html"><span class="icon icon-note"></span>COMMANDS <span class="nav-count">[37]</span></a></td></tr>
+                <tr><td><a href="../../agents/index.html"><span class="icon icon-dot"></span>AGENTS <span class="nav-count">[11]</span></a></td></tr>
+                <tr><td><a href="../../templates/index.html"><span class="icon icon-folder"></span>TEMPLATES</a></td></tr>
+                <tr><td><a href="../../tools/index.html"><span class="icon icon-folder"></span>TOOLS</a></td></tr>
+                <tr><td><a href="../../resources/index.html"><span class="icon icon-dot"></span>RESOURCES</a></td></tr>
+                <tr><td><a href="../../status/index.html"><span class="icon icon-dot"></span>STATUS</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">QUICK FIND</div>
+            <div class="system-body">
+              <div class="search-row">
+                <input type="text" placeholder="SKILLS / COMMANDS / AGENTS" aria-label="Search">
+                <button>SEARCH</button>
+              </div>
+            </div>
+            <div class="search-results" id="search-results"></div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM INFO</div>
+            <div class="system-body">
+              <table class="meta-table">
+                <tr><td class="meta-key">COMMAND</td><td>ANALYZE-BIB</td></tr>
+                <tr><td class="meta-key">STAGE</td><td>UTILITY</td></tr>
+                <tr><td class="meta-key">DATE</td><td>2026-04-14</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">ALL COMMANDS</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../index.html">&larr; COMMANDS INDEX</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </td>
+      <td class="content">
+        <div class="content-inner" id="main-content">
+
+          <div class="breadcrumb">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>ANALYZE-BIB</strong></div>
+          <div class="marquee-line"><strong>COMMAND:</strong> ANALYZE-BIB / STAGE: UTILITY</div>
+          <h2 class="section-title">ANALYZE-BIB</h2>
+          <div class="rule"></div>
+
+          <table class="meta-table">
+            <tr><td class="meta-key">SOURCE FILE</td><td>commands/analyze-bib.md</td></tr>
+            <tr><td class="meta-key">WORKFLOW STAGE</td><td>UTILITY</td></tr>
+            <tr><td class="meta-key">INVOCATION</td><td>/wtfp:analyze-bib</td></tr>
+            <tr><td class="meta-key">TOOLS</td><td>Read, Bash, Write, Glob, Grep, Task, AskUserQuestion, WebFetch</td></tr>
+          </table>
+
+          <div class="dotted-rule"></div>
+
+          <div class="intro-panel intro-panel--commands">
+            <div class="intro-panel-head">DESCRIPTION</div>
+            <div class="intro-panel-body">Analyze bibliography and map citations to sections</div>
+          </div>
+
+          <h3 class="sub-title">RAW FILES</h3>
+          <table class="list-table">
+            <tr><th>FILE</th><th>DOWNLOAD</th></tr>
+            <tr><td>analyze-bib.md</td><td><a href="raw/analyze-bib.md" download>DOWNLOAD</a></td></tr>
+          </table>
+
+          <h3 class="sub-title">FULL CONTENT</h3>
+          <div class="skill-body">
+            <pre class="raw-content">&lt;execution_context&gt;
+@~/.claude/write-the-f-paper/templates/project-context/bibliography.md
+&lt;/execution_context&gt;
+
+&lt;objective&gt;
+Deep analysis of BibTeX bibliography to inform writing strategy.
+
+**Orchestrator role:** Locate bib file, run deterministic indexing/impact tools, resolve model profile, spawn citation-expert agent for analysis, present results.
+
+Output: REFS.md with citation strategy mapped to paper sections.
+&lt;/objective&gt;
+
+&lt;context&gt;
+BibTeX file: $ARGUMENTS (optional — auto-detects .bib files if not provided)
+
+**Load project context:**
+@docs/PROJECT.md
+@docs/config.json
+@docs/structure/outline.md
+&lt;/context&gt;
+
+&lt;process&gt;
+
+## 1. Validate Environment and Resolve Model Profile
+
+```bash
+find . -name &quot;*.bib&quot; -type f 2&gt;/dev/null | grep -v node_modules | grep -v .git | head -10
+```
+
+If multiple found, ask via AskUserQuestion. If none found, exit with error.
+
+```bash
+MODEL_PROFILE=$(cat docs/config.json 2&gt;/dev/null | grep -o '&quot;model_profile&quot;[[:space:]]*:[[:space:]]*&quot;[^&quot;]*&quot;' | grep -o '&quot;[^&quot;]*&quot;$' | tr -d '&quot;' || echo &quot;balanced&quot;)
+```
+
+| Agent | quality | balanced | budget |
+|-------|---------|----------|--------|
+| citation-expert | opus | sonnet | haiku |
+
+## 2. Run Deterministic Tools
+
+```bash
+node ~/.claude/bin/bib-index.js index &quot;$BIB_FILE&quot;
+node ~/.claude/bin/analyze-impact.js &quot;$BIB_FILE&quot;
+```
+
+Capture JSON output from indexer and impact analysis results.
+
+## 3. Read Context Files
+
+```bash
+PROJECT_CONTENT=$(cat docs/PROJECT.md)
+OUTLINE_CONTENT=$(cat docs/structure/outline.md 2&gt;/dev/null)
+```
+
+## 4. Spawn citation-expert Agent
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► ANALYZING BIBLIOGRAPHY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+```
+Task(
+  prompt=&quot;First, read ~/.claude/agents/wtfp/citation-expert.md for your role.\n\n&quot; + analysis_prompt,
+  subagent_type=&quot;general-purpose&quot;,
+  model=&quot;{expert_model}&quot;,
+  description=&quot;Analyze bibliography&quot;
+)
+```
+
+Analysis prompt includes: `&lt;bib_index&gt;` with parsed entries, `&lt;impact_analysis&gt;` with metrics, `&lt;project_context&gt;` with PROJECT + outline, `&lt;output&gt;` targeting `docs/sources/REFS.md`.
+
+Agent performs: temporal analysis, topic clustering, seminal work identification, section mapping, gap identification.
+
+## 5. Handle Expert Return
+
+**`## ANALYSIS COMPLETE`:** Present summary, ask user to confirm seminal works via AskUserQuestion.
+
+**`## ANALYSIS BLOCKED`:** Present blocker (missing .bib, empty file, etc.), ask user how to proceed.
+
+## 6. Commit
+
+```bash
+git add docs/sources/REFS.md
+git commit -m &quot;refs: analyze bibliography for citation strategy&quot;
+```
+
+&lt;/process&gt;
+
+&lt;offer_next&gt;
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► BIBLIOGRAPHY ANALYZED ✓
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- Entries: [N]
+- Topic clusters: [N]
+- Seminal works: [N]
+- Citation map: docs/sources/REFS.md
+
+───────────────────────────────────────────
+
+## ▶ Next Up
+
+`/wtfp:create-outline` — use citation map to inform section planning
+
+&lt;sub&gt;`/clear` first → fresh context window&lt;/sub&gt;
+
+───────────────────────────────────────────
+
+&lt;/offer_next&gt;
+
+&lt;success_criteria&gt;
+- [ ] BibTeX file parsed completely
+- [ ] Impact analysis run
+- [ ] Citation-expert spawned with full context
+- [ ] REFS.md created with citation strategy
+- [ ] Seminal works confirmed with user
+- [ ] Committed to git
+&lt;/success_criteria&gt;</pre>
+          </div>
+
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer">CC ACADEMIC LIBRARY / CLAUDE CODE / ACADEMIC + SCIENTIFIC SKILLS / STATIC HTML / ZERO DEPENDENCIES</div>
+</div>
+</body>
+</html>

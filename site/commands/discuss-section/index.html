@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DISCUSS-SECTION — COMMANDS — CC ACADEMIC LIBRARY</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../search-index.js" defer></script>
+  <script src="../../search.js" defer></script>
+</head>
+<body class="section-commands">
+<a class="skip-to-content" href="#main-content">Skip to content</a>
+<div class="page">
+  <h1 class="site-title">CC ACADEMIC LIBRARY</h1>
+  <div class="top-meta">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>DISCUSS-SECTION</strong></div>
+
+  <table class="palette-bar" aria-hidden="true">
+    <tr><td class="p1"></td><td class="p2"></td><td class="p3"></td><td class="p4"></td><td class="p5"></td></tr>
+  </table>
+
+  <table class="layout">
+    <tr>
+      <td class="sidebar">
+        <div class="sidebar-inner">
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM PANEL</div>
+            <div class="system-subhead">SITE NAVIGATION</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../../index.html"><span class="icon icon-dot"></span>HOME</a></td></tr>
+                <tr><td><a href="../../skills/index.html"><span class="icon icon-skill"></span>SKILLS <span class="nav-count">[143]</span></a></td></tr>
+                <tr><td><a class="active" href="../index.html"><span class="icon icon-note"></span>COMMANDS <span class="nav-count">[37]</span></a></td></tr>
+                <tr><td><a href="../../agents/index.html"><span class="icon icon-dot"></span>AGENTS <span class="nav-count">[11]</span></a></td></tr>
+                <tr><td><a href="../../templates/index.html"><span class="icon icon-folder"></span>TEMPLATES</a></td></tr>
+                <tr><td><a href="../../tools/index.html"><span class="icon icon-folder"></span>TOOLS</a></td></tr>
+                <tr><td><a href="../../resources/index.html"><span class="icon icon-dot"></span>RESOURCES</a></td></tr>
+                <tr><td><a href="../../status/index.html"><span class="icon icon-dot"></span>STATUS</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">QUICK FIND</div>
+            <div class="system-body">
+              <div class="search-row">
+                <input type="text" placeholder="SKILLS / COMMANDS / AGENTS" aria-label="Search">
+                <button>SEARCH</button>
+              </div>
+            </div>
+            <div class="search-results" id="search-results"></div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM INFO</div>
+            <div class="system-body">
+              <table class="meta-table">
+                <tr><td class="meta-key">COMMAND</td><td>DISCUSS-SECTION</td></tr>
+                <tr><td class="meta-key">STAGE</td><td>WRITING</td></tr>
+                <tr><td class="meta-key">DATE</td><td>2026-04-14</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">ALL COMMANDS</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../index.html">&larr; COMMANDS INDEX</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </td>
+      <td class="content">
+        <div class="content-inner" id="main-content">
+
+          <div class="breadcrumb">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>DISCUSS-SECTION</strong></div>
+          <div class="marquee-line"><strong>COMMAND:</strong> DISCUSS-SECTION / STAGE: WRITING</div>
+          <h2 class="section-title">DISCUSS-SECTION</h2>
+          <div class="rule"></div>
+
+          <table class="meta-table">
+            <tr><td class="meta-key">SOURCE FILE</td><td>commands/discuss-section.md</td></tr>
+            <tr><td class="meta-key">WORKFLOW STAGE</td><td>WRITING</td></tr>
+            <tr><td class="meta-key">INVOCATION</td><td>/wtfp:discuss-section</td></tr>
+            <tr><td class="meta-key">TOOLS</td><td>Read, Bash, Write, Glob, Grep, AskUserQuestion</td></tr>
+          </table>
+
+          <div class="dotted-rule"></div>
+
+          <div class="intro-panel intro-panel--commands">
+            <div class="intro-panel-head">DESCRIPTION</div>
+            <div class="intro-panel-body">Discuss your vision for a section before planning it</div>
+          </div>
+
+          <h3 class="sub-title">RAW FILES</h3>
+          <table class="list-table">
+            <tr><th>FILE</th><th>DOWNLOAD</th></tr>
+            <tr><td>discuss-section.md</td><td><a href="raw/discuss-section.md" download>DOWNLOAD</a></td></tr>
+          </table>
+
+          <h3 class="sub-title">FULL CONTENT</h3>
+          <div class="skill-body">
+            <pre class="raw-content">&lt;objective&gt;
+Gather section context through collaborative thinking before planning.
+
+Purpose: Help the user articulate their vision for how a section should read, what it needs to accomplish, and what makes it effective.
+Output: CONTEXT.md file in the section directory capturing vision, essential content, and boundaries.
+&lt;/objective&gt;
+
+&lt;execution_context&gt;
+@~/.claude/write-the-f-paper/workflows/discuss-section.md
+@~/.claude/write-the-f-paper/templates/context.md
+&lt;/execution_context&gt;
+
+&lt;context&gt;
+Section number: $ARGUMENTS (required)
+
+**Load project state first:**
+@docs/STATE.md
+
+**Load roadmap:**
+@docs/ROADMAP.md
+
+**Load structure documents:**
+@docs/structure/argument-map.md
+@docs/structure/outline.md
+&lt;/context&gt;
+
+&lt;process&gt;
+
+&lt;step name=&quot;verify&quot;&gt;
+1. Check docs/ directory exists (error if not - user should run /wtfp:new-paper)
+2. Validate section number provided via $ARGUMENTS
+3. Validate section exists in roadmap
+&lt;/step&gt;
+
+&lt;step name=&quot;execute_workflow&quot;&gt;
+Execute the discuss-section workflow from execution_context.
+
+The workflow will:
+- Validate section against roadmap
+- Check for existing CONTEXT.md
+- Gather vision through AskUserQuestion (not interrogation)
+- Write CONTEXT.md capturing user's vision
+- Commit to git
+&lt;/step&gt;
+
+&lt;step name=&quot;done&quot;&gt;
+Workflow outputs next steps to user (typically: research or plan the section).
+&lt;/step&gt;
+
+&lt;/process&gt;
+
+&lt;success_criteria&gt;
+- Section validated against roadmap
+- Vision gathered through collaborative thinking
+- CONTEXT.md created in section directory
+- CONTEXT.md committed to git
+- User knows next steps
+&lt;/success_criteria&gt;</pre>
+          </div>
+
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer">CC ACADEMIC LIBRARY / CLAUDE CODE / ACADEMIC + SCIENTIFIC SKILLS / STATIC HTML / ZERO DEPENDENCIES</div>
+</div>
+</body>
+</html>

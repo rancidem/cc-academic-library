@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RESUME-WRITING — COMMANDS — CC ACADEMIC LIBRARY</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../search-index.js" defer></script>
+  <script src="../../search.js" defer></script>
+</head>
+<body class="section-commands">
+<a class="skip-to-content" href="#main-content">Skip to content</a>
+<div class="page">
+  <h1 class="site-title">CC ACADEMIC LIBRARY</h1>
+  <div class="top-meta">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>RESUME-WRITING</strong></div>
+
+  <table class="palette-bar" aria-hidden="true">
+    <tr><td class="p1"></td><td class="p2"></td><td class="p3"></td><td class="p4"></td><td class="p5"></td></tr>
+  </table>
+
+  <table class="layout">
+    <tr>
+      <td class="sidebar">
+        <div class="sidebar-inner">
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM PANEL</div>
+            <div class="system-subhead">SITE NAVIGATION</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../../index.html"><span class="icon icon-dot"></span>HOME</a></td></tr>
+                <tr><td><a href="../../skills/index.html"><span class="icon icon-skill"></span>SKILLS <span class="nav-count">[143]</span></a></td></tr>
+                <tr><td><a class="active" href="../index.html"><span class="icon icon-note"></span>COMMANDS <span class="nav-count">[37]</span></a></td></tr>
+                <tr><td><a href="../../agents/index.html"><span class="icon icon-dot"></span>AGENTS <span class="nav-count">[11]</span></a></td></tr>
+                <tr><td><a href="../../templates/index.html"><span class="icon icon-folder"></span>TEMPLATES</a></td></tr>
+                <tr><td><a href="../../tools/index.html"><span class="icon icon-folder"></span>TOOLS</a></td></tr>
+                <tr><td><a href="../../resources/index.html"><span class="icon icon-dot"></span>RESOURCES</a></td></tr>
+                <tr><td><a href="../../status/index.html"><span class="icon icon-dot"></span>STATUS</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">QUICK FIND</div>
+            <div class="system-body">
+              <div class="search-row">
+                <input type="text" placeholder="SKILLS / COMMANDS / AGENTS" aria-label="Search">
+                <button>SEARCH</button>
+              </div>
+            </div>
+            <div class="search-results" id="search-results"></div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM INFO</div>
+            <div class="system-body">
+              <table class="meta-table">
+                <tr><td class="meta-key">COMMAND</td><td>RESUME-WRITING</td></tr>
+                <tr><td class="meta-key">STAGE</td><td>LIFECYCLE</td></tr>
+                <tr><td class="meta-key">DATE</td><td>2026-04-14</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">ALL COMMANDS</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../index.html">&larr; COMMANDS INDEX</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </td>
+      <td class="content">
+        <div class="content-inner" id="main-content">
+
+          <div class="breadcrumb">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>RESUME-WRITING</strong></div>
+          <div class="marquee-line"><strong>COMMAND:</strong> RESUME-WRITING / STAGE: LIFECYCLE</div>
+          <h2 class="section-title">RESUME-WRITING</h2>
+          <div class="rule"></div>
+
+          <table class="meta-table">
+            <tr><td class="meta-key">SOURCE FILE</td><td>commands/resume-writing.md</td></tr>
+            <tr><td class="meta-key">WORKFLOW STAGE</td><td>LIFECYCLE</td></tr>
+            <tr><td class="meta-key">INVOCATION</td><td>/wtfp:resume-writing</td></tr>
+            <tr><td class="meta-key">TOOLS</td><td>Read, Bash, Glob, SlashCommand</td></tr>
+          </table>
+
+          <div class="dotted-rule"></div>
+
+          <div class="intro-panel intro-panel--commands">
+            <div class="intro-panel-head">DESCRIPTION</div>
+            <div class="intro-panel-body">Resume writing from a previous session</div>
+          </div>
+
+          <h3 class="sub-title">RAW FILES</h3>
+          <table class="list-table">
+            <tr><th>FILE</th><th>DOWNLOAD</th></tr>
+            <tr><td>resume-writing.md</td><td><a href="raw/resume-writing.md" download>DOWNLOAD</a></td></tr>
+          </table>
+
+          <h3 class="sub-title">FULL CONTENT</h3>
+          <div class="skill-body">
+            <pre class="raw-content">&lt;objective&gt;
+Resume work from a previous session with full context restoration.
+
+Reads STATE.md and any .continue-here.md files to restore context.
+
+Shows current position, recent progress, and offers appropriate next actions.
+&lt;/objective&gt;
+
+&lt;process&gt;
+
+&lt;step name=&quot;verify&quot;&gt;
+**Verify project exists:**
+
+```bash
+[ ! -f docs/STATE.md ] &amp;&amp; echo &quot;ERROR: No project state found. Run /wtfp:new-paper first&quot; &amp;&amp; exit 1
+```
+
+&lt;/step&gt;
+
+&lt;step name=&quot;load&quot;&gt;
+**Load project context:**
+
+- Read STATE.md for current position and session info
+- Read PROJECT.md for paper vision
+- Read ROADMAP.md for section structure
+- Check for .continue-here.md files in section directories
+&lt;/step&gt;
+
+&lt;step name=&quot;check_handoff&quot;&gt;
+**Check for handoff file:**
+
+```bash
+find docs/sections -name &quot;.continue-here.md&quot; 2&gt;/dev/null | head -1
+```
+
+If handoff file exists:
+- Read it for detailed resumption context
+- Extract: current task, remaining work, next action, blockers
+&lt;/step&gt;
+
+&lt;step name=&quot;present&quot;&gt;
+**Present resumption context:**
+
+**If handoff file exists:**
+
+```
+# Resuming: [Paper Title]
+
+## Where You Left Off
+Section [N]: [Name]
+Task [X] of [Y]: [task description]
+Status: [in_progress/blocked]
+
+## Completed in Last Session
+- [Task 1]: [done]
+- [Task 2]: [done]
+
+## Remaining Work
+- [Current task]: [in progress]
+- [Next tasks]: [pending]
+
+## Context Notes
+[Notes from .continue-here.md]
+
+## Blockers (if any)
+[Any blockers noted]
+
+---
+
+## ▶ Next Action
+
+[From .continue-here.md next_action]
+
+`/wtfp:[appropriate-command]`
+
+&lt;sub&gt;`/clear` first if context window is full&lt;/sub&gt;
+
+---
+```
+
+**If no handoff file:**
+
+```
+# Resuming: [Paper Title]
+
+## Current Position
+Section [N] of [total]: [Name]
+Plan [X] of [section-total]: [status]
+Words: [current] / [target]
+
+## Recent Progress
+[From STATE.md or recent SUMMARY files]
+
+---
+
+## ▶ Next Up
+
+[Based on STATE.md current position]
+
+`/wtfp:[appropriate-command]`
+
+---
+
+For full status: `/wtfp:progress`
+
+---
+```
+
+&lt;/step&gt;
+
+&lt;step name=&quot;cleanup&quot;&gt;
+**Clean up handoff file after resume:**
+
+If user proceeds with next action, the handoff file should be removed:
+
+```bash
+rm docs/sections/XX-name/.continue-here.md
+git add docs/sections/XX-name/
+git commit -m &quot;docs: resume [section name] from handoff&quot;
+```
+
+&lt;/step&gt;
+
+&lt;/process&gt;
+
+&lt;success_criteria&gt;
+- [ ] STATE.md read for current position
+- [ ] Handoff file detected if exists
+- [ ] Full context presented
+- [ ] Clear next action provided
+- [ ] Routes to appropriate command
+&lt;/success_criteria&gt;</pre>
+          </div>
+
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer">CC ACADEMIC LIBRARY / CLAUDE CODE / ACADEMIC + SCIENTIFIC SKILLS / STATIC HTML / ZERO DEPENDENCIES</div>
+</div>
+</body>
+</html>

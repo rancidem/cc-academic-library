@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>EXECUTE-OUTLINE — COMMANDS — CC ACADEMIC LIBRARY</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <script src="../../search-index.js" defer></script>
+  <script src="../../search.js" defer></script>
+</head>
+<body class="section-commands">
+<a class="skip-to-content" href="#main-content">Skip to content</a>
+<div class="page">
+  <h1 class="site-title">CC ACADEMIC LIBRARY</h1>
+  <div class="top-meta">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>EXECUTE-OUTLINE</strong></div>
+
+  <table class="palette-bar" aria-hidden="true">
+    <tr><td class="p1"></td><td class="p2"></td><td class="p3"></td><td class="p4"></td><td class="p5"></td></tr>
+  </table>
+
+  <table class="layout">
+    <tr>
+      <td class="sidebar">
+        <div class="sidebar-inner">
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM PANEL</div>
+            <div class="system-subhead">SITE NAVIGATION</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../../index.html"><span class="icon icon-dot"></span>HOME</a></td></tr>
+                <tr><td><a href="../../skills/index.html"><span class="icon icon-skill"></span>SKILLS <span class="nav-count">[143]</span></a></td></tr>
+                <tr><td><a class="active" href="../index.html"><span class="icon icon-note"></span>COMMANDS <span class="nav-count">[37]</span></a></td></tr>
+                <tr><td><a href="../../agents/index.html"><span class="icon icon-dot"></span>AGENTS <span class="nav-count">[11]</span></a></td></tr>
+                <tr><td><a href="../../templates/index.html"><span class="icon icon-folder"></span>TEMPLATES</a></td></tr>
+                <tr><td><a href="../../tools/index.html"><span class="icon icon-folder"></span>TOOLS</a></td></tr>
+                <tr><td><a href="../../resources/index.html"><span class="icon icon-dot"></span>RESOURCES</a></td></tr>
+                <tr><td><a href="../../status/index.html"><span class="icon icon-dot"></span>STATUS</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">QUICK FIND</div>
+            <div class="system-body">
+              <div class="search-row">
+                <input type="text" placeholder="SKILLS / COMMANDS / AGENTS" aria-label="Search">
+                <button>SEARCH</button>
+              </div>
+            </div>
+            <div class="search-results" id="search-results"></div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">SYSTEM INFO</div>
+            <div class="system-body">
+              <table class="meta-table">
+                <tr><td class="meta-key">COMMAND</td><td>EXECUTE-OUTLINE</td></tr>
+                <tr><td class="meta-key">STAGE</td><td>WRITING</td></tr>
+                <tr><td class="meta-key">DATE</td><td>2026-04-14</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="system-panel">
+            <div class="system-head">ALL COMMANDS</div>
+            <div class="system-body compact">
+              <table class="system-list">
+                <tr><td><a href="../index.html">&larr; COMMANDS INDEX</a></td></tr>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </td>
+      <td class="content">
+        <div class="content-inner" id="main-content">
+
+          <div class="breadcrumb">YOU ARE HERE: <a href="../../index.html">HOME</a> / <a href="../index.html">COMMANDS</a> / <strong>EXECUTE-OUTLINE</strong></div>
+          <div class="marquee-line"><strong>COMMAND:</strong> EXECUTE-OUTLINE / STAGE: WRITING</div>
+          <h2 class="section-title">EXECUTE-OUTLINE</h2>
+          <div class="rule"></div>
+
+          <table class="meta-table">
+            <tr><td class="meta-key">SOURCE FILE</td><td>commands/execute-outline.md</td></tr>
+            <tr><td class="meta-key">WORKFLOW STAGE</td><td>WRITING</td></tr>
+            <tr><td class="meta-key">INVOCATION</td><td>/wtfp:execute-outline</td></tr>
+            <tr><td class="meta-key">TOOLS</td><td>Read, Bash, Write, Edit, Glob, Grep, Task, AskUserQuestion</td></tr>
+          </table>
+
+          <div class="dotted-rule"></div>
+
+          <div class="intro-panel intro-panel--commands">
+            <div class="intro-panel-head">DESCRIPTION</div>
+            <div class="intro-panel-body">Write all sections in parallel, then check coherence</div>
+          </div>
+
+          <h3 class="sub-title">RAW FILES</h3>
+          <table class="list-table">
+            <tr><th>FILE</th><th>DOWNLOAD</th></tr>
+            <tr><td>execute-outline.md</td><td><a href="raw/execute-outline.md" download>DOWNLOAD</a></td></tr>
+          </table>
+
+          <h3 class="sub-title">FULL CONTENT</h3>
+          <div class="skill-body">
+            <pre class="raw-content">&lt;execution_context&gt;
+@~/.claude/write-the-f-paper/workflows/execute-outline.md
+@~/.claude/write-the-f-paper/references/checkpoints.md
+@~/.claude/write-the-f-paper/references/ui-brand.md
+&lt;/execution_context&gt;
+
+&lt;objective&gt;
+Execute all sections of a paper in wave-based parallel execution, then verify cross-section coherence.
+
+**Orchestrator role:** Load roadmap and all plans, group sections by wave, spawn parallel write-section Task() calls per wave, collect results, handle checkpoints between waves, spawn coherence-checker after final wave, present results.
+
+**Why wave execution:** Sections within the same wave have no dependencies and can be written in parallel. Sections in later waves depend on earlier waves completing. This maximizes throughput while respecting logical ordering.
+&lt;/objective&gt;
+
+&lt;context&gt;
+No arguments. Requires `docs/ROADMAP.md` and PLAN.md files to exist.
+&lt;/context&gt;
+
+&lt;process&gt;
+
+## 1. Validate Environment and Resolve Model Profile
+
+```bash
+[ ! -f docs/ROADMAP.md ] &amp;&amp; echo &quot;ERROR: No outline. Run /wtfp:create-outline&quot; &amp;&amp; exit 1
+ls docs/sections/*/  2&gt;/dev/null
+ls docs/sections/*/*-PLAN.md 2&gt;/dev/null
+```
+
+**Resolve model profile:**
+
+```bash
+MODEL_PROFILE=$(cat docs/config.json 2&gt;/dev/null | grep -o '&quot;model_profile&quot;[[:space:]]*:[[:space:]]*&quot;[^&quot;]*&quot;' | grep -o '&quot;[^&quot;]*&quot;$' | tr -d '&quot;' || echo &quot;balanced&quot;)
+```
+
+**Model lookup table:**
+
+| Agent | quality | balanced | budget |
+|-------|---------|----------|--------|
+| section-writer | opus | sonnet | sonnet |
+| coherence-checker | sonnet | sonnet | haiku |
+
+**Resolve config flags:**
+```bash
+WORKFLOW_VERIFIER=$(cat docs/config.json 2&gt;/dev/null | grep -o '&quot;verifier&quot;[[:space:]]*:[[:space:]]*[^,}]*' | grep -o 'true\|false' || echo &quot;true&quot;)
+```
+
+## 2. Read Context Files
+
+```bash
+ROADMAP_CONTENT=$(cat docs/ROADMAP.md)
+STATE_CONTENT=$(cat docs/STATE.md)
+PROJECT_CONTENT=$(cat docs/PROJECT.md)
+ARGMAP_CONTENT=$(cat docs/structure/argument-map.md 2&gt;/dev/null)
+OUTLINE_CONTENT=$(cat docs/structure/outline.md 2&gt;/dev/null)
+NARRATIVE_CONTENT=$(cat docs/structure/narrative-arc.md 2&gt;/dev/null)
+```
+
+## 3. Build Wave Execution Plan
+
+Parse ROADMAP.md and all PLAN.md files to build wave groups:
+
+```bash
+# Find all plans and their wave assignments
+for plan in docs/sections/*/*-PLAN.md; do
+  section=$(basename $(dirname &quot;$plan&quot;))
+  wave=$(grep -o 'wave:.*' &quot;$plan&quot; | head -1)
+  echo &quot;$wave $section $plan&quot;
+done | sort
+```
+
+Group sections by wave number:
+- Wave 1: [sections with wave: 1] (independent, no dependencies)
+- Wave 2: [sections with wave: 2] (depend on wave 1)
+- ...
+- Wave N: [final sections] (depend on all previous)
+
+Present execution plan:
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► EXECUTING OUTLINE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Execution plan:
+  Wave 1: [sections] (parallel)
+  Wave 2: [sections] (after wave 1)
+  Wave 3: [sections] (after wave 2)
+  ...
+
+Total: [N] sections, [W] words target
+```
+
+## 4. Wave Execution Loop
+
+For each wave (1 to max_wave):
+
+**4a. Display wave banner:**
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► WRITING WAVE {N}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+**4b. Spawn parallel writers:**
+
+For each section in the current wave, for each PLAN.md in that section:
+
+```
+Task(
+  prompt=&quot;First, read ~/.claude/agents/wtfp/section-writer.md for your role and instructions.\n\n&quot; + filled_writing_prompt,
+  subagent_type=&quot;general-purpose&quot;,
+  model=&quot;{writer_model}&quot;,
+  description=&quot;Write Section {X}: {Name}&quot;
+)
+```
+
+Sections within the same wave are spawned in parallel (multiple Task() calls).
+
+**4c. Collect all returns:**
+
+For each completed writer, check return:
+- `## WRITING COMPLETE` -- Record success, update STATE.md
+- `## CHECKPOINT REACHED` -- Queue for user presentation
+- `## WRITING BLOCKED` -- Queue for user presentation
+
+**4d. Handle checkpoints between waves:**
+
+If any CHECKPOINT returns from this wave:
+- Present each checkpoint to user sequentially
+- Get user response for each
+- If checkpoint was blocking and user provides direction, note for re-execution
+
+If any BLOCKED returns:
+- Present blocker to user
+- Options: retry section, skip section (continue to next wave without it), abort execution
+
+**4e. Update progress:**
+
+```bash
+# Update STATE.md with wave completion
+# Update ROADMAP.md section statuses
+```
+
+**4f. Continue to next wave** (only if all sections in current wave are COMPLETE or user chose to skip blocked ones).
+
+## 5. Post-Execution Summary
+
+After all waves complete:
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► ALL WAVES COMPLETE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Sections written: [N]/[total]
+Words written: [W]
+Skipped: [list if any]
+```
+
+## 6. Spawn wtfp-coherence-checker
+
+After the final wave, spawn coherence-checker with explicit inline context:
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► VERIFYING COHERENCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+Read all written content:
+```bash
+ALL_PAPER_CONTENT=$(cat paper/*.md 2&gt;/dev/null)
+```
+
+Spawn with inline context (NOT file references -- provide actual content):
+
+```
+Task(
+  prompt=&quot;First, read ~/.claude/agents/wtfp/coherence-checker.md for your role and instructions.\n\n&quot; +
+    &quot;&lt;paper_content&gt;\n&quot; + ALL_PAPER_CONTENT + &quot;\n&lt;/paper_content&gt;\n&quot; +
+    &quot;&lt;argument_map&gt;\n&quot; + ARGMAP_CONTENT + &quot;\n&lt;/argument_map&gt;\n&quot; +
+    &quot;&lt;narrative_arc&gt;\n&quot; + NARRATIVE_CONTENT + &quot;\n&lt;/narrative_arc&gt;\n&quot; +
+    &quot;&lt;outline&gt;\n&quot; + OUTLINE_CONTENT + &quot;\n&lt;/outline&gt;\n&quot; +
+    &quot;Run all 5 verification passes and return structured results.&quot;,
+  subagent_type=&quot;general-purpose&quot;,
+  model=&quot;{checker_model}&quot;,
+  description=&quot;Verify Cross-Section Coherence&quot;
+)
+```
+
+## 7. Handle Coherence Check Return
+
+**`## COHERENT`:** All sections pass. Present success summary.
+
+**`## GAPS FOUND`:** Present gaps to user with options:
+- Fix now: Re-spawn writers for affected sections with gap context
+- Accept: Note gaps, proceed to review
+- Plan revision: Create revision plans for affected sections
+
+## 8. Present Final Status
+
+&lt;/process&gt;
+
+&lt;offer_next&gt;
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ WTF-P ► OUTLINE EXECUTED ✓
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+**Document: {Title}** — {N} sections, {W} words
+
+Coherence: {Verified | Gaps found | Skipped}
+
+───────────────────────────────────────────
+
+## ▶ Next Up
+
+**Verify sections** — acceptance testing
+
+`/wtfp:verify-work [section]`
+
+&lt;sub&gt;`/clear` first → fresh context window&lt;/sub&gt;
+
+───────────────────────────────────────────
+
+**Also available:**
+- `/wtfp:review-section [N]` — detailed section review
+- `/wtfp:polish-prose [N]` — improve prose quality
+- `/wtfp:submit-draft` — prepare for submission
+
+&lt;/offer_next&gt;
+
+&lt;success_criteria&gt;
+- [ ] Roadmap and plans validated
+- [ ] Wave execution plan built from section dependencies
+- [ ] Parallel writers spawned per wave
+- [ ] All waves executed in order
+- [ ] Checkpoints handled between waves
+- [ ] Coherence-checker spawned after final wave with inline content
+- [ ] Coherence result handled (COHERENT or GAPS FOUND)
+- [ ] STATE.md and ROADMAP.md updated
+- [ ] User knows next steps
+&lt;/success_criteria&gt;</pre>
+          </div>
+
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer">CC ACADEMIC LIBRARY / CLAUDE CODE / ACADEMIC + SCIENTIFIC SKILLS / STATIC HTML / ZERO DEPENDENCIES</div>
+</div>
+</body>
+</html>
