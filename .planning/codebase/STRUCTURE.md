@@ -1,132 +1,81 @@
 # Structure
 
-## Workspace Tree
+## Top-Level Layout
 
-```text
-cc-academic/
-├── README.md
-├── LIBRARY.md
-├── IDEA.md
-├── library/
-│   ├── README.md
-│   ├── index.md
-│   ├── inventory.md
-│   ├── commands.md
-│   ├── agents.md
-│   ├── skills.md
-│   ├── tools.md
-│   ├── resources.md
-│   ├── repositories.md
-│   ├── entry-template.md
-│   ├── taxonomy.md
-│   └── generated/
-│       └── .gitkeep
-├── notes/
-│   ├── README.md
-│   └── maintenance.md
-├── repos/
-│   └── README.md
-├── scripts/
-│   └── generate_skills_index.py
-├── sources/
-│   ├── academic-paper-skills/
-│   ├── wtf-p/
-│   ├── MySkills/
-│   ├── claude-scientific-writer/
-│   └── scientific-agent-skills/
-└── .planning/
-    ├── PROJECT.md
-    ├── REQUIREMENTS.md
-    ├── ROADMAP.md
-    ├── STATE.md
-    ├── config.json
-    ├── quick/
-    │   └── 1-clone-github-repos-into-personal-library/
-    │       └── 1-PLAN.md
-    └── codebase/
-        ├── STACK.md
-        ├── INTEGRATIONS.md
-        ├── ARCHITECTURE.md
-        └── STRUCTURE.md
-```
+- `agents/` - canonical agent definitions, including both general writing agents and the `matsengrp-agents` subgroup.
+- `commands/` - slash-command entrypoints and workflow commands.
+- `references/` - supporting reference material, examples, and `wtf-p` guidance.
+- `resources/` - local source-bundle clones plus sync metadata.
+- `scripts/` - mirrored executable/script inventories, split into `wtfp-commands`, `wtfp-lib`, `scientific`, and related subtrees.
+- `skills/` - canonical skill catalog organized by domain.
+- `templates/` - reusable markdown and YAML templates for workflows, prompts, and documents.
+- `tools/` - auxiliary tooling, currently centered on `wcn`.
+- `.planning/` - project state, roadmap, and codebase map artifacts.
 
-## Source Repository Structures
+## Canonical Content Areas
 
-### `academic-paper-skills`
+### `agents/`
 
-```text
-academic-paper-skills/
-├── strategist/
-│   ├── SKILL.md
-│   ├── references/
-│   └── scripts/
-├── composer/
-│   ├── SKILL.md
-│   ├── references/
-│   └── scripts/
-└── examples/
-```
+- General-purpose agents live directly under `agents/`.
+- `agents/matsengrp-agents/` contains the imported Matsen plugin agents.
+- Agent files are markdown documents that define behavior and review focus.
 
-### `wtf-p`
+### `commands/`
 
-```text
-wtf-p/
-├── bin/
-│   ├── install.js
-│   └── uninstall.js
-├── core/
-├── docs/
-├── scripts/
-├── test/
-├── tests/
-├── tools/
-├── vendors/
-└── package.json
-```
+- Command docs live directly under `commands/`.
+- `commands/matsengrp-agents/pre-pr-check.md` is the Matsen plugin slash command mirror.
+- `commands/scientific-writer-init.md` is the canonical command mapped from `claude-scientific-writer`.
 
-### `MySkills`
+### `references/`
 
-```text
-MySkills/
-├── skills/
-│   └── visual-architect/
-├── README.md
-├── index.html
-└── marketplace.json
-```
+- `references/examples/` contains example paper outputs.
+- `references/wtfp/` contains workflow and policy references for the `wtf-p` bundle.
 
-### `claude-scientific-writer`
+### `resources/`
 
-```text
-claude-scientific-writer/
-├── commands/
-├── docs/
-├── scripts/
-├── skills/
-├── templates/
-├── scientific_writer/
-├── .claude/
-├── .claude-plugin/
-├── .cursor/
-└── pyproject.toml
-```
+- `resources/cc-academic-sources/` contains six local source bundles:
+  - `academic-paper-skills`
+  - `claude-scientific-writer`
+  - `MySkills`
+  - `scientific-agent-skills`
+  - `wtf-p`
+  - `matsengrp/plugins`
+- `resources/matsengrp-agents/` contains the plugin metadata that supports the canonical Matsen agent subtree.
+- `resources/source-references.md` is the main traceability table from upstream bundle to local clone and canonical mapping.
 
-### `scientific-agent-skills`
+### `scripts/`
 
-```text
-scientific-agent-skills/
-├── docs/
-├── scientific-skills/
-├── scan_skills.py
-├── pyproject.toml
-└── uv.lock
-```
+- `scripts/wtfp-commands/` holds the command-side mirroring of `wtf-p`.
+- `scripts/wtfp-lib/` holds the library-side mirroring of `wtf-p`.
+- `scripts/academic-paper-composer/` and `scripts/academic-paper-strategist/` are populated from the paper-writing bundle.
+- `scripts/scientific/` is present as a grouped area for scientific utilities.
 
-## Structural Notes
+### `skills/`
 
-- The workspace root is documentation-heavy and intentionally light on application code.
-- `LIBRARY.md` is the canonical dashboard, while `library/README.md` is the library-folder landing page.
-- The source clones are the only places where behavior, commands, and skill definitions live.
-- The richest structure is in `scientific-agent-skills/`, but it is still organized as a catalog of independent skill units rather than a single app.
-- The most package-like source is `claude-scientific-writer/`, which combines implementation code with plugin and workflow metadata.
-- `library/` is the working index surface, and `notes/` is the short-lived maintenance/history surface.
+- Domain folders are grouped by subject area: `bioinformatics`, `cheminformatics`, `clinical-medical`, `computational-biology`, `data-science`, `document-formats`, `earth-geo-astro`, `lab-automation`, `machine-learning`, `misc`, `quantum-computing`, `visualization`, and `writing-research`.
+- `skills/README.md` defines the canonical rules for placement, flattening, and regeneration.
+
+### `templates/`
+
+- `templates/` holds reusable prompt and workflow templates.
+- `templates/project-context/` contains focused guidance files for paper-writing context.
+- `templates/slides/` and `templates/posters/` provide presentation-oriented variants.
+
+### `tools/`
+
+- `tools/wcn/` contains the executable wrapper, converter, spec, and package metadata for the WCN tooling mirror.
+
+## Notable Cross-Linking
+
+- `README.md` and `STATUS.md` describe the repo as a canonical library and point users to the source-bundle mirror.
+- `inventory.json` enumerates files by kind and path for sync and diff checks.
+- The Matsen plugin bundle is organized as a three-way split:
+  - `agents/matsengrp-agents/`
+  - `commands/matsengrp-agents/`
+  - `resources/matsengrp-agents/`
+
+## Organization Pattern
+
+- Source bundles are stored verbatim or near-verbatim under `resources/cc-academic-sources/`.
+- Canonical outputs are grouped by artifact type, not by source repository.
+- Supporting docs stay near the content they describe so the tree can be audited without cross-referencing external systems.

@@ -1,87 +1,42 @@
 # Architecture
 
-## Workspace Architecture
+## System Role
 
-This repository is a **documentation and library workspace**. Its job is to index, compare, and curate five cloned upstream repositories:
+This repository is a canonical index for an academic skills library. It is not a single application; it is a curated mirror that normalizes content from multiple upstream source bundles into a stable on-disk layout.
 
-- `academic-paper-skills`
-- `wtf-p`
-- `MySkills`
-- `claude-scientific-writer`
-- `scientific-agent-skills`
+## Core Layers
 
-The workspace does not define a shared runtime. Instead, it provides a documentation shell around several independent upstream architectures.
+- `resources/cc-academic-sources/` holds the local clones of upstream bundles.
+- `agents/`, `commands/`, `references/`, `scripts/`, `skills/`, `templates/`, and `tools/` hold the canonicalized outputs and supporting docs.
+- `resources/source-references.md` links each upstream bundle to its local clone and canonical subtree mapping.
+- `inventory.json` is the machine-readable snapshot that records the current repository shape and file kinds.
+- `.planning/` stores project state, roadmap, and codebase mapping artifacts.
 
-## Layer Model
+## Content Flow
 
-### 1. Catalog Layer
+1. Upstream bundles are cloned into `resources/cc-academic-sources/`.
+2. Bundle contents are mirrored or reorganized into canonical locations under the repository root.
+3. Cross-references are updated so canonical files can be traced back to their source bundle.
+4. `inventory.json` is regenerated to capture the current tree and support sync checks.
 
-- `library/` is the curated entry point
-- `library/README.md` is the library-folder landing page
-- `library/index.md` is a pointer-only compatibility page
-- `library/repositories.md` contains per-repository summaries
+## Bundle-to-Canonical Mapping
 
-### 2. Working Layer
+- `academic-paper-skills` maps into writing-research skills plus `references/examples`.
+- `claude-scientific-writer` maps into `commands/scientific-writer-init.md` and the paper-writing skill and script trees.
+- `MySkills` maps into `skills/visualization/visual-architect`.
+- `scientific-agent-skills` maps into the scientific domain skill families under `skills/`.
+- `wtf-p` maps into `references/wtfp`, `scripts/wtfp-commands`, `scripts/wtfp-lib`, and `tools/wcn`.
+- `matsengrp/plugins` maps into `agents/matsengrp-agents`, `commands/matsengrp-agents`, and `resources/matsengrp-agents`.
 
-- `notes/` captures maintenance and comparison notes
-- `.planning/` stores roadmap/state and scan outputs
-- `.planning/codebase/` is the target for architecture and stack documentation
+## Design Principles
 
-### 3. Source Layer
+- Keep a single canonical location for each identity.
+- Preserve source provenance in local paths instead of remote URLs.
+- Keep related companions together when a bundle includes agents, commands, hooks, or scripts.
+- Prefer stable, descriptive directory names that make source-to-canonical diffs easy to audit.
 
-- `sources/` contains the cloned upstream repositories
-- each source repo remains independent and should be treated as read-only for this scan
+## Structural Characteristics
 
-## Repository Archetypes
-
-### Skill Pair: `academic-paper-skills`
-
-- Two complementary Claude Code skills: strategist and composer
-- Architectural pattern: phase-separated workflow
-- Planning and composition are intentionally decoupled
-- Support material lives beside the skills in `references/`, `scripts/`, and `examples/`
-
-### Command System: `wtf-p`
-
-- Node CLI that installs a structured academic writing system into multiple assistants
-- Architectural pattern: thin orchestrator plus specialized command modules
-- Runtime entrypoint is a single executable that dispatches to installation, status, update, and uninstall flows
-- The package ships tests, release scripts, and vendored runtime assets
-
-### Static Skill Library: `MySkills`
-
-- Minimal repository that acts as a personal skills shelf
-- Architectural pattern: docs + metadata rather than a full application
-- `skills/` is the main meaningful content surface
-- `index.html` and `marketplace.json` suggest browsing or distribution metadata rather than executable code
-
-### Python Package + Plugin Bundle: `claude-scientific-writer`
-
-- Hybrid architecture with package code, CLI entrypoints, plugin metadata, and extensive docs
-- `scientific_writer/` contains the implementation core
-- `commands/`, `skills/`, and `templates/` define the user-facing workflow layer
-- `.claude-plugin/`, `.claude/`, and `.cursor/` show editor/agent integration surfaces
-- `scripts/` contains release and verification support
-
-### Large Skill Catalog: `scientific-agent-skills`
-
-- Repository organized around a very large `scientific-skills/` tree
-- Each skill is a self-contained unit with documentation and behavior rules
-- `scan_skills.py` acts as a repository-wide governance tool for safety review
-- The architecture is catalog-like and modular, not monolithic
-
-## Cross-Repo Architectural Themes
-
-- **Document-first interfaces**: SKILL files, READMEs, and markdown instructions define behavior as much as code does
-- **Modularity**: each repo decomposes into independent units rather than a shared framework
-- **Assistant portability**: the same research/writing ideas are adapted for Claude Code, Gemini CLI, OpenCode, Cursor, and generic Agent Skills clients
-- **Verification**: tests, scanners, quality gates, and review instructions appear repeatedly across the repos
-- **Distribution via metadata**: manifests and marketplace files are used to package skills for install and discovery
-
-## Comparative Positioning
-
-- `academic-paper-skills` is the most narrowly scoped and pedagogical
-- `wtf-p` is the most operationally systemized for command-driven execution
-- `MySkills` is the lightest and least coupled
-- `claude-scientific-writer` is the most package-oriented
-- `scientific-agent-skills` is the broadest and most scalable skill catalog
+- The repository is documentation-heavy and file-oriented, with many markdown-defined agents, commands, and templates.
+- Several canonical trees are direct mirrors of upstream package structure, especially under `scripts/` and `tools/`.
+- The moved source bundle tree under `resources/cc-academic-sources/` acts as the traceability anchor for the entire library.

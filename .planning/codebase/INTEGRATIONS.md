@@ -1,69 +1,34 @@
 # Integrations
 
-## Workspace Integrations
+## Claude Code Plugin Surface
 
-- **Git**: every cloned upstream repository is a git checkout under `sources/`
-- **Markdown index workflow**: `library/` provides the human-facing catalog, while `.planning/` holds scan artifacts and planning state
-- **Action-first navigation**: `LIBRARY.md` directs users to review, raw download, and install/setup paths before deeper browsing
-- **No source mutation policy**: the workspace is intended to observe and document upstream repos, not patch them in place
+- `resources/cc-academic-sources/matsengrp/plugins/` is a Claude Code plugin bundle.
+- Its `.claude-plugin/plugin.json` declares the plugin name, homepage, license, agent directory, and hook entrypoint.
+- The bundle includes `agents/`, `commands/pre-pr-check.md`, and `hooks/hooks.json`.
+- `resources/matsengrp-agents/` is the canonical mirrored destination for the plugin content in this library.
 
-## Agent and Editor Integrations
+## External Tooling And Services
 
-### Claude Code
+- `hooks/hooks.json` integrates with `terminal-notifier` on macOS.
+- Notification hooks fire on `Notification` and `Stop` events.
+- The plugin README explicitly lists `brew install terminal-notifier` as the prerequisite for desktop notifications.
+- The plugin README also references the official Claude Code plugin documentation and a YouTube walkthrough for installation guidance.
 
-- Primary target across the repository set
-- Used by `academic-paper-skills`, `wtf-p`, `claude-scientific-writer`, and `scientific-agent-skills`
-- Skill files and instruction files are designed to be copied into or discovered by Claude Code workflows
-- Raw skill files can be downloaded directly from `library/skills.md` when you want the exact `SKILL.md` source
+## Upstream Repositories And Local Traceability
 
-### Gemini CLI
+- `resources/source-references.md` is the cross-reference table that maps each upstream source bundle to its local clone and canonical subtree.
+- The mapped source bundles currently include `academic-paper-skills`, `claude-scientific-writer`, `MySkills`, `scientific-agent-skills`, `wtf-p`, and `matsengrp/plugins`.
+- The upstream source repos are stored locally under `resources/cc-academic-sources/`, not referenced only by remote URLs.
+- `resources/source-references.md` is the primary traceability layer for understanding where each canonical subtree came from.
 
-- Explicitly supported by `wtf-p`
-- Also referenced by `claude-scientific-writer` as a supported writing ecosystem
+## Runtime Dependencies Exposed By Mirrored Sources
 
-### OpenCode
+- `resources/cc-academic-sources/claude-scientific-writer/pyproject.toml` depends on `claude-agent-sdk`, `python-dotenv`, `requests`, and `pymupdf`.
+- The same project documents external system requirements for LaTeX distributions, `pdflatex`, `bibtex`, `latexmk`, Ghostscript, and ImageMagick.
+- `resources/cc-academic-sources/wtf-p/package.json` exposes the `wcn` CLI and its Node scripts.
+- `resources/cc-academic-sources/academic-paper-skills/README.md` describes a Claude Code workflow that depends on Python verification scripts and LaTeX-based authoring.
 
-- Explicitly supported by `wtf-p`
-- Used as part of the same command distribution model as Claude Code and Gemini CLI
+## Integration Summary
 
-### Cursor
-
-- Explicitly referenced by `claude-scientific-writer`
-- Supported in `scientific-agent-skills` as an Agent Skills client
-
-### Agent Skills Standard
-
-- Central integration layer for `scientific-agent-skills`
-- Defines a portable skill format across different agent clients
-- `MySkills` and `academic-paper-skills` are both compatible with the broader skill-file pattern even though they are much smaller in scope
-
-## External Services and APIs
-
-### Research and Literature
-
-- `claude-scientific-writer` integrates real-time research lookup through Perplexity-style research workflows
-- `scientific-agent-skills` includes skills for paper lookup, literature review, citation management, and scholarly evaluation
-- `academic-paper-skills` is oriented around citation-backed paper planning and composition
-
-### Scientific Data and Platform Access
-
-- `scientific-agent-skills` includes dedicated integrations for scientific databases, lab systems, omics tools, imaging systems, and related research platforms
-- Examples visible in the repository tree include database lookup, biopython, pubmed-style research tooling, clinical research tools, and lab automation integrations
-
-### Writing and Publishing Toolchains
-
-- `wtf-p` supports writing workflows for papers, proposals, presentations, and posters across multiple assistant runtimes
-- `claude-scientific-writer` integrates LaTeX/BibTeX-style document generation, plugin installation, and package publishing workflows
-- `academic-paper-skills` uses platform-oriented paper planning and composition instructions for preprint-style publishing
-- Repository summaries and tool indexes now expose the shortest install/setup path for each supported package or plugin
-
-### Model and Media Services
-
-- `claude-scientific-writer` references Anthropic API usage, optional OpenRouter-backed research lookup, and image-generation workflows for scientific figures
-- `scientific-agent-skills` includes skills for scientific schematics, image generation, and related publication graphics workflows
-
-## Integration Risk Notes
-
-- The widest integration surface is in `scientific-agent-skills`; it should be treated as the most operationally sensitive repo because many skills can invoke external APIs or run code
-- `wtf-p` and `claude-scientific-writer` are more controlled: they package explicit commands, scripts, and docs around a narrower writing workflow
-- `MySkills` is the lowest-risk integration surface because it is mostly static catalog material
+- The repo bridges local documentation with upstream source clones, while preserving remote provenance in a single markdown table.
+- The main live integrations are Claude Code plugin hooks, macOS notifications, and the runtimes required by the mirrored Python and Node subprojects.

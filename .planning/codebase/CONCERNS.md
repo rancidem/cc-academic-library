@@ -1,0 +1,22 @@
+# Concerns
+
+## Repo hygiene
+
+- The working tree still contains `.DS_Store` noise at the repo root, in `.planning/`, `commands/`, `resources/`, `templates/`, and inside `resources/cc-academic-sources/`. This will keep producing unrelated diffs until the files are removed or ignored.
+- `inventory.json` currently records those `.DS_Store` entries as tracked inventory items, so any future snapshot refresh will continue to surface them unless the hygiene issue is cleaned up first.
+
+## Source-bundle traceability
+
+- `resources/source-references.md` now points to absolute local clone paths under `/Users/emersonburke/Documents/developer/experiments/cc-academic-library/resources/cc-academic-sources/`. That is accurate for this machine, but it is not portable to other checkouts without regeneration.
+- The Matsen plugin subtree was flattened into tracked files by removing its nested `.git/` directory. That makes the bundle diffable here, but it also means upstream provenance now depends entirely on the reference table and the local clone path.
+
+## Maintenance risk
+
+- The library now mirrors six upstream bundles, but the sync rules are split across `README.md`, `STATUS.md`, `resources/source-references.md`, and `inventory.json`. Any future source refresh needs to update all of them together or the repo will drift.
+- `resources/cc-academic-sources/` is a large vendor-style subtree inside the canonical library. Without a clear refresh procedure, it is easy to accidentally edit mirrored source files instead of the canonical copies, or to lose track of which changes are intentional local adaptations.
+
+## Follow-up items
+
+- Add a repo-level ignore rule for `.DS_Store` files and remove the already-added copies from the working tree.
+- Decide whether `resources/source-references.md` should stay machine-local or switch to relative links plus a regeneration note.
+- Document a repeatable refresh workflow for source bundles so future imports preserve provenance and keep `inventory.json` in sync.
