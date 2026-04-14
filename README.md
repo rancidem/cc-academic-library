@@ -1,29 +1,53 @@
 # cc-academic canonical library
 
-This repository is the canonical index for the academic skills library. It mirrors upstream bundles into a stable local layout so agents, commands, references, and tools stay organized and traceable.
+Canonical home for the academic skills library. This repo mirrors upstream bundles into a stable local layout and keeps the published surface easy to navigate.
 
-## What to know
+## Start Here
 
-- `resources/cc-academic-sources/` is the upstream mirror.
-- `resources/bundle-registry.json` is the source-of-truth registry for bundle mappings.
-- `resources/source-references.md` is generated from the registry and stays human-readable.
-- `inventory.json` is generated from the filesystem and used for drift checks.
-- `resources/matsengrp-agents` has been removed; Matsen content is canonical only in `agents/matsengrp-agents` and `commands/matsengrp-agents`.
+- `resources/cc-academic-sources/` - upstream mirror and local source-bundle workspace
+- `resources/bundle-registry.json` - authoritative bundle-to-canonical registry
+- `resources/source-references.md` - generated traceability table
+- `inventory.json` - generated filesystem snapshot
+- `.planning/STATE.md` - current working state
+- `.planning/ROADMAP.md` - active phase plan
 
-## Canonical surface
+## Main Areas
 
 - `agents/` - orchestration and reviewer agents
-- `commands/` - command entrypoints and workflows
-- `references/` - cross-cutting documentation and examples
+- `commands/` - slash commands and workflow entrypoints
+- `references/` - supporting reference material and examples
 - `scripts/` - mirrored command and library utilities
-- `skills/` - canonical skill identities
+- `skills/` - canonical skill identities grouped by domain
 - `templates/` - reusable prompt and document templates
-- `tools/` - mirrored auxiliary tooling, including `wcn`
+- `tools/` - auxiliary tooling, including `wcn`
 
-## Maintenance
+## What Lives Where
 
-- Run `./scripts/maintenance/refresh.js` to regenerate the registry-derived traceability doc, inventory snapshot, and status summary.
-- Update the bundle registry first when source bundles change.
-- Regenerate `resources/source-references.md` and `inventory.json` together.
+- Mirrored upstream content stays under `resources/cc-academic-sources/`.
+- Canonical published content lives in the top-level domain folders.
+- Matsen content is canonical only in `agents/matsengrp-agents` and `commands/matsengrp-agents`.
+- `resources/matsengrp-agents` is intentionally absent.
+
+## Common Actions
+
+- Add or move source-bundle content: update `resources/bundle-registry.json`, then run `./scripts/maintenance/refresh.js`.
+- Check whether the repo is in sync: run `./scripts/maintenance/refresh.js audit`.
+- Review the current model: read `.planning/PROJECT.md` and `.planning/STATE.md`.
+- Inspect the current mapping: open `resources/source-references.md`.
+
+## Adding New Content
+
+1. Put mirrored upstream files under `resources/cc-academic-sources/`.
+2. Publish only the content that belongs in the canonical root surface.
+3. Update `resources/bundle-registry.json` when a bundle mapping changes.
+4. Run `./scripts/maintenance/refresh.js` to regenerate `resources/source-references.md`, `inventory.json`, and `STATUS.md`.
+5. Verify the new paths, generated docs, and inventory snapshot are aligned.
+6. Commit the mirror, canonical files, and generated metadata together.
+
+## Maintenance Rules
+
 - Keep `.DS_Store` ignored and out of the inventory.
-- Use `.planning/STATE.md` for current work position and `.planning/ROADMAP.md` for the phase plan.
+- Regenerate the registry-derived docs together.
+- Prefer small, reviewable maintenance updates over broad reorganizations.
+- Use the planning files for state, roadmap, and quick-task continuity.
+
