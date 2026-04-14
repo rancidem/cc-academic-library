@@ -7,7 +7,7 @@
     {
       "name": "academic-paper-skills",
       "summary": "Systematic philosophy and interdisciplinary paper-writing workflows with strategist and composer skills, validation gates, and research-to-manuscript support.",
-      "upstreamUrl": null,
+      "upstreamUrl": "https://github.com/lishix520/academic-paper-skills",
       "sourcePath": "resources/cc-academic-sources/academic-paper-skills",
       "sourceReadme": "resources/cc-academic-sources/academic-paper-skills/README.md",
       "canonicalDestinations": [
