@@ -18,6 +18,7 @@ Canonical home for the academic skills library. This repo mirrors upstream bundl
 
 | Go to | Open |
 |---|---|
+| Published Site | https://rancidem.github.io/cc-academic-library/ |
 | Current model | [docs/PROJECT.md](docs/PROJECT.md) |
 | Current state | [docs/STATE.md](docs/STATE.md) |
 | Phase plan | [docs/ROADMAP.md](docs/ROADMAP.md) |
