@@ -178,6 +178,11 @@
     },
     {
       "kind": "agent",
+      "path": "agents/README.md",
+      "size": 908
+    },
+    {
+      "kind": "agent",
       "path": "agents/research-synthesizer.md",
       "size": 6431
     },
@@ -328,6 +333,11 @@
     },
     {
       "kind": "command",
+      "path": "commands/README.md",
+      "size": 851
+    },
+    {
+      "kind": "command",
       "path": "commands/remove-section.md",
       "size": 2706
     },
@@ -405,6 +415,11 @@
       "kind": "reference",
       "path": "references/examples/consciousness-paper.md",
       "size": 4835
+    },
+    {
+      "kind": "reference",
+      "path": "references/README.md",
+      "size": 873
     },
     {
       "kind": "reference",
@@ -10243,6 +10258,11 @@
     },
     {
       "kind": "script",
+      "path": "scripts/README.md",
+      "size": 1140
+    },
+    {
+      "kind": "script",
       "path": "scripts/wtfp-commands/doctor.js",
       "size": 6947
     },
@@ -18264,7 +18284,7 @@
     {
       "kind": "skill",
       "path": "skills/README.md",
-      "size": 1874
+      "size": 2250
     },
     {
       "kind": "skill",
@@ -19878,6 +19898,11 @@
     },
     {
       "kind": "template",
+      "path": "templates/README.md",
+      "size": 884
+    },
+    {
+      "kind": "template",
       "path": "templates/research.md",
       "size": 11016
     },
@@ -19933,6 +19958,11 @@
     },
     {
       "kind": "tool",
+      "path": "tools/README.md",
+      "size": 758
+    },
+    {
+      "kind": "tool",
       "path": "tools/wcn/cli.js",
       "size": 5756
     },
@@ -19968,5 +19998,5 @@
     }
   ],
   "format": "cc-academic-canonical-inventory/v1",
-  "generated": "2026-04-14T11:40:57.606Z"
+  "generated": "2026-04-14T11:42:12.951Z"
 }
