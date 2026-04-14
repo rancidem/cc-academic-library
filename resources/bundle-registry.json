@@ -34,7 +34,7 @@
     {
       "name": "MySkills",
       "summary": "Paper Visualizer skill bundle focused on turning papers into high-fidelity technical schematics and related visual outputs.",
-      "upstreamUrl": "https://github.com/rancidem/MySkills",
+      "upstreamUrl": "https://github.com/WilsonWukz/paper-visualizer-skill",
       "sourcePath": "resources/cc-academic-sources/MySkills",
       "sourceReadme": "resources/cc-academic-sources/MySkills/README.md",
       "canonicalDestinations": [

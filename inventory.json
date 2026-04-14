@@ -643,7 +643,7 @@
     {
       "kind": "resource",
       "path": "resources/bundle-registry.json",
-      "size": 4188
+      "size": 4204
     },
     {
       "kind": "resource",
@@ -10383,7 +10383,7 @@
     {
       "kind": "resource",
       "path": "resources/source-references.md",
-      "size": 3801
+      "size": 3817
     },
     {
       "kind": "script",
@@ -20212,5 +20212,5 @@
     }
   ],
   "format": "cc-academic-canonical-inventory/v1",
-  "generated": "2026-04-14T12:08:40.715Z"
+  "generated": "2026-04-14T12:09:31.630Z"
 }
