@@ -41,7 +41,7 @@ Last refreshed: 2026-04-14.
 - MySkills: 1 skill file
 - academic-paper-skills: 2 skill files
 - wtf-p: 2 skill files plus command/tooling modules
-- claude-scientific-writer: 81 skill files across `.claude/skills/`, `scientific_writer/.claude/skills/`, and `skills/`
+- claude-scientific-writer: 27 skill files under `.claude/skills/`
 - scientific-agent-skills: 134 skill files under `scientific-skills/`
 
 ## Repository Highlights
@@ -60,13 +60,15 @@ Last refreshed: 2026-04-14.
 
 ### wtf-p
 
-- Command-driven writing system for Claude Code, Gemini CLI, and OpenCode.
+- Command-driven writing system for Claude Code.
+- Trimmed local source scope now keeps the Claude Code vendor tree only.
 - Strongest repository for installable assistant workflows.
 - Best if you want the assistant to behave like a structured writing tool.
 
 ### claude-scientific-writer
 
 - Scientific writing stack with plugin, CLI, and Python package support.
+- Trimmed local source scope now keeps the canonical Claude Code skill tree only.
 - Strongest repository for research-backed scientific output.
 - Best if you want citations, conversion, and figure generation in one place.
 

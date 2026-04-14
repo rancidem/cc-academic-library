@@ -24,6 +24,7 @@ Build a structured, searchable, and maintainable inventory of Claude Code tools,
 
 - The project is organized around a single dashboard-first workflow.
 - The master catalog, repo summaries, quick-nav, and indexed skill inventory are in place.
+- The local source set has been trimmed toward Claude Code-only usage where runtime mirrors were redundant.
 - Phase 4 focuses on personal usability, repo summaries, and maintenance.
 - The dashboard-first layout is the intended way to browse and extend the library.
 

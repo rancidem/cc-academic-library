@@ -43,6 +43,7 @@ Detailed comparison notes for the five cloned repositories.
 - Source: `sources/wtf-p`
 - Local clone: `sources/wtf-p`
 - Summary: command-driven academic writing system with installer, commands, and verification loops.
+- Local scope: Claude Code vendor tree retained; Gemini and OpenCode mirrors removed from this inventory.
 - What it is good for: papers, proposals, presentations, and posters when you want the assistant to behave like a structured writing system.
 - Notable structure: `commands/`, `agents/`, `skills/`, `docs/`, `templates/`
 - Best first: open `README.md`, then `docs/BUILD_AND_RELEASE.md`, then `bin/commands/`
@@ -56,9 +57,10 @@ Detailed comparison notes for the five cloned repositories.
 - Source: `sources/claude-scientific-writer`
 - Local clone: `sources/claude-scientific-writer`
 - Summary: scientific writing stack with plugin, CLI, Python package, and bundled skills.
+- Local scope: canonical Claude Code skill tree retained; duplicate runtime mirrors removed from this inventory.
 - What it is good for: research-backed scientific writing where you need citations, conversion, figures, and a broad workflow toolkit.
-- Notable structure: `commands/`, `skills/`, `templates/`, `scientific_writer/`, `.claude-plugin/`
-- Best first: open `README.md`, then `docs/DOCUMENTATION_INDEX.md`, then `skills/`
+- Notable structure: `commands/`, `.claude/`, `templates/`, `scientific_writer/`, `.claude-plugin/`
+- Best first: open `README.md`, then `docs/DOCUMENTATION_INDEX.md`, then `.claude/skills/`
 - Strengths: deep package structure, broad skill coverage, and practical plugin integration
 - Cautions: broader and more complex than the small academic paper repos
 - Status: imported and indexed

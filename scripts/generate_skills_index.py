@@ -33,6 +33,7 @@ class RepoConfig:
     base_tags: tuple[str, ...]
     summary: str
     notes: str
+    skill_roots: tuple[str, ...]
 
 
 REPOS: tuple[RepoConfig, ...] = (
@@ -47,6 +48,7 @@ REPOS: tuple[RepoConfig, ...] = (
         base_tags=("skill", "academic-writing", "presentation", "skill-file"),
         summary="Small personal skill library centered on a single visual-architecture skill.",
         notes="Best for quickly reviewing a compact Anthropic Skill pattern.",
+        skill_roots=("skills",),
     ),
     RepoConfig(
         name="academic-paper-skills",
@@ -59,6 +61,7 @@ REPOS: tuple[RepoConfig, ...] = (
         base_tags=("skill", "academic-writing", "planning", "review", "skill-file"),
         summary="Two-skill strategist/composer workflow for planning and writing academic papers.",
         notes="Best for paper planning, outlining, and manuscript composition with checkpoints.",
+        skill_roots=("strategist", "composer"),
     ),
     RepoConfig(
         name="wtf-p",
@@ -67,10 +70,11 @@ REPOS: tuple[RepoConfig, ...] = (
         best_first="README.md, then `docs/BUILD_AND_RELEASE.md` and `bin/commands/`",
         how_to_use="Run `npx wtf-p`, then invoke the `/wtfp:*` commands in your assistant.",
         scale="large",
-        runtime_tags=("claude-code", "gemini-cli", "opencode", "node"),
+        runtime_tags=("claude-code", "node"),
         base_tags=("repository", "academic-writing", "writing", "cli"),
         summary="Command-driven academic writing system with installer, commands, and verification loops.",
-        notes="Best when you want the assistant to behave like a structured writing tool.",
+        notes="Best when you want the assistant to behave like a structured writing tool; local clone keeps the Claude Code vendor tree only.",
+        skill_roots=("vendors/claude/skills",),
     ),
     RepoConfig(
         name="claude-scientific-writer",
@@ -82,7 +86,8 @@ REPOS: tuple[RepoConfig, ...] = (
         runtime_tags=("claude-code", "python"),
         base_tags=("repository", "scientific-writing", "writing", "plugin", "package"),
         summary="Scientific writing stack with plugin, CLI, Python package, and bundled skills.",
-        notes="Best for research-backed scientific output with citations, conversion, and figure generation.",
+        notes="Best for research-backed scientific output with citations, conversion, and figure generation; local clone keeps the canonical Claude Code skill tree only.",
+        skill_roots=(".claude/skills",),
     ),
     RepoConfig(
         name="scientific-agent-skills",
@@ -91,10 +96,11 @@ REPOS: tuple[RepoConfig, ...] = (
         best_first="README.md, then `docs/scientific-skills.md`",
         how_to_use="Run `npx skills add K-Dense-AI/scientific-agent-skills`.",
         scale="very-large",
-        runtime_tags=("claude-code", "cursor", "python"),
+        runtime_tags=("claude-code", "python"),
         base_tags=("repository", "scientific-writing", "research-planning", "skill-file"),
         summary="Large Agent Skills catalog for scientific and research workflows.",
         notes="Best when you want the widest scientific skill catalog and many domain-specific entry points.",
+        skill_roots=("scientific-skills",),
     ),
 )
 
@@ -288,7 +294,12 @@ def main() -> None:
     all_skill_files: list[Path] = []
 
     for repo in REPOS:
-        files = sorted(repo.local_root.rglob("SKILL.md"), key=skill_sort_key)
+        files: list[Path] = []
+        for rel_root in repo.skill_roots:
+            skill_root = repo.local_root / rel_root
+            if skill_root.exists():
+                files.extend(sorted(skill_root.rglob("SKILL.md"), key=skill_sort_key))
+        files = sorted({path for path in files}, key=skill_sort_key)
         repo_entries.append((repo, files))
         all_skill_files.extend(files)
 
