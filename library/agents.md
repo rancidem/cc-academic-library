@@ -23,9 +23,9 @@ Use the repo sections below to browse agents, then open the local link for in-pr
 
 ## Featured Paths
 
-- [Browse by task](categories.md) - task-first navigation for review, download, and install flows.
-- [Featured stacks](stacks.md) - curated workflow bundles that include agents alongside their companion repos.
 - [Repository summaries](repositories.md) - compare the cloned sources before opening a specific agent.
+- [Browse by task](categories.md) - backup task-first navigation for review, download, and install flows.
+- [Featured stacks](stacks.md) - curated workflow bundles that include agents alongside their companion repos.
 
 ## Quick Jump
 

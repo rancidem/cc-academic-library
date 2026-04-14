@@ -30,9 +30,9 @@ Use the repo sections below to browse tools, then open the local link for in-pro
 
 ## Featured Paths
 
-- [Browse by task](categories.md) - task-first navigation for review, download, and install flows.
-- [Featured stacks](stacks.md) - curated workflow bundles that include installable tool paths.
 - [Repository summaries](repositories.md) - compare the cloned sources before opening a specific tool.
+- [Browse by task](categories.md) - backup task-first navigation for review, download, and install flows.
+- [Featured stacks](stacks.md) - curated workflow bundles that include installable tool paths.
 
 ## Quick Jump
 

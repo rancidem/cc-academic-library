@@ -7,6 +7,7 @@ Curated supporting references, docs, manifests, and maintenance pages for the li
 - Use this page for supporting docs rather than entry-point commands, agents, skills, or tools.
 - Keep the highest-value references here so the main inventory stays focused.
 - Use `library/categories.md` for task-first navigation and `library/stacks.md` for curated workflow bundles.
+- Use `library/repositories.md` first when you want the quickest path to open, download, install, or use a whole repo.
 
 ## Download And Setup
 

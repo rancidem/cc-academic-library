@@ -1,6 +1,6 @@
 # Task Categories
 
-Use this page when you want to browse the library by intent rather than by repo or item type.
+Use this page when you want a backup task-first view rather than the repository-first dashboard.
 
 ## Review, Download, Install
 
@@ -43,4 +43,3 @@ Use this page when you want to browse the library by intent rather than by repo 
 - [wtf-p](repositories.md#wtf-p)
 - [claude-scientific-writer](repositories.md#claude-scientific-writer)
 - [scientific-agent-skills](repositories.md#scientific-agent-skills)
-

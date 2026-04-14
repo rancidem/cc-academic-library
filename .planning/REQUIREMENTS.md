@@ -4,6 +4,7 @@
 
 - Maintain an index of the five cloned upstream repositories.
 - Keep `LIBRARY.md` as the first-page dashboard.
+- Keep `LIBRARY.md` repository-first so a beginner can reach the right repo quickly.
 - Keep `LIBRARY.md` organized for review, raw download, and install/setup workflows.
 - Keep task-first browsing and featured workflow bundles available from the dashboard.
 - Keep `library/inventory.md` as the full command, agent, skill, and tool inventory.

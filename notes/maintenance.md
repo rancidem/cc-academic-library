@@ -3,6 +3,7 @@
 ## 2026-04-14
 
 - Added task categories and featured workflow stacks to the library so the dashboard now feels closer to a curated skills catalog.
+- Re-centered the dashboard around repository-first navigation with repo summaries as the main path and task/category pages as helpers.
 - Refreshed the `.planning` docs so the project scope, requirements, roadmap, stack, integrations, and state all describe the action-first install/download workflow.
 - Added action-first navigation for review, download, and install/setup workflows.
 - Added install/setup fields to the shared entry template so tool and skill entries can carry verification and prerequisite notes.

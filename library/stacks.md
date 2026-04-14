@@ -14,8 +14,7 @@ Curated workflow bundles for the most common ways to use this library.
 
 ## How To Use This Page
 
-- Pick the stack that matches your intent first.
+- Pick the stack that matches your intent first, then open the matching repository summary.
 - Open the `Best first` link when you want the source repo overview.
 - Use the `Install / setup` notes when you want the shortest path to a usable local setup.
 - Use the `Download / raw` notes when you want the source files directly.
-

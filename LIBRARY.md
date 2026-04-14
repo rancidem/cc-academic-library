@@ -6,36 +6,34 @@ Last refreshed: 2026-04-14.
 
 ## Start Here
 
-### Review, download, install
+This dashboard is organized by repository first. Pick a repo, then use the repo summary to reach the exact install, download, or use path.
 
-Use the sections below based on what you want to do right now.
+### Repositories
 
-- [Browse by task](library/categories.md) - category-style entry points for review, download, and install flows
-- [Featured stacks](library/stacks.md) - curated repository combinations for the most common workflows
-- [Library inventory](library/inventory.md) - full cross-type catalog for quick review
-- [Repository summaries](library/repositories.md) - repo-level comparison plus install/setup notes
-- [Skills inventory](library/skills.md) - raw skill-file links and folder contents for direct download
-- [Tools index](library/tools.md) - raw tool links and installable package/setup notes
-- [Resources index](library/resources.md) - manifests, docs, and setup references
-- [Entry template](library/entry-template.md) - shared fields for download, install, and verification notes
+| Repo | Best for | Open |
+|---|---|---|
+| MySkills | One reusable skill and the simplest skill bundle pattern | [summary](library/repositories.md#myskills) |
+| academic-paper-skills | Paper planning and composition with checkpoints | [summary](library/repositories.md#academic-paper-skills) |
+| wtf-p | Installable command-first academic writing workflows | [summary](library/repositories.md#wtf-p) |
+| claude-scientific-writer | Research-backed writing with plugin, CLI, and package support | [summary](library/repositories.md#claude-scientific-writer) |
+| scientific-agent-skills | Broad scientific Agent Skills catalog | [summary](library/repositories.md#scientific-agent-skills) |
 
-### Browse by repo
+### Fast Access
 
-- This page is the canonical dashboard.
 - [Repo quick-nav](repos/README.md) - direct links to each cloned repository
 - [Repository summaries](library/repositories.md) - detailed per-repo comparison and usage notes
+- [Library inventory](library/inventory.md) - full cross-type catalog for quick review
+- [Commands](library/commands.md) - command entry points with summaries and raw links
+- [Agents](library/agents.md) - agent entry points with summaries and raw links
+- [Skills](library/skills.md) - skill files with summaries, use notes, open links, and raw download links
+- [Tools](library/tools.md) - tool roots, packages, and helper utilities
+- [Resources](library/resources.md) - supporting references, guides, and setup notes
 
-### Browse by item type
+### Helper Views
 
-- [Library inventory](library/inventory.md) - master index of commands, agents, skills, and tools
-- [Commands](library/commands.md) - indexed command entry points with summaries and raw links
-- [Agents](library/agents.md) - indexed agent entry points with summaries and raw links
-- [Skills](library/skills.md) - indexed skill files with summaries, use notes, open links, and raw download links
-- [Tools](library/tools.md) - reusable tool roots, packages, and helper utilities
-- [Resources](library/resources.md) - supporting references, guides, and maintenance material
-- [Browse by task](library/categories.md) - task-first catalog entry points
-- [Featured stacks](library/stacks.md) - recommended workflow combinations
-- [Entry template](library/entry-template.md) - shared schema for all new entries
+- [Browse by task](library/categories.md) - task-first entry points
+- [Featured stacks](library/stacks.md) - curated workflow combinations
+- [Entry template](library/entry-template.md) - shared schema for new entries
 - [Taxonomy](library/taxonomy.md) - controlled tags and search terms
 
 ### Browse maintenance or history
@@ -52,16 +50,19 @@ Use the sections below based on what you want to do right now.
 
 ## Current State
 
-- The master catalog, repo quick-nav, task categories, featured stacks, and exhaustive inventory pages are in place.
-- The dashboard, planning docs, and maintenance notes are synchronized with the current library structure.
+- The dashboard is repository-first and optimized for quick personal navigation.
+- The repo summaries expose install, download, and use paths directly.
+- The helper views remain available for task browsing and curated stacks.
 - Phase 4 is focused on maintenance, refreshes, and personal usability.
-- The next useful work is tightening summaries and keeping the category and stack pages easy to scan.
+- The next useful work is tightening summaries and keeping the repo pages easy to scan.
 
 ## Most Useful Now
 
-- `library/categories.md` - best when you want a task-first starting point instead of a type-first index.
-- `library/stacks.md` - best when you want a curated workflow bundle with the shortest path to use.
+- `library/repositories.md` - best when you want the fastest route to a specific repo and its install/use path.
+- `repos/README.md` - best when you want a compact repo selector.
 - `library/inventory.md` - best when you want every command, agent, skill, and tool in one place.
+- `library/categories.md` - best when you want a task-first starting point instead of a repo-first index.
+- `library/stacks.md` - best when you want a curated workflow bundle.
 - `wtf-p` - best when you want a command-first writing workflow with clear orchestration.
 - `claude-scientific-writer` - best when you want a research-backed scientific writing stack.
 - `scientific-agent-skills` - best when you want the widest scientific skill catalog.
@@ -85,9 +86,9 @@ Use the sections below based on what you want to do right now.
 
 ### MySkills
 
-- Single-skill repo with a very small review surface.
-- Fastest place to inspect a compact Anthropic Skill pattern.
-- Best if you want a simple visual-architecture example.
+- One reusable skill and the simplest skill bundle pattern.
+- Fastest place to inspect a compact Anthropic Skill example.
+- Best if you want a minimal copyable skill structure.
 
 ### academic-paper-skills
 
@@ -104,7 +105,7 @@ Use the sections below based on what you want to do right now.
 
 ### claude-scientific-writer
 
-- Scientific writing stack with plugin, CLI, command, skill, and Python package support.
+- Scientific writing stack with plugin, CLI, and package support.
 - Trimmed local source scope now keeps the canonical Claude Code skill tree only.
 - Strongest repository for research-backed scientific output.
 - Best if you want citations, conversion, and figure generation in one place.
