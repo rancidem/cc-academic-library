@@ -4,6 +4,7 @@
 
 - Maintain an index of the five cloned upstream repositories.
 - Keep `LIBRARY.md` as the first-page dashboard.
+- Keep `LIBRARY.md` organized for review, raw download, and install/setup workflows.
 - Keep `library/inventory.md` as the full command, agent, skill, and tool inventory.
 - Keep `library/repositories.md` as the detailed per-repo summary page.
 - Keep `library/commands.md`, `library/agents.md`, `library/skills.md`, and `library/tools.md` as type-specific indexes.
@@ -11,18 +12,20 @@
 - Keep `repos/README.md` as the quick-nav table.
 - Keep all entries readable in plain Markdown.
 - Support fast navigation through cross-links and consistent headings.
+- Preserve raw download paths and install/setup notes where applicable.
 
 ## Content
 
-- Each command, agent, skill, and tool entry must explain what it does, what it contains, when to use it, and where to open or download it.
+- Each command, agent, skill, and tool entry must explain what it does, what it contains, when to use it, where to open or download it, and how to install or set it up when relevant.
 - Each repository summary must show the best first document to open.
 - Each entry should include useful tags, keywords, or related links when applicable.
+- Tool and skill entries should expose raw source links prominently for direct download.
 
 ## Maintenance
 
 - Keep `sources/` aligned with upstream repositories.
 - Note significant refreshes in `notes/maintenance.md`.
-- Update the library when new command, agent, skill, tool, or notable workflow appears.
+- Update the library when new command, agent, skill, tool, notable workflow, raw download path, or install/setup path appears.
 - Keep the dashboard, library pages, and planning files aligned.
 
 ## Non-Goals

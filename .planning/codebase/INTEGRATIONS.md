@@ -4,6 +4,7 @@
 
 - **Git**: every cloned upstream repository is a git checkout under `sources/`
 - **Markdown index workflow**: `library/` provides the human-facing catalog, while `.planning/` holds scan artifacts and planning state
+- **Action-first navigation**: `LIBRARY.md` directs users to review, raw download, and install/setup paths before deeper browsing
 - **No source mutation policy**: the workspace is intended to observe and document upstream repos, not patch them in place
 
 ## Agent and Editor Integrations
@@ -13,6 +14,7 @@
 - Primary target across the repository set
 - Used by `academic-paper-skills`, `wtf-p`, `claude-scientific-writer`, and `scientific-agent-skills`
 - Skill files and instruction files are designed to be copied into or discovered by Claude Code workflows
+- Raw skill files can be downloaded directly from `library/skills.md` when you want the exact `SKILL.md` source
 
 ### Gemini CLI
 
@@ -53,6 +55,7 @@
 - `wtf-p` supports writing workflows for papers, proposals, presentations, and posters across multiple assistant runtimes
 - `claude-scientific-writer` integrates LaTeX/BibTeX-style document generation, plugin installation, and package publishing workflows
 - `academic-paper-skills` uses platform-oriented paper planning and composition instructions for preprint-style publishing
+- Repository summaries and tool indexes now expose the shortest install/setup path for each supported package or plugin
 
 ### Model and Media Services
 
@@ -64,4 +67,3 @@
 - The widest integration surface is in `scientific-agent-skills`; it should be treated as the most operationally sensitive repo because many skills can invoke external APIs or run code
 - `wtf-p` and `claude-scientific-writer` are more controlled: they package explicit commands, scripts, and docs around a narrower writing workflow
 - `MySkills` is the lowest-risk integration surface because it is mostly static catalog material
-
