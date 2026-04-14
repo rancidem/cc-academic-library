@@ -1,42 +1,50 @@
-# Project
+# cc-academic canonical library
 
-## Name
+## What This Is
 
-cc-academic - Personal Academic Tools Library
+This repository is the canonical index for the academic skills library. It mirrors upstream bundles into a stable local layout so agents, commands, references, and tools stay organized and traceable.
 
-## Objective
+## Core Value
 
-Build a Markdown-first library of Claude Code commands, agents, skills, tools, and resources for academic writing workflows with fast review, raw download, and install/setup paths.
+Keep the canonical library organized, accurate, and easy to sync back to upstream sources.
 
-## Scope
+## Requirements
 
-- `LIBRARY.md` is the personal dashboard and first page to open.
-- `LIBRARY.md` includes action-first navigation for review, download, and install/setup workflows.
-- `library/inventory.md` is the master inventory of commands, agents, skills, and tools.
-- `library/repositories.md` is the detailed repo comparison and summary page.
-- `library/commands.md`, `library/agents.md`, `library/skills.md`, and `library/tools.md` are type-specific indexes.
-- `library/resources.md` holds curated supporting references from the cloned repos.
-- `repos/README.md` is the quick-nav table for the five upstream repositories.
-- `library/entry-template.md` and `library/taxonomy.md` define the shared structure, tags, and install/download metadata.
+### Validated
 
-## Principles
+- ✓ Existing academic skills tree remains stable and navigable
+- ✓ Imported source bundles retain traceable upstream provenance
 
-- Markdown-first
-- Flat, predictable structure
-- Fast navigation and quick review
-- Action-first navigation for review, download, and install/setup
-- Internal links between related entries
-- Consistent naming, tagging, and summaries
-- Keep the dashboard and planning files in sync with the library
+### Active
 
-## Sources
+- [ ] New upstream bundles can be added without breaking the canonical layout
+- [ ] Quick tasks can track work in `.planning/quick/`
+- [ ] Source-to-canonical mapping stays explicit in metadata
 
-- `sources/academic-paper-skills`
-- `sources/wtf-p`
-- `sources/MySkills`
-- `sources/claude-scientific-writer`
-- `sources/scientific-agent-skills`
+### Out of Scope
 
-## Outcome
+- Manual rewriting of upstream content — preserve source wording unless normalization is required
+- Application runtime code — this repo is documentation and library organization only
 
-A compact personal library that makes it easy to compare, reuse, and maintain community-built academic and scientific Claude Code commands, agents, skills, tools, and resources.
+## Context
+
+- The tree already contains multiple academic skill families, command entrypoints, and reference bundles.
+- The Matsen Group plugin bundle was added as a grouped subtree under `agents/`, `commands/`, and `resources/`.
+- The repository is now initialized as a git repository so future imports can be committed cleanly.
+
+## Constraints
+
+- **Organization**: Keep each imported bundle grouped under a distinct subtree — avoid mixing source identities.
+- **Traceability**: Update `resources/source-references.md` and `inventory.json` whenever source bundles change.
+- **Low drift**: Prefer small, reviewable metadata updates over broad reorganizations.
+
+## Key Decisions
+
+| Decision | Rationale | Outcome |
+|----------|-----------|---------|
+| Group `matsengrp/plugins` under dedicated subtrees | Preserves upstream identity without colliding with existing academic skills | ✓ Good |
+| Treat the repo as a canonical index rather than a code project | Matches the existing library structure and keeps maintenance simple | ✓ Good |
+| Track source provenance in `resources/source-references.md` and `inventory.json` | Makes sync checks and future imports auditable | ✓ Good |
+
+---
+*Last updated: 2026-04-14 after Matsen Group plugin import*

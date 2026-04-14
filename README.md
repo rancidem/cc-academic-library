@@ -1,50 +1,36 @@
-# cc-academic
+# cc-academic canonical library
 
-Personal library of Claude Code academic, scientific, and research-oriented skills and tools.
+This folder is the canonical index for the academic skills library. It mirrors six source bundles:
 
-This project now lives at `/Users/emersonburke/Documents/developer/projects/cc-academic`.
+- `academic-paper-skills`
+- `claude-scientific-writer`
+- `MySkills`
+- `scientific-agent-skills`
+- `wtf-p`
+- `matsengrp/plugins`
 
-## Purpose
+## Current status
 
-Build a structured, searchable, and maintainable inventory of Claude Code tools, skills, and supporting resources with a focus on academic writing workflows.
+- Missing skill identities synced: `paper-2-web`, `matlab`, `pyzotero`
+- `wtf-p` command inventory mirrored into `scripts/wtfp-commands`
+- `wtfp` library inventory mirrored into `scripts/wtfp-lib`
+- `tools/wcn` package mirrored, including examples
+- Verification target: no remaining source-to-canonical delta except any deliberate aliasing or deduplication
+- `inventory.json` provides a machine-readable snapshot for future sync checks
+- `resources/source-references.md` tracks the upstream source bundles and canonical subtree mapping
+- `skills/README.md` documents how to create, reorganize, and maintain canonical skills
 
 ## Layout
 
-- `LIBRARY.md` - single canonical dashboard and master catalog
-- `library/start-here.md` - plain-language beginner guide
-- `library/glossary.md` - short definitions for common library terms
-- `repos/README.md` - quick navigation table for the cloned repositories
-- `library/README.md` - library-folder landing page
-- `library/categories.md` - backup task-first catalog navigation
-- `library/stacks.md` - curated workflow combinations
-- `library/index.md` - pointer-only compatibility page
-- `library/` - working index for commands, agents, skills, tools, resources, and repo summaries
-- `library/inventory.md` - master inventory of all commands, agents, skills, and tools
-- `library/commands.md` - command entry index with summaries and raw links
-- `library/agents.md` - agent entry index with summaries and raw links
-- `library/skills.md` - skill inventory across cloned repos with summaries, usage notes, and raw links
-- `library/repositories.md` - detailed per-repo comparison and entry points
-- `notes/` - working notes, comparisons, and maintenance logs
-- `scripts/` - utility scripts for regenerating indexed docs
-- `.planning/` - project context, requirements, roadmap, and work state
-- `sources/` - cloned upstream repositories
+- `agents/` - orchestration and reviewer agents
+- `commands/` - command entrypoints and workflows
+- `references/` - cross-cutting documentation and examples
+- `scripts/` - mirrored `wtf-p` command and library inventory
+- `skills/` - canonical skill identities
+- `resources/` - source references and sync metadata
+- `templates/` - reusable prompt and document templates
+- `tools/` - mirrored auxiliary tooling, including `wcn`
 
-## Current Status
+## Regeneration
 
-- The project is organized around a single dashboard-first workflow.
-- `LIBRARY.md` is the canonical start page.
-- `library/start-here.md` and `library/glossary.md` support beginner use without changing the repo-first structure.
-- The repo summaries are the primary navigation layer, with quick-nav, task categories, featured stacks, and indexed command/agent/skill/tool inventories available as helpers.
-- The planning docs and maintenance notes are synchronized with the current library structure.
-- The local source set has been trimmed toward Claude Code-only usage where runtime mirrors were redundant.
-- Phase 4 focuses on personal usability, repo summaries, and maintenance.
-- The dashboard-first layout is the intended way to browse and extend the library.
-
-## Next Steps
-
-1. Keep the repo summaries current when upstream READMEs or structures change.
-2. Use `LIBRARY.md` as the main start page, `library/start-here.md` and `library/glossary.md` when terms or next steps are unclear, and `library/repositories.md` for deep comparison.
-3. Keep source sync notes and index refreshes in `.planning/` and `notes/`.
-4. Expand tool and resource entries as new reusable items are discovered.
-5. Keep the dashboard concise so it stays useful at a glance.
-6. Keep the task categories and featured stacks aligned with the underlying repository summaries and secondary to them.
+The canonical tree is built by copying the source bundles into the folder layout above and then re-running the source-to-canonical diff.
