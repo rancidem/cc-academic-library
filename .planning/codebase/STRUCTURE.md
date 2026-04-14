@@ -5,13 +5,29 @@
 ```text
 cc-academic/
 ├── README.md
+├── LIBRARY.md
 ├── IDEA.md
 ├── library/
+│   ├── README.md
 │   ├── index.md
-│   └── repositories.md
+│   ├── inventory.md
+│   ├── commands.md
+│   ├── agents.md
+│   ├── skills.md
+│   ├── tools.md
+│   ├── resources.md
+│   ├── repositories.md
+│   ├── entry-template.md
+│   ├── taxonomy.md
+│   └── generated/
+│       └── .gitkeep
 ├── notes/
 │   ├── README.md
 │   └── maintenance.md
+├── repos/
+│   └── README.md
+├── scripts/
+│   └── generate_skills_index.py
 ├── sources/
 │   ├── academic-paper-skills/
 │   ├── wtf-p/
@@ -19,8 +35,14 @@ cc-academic/
 │   ├── claude-scientific-writer/
 │   └── scientific-agent-skills/
 └── .planning/
+    ├── PROJECT.md
+    ├── REQUIREMENTS.md
     ├── ROADMAP.md
     ├── STATE.md
+    ├── config.json
+    ├── quick/
+    │   └── 1-clone-github-repos-into-personal-library/
+    │       └── 1-PLAN.md
     └── codebase/
         ├── STACK.md
         ├── INTEGRATIONS.md
@@ -102,9 +124,9 @@ scientific-agent-skills/
 
 ## Structural Notes
 
-- The workspace root is documentation-heavy and intentionally light on application code
-- The source clones are the only places where behavior, commands, and skill definitions live
-- The richest structure is in `scientific-agent-skills/`, but it is still organized as a catalog of independent skill units rather than a single app
-- The most package-like source is `claude-scientific-writer/`, which combines implementation code with plugin and workflow metadata
-- `library/` is the only part of the workspace that should be treated as the public index surface
-
+- The workspace root is documentation-heavy and intentionally light on application code.
+- `LIBRARY.md` is the canonical dashboard, while `library/README.md` is the library-folder landing page.
+- The source clones are the only places where behavior, commands, and skill definitions live.
+- The richest structure is in `scientific-agent-skills/`, but it is still organized as a catalog of independent skill units rather than a single app.
+- The most package-like source is `claude-scientific-writer/`, which combines implementation code with plugin and workflow metadata.
+- `library/` is the working index surface, and `notes/` is the short-lived maintenance/history surface.

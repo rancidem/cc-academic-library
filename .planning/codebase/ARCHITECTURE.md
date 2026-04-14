@@ -17,7 +17,8 @@ The workspace does not define a shared runtime. Instead, it provides a documenta
 ### 1. Catalog Layer
 
 - `library/` is the curated entry point
-- `library/index.md` offers the top-level index
+- `library/README.md` is the library-folder landing page
+- `library/index.md` is a pointer-only compatibility page
 - `library/repositories.md` contains per-repository summaries
 
 ### 2. Working Layer
@@ -84,4 +85,3 @@ The workspace does not define a shared runtime. Instead, it provides a documenta
 - `MySkills` is the lightest and least coupled
 - `claude-scientific-writer` is the most package-oriented
 - `scientific-agent-skills` is the broadest and most scalable skill catalog
-

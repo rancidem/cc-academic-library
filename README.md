@@ -10,9 +10,11 @@ Build a structured, searchable, and maintainable inventory of Claude Code tools,
 
 ## Layout
 
-- `LIBRARY.md` - personal dashboard and master catalog
+- `LIBRARY.md` - single canonical dashboard and master catalog
 - `repos/README.md` - quick navigation table for the cloned repositories
-- `library/` - curated markdown index of commands, agents, skills, tools, resources, and repo summaries
+- `library/README.md` - library-folder landing page
+- `library/index.md` - pointer-only compatibility page
+- `library/` - working index for commands, agents, skills, tools, resources, and repo summaries
 - `library/inventory.md` - master inventory of all commands, agents, skills, and tools
 - `library/commands.md` - command entry index with summaries and raw links
 - `library/agents.md` - agent entry index with summaries and raw links
@@ -26,7 +28,8 @@ Build a structured, searchable, and maintainable inventory of Claude Code tools,
 ## Current Status
 
 - The project is organized around a single dashboard-first workflow.
-- The master catalog, repo summaries, quick-nav, and indexed command/agent/skill/tool inventories are in place.
+- `LIBRARY.md` is the canonical start page.
+- The repo summaries, quick-nav, and indexed command/agent/skill/tool inventories are in place.
 - The planning docs and maintenance notes are synchronized with the current library structure.
 - The local source set has been trimmed toward Claude Code-only usage where runtime mirrors were redundant.
 - Phase 4 focuses on personal usability, repo summaries, and maintenance.

@@ -2,6 +2,10 @@
 
 ## 2026-04-14
 
+- Tightened the navigation hierarchy so `LIBRARY.md` is the single canonical dashboard.
+- Converted `library/index.md` into a pointer page so `library/README.md` remains the only library intro page.
+- Added task-based shortcuts at the top of `LIBRARY.md` for browsing by repo, item type, or maintenance/history.
+- Shortened repeated intros in the inventory pages so the tables take visual priority sooner.
 - Synced the dashboard, planning docs, and maintenance notes after the full inventory refresh.
 - Expanded the library from a skills-only index into a full inventory of commands, agents, skills, and tools with raw source links.
 - Added `library/inventory.md`, `library/commands.md`, `library/agents.md`, `library/skills.md`, and `library/tools.md` so each item type has its own fast index.

@@ -1,13 +1,7 @@
 # Library Inventory
 
 Inventory of commands, agents, skills, and tools discovered across the cloned repositories.
-
-## How To Use
-
-- Start with the repo section you care about.
-- Open the local link to inspect the item inside this project.
-- Use the raw link when you want the download-ready source file from GitHub.
-- Treat hidden and nested source folders as first-class inventory unless the repo section says otherwise.
+Use the repo sections below to browse items, then open the local link for in-project inspection or the raw link for the download-ready source.
 
 ## Repository Summary
 

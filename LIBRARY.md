@@ -6,9 +6,14 @@ Last refreshed: 2026-04-14.
 
 ## Start Here
 
-- [Project master catalog](LIBRARY.md) - the fastest way to orient yourself
+### Browse by repo
+
+- This page is the canonical dashboard.
 - [Repo quick-nav](repos/README.md) - direct links to each cloned repository
 - [Repository summaries](library/repositories.md) - detailed per-repo comparison and usage notes
+
+### Browse by item type
+
 - [Library inventory](library/inventory.md) - master index of commands, agents, skills, and tools
 - [Commands](library/commands.md) - indexed command entry points with summaries and raw links
 - [Agents](library/agents.md) - indexed agent entry points with summaries and raw links
@@ -17,6 +22,11 @@ Last refreshed: 2026-04-14.
 - [Resources](library/resources.md) - supporting references, guides, and maintenance material
 - [Entry template](library/entry-template.md) - shared schema for all new entries
 - [Taxonomy](library/taxonomy.md) - controlled tags and search terms
+
+### Browse maintenance or history
+
+- [Notes](notes/README.md) - working notes, comparisons, and maintenance logs
+- [Maintenance log](notes/maintenance.md) - source syncs, index updates, and documentation changes
 
 ## What This Folder Is For
 
