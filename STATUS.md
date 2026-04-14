@@ -18,6 +18,7 @@
 - `scripts/wtfp-lib` populated from `wtf-p/bin/lib`
 - `tools/wcn` mirrored, including examples
 - `matsengrp/plugins` copied into `agents/matsengrp-agents`, `commands/matsengrp-agents`, and `resources/matsengrp-agents`
+- Upstream source bundles moved into `resources/cc-academic-sources/` with local traceability links
 - `inventory.json` generated for future sync checks
 - `resources/source-references.md` added for source bundle traceability and canonical subtree mapping
 - `skills/README.md` added for skills maintenance

@@ -30,6 +30,7 @@ Keep the canonical library organized, accurate, and easy to sync back to upstrea
 
 - The tree already contains multiple academic skill families, command entrypoints, and reference bundles.
 - The Matsen Group plugin bundle was added as a grouped subtree under `agents/`, `commands/`, and `resources/`.
+- The upstream source bundles are now stored locally under `resources/cc-academic-sources/` and the reference table points at those clones.
 - The repository is now initialized as a git repository so future imports can be committed cleanly.
 
 ## Constraints

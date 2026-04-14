@@ -9,6 +9,8 @@ This folder is the canonical index for the academic skills library. It mirrors s
 - `wtf-p`
 - `matsengrp/plugins`
 
+The upstream source repos are stored locally under `resources/cc-academic-sources/` so the traceability links in `resources/source-references.md` point at on-disk clones instead of remote paths.
+
 ## Current status
 
 - Missing skill identities synced: `paper-2-web`, `matlab`, `pyzotero`
@@ -28,6 +30,7 @@ This folder is the canonical index for the academic skills library. It mirrors s
 - `scripts/` - mirrored `wtf-p` command and library inventory
 - `skills/` - canonical skill identities
 - `resources/` - source references and sync metadata
+- `resources/cc-academic-sources/` - local clones of upstream source bundles
 - `templates/` - reusable prompt and document templates
 - `tools/` - mirrored auxiliary tooling, including `wcn`
 

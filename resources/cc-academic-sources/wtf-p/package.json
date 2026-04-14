@@ -1,0 +1,62 @@
+{
+  "name": "wtf-p",
+  "version": "0.5.0",
+  "description": "AI-powered academic writing commands for Claude Code, Gemini CLI, and OpenCode. Papers, proposals, presentations, and posters — structured, cited, verified.",
+  "bin": {
+    "wtfp": "bin/install.js",
+    "wtf-p": "bin/install.js",
+    "wtf-p-uninstall": "bin/uninstall.js"
+  },
+  "scripts": {
+    "test": "node test/sanity.js && node test/paths.js && node test/linter.js && node test/wcn-integrity.js && node test/dry-run.js && node test/feature-tests.js && node test/installer.test.js",
+    "test:integration": "node test/integration.js",
+    "test:all": "npm test && npm run test:integration",
+    "preflight": "node scripts/preflight.js",
+    "release": "node scripts/release.js"
+  },
+  "files": [
+    "bin",
+    "core",
+    "vendors"
+  ],
+  "peerDependencies": {
+    "@marp-team/marp-cli": ">=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@marp-team/marp-cli": {
+      "optional": true
+    }
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "gemini",
+    "opencode",
+    "ai",
+    "academic-writing",
+    "research",
+    "paper",
+    "writing",
+    "proposal",
+    "poster",
+    "presentation",
+    "thesis",
+    "grant",
+    "latex",
+    "bibtex",
+    "citation"
+  ],
+  "author": "akougkas",
+  "license": "MIT",
+  "homepage": "https://github.com/akougkas/wtf-p",
+  "bugs": {
+    "url": "https://github.com/akougkas/wtf-p/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akougkas/wtf-p.git"
+  },
+  "engines": {
+    "node": ">=16.7.0"
+  }
+}
