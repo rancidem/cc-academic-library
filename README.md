@@ -20,6 +20,7 @@ Canonical home for the academic skills library. This repo mirrors upstream bundl
 | Current model | [docs/PROJECT.md](docs/PROJECT.md) |
 | Current state | [docs/STATE.md](docs/STATE.md) |
 | Phase plan | [docs/ROADMAP.md](docs/ROADMAP.md) |
+| Map index | [docs/map/index.json](docs/map/index.json) |
 | Source map | [resources/source-references.md](resources/source-references.md) |
 | Registry | [resources/bundle-registry.json](resources/bundle-registry.json) |
 | Maintenance script | [scripts/maintenance/refresh.js](scripts/maintenance/refresh.js) |

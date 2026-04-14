@@ -382,6 +382,11 @@
     },
     {
       "kind": "file",
+      "path": "docs/map/index.json",
+      "size": 625733
+    },
+    {
+      "kind": "file",
       "path": "docs/PROJECT.md",
       "size": 2821
     },
@@ -403,7 +408,7 @@
     {
       "kind": "file",
       "path": "docs/README.md",
-      "size": 1182
+      "size": 1262
     },
     {
       "kind": "file",
@@ -423,7 +428,7 @@
     {
       "kind": "file",
       "path": "inventory.json",
-      "size": 653542
+      "size": 653651
     },
     {
       "kind": "file",
@@ -528,7 +533,7 @@
     {
       "kind": "file",
       "path": "README.md",
-      "size": 3772
+      "size": 3831
     },
     {
       "kind": "reference",
@@ -10382,6 +10387,26 @@
     },
     {
       "kind": "script",
+      "path": "scripts/academic-paper-composer/chapter_quality_check.py",
+      "size": 16317
+    },
+    {
+      "kind": "script",
+      "path": "scripts/academic-paper-composer/final_evaluation.py",
+      "size": 20073
+    },
+    {
+      "kind": "script",
+      "path": "scripts/academic-paper-strategist/evaluate_samples.py",
+      "size": 10557
+    },
+    {
+      "kind": "script",
+      "path": "scripts/academic-paper-strategist/gap_analysis.py",
+      "size": 13708
+    },
+    {
+      "kind": "script",
       "path": "scripts/generate_skills_index.py",
       "size": 34508
     },
@@ -10394,6 +10419,11 @@
       "kind": "script",
       "path": "scripts/maintenance/refresh.js",
       "size": 7919
+    },
+    {
+      "kind": "script",
+      "path": "scripts/map-index.js",
+      "size": 17120
     },
     {
       "kind": "script",
@@ -20207,5 +20237,5 @@
     }
   ],
   "format": "cc-academic-canonical-inventory/v1",
-  "generated": "2026-04-14T12:16:48.030Z"
+  "generated": "2026-04-14T12:23:09.275Z"
 }

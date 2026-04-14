@@ -9,6 +9,7 @@ This directory holds the living project documentation for the canonical library.
 | `PROJECT.md` | Project definition, core value, active requirements, constraints, and key decisions. |
 | `ROADMAP.md` | Phase structure and success criteria for the current milestone. |
 | `STATE.md` | Short-term project memory: current position, recent decisions, blockers, and session continuity. |
+| `map/` | Generated structural index for files, roles, and dependency links. |
 | `quick/` | Scratch space for quick-task runs and their working notes. |
 
 ## How To Read It
