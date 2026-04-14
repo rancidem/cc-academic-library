@@ -5,7 +5,7 @@
 - Maintain an index of the five cloned upstream repositories.
 - Keep `LIBRARY.md` as the first-page dashboard.
 - Keep `library/repositories.md` as the detailed per-repo summary page.
-- Keep `library/skills.md` as the exhaustive skill inventory.
+- Keep `library/skills.md` as the exhaustive skill inventory with summaries, use notes, open links, and raw links.
 - Organize content into tools, skills, and resources.
 - Keep `repos/README.md` as the quick-nav table.
 - Keep all entries readable in plain Markdown.
@@ -13,7 +13,7 @@
 
 ## Content
 
-- Each entry must explain what it does, what it contains, and when to use it.
+- Each skill entry must explain what it does, what it contains, when to use it, and where to open or download it.
 - Each repository summary must show the best first document to open.
 - Each entry should include useful tags, keywords, or related links when applicable.
 

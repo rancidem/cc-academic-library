@@ -9,7 +9,7 @@ Curated index of Claude Code academic and scientific skill repositories.
 - [Repository summaries](repositories.md) - detailed per-repo comparison and usage notes
 - [Entry template](entry-template.md) - shared schema for tools, skills, and resources
 - [Tag taxonomy](taxonomy.md) - controlled tags for search and comparison
-- [Skills inventory](skills.md) - complete skill-file index across the cloned repos
+- [Skills inventory](skills.md) - indexed skill-file catalog with summaries, usage notes, open links, and raw links
 
 ## Library Sections
 

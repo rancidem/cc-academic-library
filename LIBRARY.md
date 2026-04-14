@@ -9,7 +9,7 @@ Last refreshed: 2026-04-14.
 - [Project master catalog](LIBRARY.md) - the fastest way to orient yourself
 - [Repo quick-nav](repos/README.md) - direct links to each cloned repository
 - [Repository summaries](library/repositories.md) - detailed per-repo comparison and usage notes
-- [Skills inventory](library/skills.md) - complete index of discovered skill files
+- [Skills inventory](library/skills.md) - indexed list of discovered skill files with summaries, use notes, open links, and raw download links
 - [Tools](library/tools.md) - reusable environments, wrappers, and helper utilities
 - [Resources](library/resources.md) - supporting references, guides, and maintenance material
 - [Entry template](library/entry-template.md) - shared schema for all new entries
@@ -41,7 +41,7 @@ Last refreshed: 2026-04-14.
 - MySkills: 1 skill file
 - academic-paper-skills: 2 skill files
 - wtf-p: 2 skill files plus command/tooling modules
-- claude-scientific-writer: 54 skill files across `.claude/skills/` and `skills/`
+- claude-scientific-writer: 81 skill files across `.claude/skills/`, `scientific_writer/.claude/skills/`, and `skills/`
 - scientific-agent-skills: 134 skill files under `scientific-skills/`
 
 ## Repository Highlights

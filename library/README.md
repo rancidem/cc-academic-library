@@ -6,7 +6,7 @@ This folder is the working index for the project, but `../LIBRARY.md` is the das
 
 - [`../LIBRARY.md`](../LIBRARY.md) - master catalog and personal dashboard
 - [Repository summaries](repositories.md) - detailed per-repo comparison and entry points
-- [Skills inventory](skills.md) - complete skill-file index across cloned repos
+- [Skills inventory](skills.md) - indexed skill-file catalog with summaries, usage notes, open links, and raw links
 - [Tools](tools.md) - reusable environments, wrappers, and helper utilities
 - [Resources](resources.md) - supporting references, guides, and maintenance material
 - [Entry template](entry-template.md) - shared schema for all entries

@@ -13,16 +13,17 @@ Build a structured, searchable, and maintainable inventory of Claude Code tools,
 - `LIBRARY.md` - personal dashboard and master catalog
 - `repos/README.md` - quick navigation table for the cloned repositories
 - `library/` - curated markdown index of skills, tools, resources, and repo summaries
-- `library/skills.md` - exhaustive skill inventory across cloned repos
+- `library/skills.md` - indexed skill inventory across cloned repos with summaries, usage notes, and raw links
 - `library/repositories.md` - detailed per-repo comparison and entry points
 - `notes/` - working notes, comparisons, and maintenance logs
+- `scripts/` - utility scripts for regenerating indexed docs
 - `.planning/` - project context, requirements, roadmap, and work state
 - `sources/` - cloned upstream repositories
 
 ## Current Status
 
 - The project is organized around a single dashboard-first workflow.
-- The master catalog, repo summaries, quick-nav, and skill inventory are in place.
+- The master catalog, repo summaries, quick-nav, and indexed skill inventory are in place.
 - Phase 4 focuses on personal usability, repo summaries, and maintenance.
 - The dashboard-first layout is the intended way to browse and extend the library.
 

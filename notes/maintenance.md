@@ -2,6 +2,8 @@
 
 ## 2026-04-14
 
+- Added `scripts/generate_skills_index.py` so `library/skills.md` can be rebuilt with summaries, use notes, open links, and raw download links.
+- Rebuilt `library/skills.md` as an indexed catalog with summaries, use notes, open links, and raw download links.
 - Updated the project docs to reflect the dashboard-first workflow and the active maintenance phase.
 - Refined the master `LIBRARY.md` dashboard to prioritize personal usability.
 - Expanded repository summaries with stronger entry points, cautions, and use cases.
