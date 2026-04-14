@@ -1,80 +1,41 @@
-# Resources
+# Resources Index
 
-Quick index of references, guides, and maintenance material that support the tools and skills in this library.
+Curated supporting references, docs, manifests, and maintenance pages for the library.
 
-## Entry Format
+## How To Use
 
-- Follow the shared schema in [Entry Template](entry-template.md)
-- Keep resources focused on helping a reader use the library
-- Prefer maintainable references over ephemeral notes
-- Include a "best first" note where it helps someone act quickly.
+- Use this page for supporting docs rather than entry-point commands, agents, skills, or tools.
+- Keep the highest-value references here so the main inventory stays focused.
 
-## Recommended Fields
-
-- Title
-- Kind
-- Source
-- Scope
-- Purpose
-- Contents
-- Best use cases
-- Status
-- Tags
-- Related entries
-- Maintenance notes
-
-## Planned Resource Types
-
-- repo notes
-- comparison notes
-- workflow guides
-- maintenance logs
-- source sync references
-
-## Entries
-
-### WTF-P README and command reference
-
-- Kind: resource
-- Source: `sources/wtf-p/README.md`
-- Scope: install, usage, command reference, and runtime support for the writing workflow
-- Purpose: provide the clearest single-page guide to using the `wtf-p` toolchain
-- Contents: quick start, installation, command reference, configuration, venue templates, and workflow guidance
-- Best first: `sources/wtf-p/README.md`
-- Best use cases: onboarding, command lookup, install troubleshooting, and workflow review
-- Status: imported
-- Tags: `resource`, `academic-writing`, `cli`, `node`, `writing`
-- Related entries: [wtf-p](repositories.md#wtf-p), [Entry Template](entry-template.md), [Tag Taxonomy](taxonomy.md)
-- Maintenance notes: keep in sync with upstream command additions and runtime changes
-
-### Claude Scientific Writer installation and usage docs
-
-- Kind: resource
-- Source: `sources/claude-scientific-writer/README.md`
-- Scope: plugin installation, CLI/API usage, and writing workflow overview
-- Purpose: provide onboarding and usage guidance for the scientific writing stack
-- Contents: quick start, plugin install flow, Python package usage, CLI usage, and workflow examples
-- Best first: `sources/claude-scientific-writer/README.md`
-- Best use cases: setup, plugin onboarding, feature discovery, and workflow selection
-- Status: imported
-- Tags: `resource`, `scientific-writing`, `plugin`, `python`, `writing`
-- Related entries: [claude-scientific-writer](repositories.md#claude-scientific-writer), [Entry Template](entry-template.md), [Tag Taxonomy](taxonomy.md)
-- Maintenance notes: keep in sync with package and plugin changes, especially installation steps
-
-### Scientific Agent Skills security and onboarding docs
-
-- Kind: resource
-- Source: `sources/scientific-agent-skills/README.md`
-- Scope: repo overview, security guidance, installation, and usage for the large skill catalog
-- Purpose: document the primary source of truth for the largest skill repository in the library
-- Contents: overview, prerequisites, security disclaimer, installation, and example workflows
-- Best first: `sources/scientific-agent-skills/README.md`
-- Best use cases: repo review, safety checks, installation planning, and skill discovery
-- Status: imported
-- Tags: `resource`, `scientific-writing`, `research-planning`, `security`, `python`
-- Related entries: [scientific-agent-skills](repositories.md#scientific-agent-skills), [Entry Template](entry-template.md), [Tag Taxonomy](taxonomy.md)
-- Maintenance notes: keep in sync with new skill additions and security advisories
-
-## Status
-
-Resource entries have been populated from the cloned repositories.
+| Area | Resource | Why it matters | Open |
+|---|---|---|---|
+| Project | README.md | Project overview and the main dashboard link | [open](../README.md) |
+| Project | LIBRARY.md | Canonical dashboard and fastest orientation page | [open](../LIBRARY.md) |
+| Project | repos/README.md | Quick navigation table for the cloned repositories | [open](../repos/README.md) |
+| Library | library/inventory.md | Master catalog of commands, agents, skills, and tools | [open](inventory.md) |
+| Library | library/repositories.md | Detailed per-repo comparison and usage notes | [open](repositories.md) |
+| Library | library/taxonomy.md | Controlled tags and search terms | [open](taxonomy.md) |
+| Library | library/entry-template.md | Shared schema for new entries | [open](entry-template.md) |
+| Library | library/commands.md | Command entry index | [open](commands.md) |
+| Library | library/agents.md | Agent entry index | [open](agents.md) |
+| Library | library/skills.md | Skill inventory | [open](skills.md) |
+| Library | library/tools.md | Tool index | [open](tools.md) |
+| Library | notes/maintenance.md | Refresh and cleanup log | [open](../notes/maintenance.md) |
+| MySkills | README.md | Compact overview of the personal skill library | [open](../sources/MySkills/README.md) |
+| MySkills | marketplace.json | Plugin/catalog metadata for the personal skill bundle | [open](../sources/MySkills/marketplace.json) |
+| academic-paper-skills | README.md | Primary repo overview | [open](../sources/academic-paper-skills/README.md) |
+| academic-paper-skills | README_CN.md | Chinese-language overview | [open](../sources/academic-paper-skills/README_CN.md) |
+| academic-paper-skills | CONTRIBUTING.md | Contribution guidance | [open](../sources/academic-paper-skills/CONTRIBUTING.md) |
+| wtf-p | README.md | Primary workflow overview | [open](../sources/wtf-p/README.md) |
+| wtf-p | docs/BUILD_AND_RELEASE.md | Build, release, and packaging guide | [open](../sources/wtf-p/docs/BUILD_AND_RELEASE.md) |
+| wtf-p | vendors/claude/.claude-plugin/plugin.json | Claude plugin manifest for the vendor bundle | [open](../sources/wtf-p/vendors/claude/.claude-plugin/plugin.json) |
+| claude-scientific-writer | README.md | Primary project overview | [open](../sources/claude-scientific-writer/README.md) |
+| claude-scientific-writer | CLAUDE.md | Project-specific Claude Code guidance | [open](../sources/claude-scientific-writer/CLAUDE.md) |
+| claude-scientific-writer | docs/DOCUMENTATION_INDEX.md | Documentation navigation index | [open](../sources/claude-scientific-writer/docs/DOCUMENTATION_INDEX.md) |
+| claude-scientific-writer | docs/SKILLS.md | Skill-oriented documentation index | [open](../sources/claude-scientific-writer/docs/SKILLS.md) |
+| claude-scientific-writer | .claude/WRITER.md | Hidden writer instructions used by the bundle | [open](../sources/claude-scientific-writer/.claude/WRITER.md) |
+| claude-scientific-writer | .claude-plugin/marketplace.json | Plugin marketplace metadata | [open](../sources/claude-scientific-writer/.claude-plugin/marketplace.json) |
+| claude-scientific-writer | commands/scientific-writer-init.md | Init command for the Scientific Writer project setup | [open](../sources/claude-scientific-writer/commands/scientific-writer-init.md) |
+| scientific-agent-skills | README.md | Primary catalog overview | [open](../sources/scientific-agent-skills/README.md) |
+| scientific-agent-skills | docs/scientific-skills.md | High-level scientific skills guide | [open](../sources/scientific-agent-skills/docs/scientific-skills.md) |
+| scientific-agent-skills | scan_skills.py | Repository-wide skill scanning and governance tool | [open](../sources/scientific-agent-skills/scan_skills.py) |

@@ -2,9 +2,14 @@
 
 ## 2026-04-14
 
+- Synced the dashboard, planning docs, and maintenance notes after the full inventory refresh.
+- Expanded the library from a skills-only index into a full inventory of commands, agents, skills, and tools with raw source links.
+- Added `library/inventory.md`, `library/commands.md`, `library/agents.md`, `library/skills.md`, and `library/tools.md` so each item type has its own fast index.
+- Updated `LIBRARY.md` and the library docs to point to the master inventory first.
+- Rebuilt the inventory generator so hidden and nested source folders are scanned for entry points.
 - Trimmed the cloned sources to keep the Claude Code-relevant trees and removed redundant runtime mirrors.
-- Added `scripts/generate_skills_index.py` so `library/skills.md` can be rebuilt with summaries, use notes, open links, and raw download links.
-- Rebuilt `library/skills.md` as an indexed catalog with summaries, use notes, open links, and raw download links.
+- Added `scripts/generate_skills_index.py` so the library inventory pages can be rebuilt with summaries, use notes, open links, and raw download links.
+- Rebuilt `library/inventory.md`, `library/commands.md`, `library/agents.md`, `library/skills.md`, and `library/tools.md` as indexed catalogs with summaries, use notes, open links, and raw download links.
 - Updated the project docs to reflect the dashboard-first workflow and the active maintenance phase.
 - Refined the master `LIBRARY.md` dashboard to prioritize personal usability.
 - Expanded repository summaries with stronger entry points, cautions, and use cases.
@@ -14,7 +19,7 @@
 - Prepared the project scaffold for active indexing work.
 - Added a shared entry template, a comparison matrix, and a controlled tag taxonomy.
 - Added the master `LIBRARY.md` catalog and `repos/README.md` quick-nav table.
-- Added the exhaustive `library/skills.md` inventory of discovered skill files.
+- Added the exhaustive `library/inventory.md` master catalog and the type-specific index pages.
 
 ## 2026-04-14
 

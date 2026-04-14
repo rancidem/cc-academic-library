@@ -1,86 +1,74 @@
-# Tools
+# Tools Index
 
-Quick index of reusable Claude Code tools, environments, and helper utilities that support academic and scientific workflows.
+Inventory of tools discovered across the cloned repositories.
 
-## Entry Format
+## How To Use
 
-- Follow the shared schema in [Entry Template](entry-template.md)
-- Keep tool entries short, comparable, and scan-friendly
-- Prefer source paths, install commands, or package identifiers
-- Add a short "best first" note so this page can be skimmed quickly.
+- Start with the repo section you care about.
+- Open the local link to inspect the item inside this project.
+- Use the raw link when you want the download-ready source file from GitHub.
+- Treat hidden and nested source folders as first-class inventory unless the repo section says otherwise.
 
-## Recommended Fields
+## Repository Summary
 
-- Name
-- Kind
-- Source or location
-- Purpose
-- Contents
-- Best use cases
-- Status
-- Tags
-- Related entries
-- Runtime or client support
-- Strengths
-- Tradeoffs
+| Repo | Commands | Agents | Skills | Tools | Total | Best first | Notes |
+|---|---:|---:|---:|---:|---:|---|---|
+| MySkills | 0 | 0 | 1 | 0 | 1 | README.md, then `skills/visual-architect/SKILL.md` | Best for quickly reviewing a compact Anthropic Skill pattern. |
+| academic-paper-skills | 0 | 0 | 2 | 0 | 2 | README.md, then `strategist/SKILL.md` | Best for paper planning, outlining, and manuscript composition with checkpoints. |
+| wtf-p | 36 | 11 | 2 | 3 | 52 | README.md, then `docs/BUILD_AND_RELEASE.md` and `bin/commands/` | Best when you want the assistant to behave like a structured writing tool; local clone keeps the Claude Code vendor tree only. |
+| claude-scientific-writer | 1 | 0 | 27 | 3 | 31 | README.md, then `docs/DOCUMENTATION_INDEX.md` | Best for research-backed scientific output with citations, conversion, and figure generation; local clone keeps the canonical Claude Code skill tree only. |
+| scientific-agent-skills | 0 | 0 | 134 | 0 | 134 | README.md, then `docs/scientific-skills.md` | Best when you want the widest scientific skill catalog and many domain-specific entry points. |
 
-## Planned Tool Entry Types
+## Snapshot
 
-- Claude Code setup helpers
-- packaging and installation utilities
-- file/indexing helpers
-- search and tagging workflows
+- Total items: 6
+- Commands: 0
+- Agents: 0
+- Skills: 0
+- Tools: 6
 
-## Entries
+## Quick Jump
 
-### wtf-p
+- [MySkills](#myskills)
+- [academic-paper-skills](#academic-paper-skills)
+- [wtf-p](#wtf-p)
+- [claude-scientific-writer](#claude-scientific-writer)
+- [scientific-agent-skills](#scientific-agent-skills)
 
-- Kind: tool
-- Source: `sources/wtf-p`
-- Scope: command-driven academic writing system for Claude Code, Gemini CLI, and OpenCode
-- Purpose: provide a reusable installable workflow for papers, proposals, presentations, and posters
-- Contents: installer commands, writing workflow commands, release/support scripts, and vendored skill helpers
-- Best first: `README.md`, then `docs/BUILD_AND_RELEASE.md`
-- Best use cases: command-first academic writing, assistant workflow orchestration, section planning, and publication prep
-- Status: imported
-- Tags: `tool`, `academic-writing`, `writing`, `cli`, `node`, `large`
-- Related entries: [wtf-p](repositories.md#wtf-p), [Entry Template](entry-template.md), [Tag Taxonomy](taxonomy.md)
-- Runtime or client support: Claude Code, Gemini CLI, OpenCode
-- Strengths: broad command coverage, runtime support, and a documented install/update flow
-- Tradeoffs: more moving parts than a pure skill repo and Node-specific packaging overhead
+## Kind Filter: tool
 
-### claude-scientific-writer
+## wtf-p
 
-- Kind: tool
-- Source: `sources/claude-scientific-writer`
-- Scope: scientific writing plugin, CLI, and Python package
-- Purpose: support research-backed document generation with citations, conversion, and image generation
-- Contents: Python package core, plugin metadata, CLI support, commands, templates, and bundled skills
-- Best first: `README.md`, then `docs/DOCUMENTATION_INDEX.md`
-- Best use cases: scientific papers, literature reviews, posters, grant proposals, and citation-grounded writing workflows
-- Status: imported
-- Tags: `tool`, `scientific-writing`, `writing`, `plugin`, `package`, `python`, `large`
-- Related entries: [claude-scientific-writer](repositories.md#claude-scientific-writer), [Entry Template](entry-template.md), [Tag Taxonomy](taxonomy.md)
-- Runtime or client support: Claude Code, Python, CLI, plugin
-- Strengths: rich end-to-end writing stack with real-time research and formatting support
-- Tradeoffs: broad surface area and more maintenance overhead than the smaller skill repos
+- Source URL: https://github.com/akougkas/wtf-p
+- Local clone: `sources/wtf-p`
+- Summary: Command-driven academic writing system with installer, commands, agents, and verification loops.
+- Best first: README.md, then `docs/BUILD_AND_RELEASE.md` and `bin/commands/`
+- How to use: Run `npx wtf-p`, then invoke the `/wtfp:*` commands in your assistant.
+- Notes: Best when you want the assistant to behave like a structured writing tool; local clone keeps the Claude Code vendor tree only.
+- Counts: 36 commands, 11 agents, 2 skills, 3 tools
 
-### scientific-agent-skills
+### Tools
 
-- Kind: tool
-- Source: `sources/scientific-agent-skills`
-- Scope: large Agent Skills catalog for scientific and research workflows
-- Purpose: provide a broad, reusable skill library for scientific data, writing, and research tasks
-- Contents: scientific-skills tree, docs, scan tooling, package metadata, and security guidance
-- Best first: `README.md`, then `docs/scientific-skills.md`
-- Best use cases: agent-assisted scientific workflows, database lookups, research writing, and specialized analysis
-- Status: imported
-- Tags: `tool`, `scientific-writing`, `research-planning`, `skill-file`, `python`, `very-large`, `high`
-- Related entries: [scientific-agent-skills](repositories.md#scientific-agent-skills), [Entry Template](entry-template.md), [Tag Taxonomy](taxonomy.md)
-- Runtime or client support: Claude Code, Cursor, Codex, Agent Skills clients
-- Strengths: widest coverage and strongest specialization across scientific domains
-- Tradeoffs: largest review surface and highest operational complexity
+| Name | Summary | Contents | Use | Open | Raw | How to use | Tags | Status |
+|---|---|---|---|---|---|---|---|---|
+| [Claude plugin manifest](../sources/wtf-p/vendors/claude/.claude-plugin/plugin.json) | Plugin manifest that wires the Claude vendor bundle into the local install. | plugin.json | Installed through Claude's plugin flow when you want the WTF-P bundle available. | [open](../sources/wtf-p/vendors/claude/.claude-plugin/plugin.json) | [raw](https://raw.githubusercontent.com/akougkas/wtf-p/main/vendors/claude/.claude-plugin/plugin.json) | Installed through Claude's plugin flow when you want the WTF-P bundle available. | `academic-writing`, `writing`, `claude-code`, `node`, `large`, `tool`, `tool-root`, `installation`, `plugin` | imported |
+| [WCN workflow compressor](../sources/wtf-p/tools/wcn/SPEC.md) | Token-efficient workflow compression CLI and notation package. | SPEC.md, cli.js, converter.js, package.json, swap-workflows.sh, examples/ | Run `wcn` or read the WCN spec to convert verbose workflow instructions into compact notation. | [open](../sources/wtf-p/tools/wcn/SPEC.md) | [raw](https://raw.githubusercontent.com/akougkas/wtf-p/main/tools/wcn/SPEC.md) | Run `wcn` or read the WCN spec to convert verbose workflow instructions into compact notation. | `academic-writing`, `writing`, `claude-code`, `node`, `large`, `tool`, `tool-root`, `cli`, `package` | imported |
+| [WTF-P command runtime](../sources/wtf-p/bin/commands/list.js) | Command runtime helpers for installation, listing, diagnostics, status, and updates. | doctor.js, install-logic.js, list.js, status.js, update.js | Used internally by WTF-P for install, list, status, doctor, and update flows. | [open](../sources/wtf-p/bin/commands/list.js) | [raw](https://raw.githubusercontent.com/akougkas/wtf-p/main/bin/commands/list.js) | Used internally by WTF-P for install, list, status, doctor, and update flows. | `academic-writing`, `writing`, `claude-code`, `node`, `large`, `tool`, `tool-root`, `installation`, `cli` | imported |
 
-## Status
+## claude-scientific-writer
 
-Tool entries have been populated from the cloned repositories.
+- Source URL: https://github.com/K-Dense-AI/claude-scientific-writer
+- Local clone: `sources/claude-scientific-writer`
+- Summary: Scientific writing stack with plugin, CLI, Python package, and bundled skills.
+- Best first: README.md, then `docs/DOCUMENTATION_INDEX.md`
+- How to use: Install the plugin, or use `pip install scientific-writer` / `uv sync`, then follow the skill prompts.
+- Notes: Best for research-backed scientific output with citations, conversion, and figure generation; local clone keeps the canonical Claude Code skill tree only.
+- Counts: 1 commands, 0 agents, 27 skills, 3 tools
+
+### Tools
+
+| Name | Summary | Contents | Use | Open | Raw | How to use | Tags | Status |
+|---|---|---|---|---|---|---|---|---|
+| [Scientific Writer maintenance scripts](../sources/claude-scientific-writer/scripts/README.md) | Maintenance scripts for versioning, publishing, and verification. | bump_version.py, publish.py, verify_package.py | Use for packaging, publishing, and verification tasks around the Scientific Writer distribution. | [open](../sources/claude-scientific-writer/scripts/README.md) | [raw](https://raw.githubusercontent.com/K-Dense-AI/claude-scientific-writer/main/scripts/README.md) | Use for packaging, publishing, and verification tasks around the Scientific Writer distribution. | `scientific-writing`, `writing`, `claude-code`, `python`, `large`, `tool`, `tool-root`, `scripts` | imported |
+| [Scientific Writer package](../sources/claude-scientific-writer/pyproject.toml) | Python package powering the Scientific Writer CLI and API. | scientific_writer/api.py, cli.py, core.py, models.py, utils.py | Install with `pip install scientific-writer` or `uv sync`, then use the CLI or import the package. | [open](../sources/claude-scientific-writer/pyproject.toml) | [raw](https://raw.githubusercontent.com/K-Dense-AI/claude-scientific-writer/main/pyproject.toml) | Install with `pip install scientific-writer` or `uv sync`, then use the CLI or import the package. | `scientific-writing`, `writing`, `claude-code`, `python`, `large`, `tool`, `tool-root`, `installation`, `cli`, `package` | imported |
+| [Scientific Writer plugin manifest](../sources/claude-scientific-writer/.claude-plugin/marketplace.json) | Plugin metadata for the Scientific Writer bundle. | marketplace.json | Install through Claude's plugin flow to expose the bundled Scientific Writer skills. | [open](../sources/claude-scientific-writer/.claude-plugin/marketplace.json) | [raw](https://raw.githubusercontent.com/K-Dense-AI/claude-scientific-writer/main/.claude-plugin/marketplace.json) | Install through Claude's plugin flow to expose the bundled Scientific Writer skills. | `scientific-writing`, `writing`, `claude-code`, `python`, `large`, `tool`, `tool-root`, `installation`, `plugin` | imported |

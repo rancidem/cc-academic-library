@@ -6,6 +6,8 @@ Use these controlled tags to keep the library searchable and consistent.
 
 ### kind
 
+- `command`
+- `agent`
 - `tool`
 - `skill`
 - `resource`
@@ -48,9 +50,12 @@ Use these controlled tags to keep the library searchable and consistent.
 
 ### surface
 
+- `command-file`
+- `agent-file`
 - `cli`
 - `plugin`
 - `package`
+- `tool-root`
 - `skill-file`
 - `docs`
 - `tests`
@@ -81,6 +86,8 @@ Use these controlled tags to keep the library searchable and consistent.
 
 ## Suggested Entry Tags
 
+- `wtf-p:create-outline`: `command`, `command-file`, `academic-writing`, `planning`, `claude-code`, `node`, `large`
+- `wtfp-outliner`: `agent`, `agent-file`, `academic-writing`, `planning`, `claude-code`, `node`, `large`
 - `academic-paper-skills`: `skill`, `academic-writing`, `planning`, `review`, `claude-code`, `small`
 - `wtf-p`: `repository`, `academic-writing`, `writing`, `cli`, `node`, `large`
 - `MySkills`: `repository`, `skill`, `academic-writing`, `skill-file`, `small`

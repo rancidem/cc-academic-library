@@ -2,6 +2,8 @@
 
 Detailed comparison notes for the five cloned repositories.
 
+Use `library/inventory.md` for item-level browsing across commands, agents, skills, and tools. Use this page when you want the repo-level comparison first.
+
 ## Comparison Matrix
 
 | Repository | Size | Format / Runtime | Why It Matters Here | Strengths | Cautions | Best First | Tags |

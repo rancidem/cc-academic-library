@@ -7,6 +7,8 @@ Use this template for every item in the library so tools, skills, and resources 
 - Name
 - Kind
 - Source
+- Open
+- Raw
 - Scope
 - Purpose
 - Contents
@@ -28,8 +30,10 @@ Use this template for every item in the library so tools, skills, and resources 
 ```markdown
 # Name
 
-- Kind: tool | skill | resource
+- Kind: command | agent | skill | tool | resource
 - Source: `path/or/url`
+- Open: `local/path/or/link`
+- Raw: `raw/download/url`
 - Scope: one-sentence summary of what this entry covers
 - Purpose: why this entry exists in the library
 - Contents: primary modules, directories, or reference materials

@@ -1,10 +1,10 @@
 # cc-academic - Personal Academic Tools Library
 
-> Curated Claude Code academic, scientific, and research-oriented skills and tools.
+> Curated Claude Code academic, scientific, and research-oriented commands, agents, skills, tools, and resources.
 
 ## Purpose
 
-Build and maintain a personal library of community-built academic and scientific Claude Code skills.
+Build and maintain a personal library of community-built academic and scientific Claude Code commands, agents, skills, tools, and resources.
 
 ## Milestones
 
@@ -22,6 +22,7 @@ Phase 4 - personal usability, repo summaries, and maintenance.
 ## Phase 4 Focus
 
 - Keep `LIBRARY.md` as the default entry point.
+- Keep `library/inventory.md` as the complete cross-type inventory.
+- Keep `library/commands.md`, `library/agents.md`, `library/skills.md`, `library/tools.md`, and `library/resources.md` usable under time pressure.
 - Keep `library/repositories.md` richer than the root catalog.
-- Keep `library/skills.md`, `library/tools.md`, and `library/resources.md` usable under time pressure.
 - Keep the planning docs synchronized with the current library shape and current work.

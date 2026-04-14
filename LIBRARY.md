@@ -9,8 +9,11 @@ Last refreshed: 2026-04-14.
 - [Project master catalog](LIBRARY.md) - the fastest way to orient yourself
 - [Repo quick-nav](repos/README.md) - direct links to each cloned repository
 - [Repository summaries](library/repositories.md) - detailed per-repo comparison and usage notes
-- [Skills inventory](library/skills.md) - indexed list of discovered skill files with summaries, use notes, open links, and raw download links
-- [Tools](library/tools.md) - reusable environments, wrappers, and helper utilities
+- [Library inventory](library/inventory.md) - master index of commands, agents, skills, and tools
+- [Commands](library/commands.md) - indexed command entry points with summaries and raw links
+- [Agents](library/agents.md) - indexed agent entry points with summaries and raw links
+- [Skills](library/skills.md) - indexed skill files with summaries, use notes, open links, and raw download links
+- [Tools](library/tools.md) - reusable tool roots, packages, and helper utilities
 - [Resources](library/resources.md) - supporting references, guides, and maintenance material
 - [Entry template](library/entry-template.md) - shared schema for all new entries
 - [Taxonomy](library/taxonomy.md) - controlled tags and search terms
@@ -24,12 +27,14 @@ Last refreshed: 2026-04-14.
 
 ## Current State
 
-- The master catalog, repo quick-nav, and exhaustive skills inventory are in place.
+- The master catalog, repo quick-nav, and exhaustive inventory pages are in place.
+- The dashboard, planning docs, and maintenance notes are synchronized with the current library structure.
 - Phase 4 is focused on maintenance, refreshes, and personal usability.
 - The next useful work is tightening summaries and keeping the library easy to scan.
 
 ## Most Useful Now
 
+- `library/inventory.md` - best when you want every command, agent, skill, and tool in one place.
 - `wtf-p` - best when you want a command-first writing workflow with clear orchestration.
 - `claude-scientific-writer` - best when you want a research-backed scientific writing stack.
 - `scientific-agent-skills` - best when you want the widest scientific skill catalog.
@@ -38,11 +43,16 @@ Last refreshed: 2026-04-14.
 
 ## Inventory Snapshot
 
-- MySkills: 1 skill file
-- academic-paper-skills: 2 skill files
-- wtf-p: 2 skill files plus command/tooling modules
-- claude-scientific-writer: 27 skill files under `.claude/skills/`
-- scientific-agent-skills: 134 skill files under `scientific-skills/`
+- Total inventory items: 220
+- Commands: 37
+- Agents: 11
+- Skills: 166
+- Tools: 6
+- MySkills: 1 skill
+- academic-paper-skills: 2 skills
+- wtf-p: 36 commands, 11 agents, 2 skills, 3 tools
+- claude-scientific-writer: 1 command, 27 skills, 3 tools
+- scientific-agent-skills: 134 skills
 
 ## Repository Highlights
 
@@ -60,14 +70,14 @@ Last refreshed: 2026-04-14.
 
 ### wtf-p
 
-- Command-driven writing system for Claude Code.
+- Command-driven writing system for Claude Code, with command, agent, skill, and tool entry points.
 - Trimmed local source scope now keeps the Claude Code vendor tree only.
 - Strongest repository for installable assistant workflows.
 - Best if you want the assistant to behave like a structured writing tool.
 
 ### claude-scientific-writer
 
-- Scientific writing stack with plugin, CLI, and Python package support.
+- Scientific writing stack with plugin, CLI, command, skill, and Python package support.
 - Trimmed local source scope now keeps the canonical Claude Code skill tree only.
 - Strongest repository for research-backed scientific output.
 - Best if you want citations, conversion, and figure generation in one place.
@@ -81,8 +91,9 @@ Last refreshed: 2026-04-14.
 ## Maintenance Rules
 
 - Keep `LIBRARY.md` as the first page you open.
+- Use `library/inventory.md` for the full command, agent, skill, and tool catalog.
+- Use `library/commands.md`, `library/agents.md`, `library/skills.md`, and `library/tools.md` for type-specific browsing.
 - Use `library/repositories.md` for detailed repo comparison.
-- Use `library/skills.md` to locate specific skill files quickly.
 - Keep new entries consistent with `library/entry-template.md` and `library/taxonomy.md`.
 - Record refreshes in `notes/maintenance.md` when source repos change.
 - Treat `library/` as the working index and `LIBRARY.md` as the personal dashboard.

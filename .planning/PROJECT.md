@@ -6,14 +6,15 @@ cc-academic - Personal Academic Tools Library
 
 ## Objective
 
-Build a Markdown-first library of Claude Code tools, skills, and resources for academic writing workflows.
+Build a Markdown-first library of Claude Code commands, agents, skills, tools, and resources for academic writing workflows.
 
 ## Scope
 
 - `LIBRARY.md` is the personal dashboard and first page to open.
+- `library/inventory.md` is the master inventory of commands, agents, skills, and tools.
 - `library/repositories.md` is the detailed repo comparison and summary page.
-- `library/skills.md` is the exhaustive skill inventory with summaries, use notes, open links, and raw links.
-- `library/tools.md` and `library/resources.md` hold reusable entries from the cloned repos.
+- `library/commands.md`, `library/agents.md`, `library/skills.md`, and `library/tools.md` are type-specific indexes.
+- `library/resources.md` holds curated supporting references from the cloned repos.
 - `repos/README.md` is the quick-nav table for the five upstream repositories.
 - `library/entry-template.md` and `library/taxonomy.md` define the shared structure and tags.
 
@@ -36,4 +37,4 @@ Build a Markdown-first library of Claude Code tools, skills, and resources for a
 
 ## Outcome
 
-A compact personal library that makes it easy to compare, reuse, and maintain community-built academic and scientific Claude Code skills.
+A compact personal library that makes it easy to compare, reuse, and maintain community-built academic and scientific Claude Code commands, agents, skills, tools, and resources.
